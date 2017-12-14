@@ -1,0 +1,113 @@
+<HTML><HEAD><TITLE>XML element materialDetail</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: materialDetail</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="materialID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="isbn13" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="isbn10" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="internalDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="fullDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="materialStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="materialStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="listPrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="netPrice" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="quantityInStock" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+         &lt;element name="restriction" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="materialGroup" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="substituted" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="availableDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="copyrightYear" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="mediaType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="productDivision" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="phLevelCode1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="phLevelCode2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="phLevelCode3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="phLevelCode4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="phLevelCode5" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="unitsPerCarton" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+         &lt;element name="isSubscription" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="genItemCategory" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/MaterialNew}component" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/MaterialNew}subscriptionTerm" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="editionCategory" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/MaterialNew}Oldmaterialnumber" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;materialDetail>
+  &lt;<a href='#m_author'>author</a>>xsd:string&lt;/author>
+  &lt;<a href='#m_availableDate'>availableDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/availableDate>
+  zero or N[&lt;<a href='#m_component'>component</a>><a href='../../../../../com/hmco/eai/ots/materialnew/Component.html'>component</a>&lt;/component>]
+  &lt;<a href='#m_copyrightYear'>copyrightYear</a>>xsd:string&lt;/copyrightYear>
+  &lt;<a href='#m_editionCategory'>editionCategory</a>>xsd:string&lt;/editionCategory>
+  &lt;<a href='#m_fullDescription'>fullDescription</a>>xsd:string&lt;/fullDescription>
+  &lt;<a href='#m_genItemCategory'>genItemCategory</a>>xsd:string&lt;/genItemCategory>
+  &lt;<a href='#m_internalDescription'>internalDescription</a>>xsd:string&lt;/internalDescription>
+  &lt;<a href='#m_isbn10'>isbn10</a>>xsd:string&lt;/isbn10>
+  &lt;<a href='#m_isbn13'>isbn13</a>>xsd:string&lt;/isbn13>
+  &lt;<a href='#m_isSubscription'>isSubscription</a>>xsd:boolean&lt;/isSubscription>
+  &lt;<a href='#m_listPrice'>listPrice</a>>xsd:double&lt;/listPrice>
+  &lt;<a href='#m_materialGroup'>materialGroup</a>>xsd:string&lt;/materialGroup>
+  &lt;<a href='#m_materialID'>materialID</a>>xsd:string&lt;/materialID>
+  &lt;<a href='#m_materialStatus'>materialStatus</a>>xsd:string&lt;/materialStatus>
+  &lt;<a href='#m_materialStatusDescription'>materialStatusDescription</a>>xsd:string&lt;/materialStatusDescription>
+  &lt;<a href='#m_mediaType'>mediaType</a>>xsd:string&lt;/mediaType>
+  &lt;<a href='#m_netPrice'>netPrice</a>>xsd:double&lt;/netPrice>
+  &lt;<a href='#m_Oldmaterialnumber'>Oldmaterialnumber</a>>xsd:string&lt;/Oldmaterialnumber>
+  &lt;<a href='#m_phLevelCode1'>phLevelCode1</a>>xsd:string&lt;/phLevelCode1>
+  &lt;<a href='#m_phLevelCode2'>phLevelCode2</a>>xsd:string&lt;/phLevelCode2>
+  &lt;<a href='#m_phLevelCode3'>phLevelCode3</a>>xsd:string&lt;/phLevelCode3>
+  &lt;<a href='#m_phLevelCode4'>phLevelCode4</a>>xsd:string&lt;/phLevelCode4>
+  &lt;<a href='#m_phLevelCode5'>phLevelCode5</a>>xsd:string&lt;/phLevelCode5>
+  &lt;<a href='#m_productDivision'>productDivision</a>>xsd:string&lt;/productDivision>
+  &lt;<a href='#m_quantityInStock'>quantityInStock</a>>xsd:int&lt;/quantityInStock>
+  &lt;<a href='#m_restriction'>restriction</a>>xsd:string&lt;/restriction>
+  zero or N[&lt;<a href='#m_subscriptionTerm'>subscriptionTerm</a>><a href='../../../../../com/hmco/eai/ots/materialnew/SubscriptionTerm.html'>subscriptionTerm</a>&lt;/subscriptionTerm>]
+  &lt;<a href='#m_substituted'>substituted</a>>xsd:boolean&lt;/substituted>
+  &lt;<a href='#m_unitsPerCarton'>unitsPerCarton</a>>xsd:int&lt;/unitsPerCarton>
+&lt;/materialDetail>
+</pre></td><td><b>JSON Example:</b><pre>{"materialDetail":
+ {
+   "<a href='#m_author'>author</a>": String,
+   "<a href='#m_availableDate'>availableDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_component'>component</a>": [<a href='../../../../../com/hmco/eai/ots/materialnew/Component.html'>component</a>],
+   "<a href='#m_copyrightYear'>copyrightYear</a>": String,
+   "<a href='#m_editionCategory'>editionCategory</a>": String,
+   "<a href='#m_fullDescription'>fullDescription</a>": String,
+   "<a href='#m_genItemCategory'>genItemCategory</a>": String,
+   "<a href='#m_internalDescription'>internalDescription</a>": String,
+   "<a href='#m_isbn10'>isbn10</a>": String,
+   "<a href='#m_isbn13'>isbn13</a>": String,
+   "<a href='#m_isSubscription'>isSubscription</a>": Boolean,
+   "<a href='#m_listPrice'>listPrice</a>": Number,
+   "<a href='#m_materialGroup'>materialGroup</a>": String,
+   "<a href='#m_materialID'>materialID</a>": String,
+   "<a href='#m_materialStatus'>materialStatus</a>": String,
+   "<a href='#m_materialStatusDescription'>materialStatusDescription</a>": String,
+   "<a href='#m_mediaType'>mediaType</a>": String,
+   "<a href='#m_netPrice'>netPrice</a>": Number,
+   "<a href='#m_Oldmaterialnumber'>Oldmaterialnumber</a>": String,
+   "<a href='#m_phLevelCode1'>phLevelCode1</a>": String,
+   "<a href='#m_phLevelCode2'>phLevelCode2</a>": String,
+   "<a href='#m_phLevelCode3'>phLevelCode3</a>": String,
+   "<a href='#m_phLevelCode4'>phLevelCode4</a>": String,
+   "<a href='#m_phLevelCode5'>phLevelCode5</a>": String,
+   "<a href='#m_productDivision'>productDivision</a>": String,
+   "<a href='#m_quantityInStock'>quantityInStock</a>": Number,
+   "<a href='#m_restriction'>restriction</a>": String,
+   "<a href='#m_subscriptionTerm'>subscriptionTerm</a>": [<a href='../../../../../com/hmco/eai/ots/materialnew/SubscriptionTerm.html'>subscriptionTerm</a>],
+   "<a href='#m_substituted'>substituted</a>": Boolean,
+   "<a href='#m_unitsPerCarton'>unitsPerCarton</a>": Number,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_author'>author</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_availableDate'>availableDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_component'>component</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/materialnew/Component.html'>component</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_copyrightYear'>copyrightYear</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_editionCategory'>editionCategory</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_fullDescription'>fullDescription</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_genItemCategory'>genItemCategory</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_internalDescription'>internalDescription</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isbn10'>isbn10</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isbn13'>isbn13</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isSubscription'>isSubscription</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_listPrice'>listPrice</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialGroup'>materialGroup</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialID'>materialID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialStatus'>materialStatus</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialStatusDescription'>materialStatusDescription</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_mediaType'>mediaType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_netPrice'>netPrice</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Oldmaterialnumber'>Oldmaterialnumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_phLevelCode1'>phLevelCode1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_phLevelCode2'>phLevelCode2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_phLevelCode3'>phLevelCode3</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_phLevelCode4'>phLevelCode4</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_phLevelCode5'>phLevelCode5</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_productDivision'>productDivision</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_quantityInStock'>quantityInStock</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_restriction'>restriction</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_subscriptionTerm'>subscriptionTerm</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/materialnew/SubscriptionTerm.html'>subscriptionTerm</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_substituted'>substituted</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_unitsPerCarton'>unitsPerCarton</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

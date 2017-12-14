@@ -1,0 +1,59 @@
+<HTML><HEAD><TITLE>XML element saleLineItem</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: saleLineItem</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="lineNo" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="materialID">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="18"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="lineCouponCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material}subscriptionTerm" minOccurs="0"/>
+         &lt;element name="itemType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="overrideShipping" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}grade" minOccurs="0"/>
+         &lt;element name="contractStartDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="contractEndDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;saleLineItem>
+  &lt;<a href='#m_contractEndDate'>contractEndDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/contractEndDate>
+  &lt;<a href='#m_contractStartDate'>contractStartDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/contractStartDate>
+  &lt;<a href='#m_grade'>grade</a>>xsd:string&lt;/grade>
+  &lt;<a href='#m_itemType'>itemType</a>>xsd:string&lt;/itemType>
+  &lt;<a href='#m_lineCouponCode'>lineCouponCode</a>>xsd:string&lt;/lineCouponCode>
+  &lt;<a href='#m_lineNo'>lineNo</a>>xsd:double&lt;/lineNo>
+  &lt;<a href='#m_materialID'>materialID</a>>xsd:string&lt;/materialID>
+  &lt;<a href='#m_overrideShipping'>overrideShipping</a>>java.math.BigDecimal&lt;/overrideShipping>
+  &lt;<a href='#m_quantity'>quantity</a>>xsd:int&lt;/quantity>
+  &lt;<a href='#m_subscriptionTerm'>subscriptionTerm</a>><a href='../../../../../com/hmco/eai/ots/material/SubscriptionTerm.html'>subscriptionTerm</a>&lt;/subscriptionTerm>
+&lt;/saleLineItem>
+</pre></td><td><b>JSON Example:</b><pre>{"saleLineItem":
+ {
+   "<a href='#m_contractEndDate'>contractEndDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_contractStartDate'>contractStartDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_grade'>grade</a>": String,
+   "<a href='#m_itemType'>itemType</a>": String,
+   "<a href='#m_lineCouponCode'>lineCouponCode</a>": String,
+   "<a href='#m_lineNo'>lineNo</a>": Number,
+   "<a href='#m_materialID'>materialID</a>": String,
+   "<a href='#m_overrideShipping'>overrideShipping</a>": java.math.BigDecimal,
+   "<a href='#m_quantity'>quantity</a>": Number,
+   "<a href='#m_subscriptionTerm'>subscriptionTerm</a>": <a href='../../../../../com/hmco/eai/ots/material/SubscriptionTerm.html'>subscriptionTerm</a>,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_contractEndDate'>contractEndDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_contractStartDate'>contractStartDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_grade'>grade</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_itemType'>itemType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineCouponCode'>lineCouponCode</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineNo'>lineNo</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialID'>materialID</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_overrideShipping'>overrideShipping</td><td>java.math.BigDecimal</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_quantity'>quantity</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_subscriptionTerm'>subscriptionTerm<span class='namespace'>(http://www.hmco.com/EAI/OTS/Material)</span></td><td><a href='../../../../../com/hmco/eai/ots/material/SubscriptionTerm.html'>subscriptionTerm</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

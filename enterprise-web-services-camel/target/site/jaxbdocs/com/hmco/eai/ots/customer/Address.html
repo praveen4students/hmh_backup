@@ -1,0 +1,95 @@
+<HTML><HEAD><TITLE>XML element Address</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: Address</span></h2><p>Java class for address complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="address">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="customerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="addressLine1" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="60"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="addressLine2" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="40"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="addressLine3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="poBox" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="city">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="35"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="state">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="3"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="zipcode">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="countryCode">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="3"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Customer}emailAddressStruct" maxOccurs="unbounded" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;Address>
+  &lt;<a href='#m_addressLine1'>addressLine1</a>>xsd:string&lt;/addressLine1>
+  &lt;<a href='#m_addressLine2'>addressLine2</a>>xsd:string&lt;/addressLine2>
+  &lt;<a href='#m_addressLine3'>addressLine3</a>>xsd:string&lt;/addressLine3>
+  &lt;<a href='#m_city'>city</a>>xsd:string&lt;/city>
+  &lt;<a href='#m_countryCode'>countryCode</a>>xsd:string&lt;/countryCode>
+  &lt;<a href='#m_customerName'>customerName</a>>xsd:string&lt;/customerName>
+  zero or N[&lt;<a href='#m_emailAddressStruct'>emailAddressStruct</a>><a href='../../../../../com/hmco/eai/ots/customer/EmailAddressStruct.html'>emailAddressStruct</a>&lt;/emailAddressStruct>]
+  &lt;<a href='#m_poBox'>poBox</a>>xsd:string&lt;/poBox>
+  &lt;<a href='#m_state'>state</a>>xsd:string&lt;/state>
+  &lt;<a href='#m_zipcode'>zipcode</a>>xsd:string&lt;/zipcode>
+&lt;/Address>
+</pre></td><td><b>JSON Example:</b><pre>{"Address":
+ {
+   "<a href='#m_addressLine1'>addressLine1</a>": String,
+   "<a href='#m_addressLine2'>addressLine2</a>": String,
+   "<a href='#m_addressLine3'>addressLine3</a>": String,
+   "<a href='#m_city'>city</a>": String,
+   "<a href='#m_countryCode'>countryCode</a>": String,
+   "<a href='#m_customerName'>customerName</a>": String,
+   "<a href='#m_emailAddressStruct'>emailAddressStruct</a>": [<a href='../../../../../com/hmco/eai/ots/customer/EmailAddressStruct.html'>emailAddressStruct</a>],
+   "<a href='#m_poBox'>poBox</a>": String,
+   "<a href='#m_state'>state</a>": String,
+   "<a href='#m_zipcode'>zipcode</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_addressLine1'>addressLine1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_addressLine2'>addressLine2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_addressLine3'>addressLine3</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_city'>city</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_countryCode'>countryCode</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerName'>customerName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_emailAddressStruct'>emailAddressStruct</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/customer/EmailAddressStruct.html'>emailAddressStruct</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poBox'>poBox</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_state'>state</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_zipcode'>zipcode</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

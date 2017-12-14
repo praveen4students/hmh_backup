@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>XML element DescribeSoftphoneLayoutCallType</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: DescribeSoftphoneLayoutCallType</span></h2><p>Java class for DescribeSoftphoneLayoutCallType complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="DescribeSoftphoneLayoutCallType">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="infoFields" type="{urn:enterprise.soap.sforce.com}DescribeSoftphoneLayoutInfoField" maxOccurs="unbounded"/>
+         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="screenPopOptions" type="{urn:enterprise.soap.sforce.com}DescribeSoftphoneScreenPopOption" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="screenPopsOpenWithin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="sections" type="{urn:enterprise.soap.sforce.com}DescribeSoftphoneLayoutSection" maxOccurs="unbounded" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;DescribeSoftphoneLayoutCallType>
+  zero or N[&lt;<a href='#m_infoFields'>infoFields</a>><a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneLayoutInfoField.html'>DescribeSoftphoneLayoutInfoField</a>&lt;/infoFields>]
+  &lt;<a href='#m_name'>name</a>>xsd:string&lt;/name>
+  zero or N[&lt;<a href='#m_screenPopOptions'>screenPopOptions</a>><a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneScreenPopOption.html'>DescribeSoftphoneScreenPopOption</a>&lt;/screenPopOptions>]
+  &lt;<a href='#m_screenPopsOpenWithin'>screenPopsOpenWithin</a>>xsd:string&lt;/screenPopsOpenWithin>
+  zero or N[&lt;<a href='#m_sections'>sections</a>><a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneLayoutSection.html'>DescribeSoftphoneLayoutSection</a>&lt;/sections>]
+&lt;/DescribeSoftphoneLayoutCallType>
+</pre></td><td><b>JSON Example:</b><pre>{"DescribeSoftphoneLayoutCallType":
+ {
+   "<a href='#m_infoFields'>infoFields</a>": [<a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneLayoutInfoField.html'>DescribeSoftphoneLayoutInfoField</a>],
+   "<a href='#m_name'>name</a>": String,
+   "<a href='#m_screenPopOptions'>screenPopOptions</a>": [<a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneScreenPopOption.html'>DescribeSoftphoneScreenPopOption</a>],
+   "<a href='#m_screenPopsOpenWithin'>screenPopsOpenWithin</a>": String,
+   "<a href='#m_sections'>sections</a>": [<a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneLayoutSection.html'>DescribeSoftphoneLayoutSection</a>],
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_infoFields'>infoFields</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneLayoutInfoField.html'>DescribeSoftphoneLayoutInfoField</a>]</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_screenPopOptions'>screenPopOptions</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneScreenPopOption.html'>DescribeSoftphoneScreenPopOption</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_screenPopsOpenWithin'>screenPopsOpenWithin</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sections'>sections</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/DescribeSoftphoneLayoutSection.html'>DescribeSoftphoneLayoutSection</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

@@ -1,0 +1,119 @@
+<HTML><HEAD><TITLE>XML element transaction</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: transaction</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="transactionID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="poNumber">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="35"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="creationDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
+         &lt;element name="orderSource" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="division" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="salesOffice" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="customerEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="soldToCustomerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}soldToSANNumber" minOccurs="0"/>
+         &lt;element name="soldToCustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="soldToCustomerAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}soldToCustomerEmailAddress" minOccurs="0"/>
+         &lt;element name="shipToCustomerID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}shipToSANNumber" minOccurs="0"/>
+         &lt;element name="shipToCustomerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shipToCustomerAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}shipToCustomerEmailAddress" minOccurs="0"/>
+         &lt;element name="billToCustomerID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}billToSANNumber" minOccurs="0"/>
+         &lt;element name="billToCustomerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="billToCustomerAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}billToCustomerEmailAddress" minOccurs="0"/>
+         &lt;element name="isHeaderComplete" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}transactionRejectionStatus" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}transactionLineItem" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}shipToCareOf_1" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}shipToCareOf_2" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}billingBlock" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;transaction>
+  &lt;<a href='#m_billingBlock'>billingBlock</a>>xsd:string&lt;/billingBlock>
+  &lt;<a href='#m_billToCustomerAddress'>billToCustomerAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/billToCustomerAddress>
+  &lt;<a href='#m_billToCustomerEmailAddress'>billToCustomerEmailAddress</a>>xsd:string&lt;/billToCustomerEmailAddress>
+  &lt;<a href='#m_billToCustomerID'>billToCustomerID</a>>xsd:string&lt;/billToCustomerID>
+  &lt;<a href='#m_billToCustomerName'>billToCustomerName</a>>xsd:string&lt;/billToCustomerName>
+  &lt;<a href='#m_billToSANNumber'>billToSANNumber</a>>xsd:string&lt;/billToSANNumber>
+  &lt;<a href='#m_creationDate'>creationDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/creationDate>
+  &lt;<a href='#m_customerEmail'>customerEmail</a>>xsd:string&lt;/customerEmail>
+  &lt;<a href='#m_division'>division</a>>xsd:string&lt;/division>
+  &lt;<a href='#m_isHeaderComplete'>isHeaderComplete</a>>xsd:boolean&lt;/isHeaderComplete>
+  &lt;<a href='#m_orderSource'>orderSource</a>>xsd:string&lt;/orderSource>
+  &lt;<a href='#m_poNumber'>poNumber</a>>xsd:string&lt;/poNumber>
+  &lt;<a href='#m_salesOffice'>salesOffice</a>>xsd:string&lt;/salesOffice>
+  &lt;<a href='#m_shipToCareOf_1'>shipToCareOf_1</a>>xsd:string&lt;/shipToCareOf_1>
+  &lt;<a href='#m_shipToCareOf_2'>shipToCareOf_2</a>>xsd:string&lt;/shipToCareOf_2>
+  &lt;<a href='#m_shipToCustomerAddress'>shipToCustomerAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/shipToCustomerAddress>
+  &lt;<a href='#m_shipToCustomerEmailAddress'>shipToCustomerEmailAddress</a>>xsd:string&lt;/shipToCustomerEmailAddress>
+  &lt;<a href='#m_shipToCustomerID'>shipToCustomerID</a>>xsd:string&lt;/shipToCustomerID>
+  &lt;<a href='#m_shipToCustomerName'>shipToCustomerName</a>>xsd:string&lt;/shipToCustomerName>
+  &lt;<a href='#m_shipToSANNumber'>shipToSANNumber</a>>xsd:string&lt;/shipToSANNumber>
+  &lt;<a href='#m_soldToCustomerAddress'>soldToCustomerAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/soldToCustomerAddress>
+  &lt;<a href='#m_soldToCustomerEmailAddress'>soldToCustomerEmailAddress</a>>xsd:string&lt;/soldToCustomerEmailAddress>
+  &lt;<a href='#m_soldToCustomerID'>soldToCustomerID</a>>xsd:string&lt;/soldToCustomerID>
+  &lt;<a href='#m_soldToCustomerName'>soldToCustomerName</a>>xsd:string&lt;/soldToCustomerName>
+  &lt;<a href='#m_soldToSANNumber'>soldToSANNumber</a>>xsd:string&lt;/soldToSANNumber>
+  &lt;<a href='#m_status'>status</a>>xsd:string&lt;/status>
+  &lt;<a href='#m_transactionID'>transactionID</a>>xsd:string&lt;/transactionID>
+  zero or N[&lt;<a href='#m_transactionLineItem'>transactionLineItem</a>><a href='../../../../../com/hmco/eai/ots/transaction/TransactionLineItem.html'>transactionLineItem</a>&lt;/transactionLineItem>]
+  &lt;<a href='#m_transactionRejectionStatus'>transactionRejectionStatus</a>>xsd:string&lt;/transactionRejectionStatus>
+  &lt;<a href='#m_type'>type</a>>xsd:string&lt;/type>
+&lt;/transaction>
+</pre></td><td><b>JSON Example:</b><pre>{"transaction":
+ {
+   "<a href='#m_billingBlock'>billingBlock</a>": String,
+   "<a href='#m_billToCustomerAddress'>billToCustomerAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_billToCustomerEmailAddress'>billToCustomerEmailAddress</a>": String,
+   "<a href='#m_billToCustomerID'>billToCustomerID</a>": String,
+   "<a href='#m_billToCustomerName'>billToCustomerName</a>": String,
+   "<a href='#m_billToSANNumber'>billToSANNumber</a>": String,
+   "<a href='#m_creationDate'>creationDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_customerEmail'>customerEmail</a>": String,
+   "<a href='#m_division'>division</a>": String,
+   "<a href='#m_isHeaderComplete'>isHeaderComplete</a>": Boolean,
+   "<a href='#m_orderSource'>orderSource</a>": String,
+   "<a href='#m_poNumber'>poNumber</a>": String,
+   "<a href='#m_salesOffice'>salesOffice</a>": String,
+   "<a href='#m_shipToCareOf_1'>shipToCareOf_1</a>": String,
+   "<a href='#m_shipToCareOf_2'>shipToCareOf_2</a>": String,
+   "<a href='#m_shipToCustomerAddress'>shipToCustomerAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_shipToCustomerEmailAddress'>shipToCustomerEmailAddress</a>": String,
+   "<a href='#m_shipToCustomerID'>shipToCustomerID</a>": String,
+   "<a href='#m_shipToCustomerName'>shipToCustomerName</a>": String,
+   "<a href='#m_shipToSANNumber'>shipToSANNumber</a>": String,
+   "<a href='#m_soldToCustomerAddress'>soldToCustomerAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_soldToCustomerEmailAddress'>soldToCustomerEmailAddress</a>": String,
+   "<a href='#m_soldToCustomerID'>soldToCustomerID</a>": String,
+   "<a href='#m_soldToCustomerName'>soldToCustomerName</a>": String,
+   "<a href='#m_soldToSANNumber'>soldToSANNumber</a>": String,
+   "<a href='#m_status'>status</a>": String,
+   "<a href='#m_transactionID'>transactionID</a>": String,
+   "<a href='#m_transactionLineItem'>transactionLineItem</a>": [<a href='../../../../../com/hmco/eai/ots/transaction/TransactionLineItem.html'>transactionLineItem</a>],
+   "<a href='#m_transactionRejectionStatus'>transactionRejectionStatus</a>": String,
+   "<a href='#m_type'>type</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_billingBlock'>billingBlock</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToCustomerAddress'>billToCustomerAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToCustomerEmailAddress'>billToCustomerEmailAddress</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToCustomerID'>billToCustomerID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToCustomerName'>billToCustomerName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToSANNumber'>billToSANNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_creationDate'>creationDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerEmail'>customerEmail</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_division'>division</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isHeaderComplete'>isHeaderComplete</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderSource'>orderSource</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poNumber'>poNumber</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_salesOffice'>salesOffice</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCareOf_1'>shipToCareOf_1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCareOf_2'>shipToCareOf_2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomerAddress'>shipToCustomerAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomerEmailAddress'>shipToCustomerEmailAddress</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomerID'>shipToCustomerID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomerName'>shipToCustomerName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToSANNumber'>shipToSANNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToCustomerAddress'>soldToCustomerAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToCustomerEmailAddress'>soldToCustomerEmailAddress</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToCustomerID'>soldToCustomerID</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToCustomerName'>soldToCustomerName</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToSANNumber'>soldToSANNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_status'>status</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionID'>transactionID</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionLineItem'>transactionLineItem</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/transaction/TransactionLineItem.html'>transactionLineItem</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionRejectionStatus'>transactionRejectionStatus</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_type'>type</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

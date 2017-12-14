@@ -1,0 +1,140 @@
+<HTML><HEAD><TITLE>XML element SubmitOrder</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: SubmitOrder</span></h2><p>Java class for SubmitOrder complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="SubmitOrder">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="alternateEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="attnTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="basisSfdcInternalOrderId" type="{http://soap.sforce.com/schemas/class/OrderEntryService}ID" minOccurs="0"/>
+         &lt;element name="clientSystemId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="clientTransactionId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="contactEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="contactName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="contactPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="deliverByDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="deliveryNotes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="districtPid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="doNotMixPOsOnSamePallet" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="egoodEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="entryDivision" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="headerCCRatioIndicator" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="lineList" type="{http://soap.sforce.com/schemas/class/OrderEntryService}SubmitOrderLine" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="marketCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="noFridayDelivery" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="orderedBy" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="orderNoteList" type="{http://soap.sforce.com/schemas/class/OrderEntryService}OrderNote" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="orderReasonCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="originalPONumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="packBySchoolOrGrade" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="poNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="sendConfirmationEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="sfdcAccountId" type="{http://soap.sforce.com/schemas/class/OrderEntryService}ID" minOccurs="0"/>
+         &lt;element name="shipDateOption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shipDateOptionDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="shippingAccountName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingAddressCity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingAddressLine1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingAddressLine2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingAddressState" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingCountry" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingZip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shipToPid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="transactionName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="transactionType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="useOverrideAddress" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;SubmitOrder>
+  &lt;<a href='#m_alternateEmailAddress'>alternateEmailAddress</a>>xsd:string&lt;/alternateEmailAddress>
+  &lt;<a href='#m_attnTo'>attnTo</a>>xsd:string&lt;/attnTo>
+  &lt;<a href='#m_basisSfdcInternalOrderId'>basisSfdcInternalOrderId</a>>xsd:string&lt;/basisSfdcInternalOrderId>
+  &lt;<a href='#m_clientSystemId'>clientSystemId</a>>xsd:string&lt;/clientSystemId>
+  &lt;<a href='#m_clientTransactionId'>clientTransactionId</a>>xsd:string&lt;/clientTransactionId>
+  &lt;<a href='#m_contactEmail'>contactEmail</a>>xsd:string&lt;/contactEmail>
+  &lt;<a href='#m_contactName'>contactName</a>>xsd:string&lt;/contactName>
+  &lt;<a href='#m_contactPhone'>contactPhone</a>>xsd:string&lt;/contactPhone>
+  &lt;<a href='#m_deliverByDate'>deliverByDate</a>><a href='../../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/deliverByDate>
+  &lt;<a href='#m_deliveryNotes'>deliveryNotes</a>>xsd:string&lt;/deliveryNotes>
+  &lt;<a href='#m_districtPid'>districtPid</a>>xsd:string&lt;/districtPid>
+  &lt;<a href='#m_doNotMixPOsOnSamePallet'>doNotMixPOsOnSamePallet</a>>xsd:boolean&lt;/doNotMixPOsOnSamePallet>
+  &lt;<a href='#m_egoodEmail'>egoodEmail</a>>xsd:string&lt;/egoodEmail>
+  &lt;<a href='#m_entryDivision'>entryDivision</a>>xsd:string&lt;/entryDivision>
+  &lt;<a href='#m_headerCCRatioIndicator'>headerCCRatioIndicator</a>>xsd:string&lt;/headerCCRatioIndicator>
+  zero or N[&lt;<a href='#m_lineList'>lineList</a>><a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/SubmitOrderLine.html'>SubmitOrderLine</a>&lt;/lineList>]
+  &lt;<a href='#m_marketCode'>marketCode</a>>xsd:string&lt;/marketCode>
+  &lt;<a href='#m_noFridayDelivery'>noFridayDelivery</a>>xsd:boolean&lt;/noFridayDelivery>
+  &lt;<a href='#m_orderedBy'>orderedBy</a>>xsd:string&lt;/orderedBy>
+  zero or N[&lt;<a href='#m_orderNoteList'>orderNoteList</a>><a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/OrderNote.html'>OrderNote</a>&lt;/orderNoteList>]
+  &lt;<a href='#m_orderReasonCode'>orderReasonCode</a>>xsd:string&lt;/orderReasonCode>
+  &lt;<a href='#m_originalPONumber'>originalPONumber</a>>xsd:string&lt;/originalPONumber>
+  &lt;<a href='#m_packBySchoolOrGrade'>packBySchoolOrGrade</a>>xsd:string&lt;/packBySchoolOrGrade>
+  &lt;<a href='#m_poNumber'>poNumber</a>>xsd:string&lt;/poNumber>
+  &lt;<a href='#m_sendConfirmationEmail'>sendConfirmationEmail</a>>xsd:boolean&lt;/sendConfirmationEmail>
+  &lt;<a href='#m_sfdcAccountId'>sfdcAccountId</a>>xsd:string&lt;/sfdcAccountId>
+  &lt;<a href='#m_shipDateOption'>shipDateOption</a>>xsd:string&lt;/shipDateOption>
+  &lt;<a href='#m_shipDateOptionDate'>shipDateOptionDate</a>><a href='../../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/shipDateOptionDate>
+  &lt;<a href='#m_shippingAccountName'>shippingAccountName</a>>xsd:string&lt;/shippingAccountName>
+  &lt;<a href='#m_shippingAddressCity'>shippingAddressCity</a>>xsd:string&lt;/shippingAddressCity>
+  &lt;<a href='#m_shippingAddressLine1'>shippingAddressLine1</a>>xsd:string&lt;/shippingAddressLine1>
+  &lt;<a href='#m_shippingAddressLine2'>shippingAddressLine2</a>>xsd:string&lt;/shippingAddressLine2>
+  &lt;<a href='#m_shippingAddressState'>shippingAddressState</a>>xsd:string&lt;/shippingAddressState>
+  &lt;<a href='#m_shippingCountry'>shippingCountry</a>>xsd:string&lt;/shippingCountry>
+  &lt;<a href='#m_shippingZip'>shippingZip</a>>xsd:string&lt;/shippingZip>
+  &lt;<a href='#m_shipToPid'>shipToPid</a>>xsd:string&lt;/shipToPid>
+  &lt;<a href='#m_transactionName'>transactionName</a>>xsd:string&lt;/transactionName>
+  &lt;<a href='#m_transactionType'>transactionType</a>>xsd:string&lt;/transactionType>
+  &lt;<a href='#m_useOverrideAddress'>useOverrideAddress</a>>xsd:boolean&lt;/useOverrideAddress>
+&lt;/SubmitOrder>
+</pre></td><td><b>JSON Example:</b><pre>{"SubmitOrder":
+ {
+   "<a href='#m_alternateEmailAddress'>alternateEmailAddress</a>": String,
+   "<a href='#m_attnTo'>attnTo</a>": String,
+   "<a href='#m_basisSfdcInternalOrderId'>basisSfdcInternalOrderId</a>": String,
+   "<a href='#m_clientSystemId'>clientSystemId</a>": String,
+   "<a href='#m_clientTransactionId'>clientTransactionId</a>": String,
+   "<a href='#m_contactEmail'>contactEmail</a>": String,
+   "<a href='#m_contactName'>contactName</a>": String,
+   "<a href='#m_contactPhone'>contactPhone</a>": String,
+   "<a href='#m_deliverByDate'>deliverByDate</a>": <a href='../../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_deliveryNotes'>deliveryNotes</a>": String,
+   "<a href='#m_districtPid'>districtPid</a>": String,
+   "<a href='#m_doNotMixPOsOnSamePallet'>doNotMixPOsOnSamePallet</a>": Boolean,
+   "<a href='#m_egoodEmail'>egoodEmail</a>": String,
+   "<a href='#m_entryDivision'>entryDivision</a>": String,
+   "<a href='#m_headerCCRatioIndicator'>headerCCRatioIndicator</a>": String,
+   "<a href='#m_lineList'>lineList</a>": [<a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/SubmitOrderLine.html'>SubmitOrderLine</a>],
+   "<a href='#m_marketCode'>marketCode</a>": String,
+   "<a href='#m_noFridayDelivery'>noFridayDelivery</a>": Boolean,
+   "<a href='#m_orderedBy'>orderedBy</a>": String,
+   "<a href='#m_orderNoteList'>orderNoteList</a>": [<a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/OrderNote.html'>OrderNote</a>],
+   "<a href='#m_orderReasonCode'>orderReasonCode</a>": String,
+   "<a href='#m_originalPONumber'>originalPONumber</a>": String,
+   "<a href='#m_packBySchoolOrGrade'>packBySchoolOrGrade</a>": String,
+   "<a href='#m_poNumber'>poNumber</a>": String,
+   "<a href='#m_sendConfirmationEmail'>sendConfirmationEmail</a>": Boolean,
+   "<a href='#m_sfdcAccountId'>sfdcAccountId</a>": String,
+   "<a href='#m_shipDateOption'>shipDateOption</a>": String,
+   "<a href='#m_shipDateOptionDate'>shipDateOptionDate</a>": <a href='../../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_shippingAccountName'>shippingAccountName</a>": String,
+   "<a href='#m_shippingAddressCity'>shippingAddressCity</a>": String,
+   "<a href='#m_shippingAddressLine1'>shippingAddressLine1</a>": String,
+   "<a href='#m_shippingAddressLine2'>shippingAddressLine2</a>": String,
+   "<a href='#m_shippingAddressState'>shippingAddressState</a>": String,
+   "<a href='#m_shippingCountry'>shippingCountry</a>": String,
+   "<a href='#m_shippingZip'>shippingZip</a>": String,
+   "<a href='#m_shipToPid'>shipToPid</a>": String,
+   "<a href='#m_transactionName'>transactionName</a>": String,
+   "<a href='#m_transactionType'>transactionType</a>": String,
+   "<a href='#m_useOverrideAddress'>useOverrideAddress</a>": Boolean,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_alternateEmailAddress'>alternateEmailAddress</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_attnTo'>attnTo</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_basisSfdcInternalOrderId'>basisSfdcInternalOrderId</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_clientSystemId'>clientSystemId</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_clientTransactionId'>clientTransactionId</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_contactEmail'>contactEmail</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_contactName'>contactName</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_contactPhone'>contactPhone</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deliverByDate'>deliverByDate</td><td><a href='../../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deliveryNotes'>deliveryNotes</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_districtPid'>districtPid</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_doNotMixPOsOnSamePallet'>doNotMixPOsOnSamePallet</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_egoodEmail'>egoodEmail</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_entryDivision'>entryDivision</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_headerCCRatioIndicator'>headerCCRatioIndicator</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineList'>lineList</td><td>zero or N[<a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/SubmitOrderLine.html'>SubmitOrderLine</a>]</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_marketCode'>marketCode</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_noFridayDelivery'>noFridayDelivery</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderedBy'>orderedBy</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderNoteList'>orderNoteList</td><td>zero or N[<a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/OrderNote.html'>OrderNote</a>]</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderReasonCode'>orderReasonCode</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_originalPONumber'>originalPONumber</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_packBySchoolOrGrade'>packBySchoolOrGrade</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poNumber'>poNumber</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sendConfirmationEmail'>sendConfirmationEmail</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcAccountId'>sfdcAccountId</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipDateOption'>shipDateOption</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipDateOptionDate'>shipDateOptionDate</td><td><a href='../../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingAccountName'>shippingAccountName</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingAddressCity'>shippingAddressCity</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingAddressLine1'>shippingAddressLine1</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingAddressLine2'>shippingAddressLine2</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingAddressState'>shippingAddressState</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingCountry'>shippingCountry</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingZip'>shippingZip</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToPid'>shipToPid</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionName'>transactionName</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionType'>transactionType</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_useOverrideAddress'>useOverrideAddress</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

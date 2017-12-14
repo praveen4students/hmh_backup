@@ -1,0 +1,224 @@
+<HTML><HEAD><TITLE>XML element saleHeader2</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: saleHeader2</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="soldToCustomerID">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="shipToCustomerID" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="billToCustomerID" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="payerCustomerID" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="shipToAttentionLine" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="40"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="billToAttentionLine" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="40"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="entryDivision" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="contactName" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="40"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="contactPhone" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="16"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="toDepartment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shipToLocation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="soldTooverrideAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element name="shipTooverrideAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element name="billTooverrideAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element name="payerTooverrideAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element name="orderSource" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="shipmentMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="priceDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="promotionCode" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="3"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="allowSubstitutionsFlag" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="allowContractPricingFlag" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="requestedDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="shipDateOption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="arTerms" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="shippingTerms" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="backorderOption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="backorderCancelDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="deferedPaymentDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="freeformMessage" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="1256"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="customerEmail" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="256"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="headerCouponCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="deliveryBlock" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}orderReason" minOccurs="0"/>
+         &lt;element name="csHold" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}billOfLading" minOccurs="0"/>
+         &lt;element name="mustArriveByDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}mustArriveByReason" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}shipToCustomerPO" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}faxURL" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}removeFreightForwarder" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}forceDeliveredPricing" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}dockInstructions" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}freightCharges" minOccurs="0"/>
+         &lt;element name="poReceiptTimestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;saleHeader2>
+  &lt;<a href='#m_allowContractPricingFlag'>allowContractPricingFlag</a>>xsd:boolean&lt;/allowContractPricingFlag>
+  &lt;<a href='#m_allowSubstitutionsFlag'>allowSubstitutionsFlag</a>>xsd:string&lt;/allowSubstitutionsFlag>
+  &lt;<a href='#m_arTerms'>arTerms</a>>xsd:string&lt;/arTerms>
+  &lt;<a href='#m_backorderCancelDate'>backorderCancelDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/backorderCancelDate>
+  &lt;<a href='#m_backorderOption'>backorderOption</a>>xsd:string&lt;/backorderOption>
+  &lt;<a href='#m_billOfLading'>billOfLading</a>>xsd:string&lt;/billOfLading>
+  &lt;<a href='#m_billToAttentionLine'>billToAttentionLine</a>>xsd:string&lt;/billToAttentionLine>
+  &lt;<a href='#m_billToCustomerID'>billToCustomerID</a>>xsd:string&lt;/billToCustomerID>
+  &lt;<a href='#m_billTooverrideAddress'>billTooverrideAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/billTooverrideAddress>
+  &lt;<a href='#m_contactName'>contactName</a>>xsd:string&lt;/contactName>
+  &lt;<a href='#m_contactPhone'>contactPhone</a>>xsd:string&lt;/contactPhone>
+  &lt;<a href='#m_csHold'>csHold</a>>xsd:string&lt;/csHold>
+  &lt;<a href='#m_customerEmail'>customerEmail</a>>xsd:string&lt;/customerEmail>
+  &lt;<a href='#m_deferedPaymentDate'>deferedPaymentDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/deferedPaymentDate>
+  &lt;<a href='#m_deliveryBlock'>deliveryBlock</a>>xsd:string&lt;/deliveryBlock>
+  &lt;<a href='#m_dockInstructions'>dockInstructions</a>>xsd:string&lt;/dockInstructions>
+  &lt;<a href='#m_entryDivision'>entryDivision</a>>xsd:string&lt;/entryDivision>
+  &lt;<a href='#m_faxURL'>faxURL</a>>xsd:string&lt;/faxURL>
+  &lt;<a href='#m_forceDeliveredPricing'>forceDeliveredPricing</a>>xsd:string&lt;/forceDeliveredPricing>
+  &lt;<a href='#m_freeformMessage'>freeformMessage</a>>xsd:string&lt;/freeformMessage>
+  &lt;<a href='#m_freightCharges'>freightCharges</a>>xsd:string&lt;/freightCharges>
+  &lt;<a href='#m_headerCouponCode'>headerCouponCode</a>>xsd:string&lt;/headerCouponCode>
+  &lt;<a href='#m_mustArriveByDate'>mustArriveByDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/mustArriveByDate>
+  &lt;<a href='#m_mustArriveByReason'>mustArriveByReason</a>>xsd:string&lt;/mustArriveByReason>
+  &lt;<a href='#m_orderReason'>orderReason</a>>xsd:string&lt;/orderReason>
+  &lt;<a href='#m_orderSource'>orderSource</a>>xsd:string&lt;/orderSource>
+  &lt;<a href='#m_payerCustomerID'>payerCustomerID</a>>xsd:string&lt;/payerCustomerID>
+  &lt;<a href='#m_payerTooverrideAddress'>payerTooverrideAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/payerTooverrideAddress>
+  &lt;<a href='#m_poReceiptTimestamp'>poReceiptTimestamp</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/poReceiptTimestamp>
+  &lt;<a href='#m_priceDate'>priceDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/priceDate>
+  &lt;<a href='#m_promotionCode'>promotionCode</a>>xsd:string&lt;/promotionCode>
+  &lt;<a href='#m_removeFreightForwarder'>removeFreightForwarder</a>>xsd:boolean&lt;/removeFreightForwarder>
+  &lt;<a href='#m_requestedDate'>requestedDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/requestedDate>
+  &lt;<a href='#m_shipDateOption'>shipDateOption</a>>xsd:string&lt;/shipDateOption>
+  &lt;<a href='#m_shipmentMethod'>shipmentMethod</a>>xsd:string&lt;/shipmentMethod>
+  &lt;<a href='#m_shippingTerms'>shippingTerms</a>>xsd:string&lt;/shippingTerms>
+  &lt;<a href='#m_shipToAttentionLine'>shipToAttentionLine</a>>xsd:string&lt;/shipToAttentionLine>
+  &lt;<a href='#m_shipToCustomerID'>shipToCustomerID</a>>xsd:string&lt;/shipToCustomerID>
+  &lt;<a href='#m_shipToCustomerPO'>shipToCustomerPO</a>>xsd:string&lt;/shipToCustomerPO>
+  &lt;<a href='#m_shipToLocation'>shipToLocation</a>>xsd:string&lt;/shipToLocation>
+  &lt;<a href='#m_shipTooverrideAddress'>shipTooverrideAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/shipTooverrideAddress>
+  &lt;<a href='#m_soldToCustomerID'>soldToCustomerID</a>>xsd:string&lt;/soldToCustomerID>
+  &lt;<a href='#m_soldTooverrideAddress'>soldTooverrideAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/soldTooverrideAddress>
+  &lt;<a href='#m_toDepartment'>toDepartment</a>>xsd:string&lt;/toDepartment>
+  &lt;<a href='#m_userId'>userId</a>>xsd:string&lt;/userId>
+&lt;/saleHeader2>
+</pre></td><td><b>JSON Example:</b><pre>{"saleHeader2":
+ {
+   "<a href='#m_allowContractPricingFlag'>allowContractPricingFlag</a>": Boolean,
+   "<a href='#m_allowSubstitutionsFlag'>allowSubstitutionsFlag</a>": String,
+   "<a href='#m_arTerms'>arTerms</a>": String,
+   "<a href='#m_backorderCancelDate'>backorderCancelDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_backorderOption'>backorderOption</a>": String,
+   "<a href='#m_billOfLading'>billOfLading</a>": String,
+   "<a href='#m_billToAttentionLine'>billToAttentionLine</a>": String,
+   "<a href='#m_billToCustomerID'>billToCustomerID</a>": String,
+   "<a href='#m_billTooverrideAddress'>billTooverrideAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_contactName'>contactName</a>": String,
+   "<a href='#m_contactPhone'>contactPhone</a>": String,
+   "<a href='#m_csHold'>csHold</a>": String,
+   "<a href='#m_customerEmail'>customerEmail</a>": String,
+   "<a href='#m_deferedPaymentDate'>deferedPaymentDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_deliveryBlock'>deliveryBlock</a>": String,
+   "<a href='#m_dockInstructions'>dockInstructions</a>": String,
+   "<a href='#m_entryDivision'>entryDivision</a>": String,
+   "<a href='#m_faxURL'>faxURL</a>": String,
+   "<a href='#m_forceDeliveredPricing'>forceDeliveredPricing</a>": String,
+   "<a href='#m_freeformMessage'>freeformMessage</a>": String,
+   "<a href='#m_freightCharges'>freightCharges</a>": String,
+   "<a href='#m_headerCouponCode'>headerCouponCode</a>": String,
+   "<a href='#m_mustArriveByDate'>mustArriveByDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_mustArriveByReason'>mustArriveByReason</a>": String,
+   "<a href='#m_orderReason'>orderReason</a>": String,
+   "<a href='#m_orderSource'>orderSource</a>": String,
+   "<a href='#m_payerCustomerID'>payerCustomerID</a>": String,
+   "<a href='#m_payerTooverrideAddress'>payerTooverrideAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_poReceiptTimestamp'>poReceiptTimestamp</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_priceDate'>priceDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_promotionCode'>promotionCode</a>": String,
+   "<a href='#m_removeFreightForwarder'>removeFreightForwarder</a>": Boolean,
+   "<a href='#m_requestedDate'>requestedDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_shipDateOption'>shipDateOption</a>": String,
+   "<a href='#m_shipmentMethod'>shipmentMethod</a>": String,
+   "<a href='#m_shippingTerms'>shippingTerms</a>": String,
+   "<a href='#m_shipToAttentionLine'>shipToAttentionLine</a>": String,
+   "<a href='#m_shipToCustomerID'>shipToCustomerID</a>": String,
+   "<a href='#m_shipToCustomerPO'>shipToCustomerPO</a>": String,
+   "<a href='#m_shipToLocation'>shipToLocation</a>": String,
+   "<a href='#m_shipTooverrideAddress'>shipTooverrideAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_soldToCustomerID'>soldToCustomerID</a>": String,
+   "<a href='#m_soldTooverrideAddress'>soldTooverrideAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_toDepartment'>toDepartment</a>": String,
+   "<a href='#m_userId'>userId</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_allowContractPricingFlag'>allowContractPricingFlag</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_allowSubstitutionsFlag'>allowSubstitutionsFlag</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_arTerms'>arTerms</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_backorderCancelDate'>backorderCancelDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_backorderOption'>backorderOption</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billOfLading'>billOfLading</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToAttentionLine'>billToAttentionLine</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billToCustomerID'>billToCustomerID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_billTooverrideAddress'>billTooverrideAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_contactName'>contactName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_contactPhone'>contactPhone</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_csHold'>csHold</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerEmail'>customerEmail</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deferedPaymentDate'>deferedPaymentDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deliveryBlock'>deliveryBlock</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_dockInstructions'>dockInstructions</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_entryDivision'>entryDivision</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_faxURL'>faxURL</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_forceDeliveredPricing'>forceDeliveredPricing</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_freeformMessage'>freeformMessage</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_freightCharges'>freightCharges</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_headerCouponCode'>headerCouponCode</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_mustArriveByDate'>mustArriveByDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_mustArriveByReason'>mustArriveByReason</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderReason'>orderReason</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderSource'>orderSource</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_payerCustomerID'>payerCustomerID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_payerTooverrideAddress'>payerTooverrideAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poReceiptTimestamp'>poReceiptTimestamp</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_priceDate'>priceDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_promotionCode'>promotionCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_removeFreightForwarder'>removeFreightForwarder</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_requestedDate'>requestedDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipDateOption'>shipDateOption</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipmentMethod'>shipmentMethod</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingTerms'>shippingTerms</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToAttentionLine'>shipToAttentionLine</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomerID'>shipToCustomerID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomerPO'>shipToCustomerPO</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToLocation'>shipToLocation</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipTooverrideAddress'>shipTooverrideAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToCustomerID'>soldToCustomerID</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldTooverrideAddress'>soldTooverrideAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_toDepartment'>toDepartment</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userId'>userId</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

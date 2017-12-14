@@ -1,0 +1,68 @@
+<HTML><HEAD><TITLE>XML element productInfo</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: productInfo</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="lineNo" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="salesOffice" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="materialID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="isbn" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="couponCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="promotionType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="listPrice" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="netPrice" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="productDivision" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="listDiscount" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="isEGood" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="isSubscription" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material}subscriptionTerm" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;productInfo>
+  &lt;<a href='#m_couponCode'>couponCode</a>>xsd:string&lt;/couponCode>
+  &lt;<a href='#m_description'>description</a>>xsd:string&lt;/description>
+  &lt;<a href='#m_isbn'>isbn</a>>xsd:string&lt;/isbn>
+  &lt;<a href='#m_isEGood'>isEGood</a>>xsd:boolean&lt;/isEGood>
+  &lt;<a href='#m_isSubscription'>isSubscription</a>>xsd:boolean&lt;/isSubscription>
+  &lt;<a href='#m_lineNo'>lineNo</a>>xsd:int&lt;/lineNo>
+  &lt;<a href='#m_listDiscount'>listDiscount</a>>xsd:double&lt;/listDiscount>
+  &lt;<a href='#m_listPrice'>listPrice</a>>xsd:double&lt;/listPrice>
+  &lt;<a href='#m_materialID'>materialID</a>>xsd:string&lt;/materialID>
+  &lt;<a href='#m_netPrice'>netPrice</a>>xsd:double&lt;/netPrice>
+  &lt;<a href='#m_productDivision'>productDivision</a>>xsd:string&lt;/productDivision>
+  &lt;<a href='#m_promotionType'>promotionType</a>>xsd:string&lt;/promotionType>
+  &lt;<a href='#m_quantity'>quantity</a>>xsd:int&lt;/quantity>
+  &lt;<a href='#m_salesOffice'>salesOffice</a>>xsd:string&lt;/salesOffice>
+  &lt;<a href='#m_subscriptionTerm'>subscriptionTerm</a>><a href='../../../../../com/hmco/eai/ots/material/SubscriptionTerm.html'>subscriptionTerm</a>&lt;/subscriptionTerm>
+&lt;/productInfo>
+</pre></td><td><b>JSON Example:</b><pre>{"productInfo":
+ {
+   "<a href='#m_couponCode'>couponCode</a>": String,
+   "<a href='#m_description'>description</a>": String,
+   "<a href='#m_isbn'>isbn</a>": String,
+   "<a href='#m_isEGood'>isEGood</a>": Boolean,
+   "<a href='#m_isSubscription'>isSubscription</a>": Boolean,
+   "<a href='#m_lineNo'>lineNo</a>": Number,
+   "<a href='#m_listDiscount'>listDiscount</a>": Number,
+   "<a href='#m_listPrice'>listPrice</a>": Number,
+   "<a href='#m_materialID'>materialID</a>": String,
+   "<a href='#m_netPrice'>netPrice</a>": Number,
+   "<a href='#m_productDivision'>productDivision</a>": String,
+   "<a href='#m_promotionType'>promotionType</a>": String,
+   "<a href='#m_quantity'>quantity</a>": Number,
+   "<a href='#m_salesOffice'>salesOffice</a>": String,
+   "<a href='#m_subscriptionTerm'>subscriptionTerm</a>": <a href='../../../../../com/hmco/eai/ots/material/SubscriptionTerm.html'>subscriptionTerm</a>,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_couponCode'>couponCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_description'>description</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isbn'>isbn</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isEGood'>isEGood</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isSubscription'>isSubscription</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineNo'>lineNo</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_listDiscount'>listDiscount</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_listPrice'>listPrice</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialID'>materialID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_netPrice'>netPrice</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_productDivision'>productDivision</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_promotionType'>promotionType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_quantity'>quantity</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_salesOffice'>salesOffice</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_subscriptionTerm'>subscriptionTerm<span class='namespace'>(http://www.hmco.com/EAI/OTS/Material)</span></td><td><a href='../../../../../com/hmco/eai/ots/material/SubscriptionTerm.html'>subscriptionTerm</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

@@ -1,0 +1,98 @@
+<HTML><HEAD><TITLE>XML element customerDetail</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: customerDetail</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="customerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="customerRole" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="customerClassCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="customerClassDesc" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="customerTypeCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="customerTypeDesc" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="creditStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="san" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="mdrPID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/CustomerNew}isPrimeMDR" minOccurs="0"/>
+         &lt;element name="customerAddress" type="{http://www.hmco.com/EAI/OTS/CustomerNew}address"/>
+         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="telNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="altTelNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="customerStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="collegeNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="customerEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="customerFax" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="31"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="customerDivisionInfo" maxOccurs="unbounded" minOccurs="0">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element name="division" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="geographicTerritory" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="allowSubstitutionsFlag" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;customerDetail>
+  &lt;<a href='#m_altTelNumber'>altTelNumber</a>>xsd:string&lt;/altTelNumber>
+  &lt;<a href='#m_collegeNumber'>collegeNumber</a>>xsd:string&lt;/collegeNumber>
+  &lt;<a href='#m_creditStatus'>creditStatus</a>>xsd:string&lt;/creditStatus>
+  &lt;<a href='#m_customerAddress'>customerAddress</a>><a href='../../../../../com/hmco/eai/ots/customernew/Address.html'>Address</a>&lt;/customerAddress>
+  &lt;<a href='#m_customerClassCode'>customerClassCode</a>>xsd:string&lt;/customerClassCode>
+  &lt;<a href='#m_customerClassDesc'>customerClassDesc</a>>xsd:string&lt;/customerClassDesc>
+  zero or N[&lt;<a href='#m_customerDivisionInfo'>customerDivisionInfo</a>><a href='../../../../../com/hmco/eai/ots/customernew/CustomerDetail.CustomerDivisionInfo.html'>CustomerDivisionInfo</a>&lt;/customerDivisionInfo>]
+  &lt;<a href='#m_customerEmail'>customerEmail</a>>xsd:string&lt;/customerEmail>
+  &lt;<a href='#m_customerFax'>customerFax</a>>xsd:string&lt;/customerFax>
+  &lt;<a href='#m_customerID'>customerID</a>>xsd:string&lt;/customerID>
+  &lt;<a href='#m_customerRole'>customerRole</a>>xsd:string&lt;/customerRole>
+  &lt;<a href='#m_customerStatus'>customerStatus</a>>xsd:string&lt;/customerStatus>
+  &lt;<a href='#m_customerTypeCode'>customerTypeCode</a>>xsd:string&lt;/customerTypeCode>
+  &lt;<a href='#m_customerTypeDesc'>customerTypeDesc</a>>xsd:string&lt;/customerTypeDesc>
+  &lt;<a href='#m_isPrimeMDR'>isPrimeMDR</a>>xsd:boolean&lt;/isPrimeMDR>
+  &lt;<a href='#m_mdrPID'>mdrPID</a>>xsd:string&lt;/mdrPID>
+  &lt;<a href='#m_name'>name</a>>xsd:string&lt;/name>
+  &lt;<a href='#m_san'>san</a>>xsd:string&lt;/san>
+  &lt;<a href='#m_telNumber'>telNumber</a>>xsd:string&lt;/telNumber>
+&lt;/customerDetail>
+</pre></td><td><b>JSON Example:</b><pre>{"customerDetail":
+ {
+   "<a href='#m_altTelNumber'>altTelNumber</a>": String,
+   "<a href='#m_collegeNumber'>collegeNumber</a>": String,
+   "<a href='#m_creditStatus'>creditStatus</a>": String,
+   "<a href='#m_customerAddress'>customerAddress</a>": <a href='../../../../../com/hmco/eai/ots/customernew/Address.html'>Address</a>,
+   "<a href='#m_customerClassCode'>customerClassCode</a>": String,
+   "<a href='#m_customerClassDesc'>customerClassDesc</a>": String,
+   "<a href='#m_customerDivisionInfo'>customerDivisionInfo</a>": [<a href='../../../../../com/hmco/eai/ots/customernew/CustomerDetail.CustomerDivisionInfo.html'>CustomerDivisionInfo</a>],
+   "<a href='#m_customerEmail'>customerEmail</a>": String,
+   "<a href='#m_customerFax'>customerFax</a>": String,
+   "<a href='#m_customerID'>customerID</a>": String,
+   "<a href='#m_customerRole'>customerRole</a>": String,
+   "<a href='#m_customerStatus'>customerStatus</a>": String,
+   "<a href='#m_customerTypeCode'>customerTypeCode</a>": String,
+   "<a href='#m_customerTypeDesc'>customerTypeDesc</a>": String,
+   "<a href='#m_isPrimeMDR'>isPrimeMDR</a>": Boolean,
+   "<a href='#m_mdrPID'>mdrPID</a>": String,
+   "<a href='#m_name'>name</a>": String,
+   "<a href='#m_san'>san</a>": String,
+   "<a href='#m_telNumber'>telNumber</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_altTelNumber'>altTelNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_collegeNumber'>collegeNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_creditStatus'>creditStatus</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerAddress'>customerAddress</td><td><a href='../../../../../com/hmco/eai/ots/customernew/Address.html'>Address</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerClassCode'>customerClassCode</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerClassDesc'>customerClassDesc</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerDivisionInfo'>customerDivisionInfo</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/customernew/CustomerDetail.CustomerDivisionInfo.html'>CustomerDivisionInfo</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerEmail'>customerEmail</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerFax'>customerFax</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerID'>customerID</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerRole'>customerRole</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerStatus'>customerStatus</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerTypeCode'>customerTypeCode</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerTypeDesc'>customerTypeDesc</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isPrimeMDR'>isPrimeMDR</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_mdrPID'>mdrPID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_san'>san</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_telNumber'>telNumber</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

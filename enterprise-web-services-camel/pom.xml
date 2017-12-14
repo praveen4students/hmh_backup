@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. The ASF licenses this file to 
+	You under the Apache License, Version 2.0 (the "License"); you may not use 
+	this file except in compliance with the License. You may obtain a copy of 
+	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	by applicable law or agreed to in writing, software distributed under the 
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
+	OF ANY KIND, either express or implied. See the License for the specific 
+	language governing permissions and limitations under the License. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>hmh.ws</groupId>
+	<artifactId>web-services-camel</artifactId>
+	<name>enterprise-web-services :: camel</name>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>bundle</packaging>
+
+	<properties>
+<!-- 
+		<camel.version>2.8.0-fuse-00-08</camel.version>
+		<cxf-version>2.4.2-fuse-00-08</cxf-version>
+ -->
+		<camel.version>2.9.0.fuse-7-061</camel.version>
+		<cxf-version>2.5.0.fuse-7-061</cxf-version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-cxf</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-rt-core</artifactId> 
+			<version>${cxf-version}</version> </dependency> <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-rt-frontend-jaxws</artifactId> <version>${cxf-version}</version> 
+			</dependency> <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-rt-transports-http</artifactId> 
+			<version>${cxf-version}</version> </dependency> <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-rt-transports-http-jetty</artifactId> <version>${cxf-version}</version> 
+			<scope>test</scope> </dependency> -->
+		<!-- logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test</artifactId>
+			<version>${camel.version}</version>
+			<type>bundle</type>
+			<scope>test</scope>
+		</dependency>
+<!-- 
+		<dependency>
+    		<groupId>org.apache.camel</groupId>
+    		<artifactId>camel-sql</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+ -->
+		<dependency>
+		  	<groupId>org.apache.camel</groupId>
+		  	<artifactId>camel-xstream</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sap</groupId>
+			<artifactId>sap-bundle</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap</groupId>
+			<artifactId>sapjco</artifactId>
+			<version>2.1.10</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>r09</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+<!-- 		
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.wsdl4j</artifactId>
+			<version>1.6.2_6</version>
+			<type>bundle</type>
+			<scope>compile</scope>
+		</dependency>
+ -->
+		<dependency>
+			<groupId>hmh.common.util</groupId>
+			<artifactId>hmhutil</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>bundle</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jaxb</artifactId>
+			<version>${camel.version}</version>
+			<type>bundle</type>
+			<scope>provided</scope>
+		</dependency>
+<!-- 
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+ -->
+	</dependencies>
+
+	<description>Enterprise Web Services bundle</description>
+	<url>http://www.hmhpub.com</url>
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+	      		<configuration>
+	        		<reportPlugins>
+<!-- 	        		
+				    	<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8</version>
+							<reportSets>
+								<reportSet>
+									<id>html</id>
+									<reports>
+										<report>javadoc</report>
+									</reports>
+								</reportSet>				
+							</reportSets>	      
+						</plugin>	        		
+ -->
+				    	<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8</version>
+							<reportSets>
+								<reportSet>
+									<id>jaxb</id>
+									<configuration>
+										<doclet>com.lunatech.doclets.jax.jaxb.JAXBDoclet</doclet>
+										<docletArtifacts>
+											<docletArtifact>
+												<groupId>com.lunatech.jax-doclets</groupId>
+												<artifactId>doclets</artifactId>
+												<version>0.10.0</version>
+											</docletArtifact>
+										</docletArtifacts>
+										<destDir>jaxbdocs</destDir>
+									</configuration>
+									<reports>
+										<report>javadoc</report>
+									</reports>
+								</reportSet>
+							</reportSets>	      
+						</plugin>	        		
+	        		
+				    	<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8</version>
+							<reportSets>
+								<reportSet>
+									<id>jaxrs</id>
+									<configuration>
+										<doclet>com.lunatech.doclets.jax.jaxrs.JAXRSDoclet</doclet>
+										<docletArtifacts>
+											<docletArtifact>
+												<groupId>com.lunatech.jax-doclets</groupId>
+												<artifactId>doclets</artifactId>
+												<version>0.10.0</version>
+											</docletArtifact>
+										</docletArtifacts>
+										<additionalparam>-jaxrscontext /rest</additionalparam>
+										<destDir>jaxrsdocs</destDir>
+										<links>
+										 <link>../jaxbdocs/</link>
+										</links>
+									</configuration>
+									<reports>
+										<report>javadoc</report>
+									</reports>
+								</reportSet>								
+							</reportSets>	      
+						</plugin>
+						
+	        		</reportPlugins>
+	        	</configuration>					
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<packagingExcludes>
+					  WEB-INF/**
+					</packagingExcludes>
+					<warName>web-services-docs</warName>
+					<!-- 
+						<webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+					 -->  
+					<webResources>
+						<resource>
+					    	<!-- this is relative to the pom.xml directory -->
+					    	<directory>target/site</directory>
+						</resource>						
+					</webResources>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*Test.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<!-- CXF wsdl2java generator, will plugin to the compile goal -->
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf-version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
+							<wsdlOptions>
+
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/EnterpriseWebServices.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-autoNameResolution</extraarg>
+										<extraarg>-b</extraarg>
+										<extraarg>${basedir}/src/main/resources/META-INF/wsdl/enterprise-binding.xml</extraarg>
+										<extraarg>-verbose</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/SFDC_EskerService.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-autoNameResolution</extraarg>
+										<extraarg>-b</extraarg>
+										<extraarg>${basedir}/src/main/resources/META-INF/wsdl/GeneralJaxbBinding.xml</extraarg>
+										<extraarg>-exsh</extraarg>
+										<extraarg>true</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/SFDC_OrderEntryService.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-autoNameResolution</extraarg>
+										<extraarg>-b</extraarg>
+										<extraarg>${basedir}/src/main/resources/META-INF/wsdl/GeneralJaxbBinding.xml</extraarg>
+										<extraarg>-exsh</extraarg>
+										<extraarg>true</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/SFDC_OrderInquiryService.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-autoNameResolution</extraarg>
+										<extraarg>-b</extraarg>
+										<extraarg>${basedir}/src/main/resources/META-INF/wsdl/GeneralJaxbBinding.xml</extraarg>
+										<extraarg>-exsh</extraarg>
+										<extraarg>true</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/SFDC_CustomerService.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-autoNameResolution</extraarg>
+										<extraarg>-b</extraarg>
+										<extraarg>${basedir}/src/main/resources/META-INF/wsdl/GeneralJaxbBinding.xml</extraarg>
+										<extraarg>-exsh</extraarg>
+										<extraarg>true</extraarg>
+									</extraargs>			
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/SFDC_Enterprise.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-autoNameResolution</extraarg>
+										<extraarg>-b</extraarg>
+										<extraarg>${basedir}/src/main/resources/META-INF/wsdl/jaxb-binding.xml</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/META-INF/wsdl/XiPay30WS.asmx.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-verbose</extraarg>
+									</extraargs>
+								</wsdlOption>
+
+
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			
+			<!-- To generate Java classes from XML Schemas -->
+<!-- 			
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <packageName>com.hmco.eaicamel.availapi</packageName>
+                    <schemaDirectory>${basedir}/src/main/resources/META-INF/xsd/</schemaDirectory>
+                    <outputDirectory>${basedir}/target/generated/src/main/java/</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>     
+                    <execution>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <sources>
+                                <source>${basedir}/target/generated/src/main/java</source>
+                            </sources>
+                        </configuration>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+ -->			
+			<!-- to generate the MANIFEST-FILE of the bundle -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<manifestLocation>target/META-INF</manifestLocation>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<!-- <Export-Package>com.hmco.eai*</Export-Package> -->
+						<Private-Package>
+							com.hmco.eai*,
+							hmh.sap.rfc*,
+							hmh.util,
+							hmh.ws.services,
+							com.sforce.soap.*
+                        </Private-Package>
+						<DynamicImport-Package>
+							oracle.*
+						</DynamicImport-Package>
+						<Import-Package>
+							META-INF.cxf,
+							META-INF.cxf.osgi,
+							org.apache.cxf,
+							org.apache.cxf.binding,
+							org.apache.cxf.binding.corba,
+							org.apache.cxf.binding.soap,
+							org.apache.cxf.binding.soap.spring,
+							org.apache.cxf.bus,
+							org.apache.cxf.bus.resource,
+							org.apache.cxf.bus.spring,
+							org.apache.cxf.buslifecycle,
+							org.apache.cxf.catalog,
+							org.apache.cxf.configuration,
+							org.apache.cxf.configuration.spring,
+							org.apache.cxf.endpoint,
+							org.apache.cxf.headers,
+							org.apache.cxf.management,
+							org.apache.cxf.management.jmx,
+							org.apache.cxf.phase,
+							org.apache.cxf.resource,
+							org.apache.cxf.service.factory,
+							org.apache.cxf.transport,
+							org.apache.cxf.transport.http,
+							org.apache.cxf.transport.http.policy,
+							org.apache.cxf.transport.http_jetty,
+							org.apache.cxf.transport.jms,
+							org.apache.cxf.transports.http,
+							org.apache.cxf.workqueue,
+							org.apache.cxf.wsdl,
+							org.apache.cxf.wsdl11,
+							org.apache.ws.security.action,
+							org.apache.ws.security.processor,
+							org.springframework.beans.factory.config,
+							org.springframework.mail.javamail;resolution:=optional,
+							com.sap.*;resolution:=optional,
+							sun.misc;resolution:=optional,
+							*
+					    </Import-Package>
+						<Embed-Dependency>
+							commons-lang,
+							guava
+						</Embed-Dependency>
+						<Require-Bundle>
+							org.apache.cxf.bundle,
+							org.apache.servicemix.bundles.wsdl4j
+						</Require-Bundle>
+						<!--
+						__in case of jackson__
+						private-package: 
+							org.codehaus.jackson.*
+						inport-package:
+							org.codehaus.jackson.xc;resolution:=optional,
+						embed-dependency:
+							jackson-jaxrs
+						-->
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-maven-plugin</artifactId>
+				<version>${camel.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

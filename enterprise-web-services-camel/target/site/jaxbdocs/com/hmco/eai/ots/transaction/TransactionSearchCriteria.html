@@ -1,0 +1,117 @@
+<HTML><HEAD><TITLE>XML element transactionSearchCriteria</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: transactionSearchCriteria</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}searchType" minOccurs="0"/>
+         &lt;element name="customerID" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="fromDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="toDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="limitOfResults" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="invoiceNo" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="poNo" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="35"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="clientTransactionID" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="12"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="isbn" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="18"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}materialID" minOccurs="0"/>
+         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="transactionType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="orderSource" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}sanNumber" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}zipCode" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}countryCode" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}Division" minOccurs="0"/>
+         &lt;element name="partnerFunctionList" minOccurs="0">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element name="partnerFunction" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;transactionSearchCriteria>
+  &lt;<a href='#m_clientTransactionID'>clientTransactionID</a>>xsd:string&lt;/clientTransactionID>
+  &lt;<a href='#m_countryCode'>countryCode</a>>xsd:string&lt;/countryCode>
+  &lt;<a href='#m_customerID'>customerID</a>>xsd:string&lt;/customerID>
+  &lt;<a href='#m_Division'>Division</a>>xsd:string&lt;/Division>
+  &lt;<a href='#m_fromDate'>fromDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/fromDate>
+  &lt;<a href='#m_invoiceNo'>invoiceNo</a>>xsd:string&lt;/invoiceNo>
+  &lt;<a href='#m_isbn'>isbn</a>>xsd:string&lt;/isbn>
+  &lt;<a href='#m_limitOfResults'>limitOfResults</a>>xsd:int&lt;/limitOfResults>
+  &lt;<a href='#m_materialID'>materialID</a>>xsd:string&lt;/materialID>
+  &lt;<a href='#m_orderSource'>orderSource</a>>xsd:string&lt;/orderSource>
+  &lt;<a href='#m_partnerFunctionList'>partnerFunctionList</a>><a href='../../../../../com/hmco/eai/ots/transaction/TransactionSearchCriteria.PartnerFunctionList.html'>PartnerFunctionList</a>&lt;/partnerFunctionList>
+  &lt;<a href='#m_poNo'>poNo</a>>xsd:string&lt;/poNo>
+  &lt;<a href='#m_sanNumber'>sanNumber</a>>xsd:string&lt;/sanNumber>
+  &lt;<a href='#m_searchType'>searchType</a>>xsd:string&lt;/searchType>
+  &lt;<a href='#m_status'>status</a>>xsd:string&lt;/status>
+  &lt;<a href='#m_toDate'>toDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/toDate>
+  &lt;<a href='#m_transactionType'>transactionType</a>>xsd:string&lt;/transactionType>
+  &lt;<a href='#m_zipCode'>zipCode</a>>xsd:string&lt;/zipCode>
+&lt;/transactionSearchCriteria>
+</pre></td><td><b>JSON Example:</b><pre>{"transactionSearchCriteria":
+ {
+   "<a href='#m_clientTransactionID'>clientTransactionID</a>": String,
+   "<a href='#m_countryCode'>countryCode</a>": String,
+   "<a href='#m_customerID'>customerID</a>": String,
+   "<a href='#m_Division'>Division</a>": String,
+   "<a href='#m_fromDate'>fromDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_invoiceNo'>invoiceNo</a>": String,
+   "<a href='#m_isbn'>isbn</a>": String,
+   "<a href='#m_limitOfResults'>limitOfResults</a>": Number,
+   "<a href='#m_materialID'>materialID</a>": String,
+   "<a href='#m_orderSource'>orderSource</a>": String,
+   "<a href='#m_partnerFunctionList'>partnerFunctionList</a>": <a href='../../../../../com/hmco/eai/ots/transaction/TransactionSearchCriteria.PartnerFunctionList.html'>PartnerFunctionList</a>,
+   "<a href='#m_poNo'>poNo</a>": String,
+   "<a href='#m_sanNumber'>sanNumber</a>": String,
+   "<a href='#m_searchType'>searchType</a>": String,
+   "<a href='#m_status'>status</a>": String,
+   "<a href='#m_toDate'>toDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_transactionType'>transactionType</a>": String,
+   "<a href='#m_zipCode'>zipCode</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_clientTransactionID'>clientTransactionID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_countryCode'>countryCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerID'>customerID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Division'>Division</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_fromDate'>fromDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_invoiceNo'>invoiceNo</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isbn'>isbn</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_limitOfResults'>limitOfResults</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_materialID'>materialID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orderSource'>orderSource</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_partnerFunctionList'>partnerFunctionList</td><td><a href='../../../../../com/hmco/eai/ots/transaction/TransactionSearchCriteria.PartnerFunctionList.html'>PartnerFunctionList</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poNo'>poNo</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sanNumber'>sanNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_searchType'>searchType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_status'>status</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_toDate'>toDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionType'>transactionType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_zipCode'>zipCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

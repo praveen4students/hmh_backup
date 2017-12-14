@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="errorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="error" type="error" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="materialAvailability">
+    <xs:sequence>
+      <xs:element name="materialAvailabilityRequest" type="materialAvailabilityRequest" minOccurs="0"/>
+      <xs:element name="materialAvailabilityResponse" type="materialAvailabilityResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="materialAvailabilityRequest">
+    <xs:sequence>
+      <xs:element name="inventoryList" type="inventory" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inventory">
+    <xs:sequence>
+      <xs:element name="plantName" type="xs:string" minOccurs="0"/>
+      <xs:element name="materialID" type="xs:string" minOccurs="0"/>
+      <xs:element name="quantity" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="materialAvailabilityResponse">
+    <xs:sequence>
+      <xs:element name="inventoryList" type="inventory" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="errorList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="error">
+    <xs:sequence>
+      <xs:element name="errorCategory" type="xs:string"/>
+      <xs:element name="errorCode" type="xs:string"/>
+      <xs:element name="errorMessage" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lineItemError">
+    <xs:complexContent>
+      <xs:extension base="error">
+        <xs:sequence>
+          <xs:element name="lineNo" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>XML element DescribeLayout2</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: DescribeLayout2</span></h2><p>Java class for DescribeLayout complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="DescribeLayout">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="buttonLayoutSection" type="{urn:enterprise.soap.sforce.com}DescribeLayoutButtonSection" minOccurs="0"/>
+         &lt;element name="detailLayoutSections" type="{urn:enterprise.soap.sforce.com}DescribeLayoutSection" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="editLayoutSections" type="{urn:enterprise.soap.sforce.com}DescribeLayoutSection" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="id" type="{urn:enterprise.soap.sforce.com}ID"/>
+         &lt;element name="relatedLists" type="{urn:enterprise.soap.sforce.com}RelatedList" maxOccurs="unbounded" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;DescribeLayout2>
+  &lt;<a href='#m_buttonLayoutSection'>buttonLayoutSection</a>><a href='../../../../com/sforce/soap/enterprise/DescribeLayoutButtonSection.html'>DescribeLayoutButtonSection</a>&lt;/buttonLayoutSection>
+  zero or N[&lt;<a href='#m_detailLayoutSections'>detailLayoutSections</a>><a href='../../../../com/sforce/soap/enterprise/DescribeLayoutSection.html'>DescribeLayoutSection</a>&lt;/detailLayoutSections>]
+  zero or N[&lt;<a href='#m_editLayoutSections'>editLayoutSections</a>><a href='../../../../com/sforce/soap/enterprise/DescribeLayoutSection.html'>DescribeLayoutSection</a>&lt;/editLayoutSections>]
+  &lt;<a href='#m_id'>id</a>>xsd:string&lt;/id>
+  zero or N[&lt;<a href='#m_relatedLists'>relatedLists</a>><a href='../../../../com/sforce/soap/enterprise/RelatedList.html'>RelatedList</a>&lt;/relatedLists>]
+&lt;/DescribeLayout2>
+</pre></td><td><b>JSON Example:</b><pre>{"DescribeLayout2":
+ {
+   "<a href='#m_buttonLayoutSection'>buttonLayoutSection</a>": <a href='../../../../com/sforce/soap/enterprise/DescribeLayoutButtonSection.html'>DescribeLayoutButtonSection</a>,
+   "<a href='#m_detailLayoutSections'>detailLayoutSections</a>": [<a href='../../../../com/sforce/soap/enterprise/DescribeLayoutSection.html'>DescribeLayoutSection</a>],
+   "<a href='#m_editLayoutSections'>editLayoutSections</a>": [<a href='../../../../com/sforce/soap/enterprise/DescribeLayoutSection.html'>DescribeLayoutSection</a>],
+   "<a href='#m_id'>id</a>": String,
+   "<a href='#m_relatedLists'>relatedLists</a>": [<a href='../../../../com/sforce/soap/enterprise/RelatedList.html'>RelatedList</a>],
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_buttonLayoutSection'>buttonLayoutSection</td><td><a href='../../../../com/sforce/soap/enterprise/DescribeLayoutButtonSection.html'>DescribeLayoutButtonSection</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_detailLayoutSections'>detailLayoutSections</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/DescribeLayoutSection.html'>DescribeLayoutSection</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_editLayoutSections'>editLayoutSections</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/DescribeLayoutSection.html'>DescribeLayoutSection</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_id'>id</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_relatedLists'>relatedLists</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/RelatedList.html'>RelatedList</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

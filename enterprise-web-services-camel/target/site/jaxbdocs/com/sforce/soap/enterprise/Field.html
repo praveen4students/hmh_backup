@@ -1,0 +1,137 @@
+<HTML><HEAD><TITLE>XML element Field</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: Field</span></h2><p>Java class for Field complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="Field">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="autoNumber" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="byteLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="calculated" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="calculatedFormula" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="caseSensitive" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="controllerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="createable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="custom" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="defaultValueFormula" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="defaultedOnCreate" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="dependentPicklist" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="deprecatedAndHidden" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="digits" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="externalId" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="filterable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="groupable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="htmlFormatted" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="idLookup" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="inlineHelpText" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="label" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="length" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="nameField" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="namePointing" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="nillable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="picklistValues" type="{urn:enterprise.soap.sforce.com}PicklistEntry" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="precision" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="referenceTo" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="relationshipName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="relationshipOrder" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+         &lt;element name="restrictedPicklist" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="scale" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="soapType" type="{urn:enterprise.soap.sforce.com}soapType"/>
+         &lt;element name="sortable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="type" type="{urn:enterprise.soap.sforce.com}fieldType"/>
+         &lt;element name="unique" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="updateable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="writeRequiresMasterRead" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;Field>
+  &lt;<a href='#m_autoNumber'>autoNumber</a>>xsd:boolean&lt;/autoNumber>
+  &lt;<a href='#m_byteLength'>byteLength</a>>xsd:int&lt;/byteLength>
+  &lt;<a href='#m_calculated'>calculated</a>>xsd:boolean&lt;/calculated>
+  &lt;<a href='#m_calculatedFormula'>calculatedFormula</a>>xsd:string&lt;/calculatedFormula>
+  &lt;<a href='#m_caseSensitive'>caseSensitive</a>>xsd:boolean&lt;/caseSensitive>
+  &lt;<a href='#m_controllerName'>controllerName</a>>xsd:string&lt;/controllerName>
+  &lt;<a href='#m_createable'>createable</a>>xsd:boolean&lt;/createable>
+  &lt;<a href='#m_custom'>custom</a>>xsd:boolean&lt;/custom>
+  &lt;<a href='#m_defaultedOnCreate'>defaultedOnCreate</a>>xsd:boolean&lt;/defaultedOnCreate>
+  &lt;<a href='#m_defaultValueFormula'>defaultValueFormula</a>>xsd:string&lt;/defaultValueFormula>
+  &lt;<a href='#m_dependentPicklist'>dependentPicklist</a>>xsd:boolean&lt;/dependentPicklist>
+  &lt;<a href='#m_deprecatedAndHidden'>deprecatedAndHidden</a>>xsd:boolean&lt;/deprecatedAndHidden>
+  &lt;<a href='#m_digits'>digits</a>>xsd:int&lt;/digits>
+  &lt;<a href='#m_externalId'>externalId</a>>xsd:boolean&lt;/externalId>
+  &lt;<a href='#m_filterable'>filterable</a>>xsd:boolean&lt;/filterable>
+  &lt;<a href='#m_groupable'>groupable</a>>xsd:boolean&lt;/groupable>
+  &lt;<a href='#m_htmlFormatted'>htmlFormatted</a>>xsd:boolean&lt;/htmlFormatted>
+  &lt;<a href='#m_idLookup'>idLookup</a>>xsd:boolean&lt;/idLookup>
+  &lt;<a href='#m_inlineHelpText'>inlineHelpText</a>>xsd:string&lt;/inlineHelpText>
+  &lt;<a href='#m_label'>label</a>>xsd:string&lt;/label>
+  &lt;<a href='#m_length'>length</a>>xsd:int&lt;/length>
+  &lt;<a href='#m_name'>name</a>>xsd:string&lt;/name>
+  &lt;<a href='#m_nameField'>nameField</a>>xsd:boolean&lt;/nameField>
+  &lt;<a href='#m_namePointing'>namePointing</a>>xsd:boolean&lt;/namePointing>
+  &lt;<a href='#m_nillable'>nillable</a>>xsd:boolean&lt;/nillable>
+  zero or N[&lt;<a href='#m_picklistValues'>picklistValues</a>><a href='../../../../com/sforce/soap/enterprise/PicklistEntry.html'>PicklistEntry</a>&lt;/picklistValues>]
+  &lt;<a href='#m_precision'>precision</a>>xsd:int&lt;/precision>
+  zero or N[&lt;<a href='#m_referenceTo'>referenceTo</a>>xsd:string&lt;/referenceTo>]
+  &lt;<a href='#m_relationshipName'>relationshipName</a>>xsd:string&lt;/relationshipName>
+  &lt;<a href='#m_relationshipOrder'>relationshipOrder</a>>xsd:int&lt;/relationshipOrder>
+  &lt;<a href='#m_restrictedPicklist'>restrictedPicklist</a>>xsd:boolean&lt;/restrictedPicklist>
+  &lt;<a href='#m_scale'>scale</a>>xsd:int&lt;/scale>
+  &lt;<a href='#m_soapType'>soapType</a>>TNS___ID | XSD___BASE_64_BINARY | XSD___BOOLEAN | XSD___DOUBLE | XSD___INT | XSD___STRING | XSD___DATE | XSD___DATE_TIME | XSD___TIME | XSD___ANY_TYPE&lt;/soapType>
+  &lt;<a href='#m_sortable'>sortable</a>>xsd:boolean&lt;/sortable>
+  &lt;<a href='#m_type'>type</a>>STRING | PICKLIST | MULTIPICKLIST | COMBOBOX | REFERENCE | BASE_64 | BOOLEAN | CURRENCY | TEXTAREA | INT | DOUBLE | PERCENT | PHONE | ID | DATE | DATETIME | TIME | URL | EMAIL | ENCRYPTEDSTRING | DATACATEGORYGROUPREFERENCE | ANY_TYPE&lt;/type>
+  &lt;<a href='#m_unique'>unique</a>>xsd:boolean&lt;/unique>
+  &lt;<a href='#m_updateable'>updateable</a>>xsd:boolean&lt;/updateable>
+  &lt;<a href='#m_writeRequiresMasterRead'>writeRequiresMasterRead</a>>xsd:boolean&lt;/writeRequiresMasterRead>
+&lt;/Field>
+</pre></td><td><b>JSON Example:</b><pre>{"Field":
+ {
+   "<a href='#m_autoNumber'>autoNumber</a>": Boolean,
+   "<a href='#m_byteLength'>byteLength</a>": Number,
+   "<a href='#m_calculated'>calculated</a>": Boolean,
+   "<a href='#m_calculatedFormula'>calculatedFormula</a>": String,
+   "<a href='#m_caseSensitive'>caseSensitive</a>": Boolean,
+   "<a href='#m_controllerName'>controllerName</a>": String,
+   "<a href='#m_createable'>createable</a>": Boolean,
+   "<a href='#m_custom'>custom</a>": Boolean,
+   "<a href='#m_defaultedOnCreate'>defaultedOnCreate</a>": Boolean,
+   "<a href='#m_defaultValueFormula'>defaultValueFormula</a>": String,
+   "<a href='#m_dependentPicklist'>dependentPicklist</a>": Boolean,
+   "<a href='#m_deprecatedAndHidden'>deprecatedAndHidden</a>": Boolean,
+   "<a href='#m_digits'>digits</a>": Number,
+   "<a href='#m_externalId'>externalId</a>": Boolean,
+   "<a href='#m_filterable'>filterable</a>": Boolean,
+   "<a href='#m_groupable'>groupable</a>": Boolean,
+   "<a href='#m_htmlFormatted'>htmlFormatted</a>": Boolean,
+   "<a href='#m_idLookup'>idLookup</a>": Boolean,
+   "<a href='#m_inlineHelpText'>inlineHelpText</a>": String,
+   "<a href='#m_label'>label</a>": String,
+   "<a href='#m_length'>length</a>": Number,
+   "<a href='#m_name'>name</a>": String,
+   "<a href='#m_nameField'>nameField</a>": Boolean,
+   "<a href='#m_namePointing'>namePointing</a>": Boolean,
+   "<a href='#m_nillable'>nillable</a>": Boolean,
+   "<a href='#m_picklistValues'>picklistValues</a>": [<a href='../../../../com/sforce/soap/enterprise/PicklistEntry.html'>PicklistEntry</a>],
+   "<a href='#m_precision'>precision</a>": Number,
+   "<a href='#m_referenceTo'>referenceTo</a>": [String],
+   "<a href='#m_relationshipName'>relationshipName</a>": String,
+   "<a href='#m_relationshipOrder'>relationshipOrder</a>": Number,
+   "<a href='#m_restrictedPicklist'>restrictedPicklist</a>": Boolean,
+   "<a href='#m_scale'>scale</a>": Number,
+   "<a href='#m_soapType'>soapType</a>": 'TNS___ID' | 'XSD___BASE_64_BINARY' | 'XSD___BOOLEAN' | 'XSD___DOUBLE' | 'XSD___INT' | 'XSD___STRING' | 'XSD___DATE' | 'XSD___DATE_TIME' | 'XSD___TIME' | 'XSD___ANY_TYPE',
+   "<a href='#m_sortable'>sortable</a>": Boolean,
+   "<a href='#m_type'>type</a>": 'STRING' | 'PICKLIST' | 'MULTIPICKLIST' | 'COMBOBOX' | 'REFERENCE' | 'BASE_64' | 'BOOLEAN' | 'CURRENCY' | 'TEXTAREA' | 'INT' | 'DOUBLE' | 'PERCENT' | 'PHONE' | 'ID' | 'DATE' | 'DATETIME' | 'TIME' | 'URL' | 'EMAIL' | 'ENCRYPTEDSTRING' | 'DATACATEGORYGROUPREFERENCE' | 'ANY_TYPE',
+   "<a href='#m_unique'>unique</a>": Boolean,
+   "<a href='#m_updateable'>updateable</a>": Boolean,
+   "<a href='#m_writeRequiresMasterRead'>writeRequiresMasterRead</a>": Boolean,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_autoNumber'>autoNumber</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_byteLength'>byteLength</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_calculated'>calculated</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_calculatedFormula'>calculatedFormula</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_caseSensitive'>caseSensitive</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_controllerName'>controllerName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_createable'>createable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_custom'>custom</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_defaultedOnCreate'>defaultedOnCreate</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_defaultValueFormula'>defaultValueFormula</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_dependentPicklist'>dependentPicklist</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deprecatedAndHidden'>deprecatedAndHidden</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_digits'>digits</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_externalId'>externalId</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_filterable'>filterable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_groupable'>groupable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_htmlFormatted'>htmlFormatted</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_idLookup'>idLookup</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_inlineHelpText'>inlineHelpText</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_label'>label</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_length'>length</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_nameField'>nameField</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_namePointing'>namePointing</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_nillable'>nillable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_picklistValues'>picklistValues</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/PicklistEntry.html'>PicklistEntry</a>]</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_precision'>precision</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_referenceTo'>referenceTo</td><td>zero or N[xsd:string]</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_relationshipName'>relationshipName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_relationshipOrder'>relationshipOrder</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_restrictedPicklist'>restrictedPicklist</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_scale'>scale</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soapType'>soapType</td><td>TNS___ID | XSD___BASE_64_BINARY | XSD___BOOLEAN | XSD___DOUBLE | XSD___INT | XSD___STRING | XSD___DATE | XSD___DATE_TIME | XSD___TIME | XSD___ANY_TYPE</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sortable'>sortable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_type'>type</td><td>STRING | PICKLIST | MULTIPICKLIST | COMBOBOX | REFERENCE | BASE_64 | BOOLEAN | CURRENCY | TEXTAREA | INT | DOUBLE | PERCENT | PHONE | ID | DATE | DATETIME | TIME | URL | EMAIL | ENCRYPTEDSTRING | DATACATEGORYGROUPREFERENCE | ANY_TYPE</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_unique'>unique</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_updateable'>updateable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_writeRequiresMasterRead'>writeRequiresMasterRead</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   	xmlns:beans="http://www.springframework.org/schema/beans"
+  		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  		xmlns:ctx="http://www.springframework.org/schema/context"  
+  		xmlns:osgi="http://www.springframework.org/schema/osgi"
+  		xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+  		xsi:schemaLocation="
+  				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+                http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+                ">
+
+	<beans:bean id="myBundleConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<beans:property name="ignoreUnresolvablePlaceholders" value="true"/>
+		<beans:property name="propertiesArray">
+			<beans:array>
+
+			    <osgix:cm-properties id="sapBeanProps" persistent-id="hmh.sap.rfc.services">
+					<prop key="sapSID">Q01</prop>
+					<prop key="sapClientId">100</prop>
+					<prop key="sapUser">tibco</prop>
+					<prop key="sapPasswd">tibco</prop>
+					<prop key="sapHost">sapq01.hmco.com</prop>
+					<prop key="sapSysNo">01</prop>
+					<prop key="sapMSHost">sapq01.hmco.com</prop>
+					<prop key="sapR3Name">Q01</prop>
+					<prop key="sapGroup">Q01</prop>
+					<prop key="sapMaxNumConn">10</prop>        
+					<prop key="sapTrace">0</prop>        
+			    </osgix:cm-properties>    
+			
+			    <osgix:cm-properties id="sfdcBeanProps" persistent-id="hmh.sfdc.services">
+					<!-- <prop key="sfdcUrl">https://test.salesforce.com/services/Soap/c/22.0</prop>  --> 
+					<prop key="sfdcUrl">https://test.salesforce.com/services/Soap/c/25.0</prop> <!-- Updated the SFDC service endpoint - 13-SEP-2012 -->
+					<prop key="sfdcUserName">integrate@hmco.com.sb5</prop>
+					<prop key="sfdcPassword">hmco#123</prop>
+			    </osgix:cm-properties>
+
+			    <osgix:cm-properties id="cmProps" persistent-id="hmh.admin">
+			      <prop key="portNumber">7110</prop>
+			      <prop key="transactionAuditConsumers">5</prop>
+			      <prop key="customerAuditConsumers">5</prop>
+			      <prop key="materialAuditConsumers">5</prop>
+			      <prop key="orderAuditConsumers">5</prop>
+			    </osgix:cm-properties>
+			    
+			    <osgix:cm-properties id="orderBeanProps" persistent-id="hmh.paymetric.admin">
+					<prop key="pmUrl">https://qa01.xipaynet.com/PMXIGGE/XiPay30WS.asmx</prop>
+					<prop key="pmUser">PAYMETRIC\WSAHoughtonQA</prop>
+					<prop key="pmPass">password8*</prop>
+			   	 	<prop key="pmStatusCode">100</prop>
+			   		<prop key="pmTr_Card_Cidrespcode">M</prop>
+			    	<prop key="pmAvsCode">18,14,12,B3,B4,B7,B8</prop>
+			    </osgix:cm-properties>
+
+			    <osgix:cm-properties id="merchantidProps" persistent-id="hmh.paymetric.merchantid">
+			    </osgix:cm-properties>
+
+			</beans:array>
+		</beans:property>
+	</beans:bean> 
+
+
+</beans>

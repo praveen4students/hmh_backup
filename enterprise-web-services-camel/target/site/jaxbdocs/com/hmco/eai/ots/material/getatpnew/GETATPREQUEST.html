@@ -1,0 +1,62 @@
+<HTML><HEAD><TITLE>XML element GET_ATP_REQUEST</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: GET_ATP_REQUEST</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}COUNTRY" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}REGION" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}CUST_ID" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}DIST_CHNL" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}DIVISION" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}ITEM_TYPE" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}MDR" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}SALES_ORG" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}ORDER_TYPE" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}FLEX1" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}FLEX2" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}FLEX3" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Material/GetATPNew}ATP_MATERIAL_LIST"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;GET_ATP_REQUEST>
+  &lt;<a href='#m_ATP_MATERIAL_LIST'>ATP_MATERIAL_LIST</a>><a href='../../../../../../com/hmco/eai/ots/material/getatpnew/ATPMATERIALLIST.html'>ATP_MATERIAL_LIST</a>&lt;/ATP_MATERIAL_LIST>
+  &lt;<a href='#m_COUNTRY'>COUNTRY</a>>xsd:string&lt;/COUNTRY>
+  &lt;<a href='#m_CUST_ID'>CUST_ID</a>>xsd:string&lt;/CUST_ID>
+  &lt;<a href='#m_DIST_CHNL'>DIST_CHNL</a>>xsd:string&lt;/DIST_CHNL>
+  &lt;<a href='#m_DIVISION'>DIVISION</a>>xsd:string&lt;/DIVISION>
+  &lt;<a href='#m_FLEX1'>FLEX1</a>>xsd:string&lt;/FLEX1>
+  &lt;<a href='#m_FLEX2'>FLEX2</a>>xsd:string&lt;/FLEX2>
+  &lt;<a href='#m_FLEX3'>FLEX3</a>>xsd:string&lt;/FLEX3>
+  &lt;<a href='#m_ITEM_TYPE'>ITEM_TYPE</a>>xsd:string&lt;/ITEM_TYPE>
+  &lt;<a href='#m_MDR'>MDR</a>>xsd:string&lt;/MDR>
+  &lt;<a href='#m_ORDER_TYPE'>ORDER_TYPE</a>>xsd:string&lt;/ORDER_TYPE>
+  &lt;<a href='#m_REGION'>REGION</a>>xsd:string&lt;/REGION>
+  &lt;<a href='#m_SALES_ORG'>SALES_ORG</a>>xsd:string&lt;/SALES_ORG>
+&lt;/GET_ATP_REQUEST>
+</pre></td><td><b>JSON Example:</b><pre>{"GET_ATP_REQUEST":
+ {
+   "<a href='#m_ATP_MATERIAL_LIST'>ATP_MATERIAL_LIST</a>": <a href='../../../../../../com/hmco/eai/ots/material/getatpnew/ATPMATERIALLIST.html'>ATP_MATERIAL_LIST</a>,
+   "<a href='#m_COUNTRY'>COUNTRY</a>": String,
+   "<a href='#m_CUST_ID'>CUST_ID</a>": String,
+   "<a href='#m_DIST_CHNL'>DIST_CHNL</a>": String,
+   "<a href='#m_DIVISION'>DIVISION</a>": String,
+   "<a href='#m_FLEX1'>FLEX1</a>": String,
+   "<a href='#m_FLEX2'>FLEX2</a>": String,
+   "<a href='#m_FLEX3'>FLEX3</a>": String,
+   "<a href='#m_ITEM_TYPE'>ITEM_TYPE</a>": String,
+   "<a href='#m_MDR'>MDR</a>": String,
+   "<a href='#m_ORDER_TYPE'>ORDER_TYPE</a>": String,
+   "<a href='#m_REGION'>REGION</a>": String,
+   "<a href='#m_SALES_ORG'>SALES_ORG</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_ATP_MATERIAL_LIST'>ATP_MATERIAL_LIST</td><td><a href='../../../../../../com/hmco/eai/ots/material/getatpnew/ATPMATERIALLIST.html'>ATP_MATERIAL_LIST</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_COUNTRY'>COUNTRY</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CUST_ID'>CUST_ID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_DIST_CHNL'>DIST_CHNL</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_DIVISION'>DIVISION</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_FLEX1'>FLEX1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_FLEX2'>FLEX2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_FLEX3'>FLEX3</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ITEM_TYPE'>ITEM_TYPE</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_MDR'>MDR</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ORDER_TYPE'>ORDER_TYPE</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_REGION'>REGION</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SALES_ORG'>SALES_ORG</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

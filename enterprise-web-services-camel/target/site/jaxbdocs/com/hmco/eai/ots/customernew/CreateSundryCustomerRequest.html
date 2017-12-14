@@ -1,0 +1,101 @@
+<HTML><HEAD><TITLE>XML element createSundryCustomerRequest</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: createSundryCustomerRequest</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="division" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="SFASalesTerritory">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="geographicSalesTerritory" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="6"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="name">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="35"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="customerAddress" type="{http://www.hmco.com/EAI/OTS/CustomerNew}address"/>
+         &lt;element name="telephone1" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="16"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="telephone2" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="16"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="fax" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="31"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="collegeNumber" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="10"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="customerEmail" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="241"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;createSundryCustomerRequest>
+  &lt;<a href='#m_collegeNumber'>collegeNumber</a>>xsd:string&lt;/collegeNumber>
+  &lt;<a href='#m_customerAddress'>customerAddress</a>><a href='../../../../../com/hmco/eai/ots/customernew/Address.html'>Address</a>&lt;/customerAddress>
+  &lt;<a href='#m_customerEmail'>customerEmail</a>>xsd:string&lt;/customerEmail>
+  &lt;<a href='#m_division'>division</a>>xsd:string&lt;/division>
+  &lt;<a href='#m_fax'>fax</a>>xsd:string&lt;/fax>
+  &lt;<a href='#m_geographicSalesTerritory'>geographicSalesTerritory</a>>xsd:string&lt;/geographicSalesTerritory>
+  &lt;<a href='#m_name'>name</a>>xsd:string&lt;/name>
+  &lt;<a href='#m_SFASalesTerritory'>SFASalesTerritory</a>>xsd:string&lt;/SFASalesTerritory>
+  &lt;<a href='#m_telephone1'>telephone1</a>>xsd:string&lt;/telephone1>
+  &lt;<a href='#m_telephone2'>telephone2</a>>xsd:string&lt;/telephone2>
+&lt;/createSundryCustomerRequest>
+</pre></td><td><b>JSON Example:</b><pre>{"createSundryCustomerRequest":
+ {
+   "<a href='#m_collegeNumber'>collegeNumber</a>": String,
+   "<a href='#m_customerAddress'>customerAddress</a>": <a href='../../../../../com/hmco/eai/ots/customernew/Address.html'>Address</a>,
+   "<a href='#m_customerEmail'>customerEmail</a>": String,
+   "<a href='#m_division'>division</a>": String,
+   "<a href='#m_fax'>fax</a>": String,
+   "<a href='#m_geographicSalesTerritory'>geographicSalesTerritory</a>": String,
+   "<a href='#m_name'>name</a>": String,
+   "<a href='#m_SFASalesTerritory'>SFASalesTerritory</a>": String,
+   "<a href='#m_telephone1'>telephone1</a>": String,
+   "<a href='#m_telephone2'>telephone2</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_collegeNumber'>collegeNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerAddress'>customerAddress</td><td><a href='../../../../../com/hmco/eai/ots/customernew/Address.html'>Address</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerEmail'>customerEmail</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_division'>division</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_fax'>fax</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_geographicSalesTerritory'>geographicSalesTerritory</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SFASalesTerritory'>SFASalesTerritory</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_telephone1'>telephone1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_telephone2'>telephone2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

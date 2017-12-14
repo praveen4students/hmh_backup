@@ -1,0 +1,14 @@
+<jaxb:bindings version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://java.sun.com/xml/ns/jaxws">
+   <!-- <jaxb:globalBindings generateElementProperty="false"/>  -->
+   <jaxb:bindings schemaLocation="EnterpriseWebServices.wsdl#types12"
+		node="/xs:schema[@targetNamespace='http://www.hmco.com/EAI/OTS/EskerTransaction']">
+		
+				<jaxb:bindings node=".//xs:element[@name='overrideFlag']">
+					<jaxb:javaType name="java.lang.String"/>
+				</jaxb:bindings>
+				
+		<jaxb:globalBindings generateElementProperty="false" />
+	</jaxb:bindings>
+</jaxb:bindings> 

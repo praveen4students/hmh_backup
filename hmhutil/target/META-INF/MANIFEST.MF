@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Export-Package: com.hmh.util.hasher;uses:="org.apache.log4j,javax.xml.
+ parsers,com.hmh.util.dao,org.w3c.dom,org.xml.sax,org.springframework.
+ beans.factory";version="1.0.0.SNAPSHOT",com.hmh.util.dao;uses:="com.h
+ mh.util.hasher,org.apache.log4j,org.springframework.jdbc.core,org.spr
+ ingframework.dao,org.springframework.jdbc.core.support,org.springfram
+ ework.jdbc.support.lob,javax.sql,org.springframework.beans.factory";v
+ ersion="1.0.0.SNAPSHOT",com.hmh.util.audit;uses:="com.hmh.util.dao,or
+ g.apache.log4j,org.springframework.beans.factory";version="1.0.0.SNAP
+ SHOT",com.hmh.util.async;uses:="com.hmh.util.dao,org.apache.log4j,org
+ .springframework.beans.factory";version="1.0.0.SNAPSHOT"
+Built-By: Praveen
+Tool: Bnd-1.43.0
+Bundle-Name: An Utility Component
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: oracle.*
+Bundle-Version: 1.0.0.SNAPSHOT
+Build-Jdk: 1.6.0_35
+Bnd-LastModified: 1358935155639
+Bundle-ManifestVersion: 2
+Import-Package: javax.sql,javax.xml.parsers,oracle.ucp.jdbc,org.apache
+ .log4j,org.springframework.beans.factory;version="[3.0,4)",org.spring
+ framework.dao;version="[3.0,4)",org.springframework.jdbc.core;version
+ ="[3.0,4)",org.springframework.jdbc.core.support;version="[3.0,4)",or
+ g.springframework.jdbc.support.lob;version="[3.0,4)",org.w3c.dom,org.
+ xml.sax
+Bundle-SymbolicName: hmhutil
+

@@ -1,0 +1,119 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:ctx="http://www.springframework.org/schema/context"
+	  	xmlns:osgi="http://www.springframework.org/schema/osgi"
+  		xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"       	
+		xsi:schemaLocation="		
+           	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+			http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+			">
+
+<!-- 
+http://stackoverflow.com/questions/1427890/oracledatasource-vs-oracle-ucp-pooldatasource
+ -->
+ 
+  	<bean id="oracleDataSourceUCP" class="oracle.ucp.jdbc.PoolDataSourceFactory" factory-method="getPoolDataSource">
+        <property name="connectionFactoryClassName"    value="oracle.jdbc.pool.OracleDataSource"/>
+        <property name="URL"                           value="${jdbc.url}"/>
+        <property name="user"                          value="${jdbc.username}"/>
+        <property name="password"                      value="${jdbc.password}"/>
+        <property name="minPoolSize"                   value="${jdbc.minLimit}"/>
+        <property name="maxPoolSize"                   value="${jdbc.maxLimit}"/>
+        <property name="validateConnectionOnBorrow"    value="true"/>
+        <property name="initialPoolSize"               value="${jdbc.minLimit}"/>
+        <property name="connectionWaitTimeout"         value="120"/>
+		<property name="inactiveConnectionTimeout"     value="600"/>
+        <property name="abandonedConnectionTimeout"    value="300"/>
+        <property name="maxConnectionReuseTime"		   value="${ucb.maxReuseTime}"/>
+        
+ 	</bean>
+
+<!--  
+	<bean id="oracleDataSourceDB" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
+	   	<property name="connectionCachingEnabled" value="true" />
+	   	<property name="URL" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="connectionCacheProperties">
+		   <props merge="default">
+		      <prop key="MinLimit">${jdbc.minLimit}</prop>
+		      <prop key="MaxLimit">${jdbc.maxLimit}</prop>
+		      <prop key="InitialLimit">0</prop>
+		      <prop key="ConnectionWaitTimeout">120</prop>
+		      <prop key="InactivityTimeout">600</prop>
+		      <prop key="AbandonedConnectionTimeout">300</prop>		      
+		      <prop key="ValidateConnection">true</prop>
+		   </props>
+		</property>
+	</bean>
+ -->
+<!-- 
+ 	<bean id="dataSourceDB" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+ -->
+<!--  
+	<bean id="springDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="removeAbandoned" value="true"/>
+		<property name="initialSize" value="${jdbc.minLimit}" />
+		<property name="maxActive" value="${jdbc.maxLimit}" />
+		<property name="testOnBorrow" value="true"></property>
+		<property name="validationQuery" value="SELECT 1 FROM DUAL"></property>	   
+	</bean>
+ -->
+
+  
+    <osgix:cm-properties id="dataSourceDBProps" persistent-id="hmh.jdbc.datasource">
+		<prop key="jdbc.driverClassName">oracle.jdbc.driver.OracleDriver</prop>
+		<prop key="jdbc.url">jdbc:oracle:thin:@blackhole.hmco.com:1521:ordevlad</prop>
+		<prop key="jdbc.username">IC_COMMON</prop>
+		<prop key="jdbc.password">1sore#9</prop>
+		<prop key="jdbc.minLimit">5</prop>
+		<prop key="jdbc.maxLimit">25</prop>		
+		<prop key="ucb.maxReuseTime">600</prop>
+		<prop key="db.severity">camel</prop>
+    </osgix:cm-properties>
+    <ctx:property-placeholder properties-ref="dataSourceDBProps" />
+	
+	
+	<bean id="utilDAO" class="com.hmh.util.dao.UtilDAOImpl">
+
+		<property name="dataSource" ref="oracleDataSourceUCP" />
+<!-- 
+		<property name="dataSource" ref="springDataSource" />
+ -->
+		<property name="maxRetryCount" value="10" />
+		<property name="severity" value="${db.severity}" />		
+	</bean>
+	
+	<bean id="auditService" class="com.hmh.util.audit.AuditServiceImpl">
+		<property name="utilDAO" ref="utilDAO" />
+	</bean>
+
+	<bean id="hasher" class="com.hmh.util.hasher.HasherImpl">
+		<property name="utilDAO" ref="utilDAO" />
+	</bean>
+	
+	<bean id="asyncService" class="com.hmh.util.async.AsyncServiceImpl">
+		<property name="utilDAO" ref="utilDAO" />
+	</bean>
+
+	
+	<osgi:service ref="auditService" interface="com.hmh.util.audit.AuditService" 
+		depends-on="oracleDataSourceUCP,utilDAO" />
+	<osgi:service ref="hasher" interface="com.hmh.util.hasher.Hasher"
+		depends-on="oracleDataSourceUCP,utilDAO" />
+	<osgi:service ref="asyncService" interface="com.hmh.util.async.AsyncService"
+		depends-on="oracleDataSourceUCP,utilDAO" />
+	
+	
+</beans>

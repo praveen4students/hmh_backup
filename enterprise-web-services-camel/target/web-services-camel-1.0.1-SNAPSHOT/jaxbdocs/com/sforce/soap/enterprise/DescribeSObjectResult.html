@@ -1,0 +1,101 @@
+<HTML><HEAD><TITLE>XML element DescribeSObjectResult</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: DescribeSObjectResult</span></h2><p>Java class for DescribeSObjectResult complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="DescribeSObjectResult">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="activateable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="childRelationships" type="{urn:enterprise.soap.sforce.com}ChildRelationship" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="createable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="custom" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="customSetting" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="deletable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="deprecatedAndHidden" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="feedEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="fields" type="{urn:enterprise.soap.sforce.com}Field" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="keyPrefix" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="label" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="labelPlural" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="layoutable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="mergeable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="queryable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="recordTypeInfos" type="{urn:enterprise.soap.sforce.com}RecordTypeInfo" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="replicateable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="retrieveable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="searchable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="triggerable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="undeletable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="updateable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="urlDetail" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="urlEdit" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="urlNew" type="{http://www.w3.org/2001/XMLSchema}string"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;DescribeSObjectResult>
+  &lt;<a href='#m_activateable'>activateable</a>>xsd:boolean&lt;/activateable>
+  zero or N[&lt;<a href='#m_childRelationships'>childRelationships</a>><a href='../../../../com/sforce/soap/enterprise/ChildRelationship.html'>ChildRelationship</a>&lt;/childRelationships>]
+  &lt;<a href='#m_createable'>createable</a>>xsd:boolean&lt;/createable>
+  &lt;<a href='#m_custom'>custom</a>>xsd:boolean&lt;/custom>
+  &lt;<a href='#m_customSetting'>customSetting</a>>xsd:boolean&lt;/customSetting>
+  &lt;<a href='#m_deletable'>deletable</a>>xsd:boolean&lt;/deletable>
+  &lt;<a href='#m_deprecatedAndHidden'>deprecatedAndHidden</a>>xsd:boolean&lt;/deprecatedAndHidden>
+  &lt;<a href='#m_feedEnabled'>feedEnabled</a>>xsd:boolean&lt;/feedEnabled>
+  zero or N[&lt;<a href='#m_fields'>fields</a>><a href='../../../../com/sforce/soap/enterprise/Field.html'>Field</a>&lt;/fields>]
+  &lt;<a href='#m_keyPrefix'>keyPrefix</a>>xsd:string&lt;/keyPrefix>
+  &lt;<a href='#m_label'>label</a>>xsd:string&lt;/label>
+  &lt;<a href='#m_labelPlural'>labelPlural</a>>xsd:string&lt;/labelPlural>
+  &lt;<a href='#m_layoutable'>layoutable</a>>xsd:boolean&lt;/layoutable>
+  &lt;<a href='#m_mergeable'>mergeable</a>>xsd:boolean&lt;/mergeable>
+  &lt;<a href='#m_name'>name</a>>xsd:string&lt;/name>
+  &lt;<a href='#m_queryable'>queryable</a>>xsd:boolean&lt;/queryable>
+  zero or N[&lt;<a href='#m_recordTypeInfos'>recordTypeInfos</a>><a href='../../../../com/sforce/soap/enterprise/RecordTypeInfo.html'>RecordTypeInfo</a>&lt;/recordTypeInfos>]
+  &lt;<a href='#m_replicateable'>replicateable</a>>xsd:boolean&lt;/replicateable>
+  &lt;<a href='#m_retrieveable'>retrieveable</a>>xsd:boolean&lt;/retrieveable>
+  &lt;<a href='#m_searchable'>searchable</a>>xsd:boolean&lt;/searchable>
+  &lt;<a href='#m_triggerable'>triggerable</a>>xsd:boolean&lt;/triggerable>
+  &lt;<a href='#m_undeletable'>undeletable</a>>xsd:boolean&lt;/undeletable>
+  &lt;<a href='#m_updateable'>updateable</a>>xsd:boolean&lt;/updateable>
+  &lt;<a href='#m_urlDetail'>urlDetail</a>>xsd:string&lt;/urlDetail>
+  &lt;<a href='#m_urlEdit'>urlEdit</a>>xsd:string&lt;/urlEdit>
+  &lt;<a href='#m_urlNew'>urlNew</a>>xsd:string&lt;/urlNew>
+&lt;/DescribeSObjectResult>
+</pre></td><td><b>JSON Example:</b><pre>{"DescribeSObjectResult":
+ {
+   "<a href='#m_activateable'>activateable</a>": Boolean,
+   "<a href='#m_childRelationships'>childRelationships</a>": [<a href='../../../../com/sforce/soap/enterprise/ChildRelationship.html'>ChildRelationship</a>],
+   "<a href='#m_createable'>createable</a>": Boolean,
+   "<a href='#m_custom'>custom</a>": Boolean,
+   "<a href='#m_customSetting'>customSetting</a>": Boolean,
+   "<a href='#m_deletable'>deletable</a>": Boolean,
+   "<a href='#m_deprecatedAndHidden'>deprecatedAndHidden</a>": Boolean,
+   "<a href='#m_feedEnabled'>feedEnabled</a>": Boolean,
+   "<a href='#m_fields'>fields</a>": [<a href='../../../../com/sforce/soap/enterprise/Field.html'>Field</a>],
+   "<a href='#m_keyPrefix'>keyPrefix</a>": String,
+   "<a href='#m_label'>label</a>": String,
+   "<a href='#m_labelPlural'>labelPlural</a>": String,
+   "<a href='#m_layoutable'>layoutable</a>": Boolean,
+   "<a href='#m_mergeable'>mergeable</a>": Boolean,
+   "<a href='#m_name'>name</a>": String,
+   "<a href='#m_queryable'>queryable</a>": Boolean,
+   "<a href='#m_recordTypeInfos'>recordTypeInfos</a>": [<a href='../../../../com/sforce/soap/enterprise/RecordTypeInfo.html'>RecordTypeInfo</a>],
+   "<a href='#m_replicateable'>replicateable</a>": Boolean,
+   "<a href='#m_retrieveable'>retrieveable</a>": Boolean,
+   "<a href='#m_searchable'>searchable</a>": Boolean,
+   "<a href='#m_triggerable'>triggerable</a>": Boolean,
+   "<a href='#m_undeletable'>undeletable</a>": Boolean,
+   "<a href='#m_updateable'>updateable</a>": Boolean,
+   "<a href='#m_urlDetail'>urlDetail</a>": String,
+   "<a href='#m_urlEdit'>urlEdit</a>": String,
+   "<a href='#m_urlNew'>urlNew</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_activateable'>activateable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_childRelationships'>childRelationships</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/ChildRelationship.html'>ChildRelationship</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_createable'>createable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_custom'>custom</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customSetting'>customSetting</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deletable'>deletable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_deprecatedAndHidden'>deprecatedAndHidden</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_feedEnabled'>feedEnabled</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_fields'>fields</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/Field.html'>Field</a>]</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_keyPrefix'>keyPrefix</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_label'>label</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_labelPlural'>labelPlural</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_layoutable'>layoutable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_mergeable'>mergeable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_queryable'>queryable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_recordTypeInfos'>recordTypeInfos</td><td>zero or N[<a href='../../../../com/sforce/soap/enterprise/RecordTypeInfo.html'>RecordTypeInfo</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_replicateable'>replicateable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_retrieveable'>retrieveable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_searchable'>searchable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_triggerable'>triggerable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_undeletable'>undeletable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_updateable'>updateable</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_urlDetail'>urlDetail</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_urlEdit'>urlEdit</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_urlNew'>urlNew</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

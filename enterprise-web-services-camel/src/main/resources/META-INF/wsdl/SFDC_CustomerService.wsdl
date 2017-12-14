@@ -1,0 +1,297 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!--
+ Web Services API : CustomerService
+-->
+<definitions targetNamespace = "http://soap.sforce.com/schemas/class/CustomerService" xmlns = "http://schemas.xmlsoap.org/wsdl/" xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns = "http://soap.sforce.com/schemas/class/CustomerService" xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+	<types>
+		<xsd:schema elementFormDefault = "qualified" targetNamespace = "http://soap.sforce.com/schemas/class/CustomerService">
+			<xsd:element name = "DebuggingInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name = "debugLog" type = "xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name = "ID">
+				<xsd:restriction base = "xsd:string">
+					<xsd:length value = "18"/>
+					<xsd:pattern value = "[a-zA-Z0-9]{18}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name = "LogCategory">
+				<xsd:restriction base = "xsd:string">
+					<xsd:enumeration value = "Db"/>
+					<xsd:enumeration value = "Workflow"/>
+					<xsd:enumeration value = "Validation"/>
+					<xsd:enumeration value = "Callout"/>
+					<xsd:enumeration value = "Apex_code"/>
+					<xsd:enumeration value = "Apex_profiling"/>
+					<xsd:enumeration value = "Visualforce"/>
+					<xsd:enumeration value = "System"/>
+					<xsd:enumeration value = "All"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name = "LogCategoryLevel">
+				<xsd:restriction base = "xsd:string">
+					<xsd:enumeration value = "Internal"/>
+					<xsd:enumeration value = "Finest"/>
+					<xsd:enumeration value = "Finer"/>
+					<xsd:enumeration value = "Fine"/>
+					<xsd:enumeration value = "Debug"/>
+					<xsd:enumeration value = "Info"/>
+					<xsd:enumeration value = "Warn"/>
+					<xsd:enumeration value = "Error"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name = "LogInfo">
+				<xsd:sequence>
+					<xsd:element name = "category" type = "tns:LogCategory"/>
+					<xsd:element name = "level" type = "tns:LogCategoryLevel"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name = "LogType">
+				<xsd:restriction base = "xsd:string">
+					<xsd:enumeration value = "None"/>
+					<xsd:enumeration value = "Debugonly"/>
+					<xsd:enumeration value = "Db"/>
+					<xsd:enumeration value = "Profiling"/>
+					<xsd:enumeration value = "Callout"/>
+					<xsd:enumeration value = "Detail"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name = "DebuggingHeader">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "categories" type = "tns:LogInfo"/>
+						<xsd:element name = "debugLevel" type = "tns:LogType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "CallOptions">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name = "client" type = "xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "SessionHeader">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name = "sessionId" type = "xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "AllowFieldTruncationHeader">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name = "allowFieldTruncation" type = "xsd:boolean"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name = "SapCustomer">
+				<xsd:sequence>
+					<xsd:element minOccurs = "0" name = "accountGroup" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "customerClass" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "customerClassDesc" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "customerName" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "customerType" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "customerTypeDesc" nillable = "true" type = "xsd:string"/>
+					<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "divisionList" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "email" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "fax" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "hmhId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "mdrPid" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "orderBlock" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "phone" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "san" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "sapCustomerId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingCity" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingCountry" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingCounty" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingState" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingStreet" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingStreet2" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingStreet3" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingZip" nillable = "true" type = "xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name = "SfdcCustomer">
+				<xsd:sequence>
+					<xsd:element minOccurs = "0" name = "email" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "fax" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "insideSalesAccountFlag" nillable = "true" type = "xsd:boolean"/>
+					<xsd:element minOccurs = "0" name = "mdrCustomerType" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "mdrPid" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "name" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "phone" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "pnpAccountFlag" nillable = "true" type = "xsd:boolean"/>
+					<xsd:element minOccurs = "0" name = "sapCustomerId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "sfdcCustomerId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingCity" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingCountry" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingState" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingStreet" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "shippingZip" nillable = "true" type = "xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name = "SfdcRep">
+				<xsd:sequence>
+					<xsd:element minOccurs = "0" name = "division" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "email" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "market" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "phone" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "sfdcCustomerId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "sfdcUserId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "territoryDescription" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "userName" nillable = "true" type = "xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name = "customerUpdateResult">
+				<xsd:sequence>
+					<xsd:element minOccurs = "0" name = "message" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "operation" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "sapCustomerId" nillable = "true" type = "xsd:string"/>
+					<xsd:element minOccurs = "0" name = "success" nillable = "true" type = "xsd:boolean"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name = "customerUpdate">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "sapCustomerList" nillable = "true" type = "tns:SapCustomer"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "customerUpdateResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "result" nillable = "true" type = "tns:customerUpdateResult"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "findSfdcCustomers">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name = "mdrPid" nillable = "true" type = "xsd:string"/>
+						<xsd:element name = "sapCustomerId" nillable = "true" type = "xsd:string"/>
+						<xsd:element name = "zip" nillable = "true" type = "xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "findSfdcCustomersResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "result" nillable = "true" type = "tns:SfdcCustomer"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "getRepsForCustomers">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "sfdcCustomerIds" nillable = "true" type = "xsd:string"/>
+						<xsd:element name = "reqDivision" nillable = "true" type = "xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name = "getRepsForCustomersResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs = "unbounded" minOccurs = "0" name = "result" nillable = "true" type = "tns:SfdcRep"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</types>
+	<!-- Message for the header parts -->
+	<message name = "Header">
+		<part element = "tns:AllowFieldTruncationHeader" name = "AllowFieldTruncationHeader"/>
+		<part element = "tns:CallOptions" name = "CallOptions"/>
+		<part element = "tns:DebuggingHeader" name = "DebuggingHeader"/>
+		<part element = "tns:DebuggingInfo" name = "DebuggingInfo"/>
+		<part element = "tns:SessionHeader" name = "SessionHeader"/>
+	</message>
+	<!-- Operation Messages -->
+	<message name = "customerUpdateRequest">
+		<part element = "tns:customerUpdate" name = "parameters"/>
+	</message>
+	<message name = "customerUpdateResponse">
+		<part element = "tns:customerUpdateResponse" name = "parameters"/>
+	</message>
+	<message name = "findSfdcCustomersRequest">
+		<part element = "tns:findSfdcCustomers" name = "parameters"/>
+	</message>
+	<message name = "findSfdcCustomersResponse">
+		<part element = "tns:findSfdcCustomersResponse" name = "parameters"/>
+	</message>
+	<message name = "getRepsForCustomersRequest">
+		<part element = "tns:getRepsForCustomers" name = "parameters"/>
+	</message>
+	<message name = "getRepsForCustomersResponse">
+		<part element = "tns:getRepsForCustomersResponse" name = "parameters"/>
+	</message>
+	<portType name = "CustomerServicePortType">
+		<operation name = "customerUpdate">
+			<input message = "tns:customerUpdateRequest"/>
+			<output message = "tns:customerUpdateResponse"/>
+		</operation>
+		<operation name = "findSfdcCustomers">
+			<input message = "tns:findSfdcCustomersRequest"/>
+			<output message = "tns:findSfdcCustomersResponse"/>
+		</operation>
+		<operation name = "getRepsForCustomers">
+			<input message = "tns:getRepsForCustomersRequest"/>
+			<output message = "tns:getRepsForCustomersResponse"/>
+		</operation>
+	</portType>
+	<binding name = "CustomerServiceBinding" type = "tns:CustomerServicePortType">
+		<soap:binding style = "document" transport = "http://schemas.xmlsoap.org/soap/http"/>
+		<operation name = "customerUpdate">
+			<soap:operation soapAction = ""/>
+			<input>
+				<soap:header message = "tns:Header" part = "SessionHeader" use = "literal"/>
+				<soap:header message = "tns:Header" part = "CallOptions" use = "literal"/>
+				<soap:header message = "tns:Header" part = "DebuggingHeader" use = "literal"/>
+				<soap:header message = "tns:Header" part = "AllowFieldTruncationHeader" use = "literal"/>
+				<soap:body parts = "parameters" use = "literal"/>
+			</input>
+			<output>
+				<soap:header message = "tns:Header" part = "DebuggingInfo" use = "literal"/>
+				<soap:body use = "literal"/>
+			</output>
+		</operation>
+		<operation name = "findSfdcCustomers">
+			<soap:operation soapAction = ""/>
+			<input>
+				<soap:header message = "tns:Header" part = "SessionHeader" use = "literal"/>
+				<soap:header message = "tns:Header" part = "CallOptions" use = "literal"/>
+				<soap:header message = "tns:Header" part = "DebuggingHeader" use = "literal"/>
+				<soap:header message = "tns:Header" part = "AllowFieldTruncationHeader" use = "literal"/>
+				<soap:body parts = "parameters" use = "literal"/>
+			</input>
+			<output>
+				<soap:header message = "tns:Header" part = "DebuggingInfo" use = "literal"/>
+				<soap:body use = "literal"/>
+			</output>
+		</operation>
+		<operation name = "getRepsForCustomers">
+			<soap:operation soapAction = ""/>
+			<input>
+				<soap:header message = "tns:Header" part = "SessionHeader" use = "literal"/>
+				<soap:header message = "tns:Header" part = "CallOptions" use = "literal"/>
+				<soap:header message = "tns:Header" part = "DebuggingHeader" use = "literal"/>
+				<soap:header message = "tns:Header" part = "AllowFieldTruncationHeader" use = "literal"/>
+				<soap:body parts = "parameters" use = "literal"/>
+			</input>
+			<output>
+				<soap:header message = "tns:Header" part = "DebuggingInfo" use = "literal"/>
+				<soap:body use = "literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name = "CustomerServiceService">
+		<documentation/>
+		<port binding = "tns:CustomerServiceBinding" name = "CustomerService">
+			<soap:address location = "https://cs12-api.salesforce.com/services/Soap/class/CustomerService"/>
+		</port>
+	</service>
+</definitions>

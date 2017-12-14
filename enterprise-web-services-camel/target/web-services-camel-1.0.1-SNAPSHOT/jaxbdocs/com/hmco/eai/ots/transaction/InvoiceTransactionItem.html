@@ -1,0 +1,63 @@
+<HTML><HEAD><TITLE>XML element invoiceTransactionItem</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: invoiceTransactionItem</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="invoiceNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="invoiceType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="billingDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
+         &lt;element name="subTotal" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="salesTax" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="shippingCharge" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="lineItem" maxOccurs="unbounded">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}productInfo"/>
+                   &lt;element name="shipmentNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="shipmentLineNo" type="{http://www.w3.org/2001/XMLSchema}int"/>
+                   &lt;element name="shipmentLocation" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="paymentTerm" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}transactionNo" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Transaction}transactionLineNo" minOccurs="0"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;invoiceTransactionItem>
+  &lt;<a href='#m_billingDate'>billingDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/billingDate>
+  &lt;<a href='#m_invoiceNo'>invoiceNo</a>>xsd:string&lt;/invoiceNo>
+  &lt;<a href='#m_invoiceType'>invoiceType</a>>xsd:string&lt;/invoiceType>
+  zero or N[&lt;<a href='#m_lineItem'>lineItem</a>><a href='../../../../../com/hmco/eai/ots/transaction/InvoiceTransactionItem.LineItem.html'>LineItem</a>&lt;/lineItem>]
+  &lt;<a href='#m_salesTax'>salesTax</a>>xsd:double&lt;/salesTax>
+  &lt;<a href='#m_shippingCharge'>shippingCharge</a>>xsd:double&lt;/shippingCharge>
+  &lt;<a href='#m_subTotal'>subTotal</a>>xsd:double&lt;/subTotal>
+  &lt;<a href='#m_total'>total</a>>xsd:double&lt;/total>
+&lt;/invoiceTransactionItem>
+</pre></td><td><b>JSON Example:</b><pre>{"invoiceTransactionItem":
+ {
+   "<a href='#m_billingDate'>billingDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_invoiceNo'>invoiceNo</a>": String,
+   "<a href='#m_invoiceType'>invoiceType</a>": String,
+   "<a href='#m_lineItem'>lineItem</a>": [<a href='../../../../../com/hmco/eai/ots/transaction/InvoiceTransactionItem.LineItem.html'>LineItem</a>],
+   "<a href='#m_salesTax'>salesTax</a>": Number,
+   "<a href='#m_shippingCharge'>shippingCharge</a>": Number,
+   "<a href='#m_subTotal'>subTotal</a>": Number,
+   "<a href='#m_total'>total</a>": Number,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_billingDate'>billingDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_invoiceNo'>invoiceNo</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_invoiceType'>invoiceType</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineItem'>lineItem</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/transaction/InvoiceTransactionItem.LineItem.html'>LineItem</a>]</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_salesTax'>salesTax</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingCharge'>shippingCharge</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_subTotal'>subTotal</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_total'>total</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

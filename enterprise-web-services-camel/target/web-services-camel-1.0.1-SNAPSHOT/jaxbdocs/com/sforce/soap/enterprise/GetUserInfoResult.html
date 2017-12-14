@@ -1,0 +1,89 @@
+<HTML><HEAD><TITLE>XML element GetUserInfoResult</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: GetUserInfoResult</span></h2><p>Java class for GetUserInfoResult complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="GetUserInfoResult">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="accessibilityMode" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="currencySymbol" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="orgAttachmentFileSizeLimit" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="orgDefaultCurrencyIsoCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="orgDisallowHtmlAttachments" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="orgHasPersonAccounts" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="organizationId" type="{urn:enterprise.soap.sforce.com}ID"/>
+         &lt;element name="organizationMultiCurrency" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+         &lt;element name="organizationName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="profileId" type="{urn:enterprise.soap.sforce.com}ID"/>
+         &lt;element name="roleId" type="{urn:enterprise.soap.sforce.com}ID"/>
+         &lt;element name="sessionSecondsValid" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="userDefaultCurrencyIsoCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userEmail" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userFullName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userId" type="{urn:enterprise.soap.sforce.com}ID"/>
+         &lt;element name="userLanguage" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userLocale" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userTimeZone" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="userUiSkin" type="{http://www.w3.org/2001/XMLSchema}string"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;GetUserInfoResult>
+  &lt;<a href='#m_accessibilityMode'>accessibilityMode</a>>xsd:boolean&lt;/accessibilityMode>
+  &lt;<a href='#m_currencySymbol'>currencySymbol</a>>xsd:string&lt;/currencySymbol>
+  &lt;<a href='#m_organizationId'>organizationId</a>>xsd:string&lt;/organizationId>
+  &lt;<a href='#m_organizationMultiCurrency'>organizationMultiCurrency</a>>xsd:boolean&lt;/organizationMultiCurrency>
+  &lt;<a href='#m_organizationName'>organizationName</a>>xsd:string&lt;/organizationName>
+  &lt;<a href='#m_orgAttachmentFileSizeLimit'>orgAttachmentFileSizeLimit</a>>xsd:int&lt;/orgAttachmentFileSizeLimit>
+  &lt;<a href='#m_orgDefaultCurrencyIsoCode'>orgDefaultCurrencyIsoCode</a>>xsd:string&lt;/orgDefaultCurrencyIsoCode>
+  &lt;<a href='#m_orgDisallowHtmlAttachments'>orgDisallowHtmlAttachments</a>>xsd:boolean&lt;/orgDisallowHtmlAttachments>
+  &lt;<a href='#m_orgHasPersonAccounts'>orgHasPersonAccounts</a>>xsd:boolean&lt;/orgHasPersonAccounts>
+  &lt;<a href='#m_profileId'>profileId</a>>xsd:string&lt;/profileId>
+  &lt;<a href='#m_roleId'>roleId</a>>xsd:string&lt;/roleId>
+  &lt;<a href='#m_sessionSecondsValid'>sessionSecondsValid</a>>xsd:int&lt;/sessionSecondsValid>
+  &lt;<a href='#m_userDefaultCurrencyIsoCode'>userDefaultCurrencyIsoCode</a>>xsd:string&lt;/userDefaultCurrencyIsoCode>
+  &lt;<a href='#m_userEmail'>userEmail</a>>xsd:string&lt;/userEmail>
+  &lt;<a href='#m_userFullName'>userFullName</a>>xsd:string&lt;/userFullName>
+  &lt;<a href='#m_userId'>userId</a>>xsd:string&lt;/userId>
+  &lt;<a href='#m_userLanguage'>userLanguage</a>>xsd:string&lt;/userLanguage>
+  &lt;<a href='#m_userLocale'>userLocale</a>>xsd:string&lt;/userLocale>
+  &lt;<a href='#m_userName'>userName</a>>xsd:string&lt;/userName>
+  &lt;<a href='#m_userTimeZone'>userTimeZone</a>>xsd:string&lt;/userTimeZone>
+  &lt;<a href='#m_userType'>userType</a>>xsd:string&lt;/userType>
+  &lt;<a href='#m_userUiSkin'>userUiSkin</a>>xsd:string&lt;/userUiSkin>
+&lt;/GetUserInfoResult>
+</pre></td><td><b>JSON Example:</b><pre>{"GetUserInfoResult":
+ {
+   "<a href='#m_accessibilityMode'>accessibilityMode</a>": Boolean,
+   "<a href='#m_currencySymbol'>currencySymbol</a>": String,
+   "<a href='#m_organizationId'>organizationId</a>": String,
+   "<a href='#m_organizationMultiCurrency'>organizationMultiCurrency</a>": Boolean,
+   "<a href='#m_organizationName'>organizationName</a>": String,
+   "<a href='#m_orgAttachmentFileSizeLimit'>orgAttachmentFileSizeLimit</a>": Number,
+   "<a href='#m_orgDefaultCurrencyIsoCode'>orgDefaultCurrencyIsoCode</a>": String,
+   "<a href='#m_orgDisallowHtmlAttachments'>orgDisallowHtmlAttachments</a>": Boolean,
+   "<a href='#m_orgHasPersonAccounts'>orgHasPersonAccounts</a>": Boolean,
+   "<a href='#m_profileId'>profileId</a>": String,
+   "<a href='#m_roleId'>roleId</a>": String,
+   "<a href='#m_sessionSecondsValid'>sessionSecondsValid</a>": Number,
+   "<a href='#m_userDefaultCurrencyIsoCode'>userDefaultCurrencyIsoCode</a>": String,
+   "<a href='#m_userEmail'>userEmail</a>": String,
+   "<a href='#m_userFullName'>userFullName</a>": String,
+   "<a href='#m_userId'>userId</a>": String,
+   "<a href='#m_userLanguage'>userLanguage</a>": String,
+   "<a href='#m_userLocale'>userLocale</a>": String,
+   "<a href='#m_userName'>userName</a>": String,
+   "<a href='#m_userTimeZone'>userTimeZone</a>": String,
+   "<a href='#m_userType'>userType</a>": String,
+   "<a href='#m_userUiSkin'>userUiSkin</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_accessibilityMode'>accessibilityMode</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_currencySymbol'>currencySymbol</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_organizationId'>organizationId</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_organizationMultiCurrency'>organizationMultiCurrency</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_organizationName'>organizationName</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orgAttachmentFileSizeLimit'>orgAttachmentFileSizeLimit</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orgDefaultCurrencyIsoCode'>orgDefaultCurrencyIsoCode</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orgDisallowHtmlAttachments'>orgDisallowHtmlAttachments</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_orgHasPersonAccounts'>orgHasPersonAccounts</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_profileId'>profileId</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_roleId'>roleId</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sessionSecondsValid'>sessionSecondsValid</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userDefaultCurrencyIsoCode'>userDefaultCurrencyIsoCode</td><td>xsd:string</td><td>true</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userEmail'>userEmail</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userFullName'>userFullName</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userId'>userId</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userLanguage'>userLanguage</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userLocale'>userLocale</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userName'>userName</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userTimeZone'>userTimeZone</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userType'>userType</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_userUiSkin'>userUiSkin</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

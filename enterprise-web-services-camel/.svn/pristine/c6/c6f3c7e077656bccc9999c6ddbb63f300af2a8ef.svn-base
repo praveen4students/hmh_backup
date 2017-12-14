@@ -1,0 +1,32 @@
+<jaxb:bindings version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://java.sun.com/xml/ns/jaxws">
+
+	<jaxb:bindings schemaLocation="SFDC_Enterprise.wsdl#types1"
+		node="/xs:schema[@targetNamespace='urn:sobject.enterprise.soap.sforce.com']">
+
+		<jaxb:bindings node="//xs:complexType[@name='Opportunity']">
+
+			<jaxb:bindings
+				node=".//xs:complexContent/xs:extension[@base='ens:sObject']">
+				<jaxb:bindings node=".//xs:element[@name='Effective_Date__c']">
+					<jaxb:property name="secondEffective_Date_c">
+						<jaxb:javadoc><![CDATA[Sample variable-level Javadoc comment.]]></jaxb:javadoc>
+					</jaxb:property>
+				</jaxb:bindings>
+
+			</jaxb:bindings>
+		</jaxb:bindings>
+		<jaxb:globalBindings underscoreBinding="asCharInWord"
+			generateElementProperty="false" />
+		<jaxb:schemaBindings>
+			<jaxb:nameXmlTransform>
+				<jaxb:typeName suffix="Type" />
+			</jaxb:nameXmlTransform>
+		</jaxb:schemaBindings>
+		
+	</jaxb:bindings>
+
+
+
+</jaxb:bindings>

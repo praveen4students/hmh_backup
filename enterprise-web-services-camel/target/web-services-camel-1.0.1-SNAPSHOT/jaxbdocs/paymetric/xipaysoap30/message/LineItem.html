@@ -1,0 +1,50 @@
+<HTML><HEAD><TITLE>XML element LineItem</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: LineItem</span></h2><p>Java class for LineItem complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="LineItem">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="MaterialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="SalesDocItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ActualInvoicedQuantity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="SalesUnit" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TaxAmount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="NetValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="InfoItems" type="{http://Paymetric/XiPaySoap30/message/}ArrayOfInfoItem" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;LineItem>
+  &lt;<a href='#m_ActualInvoicedQuantity'>ActualInvoicedQuantity</a>>xsd:string&lt;/ActualInvoicedQuantity>
+  &lt;<a href='#m_Description'>Description</a>>xsd:string&lt;/Description>
+  &lt;<a href='#m_InfoItems'>InfoItems</a>><a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a>&lt;/InfoItems>
+  &lt;<a href='#m_MaterialNumber'>MaterialNumber</a>>xsd:string&lt;/MaterialNumber>
+  &lt;<a href='#m_NetValue'>NetValue</a>>xsd:string&lt;/NetValue>
+  &lt;<a href='#m_SalesDocItemNumber'>SalesDocItemNumber</a>>xsd:string&lt;/SalesDocItemNumber>
+  &lt;<a href='#m_SalesUnit'>SalesUnit</a>>xsd:string&lt;/SalesUnit>
+  &lt;<a href='#m_TaxAmount'>TaxAmount</a>>xsd:string&lt;/TaxAmount>
+  &lt;<a href='#m_UPC'>UPC</a>>xsd:string&lt;/UPC>
+&lt;/LineItem>
+</pre></td><td><b>JSON Example:</b><pre>{"LineItem":
+ {
+   "<a href='#m_ActualInvoicedQuantity'>ActualInvoicedQuantity</a>": String,
+   "<a href='#m_Description'>Description</a>": String,
+   "<a href='#m_InfoItems'>InfoItems</a>": <a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a>,
+   "<a href='#m_MaterialNumber'>MaterialNumber</a>": String,
+   "<a href='#m_NetValue'>NetValue</a>": String,
+   "<a href='#m_SalesDocItemNumber'>SalesDocItemNumber</a>": String,
+   "<a href='#m_SalesUnit'>SalesUnit</a>": String,
+   "<a href='#m_TaxAmount'>TaxAmount</a>": String,
+   "<a href='#m_UPC'>UPC</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_ActualInvoicedQuantity'>ActualInvoicedQuantity</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Description'>Description</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_InfoItems'>InfoItems</td><td><a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_MaterialNumber'>MaterialNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_NetValue'>NetValue</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SalesDocItemNumber'>SalesDocItemNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SalesUnit'>SalesUnit</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TaxAmount'>TaxAmount</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_UPC'>UPC</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

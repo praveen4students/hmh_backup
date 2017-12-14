@@ -1,0 +1,62 @@
+<HTML><HEAD><TITLE>XML element createEtailCustomerRequest</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: createEtailCustomerRequest</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Customer}storeID"/>
+         &lt;element name="name">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="35"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="telephone">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="16"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="customerEmail" minOccurs="0">
+           &lt;simpleType>
+             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               &lt;maxLength value="241"/>
+             &lt;/restriction>
+           &lt;/simpleType>
+         &lt;/element>
+         &lt;element name="soldToAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address"/>
+         &lt;element name="billToAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+         &lt;element name="shipToAddress" type="{http://www.hmco.com/EAI/OTS/Customer}address" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;createEtailCustomerRequest>
+  &lt;<a href='#m_billToAddress'>billToAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/billToAddress>
+  &lt;<a href='#m_customerEmail'>customerEmail</a>>xsd:string&lt;/customerEmail>
+  &lt;<a href='#m_name'>name</a>>xsd:string&lt;/name>
+  &lt;<a href='#m_shipToAddress'>shipToAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/shipToAddress>
+  &lt;<a href='#m_soldToAddress'>soldToAddress</a>><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>&lt;/soldToAddress>
+  &lt;<a href='#m_storeID'>storeID</a>>xsd:string&lt;/storeID>
+  &lt;<a href='#m_telephone'>telephone</a>>xsd:string&lt;/telephone>
+&lt;/createEtailCustomerRequest>
+</pre></td><td><b>JSON Example:</b><pre>{"createEtailCustomerRequest":
+ {
+   "<a href='#m_billToAddress'>billToAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_customerEmail'>customerEmail</a>": String,
+   "<a href='#m_name'>name</a>": String,
+   "<a href='#m_shipToAddress'>shipToAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_soldToAddress'>soldToAddress</a>": <a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a>,
+   "<a href='#m_storeID'>storeID</a>": String,
+   "<a href='#m_telephone'>telephone</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_billToAddress'>billToAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerEmail'>customerEmail</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToAddress'>shipToAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToAddress'>soldToAddress</td><td><a href='../../../../../com/hmco/eai/ots/customer/Address.html'>Address</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_storeID'>storeID</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_telephone'>telephone</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

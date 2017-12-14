@@ -1,0 +1,284 @@
+<HTML><HEAD><TITLE>XML element ITransactionHeader</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: ITransactionHeader</span></h2><p>Java class for ITransactionHeader complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="ITransactionHeader">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="AVSAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AVSCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AVSZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AccountingDocNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ActionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AdditionalInfo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AuthorizationCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AuthorizationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="AuthorizationReferenceCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AuthorizationTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="AuthorizedThroughCartridge" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="BankBatchID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="BankSubBatchID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="BankTransactionID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="BatchID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="BillingDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="BillingPlanItem" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CaptureDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="CaptureReferenceCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardCVV2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardDataSource" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardExpirationDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardFollowOnNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderCity" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderCountry" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderDistrict" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderName1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderName2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderState" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardHolderZip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardPresent" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="CardType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CardValidFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ChargeAmount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="Client" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CompanyCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CreationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="CurrencyKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CustTXN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="CustomerNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="FiscalYear" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="GLAccount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="LastModificationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="LocationID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="MerchantID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="MerchantTXN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="MerchantTransactionID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="Message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ModifiedStatus" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="Origin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="PONumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="PacketOperation" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="Preauthorized" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ReferenceCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ReferenceLineItem" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ResponseCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="SalesDocNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="SettlementAmount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="SettlementReferenceCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ShippingCaptureDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+         &lt;element name="ShippingLocationID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="ShippingMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="StatusCode" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="StatusTXN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TaxLevel1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TaxLevel2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TaxLevel3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TaxLevel4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TerminalID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TransactionID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="VATNumberCustomer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="VATNumberMerchant" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="XIID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="InfoItems" type="{http://Paymetric/XiPaySoap30/message/}ArrayOfInfoItem" minOccurs="0"/>
+         &lt;element name="LineItems" type="{http://Paymetric/XiPaySoap30/message/}ArrayOfLineItem" minOccurs="0"/>
+         &lt;element name="SourceSystemInfoItems" type="{http://Paymetric/XiPaySoap30/message/}ArrayOfInfoItem" minOccurs="0"/>
+         &lt;element name="BlobItems" type="{http://Paymetric/XiPaySoap30/message/}ArrayOfBlobItem" minOccurs="0"/>
+         &lt;element name="CheckImages" type="{http://Paymetric/XiPaySoap30/message/}ArrayOfCheckImage" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;ITransactionHeader>
+  &lt;<a href='#m_AccountingDocNumber'>AccountingDocNumber</a>>xsd:string&lt;/AccountingDocNumber>
+  &lt;<a href='#m_ActionCode'>ActionCode</a>>xsd:string&lt;/ActionCode>
+  &lt;<a href='#m_AdditionalInfo'>AdditionalInfo</a>>xsd:string&lt;/AdditionalInfo>
+  &lt;<a href='#m_Amount'>Amount</a>>xsd:string&lt;/Amount>
+  &lt;<a href='#m_AuthorizationCode'>AuthorizationCode</a>>xsd:string&lt;/AuthorizationCode>
+  &lt;<a href='#m_AuthorizationDate'>AuthorizationDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/AuthorizationDate>
+  &lt;<a href='#m_AuthorizationReferenceCode'>AuthorizationReferenceCode</a>>xsd:string&lt;/AuthorizationReferenceCode>
+  &lt;<a href='#m_AuthorizationTime'>AuthorizationTime</a>>xsd:string&lt;/AuthorizationTime>
+  &lt;<a href='#m_AuthorizedThroughCartridge'>AuthorizedThroughCartridge</a>>xsd:string&lt;/AuthorizedThroughCartridge>
+  &lt;<a href='#m_AVSAddress'>AVSAddress</a>>xsd:string&lt;/AVSAddress>
+  &lt;<a href='#m_AVSCode'>AVSCode</a>>xsd:string&lt;/AVSCode>
+  &lt;<a href='#m_AVSZipCode'>AVSZipCode</a>>xsd:string&lt;/AVSZipCode>
+  &lt;<a href='#m_BankBatchID'>BankBatchID</a>>xsd:string&lt;/BankBatchID>
+  &lt;<a href='#m_BankSubBatchID'>BankSubBatchID</a>>xsd:string&lt;/BankSubBatchID>
+  &lt;<a href='#m_BankTransactionID'>BankTransactionID</a>>xsd:string&lt;/BankTransactionID>
+  &lt;<a href='#m_BatchID'>BatchID</a>>xsd:string&lt;/BatchID>
+  &lt;<a href='#m_BillingDate'>BillingDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/BillingDate>
+  &lt;<a href='#m_BillingPlanItem'>BillingPlanItem</a>>xsd:string&lt;/BillingPlanItem>
+  &lt;<a href='#m_BlobItems'>BlobItems</a>><a href='../../../paymetric/xipaysoap30/message/ArrayOfBlobItem.html'>ArrayOfBlobItem</a>&lt;/BlobItems>
+  &lt;<a href='#m_CaptureDate'>CaptureDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/CaptureDate>
+  &lt;<a href='#m_CaptureReferenceCode'>CaptureReferenceCode</a>>xsd:string&lt;/CaptureReferenceCode>
+  &lt;<a href='#m_CardCVV2'>CardCVV2</a>>xsd:string&lt;/CardCVV2>
+  &lt;<a href='#m_CardDataSource'>CardDataSource</a>>xsd:string&lt;/CardDataSource>
+  &lt;<a href='#m_CardExpirationDate'>CardExpirationDate</a>>xsd:string&lt;/CardExpirationDate>
+  &lt;<a href='#m_CardFollowOnNumber'>CardFollowOnNumber</a>>xsd:string&lt;/CardFollowOnNumber>
+  &lt;<a href='#m_CardHolderAddress1'>CardHolderAddress1</a>>xsd:string&lt;/CardHolderAddress1>
+  &lt;<a href='#m_CardHolderAddress2'>CardHolderAddress2</a>>xsd:string&lt;/CardHolderAddress2>
+  &lt;<a href='#m_CardHolderCity'>CardHolderCity</a>>xsd:string&lt;/CardHolderCity>
+  &lt;<a href='#m_CardHolderCountry'>CardHolderCountry</a>>xsd:string&lt;/CardHolderCountry>
+  &lt;<a href='#m_CardHolderDistrict'>CardHolderDistrict</a>>xsd:string&lt;/CardHolderDistrict>
+  &lt;<a href='#m_CardHolderName'>CardHolderName</a>>xsd:string&lt;/CardHolderName>
+  &lt;<a href='#m_CardHolderName1'>CardHolderName1</a>>xsd:string&lt;/CardHolderName1>
+  &lt;<a href='#m_CardHolderName2'>CardHolderName2</a>>xsd:string&lt;/CardHolderName2>
+  &lt;<a href='#m_CardHolderState'>CardHolderState</a>>xsd:string&lt;/CardHolderState>
+  &lt;<a href='#m_CardHolderZip'>CardHolderZip</a>>xsd:string&lt;/CardHolderZip>
+  &lt;<a href='#m_CardNumber'>CardNumber</a>>xsd:string&lt;/CardNumber>
+  &lt;<a href='#m_CardPresent'>CardPresent</a>>xsd:int&lt;/CardPresent>
+  &lt;<a href='#m_CardType'>CardType</a>>xsd:string&lt;/CardType>
+  &lt;<a href='#m_CardValidFrom'>CardValidFrom</a>>xsd:string&lt;/CardValidFrom>
+  &lt;<a href='#m_ChargeAmount'>ChargeAmount</a>>xsd:string&lt;/ChargeAmount>
+  &lt;<a href='#m_CheckImages'>CheckImages</a>><a href='../../../paymetric/xipaysoap30/message/ArrayOfCheckImage.html'>ArrayOfCheckImage</a>&lt;/CheckImages>
+  &lt;<a href='#m_Client'>Client</a>>xsd:string&lt;/Client>
+  &lt;<a href='#m_CompanyCode'>CompanyCode</a>>xsd:string&lt;/CompanyCode>
+  &lt;<a href='#m_CreationDate'>CreationDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/CreationDate>
+  &lt;<a href='#m_CurrencyKey'>CurrencyKey</a>>xsd:string&lt;/CurrencyKey>
+  &lt;<a href='#m_CustomerNumber'>CustomerNumber</a>>xsd:string&lt;/CustomerNumber>
+  &lt;<a href='#m_CustTXN'>CustTXN</a>>xsd:string&lt;/CustTXN>
+  &lt;<a href='#m_FiscalYear'>FiscalYear</a>>xsd:string&lt;/FiscalYear>
+  &lt;<a href='#m_GLAccount'>GLAccount</a>>xsd:string&lt;/GLAccount>
+  &lt;<a href='#m_InfoItems'>InfoItems</a>><a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a>&lt;/InfoItems>
+  &lt;<a href='#m_LastModificationDate'>LastModificationDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/LastModificationDate>
+  &lt;<a href='#m_LineItems'>LineItems</a>><a href='../../../paymetric/xipaysoap30/message/ArrayOfLineItem.html'>ArrayOfLineItem</a>&lt;/LineItems>
+  &lt;<a href='#m_LocationID'>LocationID</a>>xsd:string&lt;/LocationID>
+  &lt;<a href='#m_MerchantID'>MerchantID</a>>xsd:string&lt;/MerchantID>
+  &lt;<a href='#m_MerchantTransactionID'>MerchantTransactionID</a>>xsd:string&lt;/MerchantTransactionID>
+  &lt;<a href='#m_MerchantTXN'>MerchantTXN</a>>xsd:string&lt;/MerchantTXN>
+  &lt;<a href='#m_Message'>Message</a>>xsd:string&lt;/Message>
+  &lt;<a href='#m_ModifiedStatus'>ModifiedStatus</a>>xsd:int&lt;/ModifiedStatus>
+  &lt;<a href='#m_OrderDate'>OrderDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/OrderDate>
+  &lt;<a href='#m_OrderID'>OrderID</a>>xsd:string&lt;/OrderID>
+  &lt;<a href='#m_Origin'>Origin</a>>xsd:string&lt;/Origin>
+  &lt;<a href='#m_PacketOperation'>PacketOperation</a>>xsd:int&lt;/PacketOperation>
+  &lt;<a href='#m_PONumber'>PONumber</a>>xsd:string&lt;/PONumber>
+  &lt;<a href='#m_Preauthorized'>Preauthorized</a>>xsd:string&lt;/Preauthorized>
+  &lt;<a href='#m_ReferenceCode'>ReferenceCode</a>>xsd:string&lt;/ReferenceCode>
+  &lt;<a href='#m_ReferenceLineItem'>ReferenceLineItem</a>>xsd:string&lt;/ReferenceLineItem>
+  &lt;<a href='#m_ResponseCode'>ResponseCode</a>>xsd:string&lt;/ResponseCode>
+  &lt;<a href='#m_SalesDocNumber'>SalesDocNumber</a>>xsd:string&lt;/SalesDocNumber>
+  &lt;<a href='#m_SettlementAmount'>SettlementAmount</a>>xsd:string&lt;/SettlementAmount>
+  &lt;<a href='#m_SettlementDate'>SettlementDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/SettlementDate>
+  &lt;<a href='#m_SettlementReferenceCode'>SettlementReferenceCode</a>>xsd:string&lt;/SettlementReferenceCode>
+  &lt;<a href='#m_ShippingCaptureDate'>ShippingCaptureDate</a>><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/ShippingCaptureDate>
+  &lt;<a href='#m_ShippingLocationID'>ShippingLocationID</a>>xsd:string&lt;/ShippingLocationID>
+  &lt;<a href='#m_ShippingMethod'>ShippingMethod</a>>xsd:string&lt;/ShippingMethod>
+  &lt;<a href='#m_SourceSystemInfoItems'>SourceSystemInfoItems</a>><a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a>&lt;/SourceSystemInfoItems>
+  &lt;<a href='#m_StatusCode'>StatusCode</a>>xsd:int&lt;/StatusCode>
+  &lt;<a href='#m_StatusTXN'>StatusTXN</a>>xsd:string&lt;/StatusTXN>
+  &lt;<a href='#m_TaxLevel1'>TaxLevel1</a>>xsd:string&lt;/TaxLevel1>
+  &lt;<a href='#m_TaxLevel2'>TaxLevel2</a>>xsd:string&lt;/TaxLevel2>
+  &lt;<a href='#m_TaxLevel3'>TaxLevel3</a>>xsd:string&lt;/TaxLevel3>
+  &lt;<a href='#m_TaxLevel4'>TaxLevel4</a>>xsd:string&lt;/TaxLevel4>
+  &lt;<a href='#m_TerminalID'>TerminalID</a>>xsd:string&lt;/TerminalID>
+  &lt;<a href='#m_TransactionID'>TransactionID</a>>xsd:string&lt;/TransactionID>
+  &lt;<a href='#m_TransactionType'>TransactionType</a>>xsd:string&lt;/TransactionType>
+  &lt;<a href='#m_VATNumberCustomer'>VATNumberCustomer</a>>xsd:string&lt;/VATNumberCustomer>
+  &lt;<a href='#m_VATNumberMerchant'>VATNumberMerchant</a>>xsd:string&lt;/VATNumberMerchant>
+  &lt;<a href='#m_XIID'>XIID</a>>xsd:string&lt;/XIID>
+&lt;/ITransactionHeader>
+</pre></td><td><b>JSON Example:</b><pre>{"ITransactionHeader":
+ {
+   "<a href='#m_AccountingDocNumber'>AccountingDocNumber</a>": String,
+   "<a href='#m_ActionCode'>ActionCode</a>": String,
+   "<a href='#m_AdditionalInfo'>AdditionalInfo</a>": String,
+   "<a href='#m_Amount'>Amount</a>": String,
+   "<a href='#m_AuthorizationCode'>AuthorizationCode</a>": String,
+   "<a href='#m_AuthorizationDate'>AuthorizationDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_AuthorizationReferenceCode'>AuthorizationReferenceCode</a>": String,
+   "<a href='#m_AuthorizationTime'>AuthorizationTime</a>": String,
+   "<a href='#m_AuthorizedThroughCartridge'>AuthorizedThroughCartridge</a>": String,
+   "<a href='#m_AVSAddress'>AVSAddress</a>": String,
+   "<a href='#m_AVSCode'>AVSCode</a>": String,
+   "<a href='#m_AVSZipCode'>AVSZipCode</a>": String,
+   "<a href='#m_BankBatchID'>BankBatchID</a>": String,
+   "<a href='#m_BankSubBatchID'>BankSubBatchID</a>": String,
+   "<a href='#m_BankTransactionID'>BankTransactionID</a>": String,
+   "<a href='#m_BatchID'>BatchID</a>": String,
+   "<a href='#m_BillingDate'>BillingDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_BillingPlanItem'>BillingPlanItem</a>": String,
+   "<a href='#m_BlobItems'>BlobItems</a>": <a href='../../../paymetric/xipaysoap30/message/ArrayOfBlobItem.html'>ArrayOfBlobItem</a>,
+   "<a href='#m_CaptureDate'>CaptureDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_CaptureReferenceCode'>CaptureReferenceCode</a>": String,
+   "<a href='#m_CardCVV2'>CardCVV2</a>": String,
+   "<a href='#m_CardDataSource'>CardDataSource</a>": String,
+   "<a href='#m_CardExpirationDate'>CardExpirationDate</a>": String,
+   "<a href='#m_CardFollowOnNumber'>CardFollowOnNumber</a>": String,
+   "<a href='#m_CardHolderAddress1'>CardHolderAddress1</a>": String,
+   "<a href='#m_CardHolderAddress2'>CardHolderAddress2</a>": String,
+   "<a href='#m_CardHolderCity'>CardHolderCity</a>": String,
+   "<a href='#m_CardHolderCountry'>CardHolderCountry</a>": String,
+   "<a href='#m_CardHolderDistrict'>CardHolderDistrict</a>": String,
+   "<a href='#m_CardHolderName'>CardHolderName</a>": String,
+   "<a href='#m_CardHolderName1'>CardHolderName1</a>": String,
+   "<a href='#m_CardHolderName2'>CardHolderName2</a>": String,
+   "<a href='#m_CardHolderState'>CardHolderState</a>": String,
+   "<a href='#m_CardHolderZip'>CardHolderZip</a>": String,
+   "<a href='#m_CardNumber'>CardNumber</a>": String,
+   "<a href='#m_CardPresent'>CardPresent</a>": Number,
+   "<a href='#m_CardType'>CardType</a>": String,
+   "<a href='#m_CardValidFrom'>CardValidFrom</a>": String,
+   "<a href='#m_ChargeAmount'>ChargeAmount</a>": String,
+   "<a href='#m_CheckImages'>CheckImages</a>": <a href='../../../paymetric/xipaysoap30/message/ArrayOfCheckImage.html'>ArrayOfCheckImage</a>,
+   "<a href='#m_Client'>Client</a>": String,
+   "<a href='#m_CompanyCode'>CompanyCode</a>": String,
+   "<a href='#m_CreationDate'>CreationDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_CurrencyKey'>CurrencyKey</a>": String,
+   "<a href='#m_CustomerNumber'>CustomerNumber</a>": String,
+   "<a href='#m_CustTXN'>CustTXN</a>": String,
+   "<a href='#m_FiscalYear'>FiscalYear</a>": String,
+   "<a href='#m_GLAccount'>GLAccount</a>": String,
+   "<a href='#m_InfoItems'>InfoItems</a>": <a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a>,
+   "<a href='#m_LastModificationDate'>LastModificationDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_LineItems'>LineItems</a>": <a href='../../../paymetric/xipaysoap30/message/ArrayOfLineItem.html'>ArrayOfLineItem</a>,
+   "<a href='#m_LocationID'>LocationID</a>": String,
+   "<a href='#m_MerchantID'>MerchantID</a>": String,
+   "<a href='#m_MerchantTransactionID'>MerchantTransactionID</a>": String,
+   "<a href='#m_MerchantTXN'>MerchantTXN</a>": String,
+   "<a href='#m_Message'>Message</a>": String,
+   "<a href='#m_ModifiedStatus'>ModifiedStatus</a>": Number,
+   "<a href='#m_OrderDate'>OrderDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_OrderID'>OrderID</a>": String,
+   "<a href='#m_Origin'>Origin</a>": String,
+   "<a href='#m_PacketOperation'>PacketOperation</a>": Number,
+   "<a href='#m_PONumber'>PONumber</a>": String,
+   "<a href='#m_Preauthorized'>Preauthorized</a>": String,
+   "<a href='#m_ReferenceCode'>ReferenceCode</a>": String,
+   "<a href='#m_ReferenceLineItem'>ReferenceLineItem</a>": String,
+   "<a href='#m_ResponseCode'>ResponseCode</a>": String,
+   "<a href='#m_SalesDocNumber'>SalesDocNumber</a>": String,
+   "<a href='#m_SettlementAmount'>SettlementAmount</a>": String,
+   "<a href='#m_SettlementDate'>SettlementDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_SettlementReferenceCode'>SettlementReferenceCode</a>": String,
+   "<a href='#m_ShippingCaptureDate'>ShippingCaptureDate</a>": <a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_ShippingLocationID'>ShippingLocationID</a>": String,
+   "<a href='#m_ShippingMethod'>ShippingMethod</a>": String,
+   "<a href='#m_SourceSystemInfoItems'>SourceSystemInfoItems</a>": <a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a>,
+   "<a href='#m_StatusCode'>StatusCode</a>": Number,
+   "<a href='#m_StatusTXN'>StatusTXN</a>": String,
+   "<a href='#m_TaxLevel1'>TaxLevel1</a>": String,
+   "<a href='#m_TaxLevel2'>TaxLevel2</a>": String,
+   "<a href='#m_TaxLevel3'>TaxLevel3</a>": String,
+   "<a href='#m_TaxLevel4'>TaxLevel4</a>": String,
+   "<a href='#m_TerminalID'>TerminalID</a>": String,
+   "<a href='#m_TransactionID'>TransactionID</a>": String,
+   "<a href='#m_TransactionType'>TransactionType</a>": String,
+   "<a href='#m_VATNumberCustomer'>VATNumberCustomer</a>": String,
+   "<a href='#m_VATNumberMerchant'>VATNumberMerchant</a>": String,
+   "<a href='#m_XIID'>XIID</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_AccountingDocNumber'>AccountingDocNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ActionCode'>ActionCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AdditionalInfo'>AdditionalInfo</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Amount'>Amount</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AuthorizationCode'>AuthorizationCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AuthorizationDate'>AuthorizationDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AuthorizationReferenceCode'>AuthorizationReferenceCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AuthorizationTime'>AuthorizationTime</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AuthorizedThroughCartridge'>AuthorizedThroughCartridge</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AVSAddress'>AVSAddress</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AVSCode'>AVSCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_AVSZipCode'>AVSZipCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BankBatchID'>BankBatchID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BankSubBatchID'>BankSubBatchID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BankTransactionID'>BankTransactionID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BatchID'>BatchID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BillingDate'>BillingDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BillingPlanItem'>BillingPlanItem</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_BlobItems'>BlobItems</td><td><a href='../../../paymetric/xipaysoap30/message/ArrayOfBlobItem.html'>ArrayOfBlobItem</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CaptureDate'>CaptureDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CaptureReferenceCode'>CaptureReferenceCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardCVV2'>CardCVV2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardDataSource'>CardDataSource</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardExpirationDate'>CardExpirationDate</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardFollowOnNumber'>CardFollowOnNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderAddress1'>CardHolderAddress1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderAddress2'>CardHolderAddress2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderCity'>CardHolderCity</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderCountry'>CardHolderCountry</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderDistrict'>CardHolderDistrict</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderName'>CardHolderName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderName1'>CardHolderName1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderName2'>CardHolderName2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderState'>CardHolderState</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardHolderZip'>CardHolderZip</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardNumber'>CardNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardPresent'>CardPresent</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardType'>CardType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CardValidFrom'>CardValidFrom</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ChargeAmount'>ChargeAmount</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CheckImages'>CheckImages</td><td><a href='../../../paymetric/xipaysoap30/message/ArrayOfCheckImage.html'>ArrayOfCheckImage</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Client'>Client</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CompanyCode'>CompanyCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CreationDate'>CreationDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CurrencyKey'>CurrencyKey</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CustomerNumber'>CustomerNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_CustTXN'>CustTXN</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_FiscalYear'>FiscalYear</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_GLAccount'>GLAccount</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_InfoItems'>InfoItems</td><td><a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_LastModificationDate'>LastModificationDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_LineItems'>LineItems</td><td><a href='../../../paymetric/xipaysoap30/message/ArrayOfLineItem.html'>ArrayOfLineItem</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_LocationID'>LocationID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_MerchantID'>MerchantID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_MerchantTransactionID'>MerchantTransactionID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_MerchantTXN'>MerchantTXN</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Message'>Message</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ModifiedStatus'>ModifiedStatus</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_OrderDate'>OrderDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_OrderID'>OrderID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Origin'>Origin</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_PacketOperation'>PacketOperation</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_PONumber'>PONumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_Preauthorized'>Preauthorized</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ReferenceCode'>ReferenceCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ReferenceLineItem'>ReferenceLineItem</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ResponseCode'>ResponseCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SalesDocNumber'>SalesDocNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SettlementAmount'>SettlementAmount</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SettlementDate'>SettlementDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SettlementReferenceCode'>SettlementReferenceCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ShippingCaptureDate'>ShippingCaptureDate</td><td><a href='../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ShippingLocationID'>ShippingLocationID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_ShippingMethod'>ShippingMethod</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_SourceSystemInfoItems'>SourceSystemInfoItems</td><td><a href='../../../paymetric/xipaysoap30/message/ArrayOfInfoItem.html'>ArrayOfInfoItem</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_StatusCode'>StatusCode</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_StatusTXN'>StatusTXN</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TaxLevel1'>TaxLevel1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TaxLevel2'>TaxLevel2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TaxLevel3'>TaxLevel3</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TaxLevel4'>TaxLevel4</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TerminalID'>TerminalID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TransactionID'>TransactionID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_TransactionType'>TransactionType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_VATNumberCustomer'>VATNumberCustomer</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_VATNumberMerchant'>VATNumberMerchant</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_XIID'>XIID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

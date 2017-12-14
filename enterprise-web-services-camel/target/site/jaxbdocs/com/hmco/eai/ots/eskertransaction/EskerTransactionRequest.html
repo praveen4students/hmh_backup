@@ -1,0 +1,59 @@
+<HTML><HEAD><TITLE>XML element EskerTransactionRequest</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: EskerTransactionRequest</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}cpSfdcOrderNumber"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}soldToCustomer" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}shipToCustomer" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}attnLine" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}emailAddress" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}faxURL" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}customerPO"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}overrideFlag"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}dataIn1" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}dataIn2" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}dataIn3" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/EskerTransaction}poReceiptTimestamp" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;EskerTransactionRequest>
+  &lt;<a href='#m_attnLine'>attnLine</a>>xsd:string&lt;/attnLine>
+  &lt;<a href='#m_cpSfdcOrderNumber'>cpSfdcOrderNumber</a>>xsd:string&lt;/cpSfdcOrderNumber>
+  &lt;<a href='#m_customerPO'>customerPO</a>>xsd:string&lt;/customerPO>
+  &lt;<a href='#m_dataIn1'>dataIn1</a>>xsd:string&lt;/dataIn1>
+  &lt;<a href='#m_dataIn2'>dataIn2</a>>xsd:string&lt;/dataIn2>
+  &lt;<a href='#m_dataIn3'>dataIn3</a>>xsd:string&lt;/dataIn3>
+  &lt;<a href='#m_emailAddress'>emailAddress</a>>xsd:string&lt;/emailAddress>
+  &lt;<a href='#m_faxURL'>faxURL</a>>xsd:string&lt;/faxURL>
+  &lt;<a href='#m_overrideFlag'>overrideFlag</a>>xsd:boolean&lt;/overrideFlag>
+  &lt;<a href='#m_poReceiptTimestamp'>poReceiptTimestamp</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/poReceiptTimestamp>
+  &lt;<a href='#m_shipToCustomer'>shipToCustomer</a>>xsd:string&lt;/shipToCustomer>
+  &lt;<a href='#m_soldToCustomer'>soldToCustomer</a>>xsd:string&lt;/soldToCustomer>
+&lt;/EskerTransactionRequest>
+</pre></td><td><b>JSON Example:</b><pre>{"EskerTransactionRequest":
+ {
+   "<a href='#m_attnLine'>attnLine</a>": String,
+   "<a href='#m_cpSfdcOrderNumber'>cpSfdcOrderNumber</a>": String,
+   "<a href='#m_customerPO'>customerPO</a>": String,
+   "<a href='#m_dataIn1'>dataIn1</a>": String,
+   "<a href='#m_dataIn2'>dataIn2</a>": String,
+   "<a href='#m_dataIn3'>dataIn3</a>": String,
+   "<a href='#m_emailAddress'>emailAddress</a>": String,
+   "<a href='#m_faxURL'>faxURL</a>": String,
+   "<a href='#m_overrideFlag'>overrideFlag</a>": String,
+   "<a href='#m_poReceiptTimestamp'>poReceiptTimestamp</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_shipToCustomer'>shipToCustomer</a>": String,
+   "<a href='#m_soldToCustomer'>soldToCustomer</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_attnLine'>attnLine</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_cpSfdcOrderNumber'>cpSfdcOrderNumber</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_customerPO'>customerPO</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_dataIn1'>dataIn1</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_dataIn2'>dataIn2</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_dataIn3'>dataIn3</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_emailAddress'>emailAddress</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_faxURL'>faxURL</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_overrideFlag'>overrideFlag</td><td>xsd:boolean</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poReceiptTimestamp'>poReceiptTimestamp</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipToCustomer'>shipToCustomer</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldToCustomer'>soldToCustomer</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

@@ -1,0 +1,80 @@
+<HTML><HEAD><TITLE>XML element submitSampleResponse</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: submitSampleResponse</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="header">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element name="transactionID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}saleDate" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}orderSubTotal" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}taxAmount" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}shippingAmount" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}saleTotal" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}deliveredPricing" minOccurs="0"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+         &lt;element name="lineItem" maxOccurs="unbounded">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element name="lineNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="materialID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}quantity" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}listPrice" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}netPrice" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}discountPercent" minOccurs="0"/>
+                   &lt;element name="substituted" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}couponCode" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}contractPriceIndicator" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}discountAmount" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}promoAmount" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}freeGoodsIndicator" minOccurs="0"/>
+                   &lt;element name="lineItemError" minOccurs="0">
+                     &lt;complexType>
+                       &lt;complexContent>
+                         &lt;extension base="{http://www.hmco.com/EAI}error">
+                           &lt;sequence>
+                             &lt;element name="lineNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                           &lt;/sequence>
+                         &lt;/extension>
+                       &lt;/complexContent>
+                     &lt;/complexType>
+                   &lt;/element>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}deliveryInfo" maxOccurs="unbounded" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}deliveredPriceIndicator" minOccurs="0"/>
+                   &lt;element ref="{http://www.hmco.com/EAI/OTS/Material}subscriptionTerm" maxOccurs="unbounded" minOccurs="0"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;submitSampleResponse>
+  &lt;<a href='#m_header'>header</a>><a href='../../../../../com/hmco/eai/ots/order/SubmitSampleResponse.Header.html'>Header</a>&lt;/header>
+  zero or N[&lt;<a href='#m_lineItem'>lineItem</a>><a href='../../../../../com/hmco/eai/ots/order/SubmitSampleResponse.LineItem.html'>LineItem</a>&lt;/lineItem>]
+&lt;/submitSampleResponse>
+</pre></td><td><b>JSON Example:</b><pre>{"submitSampleResponse":
+ {
+   "<a href='#m_header'>header</a>": <a href='../../../../../com/hmco/eai/ots/order/SubmitSampleResponse.Header.html'>Header</a>,
+   "<a href='#m_lineItem'>lineItem</a>": [<a href='../../../../../com/hmco/eai/ots/order/SubmitSampleResponse.LineItem.html'>LineItem</a>],
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_header'>header</td><td><a href='../../../../../com/hmco/eai/ots/order/SubmitSampleResponse.Header.html'>Header</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineItem'>lineItem</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/order/SubmitSampleResponse.LineItem.html'>LineItem</a>]</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

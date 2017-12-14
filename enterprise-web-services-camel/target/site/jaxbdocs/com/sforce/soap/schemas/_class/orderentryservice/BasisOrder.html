@@ -1,0 +1,53 @@
+<HTML><HEAD><TITLE>XML element BasisOrder</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: BasisOrder</span></h2><p>Java class for BasisOrder complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="BasisOrder">
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="basisOrderUsed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="entryDivision" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="entryYear" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+         &lt;element name="hasEGood" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="lineList" type="{http://soap.sforce.com/schemas/class/OrderEntryService}BasisOrderLine" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element name="sfdcAccountId" type="{http://soap.sforce.com/schemas/class/OrderEntryService}ID" minOccurs="0"/>
+         &lt;element name="sfdcInternalOrderId" type="{http://soap.sforce.com/schemas/class/OrderEntryService}ID" minOccurs="0"/>
+         &lt;element name="sfdcOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="transactionType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;BasisOrder>
+  &lt;<a href='#m_basisOrderUsed'>basisOrderUsed</a>>xsd:boolean&lt;/basisOrderUsed>
+  &lt;<a href='#m_entryDivision'>entryDivision</a>>xsd:string&lt;/entryDivision>
+  &lt;<a href='#m_entryYear'>entryYear</a>>xsd:int&lt;/entryYear>
+  &lt;<a href='#m_hasEGood'>hasEGood</a>>xsd:boolean&lt;/hasEGood>
+  zero or N[&lt;<a href='#m_lineList'>lineList</a>><a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/BasisOrderLine.html'>BasisOrderLine</a>&lt;/lineList>]
+  &lt;<a href='#m_sfdcAccountId'>sfdcAccountId</a>>xsd:string&lt;/sfdcAccountId>
+  &lt;<a href='#m_sfdcInternalOrderId'>sfdcInternalOrderId</a>>xsd:string&lt;/sfdcInternalOrderId>
+  &lt;<a href='#m_sfdcOrderNumber'>sfdcOrderNumber</a>>xsd:string&lt;/sfdcOrderNumber>
+  &lt;<a href='#m_state'>state</a>>xsd:string&lt;/state>
+  &lt;<a href='#m_transactionType'>transactionType</a>>xsd:string&lt;/transactionType>
+&lt;/BasisOrder>
+</pre></td><td><b>JSON Example:</b><pre>{"BasisOrder":
+ {
+   "<a href='#m_basisOrderUsed'>basisOrderUsed</a>": Boolean,
+   "<a href='#m_entryDivision'>entryDivision</a>": String,
+   "<a href='#m_entryYear'>entryYear</a>": Number,
+   "<a href='#m_hasEGood'>hasEGood</a>": Boolean,
+   "<a href='#m_lineList'>lineList</a>": [<a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/BasisOrderLine.html'>BasisOrderLine</a>],
+   "<a href='#m_sfdcAccountId'>sfdcAccountId</a>": String,
+   "<a href='#m_sfdcInternalOrderId'>sfdcInternalOrderId</a>": String,
+   "<a href='#m_sfdcOrderNumber'>sfdcOrderNumber</a>": String,
+   "<a href='#m_state'>state</a>": String,
+   "<a href='#m_transactionType'>transactionType</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_basisOrderUsed'>basisOrderUsed</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_entryDivision'>entryDivision</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_entryYear'>entryYear</td><td>xsd:int</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_hasEGood'>hasEGood</td><td>xsd:boolean</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineList'>lineList</td><td>zero or N[<a href='../../../../../../com/sforce/soap/schemas/_class/orderentryservice/BasisOrderLine.html'>BasisOrderLine</a>]</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcAccountId'>sfdcAccountId</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcInternalOrderId'>sfdcInternalOrderId</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcOrderNumber'>sfdcOrderNumber</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_state'>state</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionType'>transactionType</td><td>xsd:string</td><td>false</td><td>true</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

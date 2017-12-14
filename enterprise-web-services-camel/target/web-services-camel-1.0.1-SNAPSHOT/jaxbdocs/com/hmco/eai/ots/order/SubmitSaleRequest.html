@@ -1,0 +1,47 @@
+<HTML><HEAD><TITLE>XML element submitSaleRequest</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: submitSaleRequest</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}submitSaleTranAction"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}saleHeader"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}saleLineItemList"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}creditCard" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}clientTransactionID" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}poNumber"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}submitForManualCorrection"/>
+         &lt;element name="tranType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;submitSaleRequest>
+  &lt;<a href='#m_clientTransactionID'>clientTransactionID</a>>xsd:string&lt;/clientTransactionID>
+  &lt;<a href='#m_creditCard'>creditCard</a>><a href='../../../../../com/hmco/eai/ots/order/CreditCard.html'>creditCard</a>&lt;/creditCard>
+  &lt;<a href='#m_poNumber'>poNumber</a>>xsd:string&lt;/poNumber>
+  &lt;<a href='#m_saleHeader'>saleHeader</a>><a href='../../../../../com/hmco/eai/ots/order/SaleHeader.html'>saleHeader</a>&lt;/saleHeader>
+  &lt;<a href='#m_saleLineItemList'>saleLineItemList</a>><a href='../../../../../com/hmco/eai/ots/order/SaleLineItemList.html'>saleLineItemList</a>&lt;/saleLineItemList>
+  &lt;<a href='#m_submitForManualCorrection'>submitForManualCorrection</a>>xsd:boolean&lt;/submitForManualCorrection>
+  &lt;<a href='#m_submitSaleTranAction'>submitSaleTranAction</a>>xsd:string&lt;/submitSaleTranAction>
+  &lt;<a href='#m_tranType'>tranType</a>>xsd:string&lt;/tranType>
+&lt;/submitSaleRequest>
+</pre></td><td><b>JSON Example:</b><pre>{"submitSaleRequest":
+ {
+   "<a href='#m_clientTransactionID'>clientTransactionID</a>": String,
+   "<a href='#m_creditCard'>creditCard</a>": <a href='../../../../../com/hmco/eai/ots/order/CreditCard.html'>creditCard</a>,
+   "<a href='#m_poNumber'>poNumber</a>": String,
+   "<a href='#m_saleHeader'>saleHeader</a>": <a href='../../../../../com/hmco/eai/ots/order/SaleHeader.html'>saleHeader</a>,
+   "<a href='#m_saleLineItemList'>saleLineItemList</a>": <a href='../../../../../com/hmco/eai/ots/order/SaleLineItemList.html'>saleLineItemList</a>,
+   "<a href='#m_submitForManualCorrection'>submitForManualCorrection</a>": Boolean,
+   "<a href='#m_submitSaleTranAction'>submitSaleTranAction</a>": String,
+   "<a href='#m_tranType'>tranType</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_clientTransactionID'>clientTransactionID</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_creditCard'>creditCard</td><td><a href='../../../../../com/hmco/eai/ots/order/CreditCard.html'>creditCard</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_poNumber'>poNumber</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_saleHeader'>saleHeader</td><td><a href='../../../../../com/hmco/eai/ots/order/SaleHeader.html'>saleHeader</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_saleLineItemList'>saleLineItemList</td><td><a href='../../../../../com/hmco/eai/ots/order/SaleLineItemList.html'>saleLineItemList</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_submitForManualCorrection'>submitForManualCorrection</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_submitSaleTranAction'>submitSaleTranAction</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_tranType'>tranType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

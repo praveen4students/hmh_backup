@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:ctx="http://www.springframework.org/schema/context"  
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+       xmlns:httpj="http://cxf.apache.org/transports/http-jetty/configuration"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cxfc="http://cxf.apache.org/core"
+       xsi:schemaLocation="
+           	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           	http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+           	http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+           	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+			http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+           	http://cxf.apache.org/transports/http-jetty/configuration http://cxf.apache.org/schemas/configuration/http-jetty.xsd
+           	http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+			http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+           	">
+                      
+    <!--Create a new SpringBus -->
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+<!-- 
+    <import resource="classpath:META-INF/cxf/osgi/cxf-extension-osgi.xml" />
+ -->
+
+    <!-- adding the feature to the bus-->
+    <cxfc:bus>
+        <cxfc:features>
+            <cxfc:logging/>
+        </cxfc:features>
+    </cxfc:bus> 
+
+
+	<!-- ENDPOINTS -->
+    <cxf:cxfEndpoint id="transactionExEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/transaction" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.TransactionEx"
+					endpointName="s:TransactionExEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices"              
+					>
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+			</cxf:properties>
+	</cxf:cxfEndpoint>
+    <cxf:cxfEndpoint id="customerExEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/customer" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.CustomerEx"
+					endpointName="s:CustomerExEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices"              
+					>
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+			</cxf:properties>
+	</cxf:cxfEndpoint>
+	<cxf:cxfEndpoint id="materialExEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/material" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.MaterialEx"
+					endpointName="s:MaterialExEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices">
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+				<entry key="jaxb-validation-event-handler">
+            		<bean class="hmh.util.MaterialSchemaValidator" />
+        		</entry>
+			</cxf:properties>
+	</cxf:cxfEndpoint>
+	<cxf:cxfEndpoint id="atpExEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/atp" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.ATPEx"
+					endpointName="s:ATPExEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices"              
+					>
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+			</cxf:properties>
+	</cxf:cxfEndpoint>
+					
+	<cxf:cxfEndpoint id="eskerEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/esker" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.EskerServices"
+					endpointName="s:EskerServicesEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices"              
+					>
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+			</cxf:properties>			
+	</cxf:cxfEndpoint>
+	<cxf:cxfEndpoint id="orderEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/order" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.Order"
+					endpointName="s:OrderEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices"              
+					>
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+			</cxf:properties>
+	</cxf:cxfEndpoint>
+	<cxf:cxfEndpoint id="orderExEndpoint"
+					address="http://0.0.0.0:${portNumber}/services/orderEx" 
+                    wsdlURL="META-INF/wsdl/EnterpriseWebServices.wsdl"
+                    serviceClass="com.hmco.eai.tibco.enterprisewebservices.OrderEx"
+					endpointName="s:OrderExEndpoint1"
+        			serviceName="s:EnterpriseWebServices.serviceagent"
+        			xmlns:s="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices"              
+					>
+			<cxf:properties>
+				<entry key="schema-validation-enabled" value="true" />
+			</cxf:properties>
+	</cxf:cxfEndpoint>
+	
+
+	<!-- Defined JAXRS back end service  -->
+	<jaxrs:server id="restServices"
+			address="http://0.0.0.0:${portNumber}/rest" 
+			staticSubresourceResolution="true">
+		<jaxrs:serviceBeans>
+			<ref bean="transactionRESTBean"/>
+			<ref bean="customerRESTBean"/>
+			<ref bean="materialRESTBean"/>
+			<ref bean="orderRESTBean"/>
+			<ref bean="sapRESTBean"/>
+			<ref bean="cardRESTBean"/>
+		</jaxrs:serviceBeans>
+		       
+		<jaxrs:providers>
+			<ref bean="jsonProvider"/>
+		</jaxrs:providers>
+	</jaxrs:server>
+
+
+	<jaxrs:server id="restCustomerService"
+			address="/customer"
+	>
+<!-- 
+			address="http://0.0.0.0:${portNumber}/rest/customer" 
+			staticSubresourceResolution="true">
+ -->
+		<jaxrs:serviceBeans>
+			<ref bean="customerRESTBean"/>
+		</jaxrs:serviceBeans>
+<!-- 
+		<jaxrs:providers>
+			<ref bean="jsonProvider"/>
+		</jaxrs:providers>
+
+        <jaxrs:features>
+            <cxfc:logging/>
+        </jaxrs:features>		
+ -->
+	</jaxrs:server>
+
+ 
+	<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.JSONProvider">
+		<property name="ignoreNamespaces" value="true"/>
+	</bean>
+	
+
+	<!--  
+		activemq setup
+	-->
+	<bean id="jmsConnectionFactory" 
+	   class="org.apache.activemq.ActiveMQConnectionFactory">
+	   <property name="brokerURL" value="tcp://localhost:61616" />
+	</bean>	
+	<bean id="pooledConnectionFactory" 
+	   class="org.apache.activemq.pool.PooledConnectionFactory" init-method="start" destroy-method="stop">
+	   <property name="maxConnections" value="8" />
+	   <property name="connectionFactory" ref="jmsConnectionFactory" />
+	</bean>	
+	<bean id="jmsConfig" 
+	   class="org.apache.camel.component.jms.JmsConfiguration">
+	   <property name="connectionFactory" ref="pooledConnectionFactory"/>
+	   <property name="concurrentConsumers" value="10"/>
+	</bean>	
+	<bean id="activemq" 
+	    class="org.apache.activemq.camel.component.ActiveMQComponent">
+	    <property name="configuration" ref="jmsConfig"/>
+	</bean>
+
+
+	<!-- REFERENCES beans -->
+	<osgi:reference id="hasherRef" bean-name="hasher" interface="com.hmh.util.hasher.Hasher" />	
+	<osgi:reference id="auditRef" bean-name="auditService" interface="com.hmh.util.audit.AuditService" />
+	<osgi:reference id="asyncRef" bean-name="asyncService" interface="com.hmh.util.async.AsyncService" />
+	<osgi:reference id="configAdmin" interface="org.osgi.service.cm.ConfigurationAdmin" />
+	
+
+	<!-- ROUTES -->    
+    <bean id="transactionRoutes" class="hmh.ws.services.TransactionRoutes" />
+    <bean id="customerRoutes" class="hmh.ws.services.CustomerRoutes">
+		<property name="asyncService" ref="asyncRef"/>
+    </bean>
+	<bean id="materialRoutes" class="hmh.ws.services.MaterialRoutes">
+		<property name="asyncService" ref="asyncRef"/>
+    </bean>
+    <bean id="orderRoutes" class="hmh.ws.services.OrderRoutes">
+		<property name="asyncService" ref="asyncRef"/>
+    </bean>
+    
+	<!-- CAMEL context -->
+    <camel:camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+
+    	<camel:routeBuilder ref="transactionRoutes" />
+    	<camel:routeBuilder ref="customerRoutes" />
+    	<camel:routeBuilder ref="materialRoutes" />
+    	<camel:routeBuilder ref="orderRoutes" />
+<!-- 
+    	<camel:threadPool id="wireTapThreadPool" threadName="wiretap"
+    			poolSize="5" maxPoolSize="50"/>
+ -->
+    	<camel:endpoint id="sedaTransactionAudit" uri="seda:transactionAudit?concurrentConsumers=${transactionAuditConsumers}" />
+    	<camel:endpoint id="sedaCustomerAudit" uri="seda:customerAudit?concurrentConsumers=${customerAuditConsumers}" />
+    	<camel:endpoint id="sedaMaterialAudit" uri="seda:materialAudit?concurrentConsumers=${materialAuditConsumers}" />
+    	<camel:endpoint id="sedaOrderAudit" uri="seda:orderAudit?concurrentConsumers=${orderAuditConsumers}" />
+
+		<route>
+			<from ref="sedaTransactionAudit"/>
+			<bean ref="transactionImplBean" method="sendAudit"/>
+		</route>
+		<route>
+			<from ref="sedaCustomerAudit"/>
+			<bean ref="customerImplBean" method="sendAudit"/>
+		</route>
+		<route>
+			<from ref="sedaMaterialAudit"/>
+			<bean ref="materialImplBean" method="sendAudit"/>
+		</route>
+		<route>
+			<from ref="sedaOrderAudit"/>
+			<bean ref="orderImplBean" method="sendAudit"/>
+		</route>
+    	                       
+    </camel:camelContext>
+
+
+	<!--  IMPL beans -->
+	<bean id="transactionImplBean" class="hmh.ws.services.TransactionImpl">
+		<property name="bean" ref="transactionBean" />
+		<property name="hasher" ref="hasherRef" />
+		<property name="audit" ref="auditRef" />
+		<property name="camelContext" ref="camel" />			
+	</bean>
+	<bean id="customerImplBean" class="hmh.ws.services.CustomerImpl">
+		<property name="bean" ref="customerBean" />
+		<property name="hasher" ref="hasherRef" />
+		<property name="audit" ref="auditRef" />
+		<property name="camelContext" ref="camel" />			
+		<property name="sfdcBean" ref="sfdcLoginBean" />
+		<property name="asyncService" ref="asyncRef"/>
+	</bean>
+	<bean id="materialImplBean" class="hmh.ws.services.MaterialImpl">
+		<property name="bean" ref="materialBean" />
+		<property name="hasher" ref="hasherRef" />
+		<property name="audit" ref="auditRef" />
+		<property name="camelContext" ref="camel" />			
+		<property name="asyncService" ref="asyncRef"/>
+	</bean>
+	<bean id="orderImplBean" class="hmh.ws.services.OrderImpl">
+		<property name="bean" ref="orderBean" />
+		<property name="hasher" ref="hasherRef" />
+		<property name="audit" ref="auditRef" />
+		<property name="camelContext" ref="camel" />		
+		<property name="sfdcBean" ref="sfdcLoginBean" />	
+		<property name="asyncService" ref="asyncRef"/>
+	</bean>
+	
+	<!-- SAP beans -->
+	<bean id="transactionBean" class="hmh.ws.controller.TransactionBean">
+		<property name="sapSID" value="${sapSID}" />
+		<property name="sapClientId" value="${sapClientId}" />
+		<property name="sapUser" value="${sapUser}" />
+		<property name="sapPasswd" value="${sapPasswd}" />
+		<property name="sapHost" value="${sapHost}" />
+		<property name="sapSysNo" value="${sapSysNo}" />
+		<property name="sapMSHost" value="${sapMSHost}" />
+		<property name="sapR3Name" value="${sapR3Name}" />
+		<property name="sapGroup" value="${sapGroup}" />
+		<property name="sapMaxNumConn" value="${sapMaxNumConn}" />
+		<property name="sapTrace" value="${sapTrace}" />
+	</bean>	
+	<bean id="customerBean" class="hmh.ws.controller.CustomerBean">
+		<property name="sapSID" value="${sapSID}" />
+		<property name="sapClientId" value="${sapClientId}" />
+		<property name="sapUser" value="${sapUser}" />
+		<property name="sapPasswd" value="${sapPasswd}" />
+		<property name="sapHost" value="${sapHost}" />
+		<property name="sapSysNo" value="${sapSysNo}" />
+		<property name="sapMSHost" value="${sapMSHost}" />
+		<property name="sapR3Name" value="${sapR3Name}" />
+		<property name="sapGroup" value="${sapGroup}" />
+		<property name="sapMaxNumConn" value="${sapMaxNumConn}" />
+		<property name="sapTrace" value="${sapTrace}" />
+	</bean>
+	<bean id="materialBean" class="hmh.ws.controller.MaterialBean">
+		<property name="sapSID" value="${sapSID}" />
+		<property name="sapClientId" value="${sapClientId}" />
+		<property name="sapUser" value="${sapUser}" />
+		<property name="sapPasswd" value="${sapPasswd}" />
+		<property name="sapHost" value="${sapHost}" />
+		<property name="sapSysNo" value="${sapSysNo}" />
+		<property name="sapMSHost" value="${sapMSHost}" />
+		<property name="sapR3Name" value="${sapR3Name}" />
+		<property name="sapGroup" value="${sapGroup}" />
+		<property name="sapMaxNumConn" value="${sapMaxNumConn}" />
+		<property name="sapTrace" value="${sapTrace}" />
+	</bean>
+	<bean id="orderBean" class="hmh.ws.controller.OrderBean">
+		<property name="sapSID" value="${sapSID}" />
+		<property name="sapClientId" value="${sapClientId}" />
+		<property name="sapUser" value="${sapUser}" />
+		<property name="sapPasswd" value="${sapPasswd}" />
+		<property name="sapHost" value="${sapHost}" />
+		<property name="sapMSHost" value="${sapMSHost}" />
+		<property name="sapR3Name" value="${sapR3Name}" />
+		<property name="sapGroup" value="${sapGroup}" />
+		<property name="sapSysNo" value="${sapSysNo}" />
+		<property name="sapMaxNumConn" value="${sapMaxNumConn}" />
+		<property name="sapTrace" value="${sapTrace}" />
+	</bean>
+
+	<!-- SFDC Bean -->
+	<bean id="sfdcLoginBean" class="hmh.ws.controller.SfdcBean">
+		<property name="sfdcUrl" value="${sfdcUrl}" />
+		<property name="sfdcUserName" value="${sfdcUserName}" />
+		<property name="sfdcPassword" value="${sfdcPassword}" />
+	</bean>
+
+	<!--  REST Beans -->
+	<bean id="transactionRESTBean" class="hmh.rs.services.TransactionREST">
+		<property name="impl" ref="transactionImplBean" />
+	</bean>
+	<bean id="customerRESTBean" class="hmh.rs.services.CustomerREST">
+		<property name="impl" ref="customerImplBean" />
+	</bean>
+	<bean id="materialRESTBean" class="hmh.rs.services.MaterialREST">
+		<property name="impl" ref="materialImplBean" />
+	</bean>
+	<bean id="orderRESTBean" class="hmh.rs.services.OrderREST">
+		<property name="impl" ref="orderImplBean" />
+	</bean>
+ 
+ 	<bean id="sapRESTBean" class="hmh.rs.services.SapREST">
+		<property name="sapSID" value="${sapSID}" />
+		<property name="sapClientId" value="${sapClientId}" />
+		<property name="sapUser" value="${sapUser}" />
+		<property name="sapPasswd" value="${sapPasswd}" />
+		<property name="sapHost" value="${sapHost}" />
+		<property name="sapSysNo" value="${sapSysNo}" />
+		<property name="sapMSHost" value="${sapMSHost}" />
+		<property name="sapR3Name" value="${sapR3Name}" />
+		<property name="sapGroup" value="${sapGroup}" />		
+		<property name="sapMaxNumConn" value="${sapMaxNumConn}" />
+	</bean>
+	<bean id="cardRESTBean" class="hmh.rs.services.CardREST">
+		<property name="camelContext" ref="camel" />
+		<property name="configAdmin" ref="configAdmin" />
+		<property name="hasher" ref="hasherRef" />
+	
+		<property name="pmUrl" value="${pmUrl}" />
+		<property name="pmUser" value="${pmUser}" />
+		<property name="pmPass" value="${pmPass}" />
+		<property name="pmStatusCode" value="${pmStatusCode}" />
+		<property name="pmTr_Card_Cidrespcode" value="${pmTr_Card_Cidrespcode}" />
+		<property name="pmAvsCode" value="${pmAvsCode}" />
+	</bean>
+ 
+ 
+  	<httpj:engine-factory bus="cxf" id="engine-settings">
+	    <httpj:engine port="${portNumber}">
+			<httpj:connector>
+		      <beans:bean class="org.eclipse.jetty.server.bio.SocketConnector">
+		         <beans:property name = "port" value="${portNumber}" />
+		      </beans:bean>
+		    </httpj:connector>
+	  	</httpj:engine>
+	</httpj:engine-factory>      	
+
+</beans>

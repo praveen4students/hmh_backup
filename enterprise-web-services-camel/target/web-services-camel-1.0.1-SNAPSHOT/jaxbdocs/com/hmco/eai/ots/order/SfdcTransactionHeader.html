@@ -1,0 +1,71 @@
+<HTML><HEAD><TITLE>XML element sfdcTransactionHeader</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: sfdcTransactionHeader</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}couponCode" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}districtPid" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}effectiveDate" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}entryDivision" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}expirationDate" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}isPriceListOrderForm" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}sfdcTransactionLineItem" maxOccurs="unbounded" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}sfdcInternalOrderId" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}sfdcOrderNumber" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}shiptoCustomerId" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}soldtoCustomerId" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}transactionName" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}transactionStatus" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}transactionType" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}techContactEmail" minOccurs="0"/>
+         &lt;element ref="{http://www.hmco.com/EAI/OTS/Order}techContactName" minOccurs="0"/>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;sfdcTransactionHeader>
+  &lt;<a href='#m_couponCode'>couponCode</a>>xsd:string&lt;/couponCode>
+  &lt;<a href='#m_districtPid'>districtPid</a>>xsd:string&lt;/districtPid>
+  &lt;<a href='#m_effectiveDate'>effectiveDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/effectiveDate>
+  &lt;<a href='#m_entryDivision'>entryDivision</a>>xsd:string&lt;/entryDivision>
+  &lt;<a href='#m_expirationDate'>expirationDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/expirationDate>
+  &lt;<a href='#m_isPriceListOrderForm'>isPriceListOrderForm</a>>xsd:boolean&lt;/isPriceListOrderForm>
+  &lt;<a href='#m_sfdcInternalOrderId'>sfdcInternalOrderId</a>>xsd:string&lt;/sfdcInternalOrderId>
+  &lt;<a href='#m_sfdcOrderNumber'>sfdcOrderNumber</a>>xsd:string&lt;/sfdcOrderNumber>
+  zero or N[&lt;<a href='#m_sfdcTransactionLineItem'>sfdcTransactionLineItem</a>><a href='../../../../../com/hmco/eai/ots/order/SfdcTransactionLineItem.html'>sfdcTransactionLineItem</a>&lt;/sfdcTransactionLineItem>]
+  &lt;<a href='#m_shiptoCustomerId'>shiptoCustomerId</a>>xsd:string&lt;/shiptoCustomerId>
+  &lt;<a href='#m_soldtoCustomerId'>soldtoCustomerId</a>>xsd:string&lt;/soldtoCustomerId>
+  &lt;<a href='#m_techContactEmail'>techContactEmail</a>>xsd:string&lt;/techContactEmail>
+  &lt;<a href='#m_techContactName'>techContactName</a>>xsd:string&lt;/techContactName>
+  &lt;<a href='#m_transactionName'>transactionName</a>>xsd:string&lt;/transactionName>
+  &lt;<a href='#m_transactionStatus'>transactionStatus</a>>xsd:string&lt;/transactionStatus>
+  &lt;<a href='#m_transactionType'>transactionType</a>>xsd:string&lt;/transactionType>
+&lt;/sfdcTransactionHeader>
+</pre></td><td><b>JSON Example:</b><pre>{"sfdcTransactionHeader":
+ {
+   "<a href='#m_couponCode'>couponCode</a>": String,
+   "<a href='#m_districtPid'>districtPid</a>": String,
+   "<a href='#m_effectiveDate'>effectiveDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_entryDivision'>entryDivision</a>": String,
+   "<a href='#m_expirationDate'>expirationDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_isPriceListOrderForm'>isPriceListOrderForm</a>": Boolean,
+   "<a href='#m_sfdcInternalOrderId'>sfdcInternalOrderId</a>": String,
+   "<a href='#m_sfdcOrderNumber'>sfdcOrderNumber</a>": String,
+   "<a href='#m_sfdcTransactionLineItem'>sfdcTransactionLineItem</a>": [<a href='../../../../../com/hmco/eai/ots/order/SfdcTransactionLineItem.html'>sfdcTransactionLineItem</a>],
+   "<a href='#m_shiptoCustomerId'>shiptoCustomerId</a>": String,
+   "<a href='#m_soldtoCustomerId'>soldtoCustomerId</a>": String,
+   "<a href='#m_techContactEmail'>techContactEmail</a>": String,
+   "<a href='#m_techContactName'>techContactName</a>": String,
+   "<a href='#m_transactionName'>transactionName</a>": String,
+   "<a href='#m_transactionStatus'>transactionStatus</a>": String,
+   "<a href='#m_transactionType'>transactionType</a>": String,
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_couponCode'>couponCode</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_districtPid'>districtPid</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_effectiveDate'>effectiveDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_entryDivision'>entryDivision</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_expirationDate'>expirationDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_isPriceListOrderForm'>isPriceListOrderForm</td><td>xsd:boolean</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcInternalOrderId'>sfdcInternalOrderId</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcOrderNumber'>sfdcOrderNumber</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_sfdcTransactionLineItem'>sfdcTransactionLineItem</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/order/SfdcTransactionLineItem.html'>sfdcTransactionLineItem</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shiptoCustomerId'>shiptoCustomerId</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_soldtoCustomerId'>soldtoCustomerId</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_techContactEmail'>techContactEmail</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_techContactName'>techContactName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionName'>transactionName</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionStatus'>transactionStatus</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_transactionType'>transactionType</td><td>xsd:string</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>

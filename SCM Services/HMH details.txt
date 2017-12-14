@@ -1,0 +1,147 @@
+Token ID Usernames
+----------------------
+maryadar        -           Rajesh
+muthukumarr     -           Ramesh
+attoorv 1234
+karnatik 4444 
+CtsHmh1
+ 
+log:set DEBUG
+
+HDFC Complient No. 542919
+
+SVN Link for Eclipse
+-----------------------------
+link            :           svn://neduapp001/tibco/trunk/Apache_Camel
+
+userid          :           ramesh
+password        :           ramesh
+ 
+userid          :           praveen
+password        :           praveen1
+
+ 
+Maven Commands for Installing SAP Jars
+-------------------------------------------
+mvn install:install-file -Dfile=D:\Praveen\tools\SAP\sapjco.jar -DgroupId=com.sap -DartifactId=sapjco -Dversion=2.1.10 -Dpackaging=jar
+mvn install:install-file -Dfile=D:\Praveen\tools\SAP\sap-bundle.jar -DgroupId=com.sap -DartifactId=sap-bundle -Dversion=1.0 -Dpackaging=jar
+ 
+ 
+Stage DB Details
+------------------------
+MIG_LOOKUP_DB/HOST = jdbc:tibcosoftwareinc:oracle://blackhole.hmco.com:1521;SID=ORDEVLAD
+MIG_LOOKUP_DB/PWD = Pas$w0rd1
+MIG_LOOKUP_DB/USER = IC_COMMON_STG
+
+13, 14 17
+ 
+Devlopment Machine
+----------------------------------
+Hostname       =          neduapp001b
+Username       =          tibcoa
+Password       =          tibc123
+Protocol       =          SSH1
+Port           =          22
+
+pscp -pw tibc123 C:\Praveen\tools\workspace\hmhutil\target\hmhutil-1.0-SNAPSHOT-pscpTest.jar tibcoa@neduapp001b:/opt/tibcoa/local/fuse-esb-7.0.0.fuse-061/deploy
+ 
+Stage Machine
+----------------------------------
+Hostname       =          hmhaestapp01
+Username       =          tibco
+Password        =          gear.card.kidney
+Protocol          =          SSH2
+Port                 =          22
+ 
+ 
+Production Machine 1
+-----------------------------------
+Hostname       =          hmhaeapapp01
+Username       =          tibco
+Password        =          gear.card.kidney
+Protocol          =          SSH2
+Port                 =          22
+ 
+ 
+Production Machine 2
+-----------------------------------
+Hostname       =          hmhaeapapp02
+Username       =          tibco
+Password        =          gear.card.kidney
+Protocol          =          SSH2
+Port                 =          22
+ 
+For FuseESB
+--------------
+osgi:install -s mvn:org.springframework/spring-jdbc/3.0.7.RELEASE
+ 
+ 
+For Cygwin
+---------------
+246181@PC177262 /cygdrive
+$ cd d:/Praveen/tools/fuse-esb-7.0.0.fuse-061
+ 
+246181@PC177262 /cygdrive/d/Praveen/tools/fuse-esb-7.0.0.fuse-061
+$ cd d:/Praveen/tools/fuse-esb-7.0.0.fuse-061/data/log
+ 
+246181@PC177262 /cygdrive/d/Praveen/tools/fuse-esb-7.0.0.fuse-061/data/log
+$ tail -f fuseesb.log
+ 
+PATH Settings
+---------------
+JAVA_HOME = C:\Program Files\Java\jdk1.6.0_37
+ 
+Path = %JAVA_HOME%\bin;D:\Praveen\tools\apache-maven-3.0.4\bin;D:\Praveen\tools\ReferenceJars\sap-bundle.jar;D:\Praveen\tools\ReferenceJars\sapjco.jar
+ 
+ 
+SOAP UI
+-----------
+http://neduapp001b:7110/services/transaction?wsdl
+ 
+ 
+ 
+ 
+http://localhost:7110/services/transaction
+http://eaicamel-stg/services/transaction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://www.tube8.com/indian/indian-teen/547711/
+http://www.tube8.com/indian/casting-ruby-indian/370552/
+http://www.tube8.com/indian/indian-sex-in-india/7994/
+http://www.tube8.com/indian/amateur-mumbai-couple/189943/
+http://www.tube8.com/indian/mumbai-gal/39694/
+http://www.tube8.com/indian/indian-cam/39702/
+http://www.tube8.com/amateur/paki-dasi/215285/

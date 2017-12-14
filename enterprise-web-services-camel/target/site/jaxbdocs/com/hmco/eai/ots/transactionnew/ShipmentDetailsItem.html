@@ -1,0 +1,86 @@
+<HTML><HEAD><TITLE>XML element shipmentDetailsItem</TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD><BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><h2 class='classname'><span class='name'>Name: shipmentDetailsItem</span></h2><p>Java class for anonymous complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType>
+   &lt;complexContent>
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       &lt;sequence>
+         &lt;element name="shipmentNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="shipmentCharge" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="shipmentCarrier" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="shipmentServiceLevel" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         &lt;element name="shipmentWeight" type="{http://www.w3.org/2001/XMLSchema}double"/>
+         &lt;element name="totalPackages" type="{http://www.w3.org/2001/XMLSchema}int"/>
+         &lt;element name="docDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
+         &lt;element name="shippingDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+         &lt;element name="lineItem" maxOccurs="unbounded">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element name="lineNo" type="{http://www.w3.org/2001/XMLSchema}int"/>
+                   &lt;element name="transactionID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="transactionLineNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="materialID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+                   &lt;element name="isbn" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="fullDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="shipmentLocation" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double"/>
+                   &lt;element name="productDivision" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+         &lt;element name="trackingItem" maxOccurs="unbounded" minOccurs="0">
+           &lt;complexType>
+             &lt;complexContent>
+               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+                 &lt;sequence>
+                   &lt;element name="trackingNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="shippedDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
+                   &lt;element name="shipmentServiceLevel" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="destinationZip" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                   &lt;element name="weight" type="{http://www.w3.org/2001/XMLSchema}double"/>
+                   &lt;element name="trackingURL" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                 &lt;/sequence>
+               &lt;/restriction>
+             &lt;/complexContent>
+           &lt;/complexType>
+         &lt;/element>
+       &lt;/sequence>
+     &lt;/restriction>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+<P>
+<table class='examples'><tr><td><b>XML Example:</b><pre>&lt;shipmentDetailsItem>
+  &lt;<a href='#m_docDate'>docDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/docDate>
+  zero or N[&lt;<a href='#m_lineItem'>lineItem</a>><a href='../../../../../com/hmco/eai/ots/transactionnew/ShipmentDetailsItem.LineItem.html'>LineItem</a>&lt;/lineItem>]
+  &lt;<a href='#m_shipmentCarrier'>shipmentCarrier</a>>xsd:string&lt;/shipmentCarrier>
+  &lt;<a href='#m_shipmentCharge'>shipmentCharge</a>>xsd:double&lt;/shipmentCharge>
+  &lt;<a href='#m_shipmentNo'>shipmentNo</a>>xsd:string&lt;/shipmentNo>
+  &lt;<a href='#m_shipmentServiceLevel'>shipmentServiceLevel</a>>xsd:string&lt;/shipmentServiceLevel>
+  &lt;<a href='#m_shipmentWeight'>shipmentWeight</a>>xsd:double&lt;/shipmentWeight>
+  &lt;<a href='#m_shippingDate'>shippingDate</a>><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>&lt;/shippingDate>
+  &lt;<a href='#m_totalPackages'>totalPackages</a>>xsd:int&lt;/totalPackages>
+  zero or N[&lt;<a href='#m_trackingItem'>trackingItem</a>><a href='../../../../../com/hmco/eai/ots/transactionnew/ShipmentDetailsItem.TrackingItem.html'>TrackingItem</a>&lt;/trackingItem>]
+&lt;/shipmentDetailsItem>
+</pre></td><td><b>JSON Example:</b><pre>{"shipmentDetailsItem":
+ {
+   "<a href='#m_docDate'>docDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_lineItem'>lineItem</a>": [<a href='../../../../../com/hmco/eai/ots/transactionnew/ShipmentDetailsItem.LineItem.html'>LineItem</a>],
+   "<a href='#m_shipmentCarrier'>shipmentCarrier</a>": String,
+   "<a href='#m_shipmentCharge'>shipmentCharge</a>": Number,
+   "<a href='#m_shipmentNo'>shipmentNo</a>": String,
+   "<a href='#m_shipmentServiceLevel'>shipmentServiceLevel</a>": String,
+   "<a href='#m_shipmentWeight'>shipmentWeight</a>": Number,
+   "<a href='#m_shippingDate'>shippingDate</a>": <a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a>,
+   "<a href='#m_totalPackages'>totalPackages</a>": Number,
+   "<a href='#m_trackingItem'>trackingItem</a>": [<a href='../../../../../com/hmco/eai/ots/transactionnew/ShipmentDetailsItem.TrackingItem.html'>TrackingItem</a>],
+ }
+}
+</pre></td></tr></table><dl></dl><hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Required</th><th class='TableHeader'>Nillable</th><th class='TableHeader'>Default Value</th><th class='TableHeader'>Description</th></tr><tr><td id='m_docDate'>docDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_lineItem'>lineItem</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/transactionnew/ShipmentDetailsItem.LineItem.html'>LineItem</a>]</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipmentCarrier'>shipmentCarrier</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipmentCharge'>shipmentCharge</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipmentNo'>shipmentNo</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipmentServiceLevel'>shipmentServiceLevel</td><td>xsd:string</td><td>true</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shipmentWeight'>shipmentWeight</td><td>xsd:double</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_shippingDate'>shippingDate</td><td><a href='../../../../../javax/xml/datatype/XMLGregorianCalendar.html'>XMLGregorianCalendar</a></td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_totalPackages'>totalPackages</td><td>xsd:int</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr><tr><td id='m_trackingItem'>trackingItem</td><td>zero or N[<a href='../../../../../com/hmco/eai/ots/transactionnew/ShipmentDetailsItem.TrackingItem.html'>TrackingItem</a>]</td><td>false</td><td>false</td><td></td><td>&nbsp;</td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../index.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | attribute | value</td></tr></table><hr/><div class='footer'>Generated by <a href='http://www.lunatech-labs.com/open-source/jax-doclets'>Lunatech Labs jax-doclets</a> v0.10.0</div></BODY></HTML>
