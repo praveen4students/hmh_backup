@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:cts="http://www.hmco.com/EAI/CoreTechnicalServices"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.hmco.com/EAI/CoreTechnicalServices"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="messageHeader">
+		<complexType>
+			<sequence>
+				<element name="source" type="xsd:string"/>
+				<element name="destination" type="xsd:string"/>
+				<element name="ebsName" type="xsd:string" minOccurs="0"/>
+				<element name="eventID" type="xsd:string"/>
+				<element name="transactionID" type="xsd:string"/>
+				<element name="sourceSpecificHeaders" minOccurs="0">
+					<complexType>
+						<sequence minOccurs="0" maxOccurs="unbounded">
+							<element name="name" type="xsd:string"/>
+							<element name="value" type="xsd:string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="externalSqlSetup">
+		<complexType>
+			<sequence>
+				<element name="jdbcDriver" type="xsd:string"/>
+				<element name="jdbcConnectString" type="xsd:string"/>
+				<element name="user" type="xsd:string"/>
+				<element name="password" type="xsd:string"/>
+				<element name="sqlProcess" type="xsd:string"/>
+				<element name="sqlFile" type="xsd:string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="logMessage">
+		<sequence>
+			<element name="severity">
+				<simpleType>
+					<restriction base="xsd:string">
+						<enumeration value="debug"/>
+						<enumeration value="info"/>
+						<enumeration value="warn"/>
+						<enumeration value="error"/>
+						<enumeration value="fatal"/>
+						<enumeration value="audit"/>
+						<enumeration value="trail"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="sensitive" type="xsd:boolean" default="false"/>
+			<element name="componentName" type="xsd:string"/>
+			<element name="messageText" type="xsd:string" minOccurs="0"/>
+			<element name="payload" type="xsd:string" minOccurs="0"/>
+			<element name="evtActivityTimeStamp" type="xsd:dateTime"/>
+		</sequence>
+	</complexType>
+	<element name="logMessage" type="cts:logMessage"/>
+	<element name="errorMessage" type="cts:errorMessage" substitutionGroup="cts:logMessage"/>
+	<complexType name="errorMessage">
+		<complexContent>
+			<extension base="cts:logMessage">
+				<sequence>
+					<element name="errorType" type="xsd:string"/>
+					<element name="errorFamily">
+						<simpleType>
+							<restriction base="xsd:string">
+								<enumeration value="Business"/>
+								<enumeration value="System"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="errorStackTrace" type="xsd:string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="payloadInsertComponents">
+		<complexType>
+			<sequence>
+				<element name="defaultPayloadInsert" type="xsd:boolean"/>
+				<element name="components" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="componentName" type="xsd:string"/>
+							<element name="payloadInsert" type="xsd:boolean"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

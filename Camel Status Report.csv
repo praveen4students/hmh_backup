@@ -1,0 +1,17 @@
+Report for 2013/03/21,,,,,,,,,
+Camel WebService numbers per interface:,,,,,,,,,
+EBS_NM, SOURCE, DESTINATION, TRAN_TOTAL, AVG_RESPONSE_TIME,MED_RESPONSE_TIME,AVG_REQUEST_WAIT,MED_REQUEST_WAIT, MIN_REQUEST_WAIT, MAX_REQUEST_WAIT
+asyncPoll                                         ,WebService                                        ,SAP                                               ,4870,0.032,0.012,                ,                ,                ,
+EskerTransaction                                  ,WebService                                        ,SFDC                                              ,127,2.119,0.653,1.991,0.526,0.234,13.453
+getMaterialDetail                                 ,WebService                                        ,SAP                                               ,2,20.319,20.319,20.217,20.217,2.498,37.936
+submitSaleOrderEx                                 ,WebService                                        ,SAP                                               ,1292,13.33,4.741,13.271,4.595,0.309,479.801
+getTransactionDetail                              ,WebService                                        ,SAP                                               ,291,0.775,0.246,0.752,0.233,0.188,50.967
+asyncPoll                                         ,WebService                                        ,SAP                                               ,52,0.012,0.012,                ,                ,                ,
+GetCustomerDetail                                 ,WebService                                        ,SAP                                               ,4,15.428,0.381,0.337,0.283,0.26,0.467
+getMaterialDetail                                 ,WebService                                        ,SAP                                               ,4,17.254,2.769,2.602,2.621,2.274,2.912
+submitSaleOrderEx                                 ,WebService                                        ,SAP                                               ,34,4.771,3.007,4.628,2.761,0.442,26.068
+getTransactionDetail                              ,WebService                                        ,SAP                                               ,4,15.979,0.816,0.767,0.76,0.685,0.857
+REST Services numbers per interface:,,,,,,,,,
+EBS_NM, SOURCE, DESTINATION, TRAN_TOTAL, AVG_RESPONSE_TIME,MED_RESPONSE_TIME,AVG_REQUEST_WAIT,MED_REQUEST_WAIT, MIN_REQUEST_WAIT, MAX_REQUEST_WAIT
+OrderSubmit                                       ,WebService                                        ,SAP                                               ,6,2.398,2.365,2.397,2.363,2.035,2.779
+OrderSimulate                                     ,WebService                                        ,SAP                                               ,37,1.353,1.183,1.352,1.182,0.844,2.646

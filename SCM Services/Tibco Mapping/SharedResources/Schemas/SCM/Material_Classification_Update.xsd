@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Classification_Update_Requests">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Material_Number" minOccurs="0"/>
+				<xs:element ref="ATNAM" minOccurs="0"/>
+				<xs:element ref="ATWRT" minOccurs="0"/>
+				<xs:element ref="ATWTB" minOccurs="0"/>
+				<xs:element ref="iDocNumber" minOccurs="0"/>
+				<xs:element ref="Update_User" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Material_Number" type="xs:string"/>
+	<xs:element name="ATNAM" type="xs:string"/>
+	<xs:element name="ATWRT" type="xs:string"/>
+	<xs:element name="ATWTB" type="xs:string"/>
+	<xs:element name="iDocNumber" type="xs:string"/>
+	<xs:element name="Update_User" type="xs:string"/>
+	<xs:element name="Classfication_Update_Request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Classification_Update_Requests" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

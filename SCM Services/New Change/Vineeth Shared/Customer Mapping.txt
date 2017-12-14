@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx8:Customer xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx51="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/OTS_Legacy_Inbound_ADFFA" xmlns:pfx11="http://www.tibco.com/ns/no_namespace_schema_location/SharedResources/Schemas/AE Message/OUT_Schema_SubCustomerUpdateSFA_Intermidiate.xsd" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pfx8="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/OTS/Schema.xsd" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx61="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/OTS_Legacy_Outbound_ADFFA" xmlns:ns11="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx10="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPCustomerUpdateBanta_Schema" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:pfx9="http://www.hmco.com/schemas/sfa/customer_update" xmlns:pfx5="http://www.hmco.com/schemas/ddo/decode_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/decode_update" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx71="http://www.tibco.com/xmlns/ae2xsd/2002/05/Sub_CustomerUpdate" xmlns:pfx81="http://www.tibco.com/xmlns/ae2xsd/2002/05/Sub_CustomerUpdateBanta">
+    <xsl:attribute name="CustomerID">
+        <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KUNNR"/>
+    </xsl:attribute>
+    <xsl:attribute name="CustomerName">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/NAME1)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Status">
+        <xsl:value-of select="if ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;003&quot;) then &quot;I&quot;&#xA;else&#xA;if ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;004&quot; or $Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;009&quot; or $Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;005&quot;) &#xA;then &quot;A&quot;&#xA;else&#xA;()"/>
+    </xsl:attribute>
+    <xsl:attribute name="ClassCode">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KDKG1)"/>
+    </xsl:attribute>
+    <xsl:attribute name="ClassName">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZCLASSDESC)"/>
+    </xsl:attribute>
+    <xsl:attribute name="TypeCode">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KDKG2)"/>
+    </xsl:attribute>
+    <xsl:attribute name="TypeName">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZTYPEDESC)"/>
+    </xsl:attribute>
+    <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZMDRPID/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+        <xsl:attribute name="MDRPID">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZMDRPID)"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:attribute name="Old_MDR_PID">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/OLD__MDRPID)"/>
+    </xsl:attribute>
+    <xsl:attribute name="MDR_changed">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/MDRPID__CHANGED)"/>
+    </xsl:attribute>
+    <xsl:attribute name="HMH_ID">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/HMHID)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Old_HMH_ID">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/OLD__HMHID)"/>
+    </xsl:attribute>
+    <xsl:attribute name="HMH_ID_changed">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/HMHID__CHANGED)"/>
+    </xsl:attribute>
+    <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TELF1/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+        <xsl:attribute name="Telephone1">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TELF1)"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TELF2/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+        <xsl:attribute name="Telephone2">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TELF2)"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TELFX/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+        <xsl:attribute name="Fax">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TELFX)"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/E__MAIL/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+        <xsl:attribute name="EMail">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/E__MAIL)"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/LOCCO/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+        <xsl:attribute name="CollegeNumber">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/LOCCO)"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:attribute name="CustomerAccountGroup">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KTOKD)"/>
+    </xsl:attribute>
+    <xsl:attribute name="CentralOrderBlock">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/AUFSD)"/>
+    </xsl:attribute>
+    <xsl:attribute name="iDocNumber">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/EDI__DC/DOCNUM)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Update_User">
+        <xsl:value-of select="$_globalVariables/ns11:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+    </xsl:attribute>
+    <xsl:attribute name="SFARepID">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KONZS)"/>
+    </xsl:attribute>
+    <xsl:attribute name="POBox">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/PFACH)"/>
+    </xsl:attribute>
+    <xsl:attribute name="createDate_SAP">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ERDAT)"/>
+    </xsl:attribute>
+    <xsl:attribute name="createdBy_SAP">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ERNAM)"/>
+    </xsl:attribute>
+    <xsl:attribute name="PeriodAccntInd">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNB1M/item[1]/FIELDS/XAUSZ)"/>
+    </xsl:attribute>
+    <xsl:attribute name="DeliveredOrNot">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KDKG3)"/>
+    </xsl:attribute>
+    <xsl:attribute name="VendorAccntNumber">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/LIFNR)"/>
+    </xsl:attribute>
+    <xsl:attribute name="BillingBlockallSalesAreas">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/FAKSD)"/>
+    </xsl:attribute>
+    <xsl:attribute name="DeliveryBlockallSalesAreas">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/LIFSD)"/>
+    </xsl:attribute>
+    <xsl:attribute name="SendBoNotification">
+        <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZZBONOTIF"/>
+    </xsl:attribute>
+    <xsl:attribute name="JurisdictCode">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/TXJCD)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Industry">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/BRSCH)"/>
+    </xsl:attribute>
+    <xsl:attribute name="GeneraltermsofPayment">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNB1M/item[1]/FIELDS/ZTERM)"/>
+    </xsl:attribute>
+    <xsl:attribute name="TaxCountry">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNVVM/item[1]/CHILDREN/E1KNVIM/item[1]/FIELDS/ALAND)"/>
+    </xsl:attribute>
+    <xsl:attribute name="TaxCategory">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNVVM/item[1]/CHILDREN/E1KNVIM/item[1]/FIELDS/TATYP)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Licensenumber">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNVVM/item[1]/CHILDREN/E1KNVLM/item[1]/FIELDS/LICNR)"/>
+    </xsl:attribute>
+    <xsl:attribute name="LicensevalidFrom">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNVVM/item[1]/CHILDREN/E1KNVLM/item[1]/FIELDS/DATAB)"/>
+    </xsl:attribute>
+    <xsl:attribute name="LicensevalidTo">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNVVM/item[1]/CHILDREN/E1KNVLM/item[1]/FIELDS/DATBI)"/>
+    </xsl:attribute>
+    <xsl:attribute name="AddressFieldforeMail">
+        <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ADRNR"/>
+    </xsl:attribute>
+    <xsl:attribute name="CustomerClassadjMarket">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KUKLA)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Comments">
+        <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/REMARK"/>
+    </xsl:attribute>
+    <xsl:attribute name="DunnProcedure">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNB1M/item[1]/CHILDREN/E1KNB5M/item[1]/FIELDS/MAHNA)"/>
+    </xsl:attribute>
+    <xsl:attribute name="DunningClerk">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNB1M/item[1]/CHILDREN/E1KNB5M/item[1]/FIELDS/BUSAB)"/>
+    </xsl:attribute>
+    <xsl:attribute name="AcctgClerk">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNB1M/item[1]/FIELDS/BUSAB)"/>
+    </xsl:attribute>
+    <xsl:attribute name="BackorderChoice">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KDKG4)"/>
+    </xsl:attribute>
+    <xsl:attribute name="NoshipConsolidation">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KDKG5)"/>
+    </xsl:attribute>
+    <xsl:attribute name="AsneMail">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KATR9)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Accessorial1">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KATR6)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Accessorial2">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KATR7)"/>
+    </xsl:attribute>
+    <xsl:attribute name="Accessorial3">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/KATR8)"/>
+    </xsl:attribute>
+    <xsl:attribute name="ToleranceGroup">
+        <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNB1M/item[1]/FIELDS/TOGRU)"/>
+    </xsl:attribute>
+    <pfx8:Action>
+        <xsl:attribute name="Flag">
+            <xsl:value-of select="if ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;003&quot;) then &quot;DELETE&quot;&#xA;else&#xA;if ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;004&quot;) then &quot;CHANGE&quot;&#xA;else&#xA; if ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;005&quot; or $Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/MSGFN=&quot;009&quot;) then &quot;ADD&quot;&#xA;else&#xA;()"/>
+        </xsl:attribute>
+        <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+            <xsl:attribute name="DateTime">
+                <xsl:value-of select="(tib:create-dateTime(substring($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME,1,4),substring($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME,5,2),substring($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME,7,2),substring($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME,9,2),substring($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME,11,2),substring($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/ZDATETIME,13,2)))"/>
+            </xsl:attribute>
+        </xsl:if>
+    </pfx8:Action>
+    <pfx8:Address>
+        <xsl:attribute name="AddressLine1">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/STRAS)"/>
+        </xsl:attribute>
+        <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/STR__SUPPL1/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+            <xsl:attribute name="AddressLine2">
+                <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/STR__SUPPL1)"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="not($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/STR__SUPPL2/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+            <xsl:attribute name="AddressLine3">
+                <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/STR__SUPPL2)"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:attribute name="City">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/ORT01)"/>
+        </xsl:attribute>
+        <xsl:attribute name="State">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/REGIO)"/>
+        </xsl:attribute>
+        <xsl:attribute name="ZipCode">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/PSTLZ)"/>
+        </xsl:attribute>
+        <xsl:attribute name="CountyName">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/ORT02)"/>
+        </xsl:attribute>
+        <xsl:attribute name="CountryCode">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/FIELDS/LAND1)"/>
+        </xsl:attribute>
+        <xsl:attribute name="CountryName">
+            <xsl:value-of select="tib:trim($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1KNA1S01/item/FIELDS/LANDX)"/>
+        </xsl:attribute>
+    </pfx8:Address>
+    <xsl:for-each select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNVVM/item">
+        <pfx8:Divisional>
+            <xsl:attribute name="Division">
+                <xsl:value-of select="tib:trim(FIELDS/SPART)"/>
+            </xsl:attribute>
+            <xsl:if test="not(FIELDS/KLABC/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <xsl:attribute name="CustomerClassification">
+                    <xsl:value-of select="tib:trim(FIELDS/KLABC)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:attribute name="DiscountCode">
+                <xsl:value-of select="tib:trim(FIELDS/KONDA)"/>
+            </xsl:attribute>
+            <xsl:attribute name="DiscountDescription">
+                <xsl:value-of select="tib:trim(CHILDREN/Z1KNVVS01/item[1]/FIELDS/KONDA__TEXT)"/>
+            </xsl:attribute>
+            <xsl:attribute name="PaymentTermsCode">
+                <xsl:value-of select="tib:trim(FIELDS/ZTERM)"/>
+            </xsl:attribute>
+            <xsl:attribute name="PaymentTermsDescription">
+                <xsl:value-of select="tib:trim(CHILDREN/Z1KNVVS01/item[1]/FIELDS/ZTERM__TEXT)"/>
+            </xsl:attribute>
+            <xsl:attribute name="IncoTerm1">
+                <xsl:value-of select="tib:trim(FIELDS/INCO1)"/>
+            </xsl:attribute>
+            <xsl:attribute name="IncoTerm2">
+                <xsl:value-of select="tib:trim(FIELDS/INCO2)"/>
+            </xsl:attribute>
+            <xsl:attribute name="SanNum">
+                <xsl:value-of select="tib:trim(current()/FIELDS/EIKTO)"/>
+            </xsl:attribute>
+            <xsl:attribute name="DefaultBilltoCustomerID">
+                <xsl:value-of select="if (exists(CHILDREN/E1KNVPM/item[FIELDS/PARVW=&quot;BP&quot;])) then&#xA;CHILDREN/E1KNVPM/item[FIELDS/PARVW=&quot;BP&quot;]/FIELDS/KUNN2&#xA;else&#xA;()"/>
+            </xsl:attribute>
+            <xsl:attribute name="DefaultBilltoCustomerName">
+                <xsl:value-of select="tib:trim(current()/CHILDREN/Z1KNVVS01/item[1]/FIELDS/BILL__NAME1)"/>
+            </xsl:attribute>
+            <xsl:if test="not(FIELDS/VKBUR/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <xsl:attribute name="SalesOffice">
+                    <xsl:value-of select="tib:trim(FIELDS/VKBUR)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="not(FIELDS/VKGRP/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <xsl:attribute name="SalesGroup">
+                    <xsl:value-of select="tib:trim(FIELDS/VKGRP)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:attribute name="TerritoryCode">
+                <xsl:value-of select="tib:trim(FIELDS/BZIRK)"/>
+            </xsl:attribute>
+            <xsl:attribute name="CentralOrderBlock">
+                <xsl:value-of select="tib:trim(current()/FIELDS/AUFSD)"/>
+            </xsl:attribute>
+            <xsl:attribute name="OrderBlock">
+                <xsl:value-of select="tib:trim(current()/FIELDS/AUFSD)"/>
+            </xsl:attribute>
+            <xsl:attribute name="PriceGroup">
+                <xsl:value-of select="tib:trim(current()/FIELDS/KONDA)"/>
+            </xsl:attribute>
+            <xsl:attribute name="PriceList">
+                <xsl:value-of select="tib:trim(current()/FIELDS/PLTYP)"/>
+            </xsl:attribute>
+            <xsl:attribute name="CustomerDeliveryBlock">
+                <xsl:value-of select="tib:trim(current()/FIELDS/LIFSD)"/>
+            </xsl:attribute>
+            <xsl:attribute name="ShipperAccountNumber">
+                <xsl:value-of select="tib:trim(current()/FIELDS/EIKTO)"/>
+            </xsl:attribute>
+            <xsl:attribute name="ServiceLevel">
+                <xsl:value-of select="tib:trim(current()/CHILDREN/Z1KNVVS01/item/FIELDS/ZZSLEVEL)"/>
+            </xsl:attribute>
+            <xsl:attribute name="BillingBlockSelectedSalesArea">
+                <xsl:value-of select="tib:trim(FIELDS/FAKSD)"/>
+            </xsl:attribute>
+            <xsl:attribute name="OrderCombination">
+                <xsl:value-of select="tib:trim(FIELDS/KZAZU)"/>
+            </xsl:attribute>
+            <xsl:attribute name="SuppressedInvoiceProcessing">
+                <xsl:value-of select="tib:trim(FIELDS/MRNKZ)"/>
+            </xsl:attribute>
+            <xsl:attribute name="ShippingConditions">
+                <xsl:value-of select="tib:trim(FIELDS/VSBED)"/>
+            </xsl:attribute>
+            <xsl:attribute name="SubstitutionsAllowed">
+                <xsl:value-of select="tib:trim(FIELDS/KVGR3)"/>
+            </xsl:attribute>
+            <xsl:attribute name="FreightTerms">
+                <xsl:value-of select="tib:trim(FIELDS/KVGR4)"/>
+            </xsl:attribute>
+            <xsl:attribute name="DeliveringPlant">
+                <xsl:value-of select="tib:trim(FIELDS/VWERK)"/>
+            </xsl:attribute>
+            <xsl:attribute name="ContractPriceAllowed">
+                <xsl:value-of select="tib:trim(FIELDS/KVGR2)"/>
+            </xsl:attribute>
+            <xsl:attribute name="DeliveryPriority">
+                <xsl:value-of select="tib:trim(FIELDS/LPRIO)"/>
+            </xsl:attribute>
+            <xsl:attribute name="PartialDelvperItem">
+                <xsl:value-of select="tib:trim(FIELDS/KZTLF)"/>
+            </xsl:attribute>
+            <xsl:attribute name="CustomerGroup">
+                <xsl:value-of select="tib:trim(FIELDS/KDGRP)"/>
+            </xsl:attribute>
+            <xsl:choose>
+                <xsl:when test="exists(current()/CHILDREN/Z1KNVPM/item)">
+                    <xsl:for-each select="current()/CHILDREN/Z1KNVPM/item">
+                        <pfx8:SalesRepresentative>
+                            <xsl:attribute name="PartnerNumber">
+                                <xsl:value-of select="tib:trim(current()/FIELDS/KUNN2)"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="PartnerFunction">
+                                <xsl:value-of select="tib:trim(current()/FIELDS/PARVW)"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="DefaultPartner">
+                                <xsl:value-of select="tib:trim(current()/FIELDS/DEFPA)"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="ParnterDescription">
+                                <xsl:value-of select="tib:trim(current()/FIELDS/KNREF)"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="PartnerCounter">
+                                <xsl:value-of select="tib:trim(current()/FIELDS/PARZA)"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="MessageFunction">
+                                <xsl:value-of select="tib:trim(current()/FIELDS/MSGFN)"/>
+                            </xsl:attribute>
+                        </pfx8:SalesRepresentative>
+                    </xsl:for-each>
+                </xsl:when>
+            </xsl:choose>
+        </pfx8:Divisional>
+    </xsl:for-each>
+    <pfx8:Contact>
+        <xsl:if test="not(($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[1]/FIELDS/TELF1/@xsi:nil=(&quot;true&quot;)) or ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[1]/FIELDS/TELF1/@xsi:nil=(&quot;1&quot;)))">
+            <xsl:attribute name="Tel1">
+                <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[1]/FIELDS/TELF1"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="not(($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[2]/FIELDS/TELF1/@xsi:nil=(&quot;true&quot;)) or ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[2]/FIELDS/TELF1/@xsi:nil=(&quot;1&quot;)))">
+            <xsl:attribute name="Tel2">
+                <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[2]/FIELDS/TELF1"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="not(($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[3]/FIELDS/TELF1/@xsi:nil=(&quot;true&quot;)) or ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[3]/FIELDS/TELF1/@xsi:nil=(&quot;1&quot;)))">
+            <xsl:attribute name="Tel3">
+                <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1TELEP/item[3]/FIELDS/TELF1"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="not(($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[1]/FIELDS/E__MAIL/@xsi:nil=(&quot;true&quot;)) or ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[1]/FIELDS/E__MAIL/@xsi:nil=(&quot;1&quot;)))">
+            <xsl:attribute name="Email1">
+                <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[1]/FIELDS/E__MAIL"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="not(($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[2]/FIELDS/E__MAIL/@xsi:nil=(&quot;true&quot;)) or ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[2]/FIELDS/E__MAIL/@xsi:nil=(&quot;1&quot;)))">
+            <xsl:attribute name="Email2">
+                <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[2]/FIELDS/E__MAIL"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="not(($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[3]/FIELDS/E__MAIL/@xsi:nil=(&quot;true&quot;)) or ($Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[3]/FIELDS/E__MAIL/@xsi:nil=(&quot;1&quot;)))">
+            <xsl:attribute name="Email3">
+                <xsl:value-of select="$Start/pfx3:DEBMAS06-Z__CUSTOMER__UPD-4x/CHILDREN/E1KNA1M/item/CHILDREN/E1KNA11/item/CHILDREN/Z1EMAIL/item[3]/FIELDS/E__MAIL"/>
+            </xsl:attribute>
+        </xsl:if>
+    </pfx8:Contact>
+</pfx8:Customer>

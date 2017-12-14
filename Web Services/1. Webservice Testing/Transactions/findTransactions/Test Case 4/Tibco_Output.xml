@@ -1,0 +1,58 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <SOAP-ENV:Fault>
+         <faultcode>SOAP-ENV:Exception</faultcode>
+         <faultstring>An error occurred while processing SOAP request.</faultstring>
+         <faultactor/>
+         <detail>
+            <ns:transactionException xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/">
+               <ns1:errorList xmlns:ns1="http://www.hmco.com/EAI">
+                  <ns1:error>
+                     <ns1:errorCategory>1</ns1:errorCategory>
+                     <ns1:errorCode>100</ns1:errorCode>
+                     <ns1:errorMessage>Job-13171432 Error in [BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions.process/SOAPEventSource]
+Output data invalid
+	at com.tibco.pe.core.ProcessGroup.a(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.eval(Unknown Source)
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)
+caused by: org.xml.sax.SAXException: validation error: data "" is not a valid int.  A valid example is "-1, 0, 126789675, +100000".   ({com.tibco.xml.validation}SIMPLE_E_INVALID_VALUE_FOR_TYPE) at /inputMessage[1]/tran:transactionSearchCriteria[1]/tran:limitOfResults[1]
+com.tibco.xml.validation.exception.ValueParseException: data "" is not a valid int.  A valid example is "-1, 0, 126789675, +100000".
+	at com.tibco.xml.validation.state.glue.LegacySimpleValidator.string(LegacySimpleValidator.java:67)
+	at com.tibco.xml.validation.state.driver.ValidationJazz.d(ValidationJazz.java:1133)
+	at com.tibco.xml.validation.state.driver.ValidationJazz.endElement(ValidationJazz.java:482)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:97)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:92)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:92)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:129)
+	at com.tibco.xml.xdata.bind.BindingRunner.validate(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.a(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.eval(Unknown Source)
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)
+
+	at com.tibco.xml.xdata.bind.BindingRemarkHandler.assertNoErrors(Unknown Source)
+	at com.tibco.xml.xdata.bind.BindingRunner.validate(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.a(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.eval(Unknown Source)
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)</ns1:errorMessage>
+                  </ns1:error>
+               </ns1:errorList>
+            </ns:transactionException>
+         </detail>
+      </SOAP-ENV:Fault>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

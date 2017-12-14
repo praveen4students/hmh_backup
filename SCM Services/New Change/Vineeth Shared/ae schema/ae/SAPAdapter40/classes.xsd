@@ -1,0 +1,2288 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<schema xmlns:ns3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SAPAdapter40/classes" xmlns:ns2="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/scalar/ae" xmlns:ae="http://www.tibco.com/xmlns/ae2xsd/2002/05" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SAPAdapter40/classes" elementFormDefault="qualified" attributeFormDefault="qualified">
+    <import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/scalar/ae" schemaLocation="../scalar/ae.xsd"/>
+    <import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05" schemaLocation="../../ae2xsd.xsd"/>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.DiscoveryRequest" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/DiscoveryRequest" name="DiscoveryRequest">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="InstanceId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.DiscoveryResult" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/DiscoveryResult" name="DiscoveryResult">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="InstanceId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Version" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="R3SubjectName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DC" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DC" name="EDI__DC">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TABNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCREL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="4"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STATUS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="8"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DIRECT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPOR" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPRT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPRN" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVSAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="21"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVLAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STDVRS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STDMES" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESCOD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESFCT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="OUTMOD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TEST" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPOR" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPRT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPRN" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDSAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="21"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDLAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFINT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFGRP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFMES" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ARCKEY" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CREDAT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="8"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CRETIM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOCTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="8"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CIMTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="8"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPFC" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPFC" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SERIAL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="20"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="EXPRSS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DC40" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DC40" name="EDI__DC40">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TABNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCREL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="4"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STATUS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DIRECT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="OUTMOD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="EXPRSS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TEST" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOCTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CIMTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESCOD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESFCT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STDVRS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STDMES" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPOR" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPRT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPFC" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPRN" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDSAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="21"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDLAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPOR" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPRT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPFC" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPRN" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVSAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="21"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVLAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CREDAT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="8"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CRETIM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFINT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFGRP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFMES" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ARCKEY" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SERIAL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="20"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DC40-4x" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DC40-4x" name="EDI__DC40-4x">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TABNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCREL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="4"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STATUS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DIRECT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="OUTMOD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="EXPRSS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TEST" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOCTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CIMTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESTYP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESCOD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MESFCT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STDVRS" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="STDMES" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPOR" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPRT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPFC" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDPRN" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDSAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="21"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SNDLAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPOR" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPRT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPFC" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVPRN" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVSAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="21"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RCVLAD" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CREDAT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="8"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="CRETIM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFINT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFGRP" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="REFMES" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="14"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ARCKEY" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="70"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SERIAL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="20"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DD" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DD" name="EDI__DD">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TABNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="PSGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="HLEVEL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DTINT2" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SDATA" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1000"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DD40" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DD40" name="EDI__DD40">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="PSGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="HLEVEL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SDATA" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1000"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DD40-4x" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DD40-4x" name="EDI__DD40-4x">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="PSGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="HLEVEL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SDATA" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="1000"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DD40_HEAD-4x" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DD40_HEAD-4x" name="EDI__DD40__HEAD-4x">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="30"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="PSGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="HLEVEL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.EDI_DD_HEAD-3x" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/EDI_DD_HEAD-3x" name="EDI__DD__HEAD-3x">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TABNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="MANDT" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DOCNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="16"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="SEGNAM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="10"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="PSGNUM" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="6"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="HLEVEL" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DTINT2" form="unqualified" nillable="true" minOccurs="0">
+                <simpleType ae:type="char">
+                    <restriction base="ae:char">
+                        <maxLength value="2"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.IDOC_INBOUND_ASYNCHRONOUS" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/IDOC_INBOUND_ASYNCHRONOUS" name="IDOC__INBOUND__ASYNCHRONOUS">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOC__CONTROL__REC__40" form="unqualified" nillable="true" type="ns3:sequence_lsqb_EDI__DC40_rsqb_" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOC__DATA__REC__40" form="unqualified" nillable="true" type="ns3:sequence_lsqb_EDI__DD40_rsqb_" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.INBOUND_IDOC_PROCESS" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/INBOUND_IDOC_PROCESS" name="INBOUND__IDOC__PROCESS">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOC__CONTROL" form="unqualified" nillable="true" type="ns3:sequence_lsqb_EDI__DC_rsqb_" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="IDOC__DATA" form="unqualified" nillable="true" type="ns3:sequence_lsqb_EDI__DD_rsqb_" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.MAdvisoryDocument" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/MAdvisoryDocument" name="MAdvisoryDocument">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Name" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Version" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ReferenceId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DateTimeStamp" form="unqualified" nillable="true" type="ae:dateTime" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ApplicationId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ApplicationInstanceId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Class" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Severity" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Description" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Analysis" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Subject" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ApplicationContext" form="unqualified" nillable="true" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Data" form="unqualified" nillable="true" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.MBusinessDocument" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/MBusinessDocument" name="MBusinessDocument">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Name" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Version" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ReferenceId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DateTimeStamp" form="unqualified" nillable="true" type="ae:dateTime" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ApplicationId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ApplicationInstanceId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="LotId" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ComponentId" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Encrypted" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ReplyAddress" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ErrorAddress" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ConfirmCode" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Operation" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="ApplicationContext" form="unqualified" nillable="true" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="DataSection" form="unqualified" nillable="true" type="ns3:sequence_lsqb_MDataSection_rsqb_" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.MDataSection" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/MDataSection" name="MDataSection">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="Data" form="unqualified" nillable="true" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="VerbCode" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.MsgReport" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/MsgReport" name="MsgReport">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="service" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="info" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="error" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="hasException" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="sessionID" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.RFCCLOSURE" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/RFCCLOSURE" name="RFCCLOSURE">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="TID" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="bTransactional" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="GUID" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="packetSize" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="bUseCache" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="bMore" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="sessionID" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="bLogoutAfterCall" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="bQueue" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="qName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="qCount" form="unqualified" nillable="true" type="ae:ui4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="bClearCache" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="cacheDirection" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="maxRowCount" form="unqualified" nillable="true" type="ae:ui4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="currentRowCount" form="unqualified" nillable="true" type="ae:ui4" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.RFCClient" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/RFCClient" name="RFCClient">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="functions" form="unqualified" nillable="true" type="ns3:sequence_lsqb_rfcFunctions_rsqb_" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="isSubscribe" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.RFCServer" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/RFCServer" name="RFCServer">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="functions" form="unqualified" nillable="true" type="ns3:sequence_lsqb_rfcFunctions_rsqb_" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="isPublish" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.SAPConnectionInfo" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/SAPConnectionInfo" name="SAPConnectionInfo">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="RFC__MODE" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="r3release" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="hostname" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="gatewayHost" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="gatewayService" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="systemNo" form="unqualified" nillable="true" type="ae:i2" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="appServer" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.SAPUserInfo" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/SAPUserInfo" name="SAPUserInfo">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="client" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="userName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="password" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="language" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.SERVERINFO" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/SERVERINFO" name="SERVERINFO">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="SERVERNAME" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="SERVERHOST" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:default="" name="SERVICE" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.SERVERINFO-SEQUENCE" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/SERVERINFO-SEQUENCE" name="SERVERINFO-SEQUENCE">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" name="SEQ-SERVERINFO" form="unqualified" nillable="true" type="ns3:sequence_lsqb_SERVERINFO_rsqb_" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCClient^Logoff" name="__caret_reply_caret_RFCClient_caret_Logoff">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCClient^Logon" name="__caret_reply_caret_RFCClient_caret_Logon">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="sessionID" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCClient^add" name="__caret_reply_caret_RFCClient_caret_add">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCClient^getListByClassRef" name="__caret_reply_caret_RFCClient_caret_getListByClassRef">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ns3:sequence_lsqb_rfcFunctions_rsqb_" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCClient^remove" name="__caret_reply_caret_RFCClient_caret_remove">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCServer^add" name="__caret_reply_caret_RFCServer_caret_add">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCServer^getListByClassRef" name="__caret_reply_caret_RFCServer_caret_getListByClassRef">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ns3:sequence_lsqb_rfcFunctions_rsqb_" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^RFCServer^remove" name="__caret_reply_caret_RFCServer_caret_remove">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^admin^setTraceRole" name="__caret_reply_caret_admin_caret_setTraceRole">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocInbound^callMB" name="__caret_reply_caret_idocInbound_caret_callMB">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocInbound^set" name="__caret_reply_caret_idocInbound_caret_set">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocOutbound^callMB" name="__caret_reply_caret_idocOutbound_caret_callMB">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocOutbound^publish" name="__caret_reply_caret_idocOutbound_caret_publish">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocOutbound^set" name="__caret_reply_caret_idocOutbound_caret_set">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocParser^explode30" name="__caret_reply_caret_idocParser_caret_explode30">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocParser^explode40" name="__caret_reply_caret_idocParser_caret_explode40">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocParser^implode30" name="__caret_reply_caret_idocParser_caret_implode30">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^idocParser^implode40" name="__caret_reply_caret_idocParser_caret_implode40">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^r3Inbound^addInterface" name="__caret_reply_caret_r3Inbound_caret_addInterface">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^r3Inbound^getInterfaceList" name="__caret_reply_caret_r3Inbound_caret_getInterfaceList">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ns2:sequence_lsqb_string_rsqb_" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^r3OutBound^addInterface" name="__caret_reply_caret_r3OutBound_caret_addInterface">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^r3OutBound^getInterfaceList" name="__caret_reply_caret_r3OutBound_caret_getInterfaceList">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ns2:sequence_lsqb_string_rsqb_" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^sapConnect^accept" name="__caret_reply_caret_sapConnect_caret_accept">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^sapConnect^connect" name="__caret_reply_caret_sapConnect_caret_connect">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^sapConnect^getConnectionStates" name="__caret_reply_caret_sapConnect_caret_getConnectionStates">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^sapConnect^set" name="__caret_reply_caret_sapConnect_caret_set">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^sapIDocOperations^IDOC_INBOUND_ASYNCHRONOUS" name="__caret_reply_caret_sapIDocOperations_caret_IDOC__INBOUND__ASYNCHRONOUS">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^sapIDocOperations^INBOUND_IDOC_PROCESS" name="__caret_reply_caret_sapIDocOperations_caret_INBOUND__IDOC__PROCESS">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onCheckTid" name="__caret_reply_caret_tidManager_caret_onCheckTid">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onCommit" name="__caret_reply_caret_tidManager_caret_onCommit">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onConfirmInboundTid" name="__caret_reply_caret_tidManager_caret_onConfirmInboundTid">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onConfirmTid" name="__caret_reply_caret_tidManager_caret_onConfirmTid">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onCreateTid" name="__caret_reply_caret_tidManager_caret_onCreateTid">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onExecuteTid" name="__caret_reply_caret_tidManager_caret_onExecuteTid">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^onSearchTid" name="__caret_reply_caret_tidManager_caret_onSearchTid">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^tidManager^ping" name="__caret_reply_caret_tidManager_caret_ping">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^userExit^send" name="__caret_reply_caret_userExit_caret_send">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^reply^userExit^transform" name="__caret_reply_caret_userExit_caret_transform">
+        <complexContent>
+            <extension base="ae:new-operationReplyType">
+                <sequence>
+                    <element name="__caret_hasException_caret_" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+                    <element name="__caret_exceptionName_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_exceptionData_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_returnValue_caret_" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="__caret_closure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="__caret_userClosure_caret_" form="unqualified" nillable="true" type="anyType" minOccurs="0"/>
+                    <element name="inContext" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="inObject" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="outContext" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="outObject" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCClient^Logoff" name="__caret_request_caret_RFCClient_caret_Logoff">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="sessionID" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCClient^Logon" name="__caret_request_caret_RFCClient_caret_Logon">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="appServer" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="destination" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="groupName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="language" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="msgServer" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="number" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="password" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="systemName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="systemNumber" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="useLoadBalancing" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="useSAPRFCIni" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="userName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCClient^add" name="__caret_request_caret_RFCClient_caret_add">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="classRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="deploymentRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="name" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="rpcRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="serviceName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCClient^getListByClassRef" name="__caret_request_caret_RFCClient_caret_getListByClassRef">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="classRef" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCClient^remove" name="__caret_request_caret_RFCClient_caret_remove">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="functionName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCServer^add" name="__caret_request_caret_RFCServer_caret_add">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="classRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="deploymentRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="name" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="rpcRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="serviceName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCServer^getListByClassRef" name="__caret_request_caret_RFCServer_caret_getListByClassRef">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="classRef" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^RFCServer^remove" name="__caret_request_caret_RFCServer_caret_remove">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="functionName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^admin^setTraceRole" name="__caret_request_caret_admin_caret_setTraceRole">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="deployment" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="traceName" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="traceRole" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocInbound^callMB" name="__caret_request_caret_idocInbound_caret_callMB">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="schema" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocInbound^set" name="__caret_request_caret_idocInbound_caret_set">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="attribute" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocOutbound^callMB" name="__caret_request_caret_idocOutbound_caret_callMB">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="schema" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocOutbound^publish" name="__caret_request_caret_idocOutbound_caret_publish">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="producerRef" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="subjectName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocOutbound^set" name="__caret_request_caret_idocOutbound_caret_set">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="attribute" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocParser^explode30" name="__caret_request_caret_idocParser_caret_explode30">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocParser^explode40" name="__caret_request_caret_idocParser_caret_explode40">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocParser^implode30" name="__caret_request_caret_idocParser_caret_implode30">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^idocParser^implode40" name="__caret_request_caret_idocParser_caret_implode40">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="data" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^r3Inbound^addInterface" name="__caret_request_caret_r3Inbound_caret_addInterface">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="interfaceName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^r3Inbound^getInterfaceList" name="__caret_request_caret_r3Inbound_caret_getInterfaceList">
+        <complexContent>
+            <extension base="ae:new-operationRequestType"/>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^r3OutBound^addInterface" name="__caret_request_caret_r3OutBound_caret_addInterface">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="interfaceName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^r3OutBound^getInterfaceList" name="__caret_request_caret_r3OutBound_caret_getInterfaceList">
+        <complexContent>
+            <extension base="ae:new-operationRequestType"/>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^sapConnect^accept" name="__caret_request_caret_sapConnect_caret_accept">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="PollerInfo" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="ServerConnectionInfo" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^sapConnect^connect" name="__caret_request_caret_sapConnect_caret_connect">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="ClientConnectionInfo" form="unqualified" type="ns3:SAPConnectionInfo" minOccurs="0"/>
+                    <element name="UserInfo" form="unqualified" type="ns3:SAPUserInfo" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^sapConnect^getConnectionStates" name="__caret_request_caret_sapConnect_caret_getConnectionStates">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="sapInstance" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^sapConnect^set" name="__caret_request_caret_sapConnect_caret_set">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="attribute" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^sapIDocOperations^IDOC_INBOUND_ASYNCHRONOUS" name="__caret_request_caret_sapIDocOperations_caret_IDOC__INBOUND__ASYNCHRONOUS">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="IDOC__CONTROL__REC__40" form="unqualified" type="ns3:sequence_lsqb_EDI__DC40_rsqb_" minOccurs="0"/>
+                    <element name="IDOC__DATA__REC__40" form="unqualified" type="ns3:sequence_lsqb_EDI__DD40_rsqb_" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^sapIDocOperations^INBOUND_IDOC_PROCESS" name="__caret_request_caret_sapIDocOperations_caret_INBOUND__IDOC__PROCESS">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="IDOC__CONTROL" form="unqualified" type="ns3:sequence_lsqb_EDI__DC_rsqb_" minOccurs="0"/>
+                    <element name="IDOC__DATA" form="unqualified" type="ns3:sequence_lsqb_EDI__DD_rsqb_" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onCheckTid" name="__caret_request_caret_tidManager_caret_onCheckTid">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="guid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onCommit" name="__caret_request_caret_tidManager_caret_onCommit">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onConfirmInboundTid" name="__caret_request_caret_tidManager_caret_onConfirmInboundTid">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="trackid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onConfirmTid" name="__caret_request_caret_tidManager_caret_onConfirmTid">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onCreateTid" name="__caret_request_caret_tidManager_caret_onCreateTid">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="trackid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onExecuteTid" name="__caret_request_caret_tidManager_caret_onExecuteTid">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="trackid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                    <element name="tid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^onSearchTid" name="__caret_request_caret_tidManager_caret_onSearchTid">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="trackid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^tidManager^ping" name="__caret_request_caret_tidManager_caret_ping">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="trackid" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^userExit^send" name="__caret_request_caret_userExit_caret_send">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="inContext" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="inObject" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/^request^userExit^transform" name="__caret_request_caret_userExit_caret_transform">
+        <complexContent>
+            <extension base="ae:new-operationRequestType">
+                <sequence>
+                    <element name="inContext" form="unqualified" type="anyType" minOccurs="0"/>
+                    <element name="inObject" form="unqualified" type="anyType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.admin" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/admin" name="admin"/>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.idocInbound" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/idocInbound" name="idocInbound">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="idocParser" form="unqualified" nillable="true" type="ns3:idocParser" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="implode" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="consumerRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="userExitRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="idocOperations" form="unqualified" nillable="true" type="ns3:sapIDocOperations" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.idocOutbound" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/idocOutbound" name="idocOutbound">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="idocParser" form="unqualified" nillable="true" type="ns3:idocParser" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="explode" form="unqualified" nillable="true" type="ae:boolean" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="producerRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="userExitRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="idocOperations" form="unqualified" nillable="true" type="ns3:sapIDocOperations" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.idocParser" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/idocParser" name="idocParser"/>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.r3Inbound" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/r3Inbound" name="r3Inbound"/>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.r3OutBound" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/r3OutBound" name="r3OutBound"/>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.rfcFunctions" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/rfcFunctions" name="rfcFunctions">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="functionName" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="referenceClass" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="deploymentRef" form="unqualified" nillable="true" type="ae:string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.sapConnect" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/sapConnect" name="sapConnect">
+        <sequence>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="noOfConnections" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+            <element ae:readable="true" ae:writeable="true" ae:key="false" name="pollTime" form="unqualified" nillable="true" type="ae:i4" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.sapIDocOperations" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/sapIDocOperations" name="sapIDocOperations"/>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[EDI_DC40]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[EDI_DC40]" name="sequence_lsqb_EDI__DC40_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:EDI__DC40" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[EDI_DC]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[EDI_DC]" name="sequence_lsqb_EDI__DC_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:EDI__DC" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[EDI_DD40]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[EDI_DD40]" name="sequence_lsqb_EDI__DD40_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:EDI__DD40" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[EDI_DD]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[EDI_DD]" name="sequence_lsqb_EDI__DD_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:EDI__DD" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[MDataSection]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[MDataSection]" name="sequence_lsqb_MDataSection_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:MDataSection" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[SERVERINFO]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[SERVERINFO]" name="sequence_lsqb_SERVERINFO_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:SERVERINFO" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="sequence" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#sequence.sequence[rfcFunctions]" ae:isSequence="true" ae:typename="/tibco/public/sequence/ae/class/ae/SAPAdapter40/classes/sequence[rfcFunctions]" name="sequence_lsqb_rfcFunctions_rsqb_">
+        <sequence>
+            <element name="item" form="unqualified" type="ns3:rfcFunctions" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.tidManager" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/tidManager" name="tidManager"/>
+    <complexType ae:type="class" ae:directory="/AESchemas/ae/SAPAdapter40/classes.aeschema#class.userExit" ae:typename="/tibco/public/class/ae/SAPAdapter40/classes/userExit" name="userExit"/>
+    <element name="DiscoveryRequest" type="ns3:DiscoveryRequest"/>
+    <element name="DiscoveryResult" type="ns3:DiscoveryResult"/>
+    <element name="EDI__DC" type="ns3:EDI__DC"/>
+    <element name="EDI__DC40" type="ns3:EDI__DC40"/>
+    <element name="EDI__DC40-4x" type="ns3:EDI__DC40-4x"/>
+    <element name="EDI__DD" type="ns3:EDI__DD"/>
+    <element name="EDI__DD40" type="ns3:EDI__DD40"/>
+    <element name="EDI__DD40-4x" type="ns3:EDI__DD40-4x"/>
+    <element name="EDI__DD40__HEAD-4x" type="ns3:EDI__DD40__HEAD-4x"/>
+    <element name="EDI__DD__HEAD-3x" type="ns3:EDI__DD__HEAD-3x"/>
+    <element name="IDOC__INBOUND__ASYNCHRONOUS" type="ns3:IDOC__INBOUND__ASYNCHRONOUS"/>
+    <element name="INBOUND__IDOC__PROCESS" type="ns3:INBOUND__IDOC__PROCESS"/>
+    <element name="MAdvisoryDocument" type="ns3:MAdvisoryDocument"/>
+    <element name="MBusinessDocument" type="ns3:MBusinessDocument"/>
+    <element name="MDataSection" type="ns3:MDataSection"/>
+    <element name="MsgReport" type="ns3:MsgReport"/>
+    <element name="RFCCLOSURE" type="ns3:RFCCLOSURE"/>
+    <element name="RFCClient" type="ns3:RFCClient"/>
+    <element name="RFCServer" type="ns3:RFCServer"/>
+    <element name="SAPConnectionInfo" type="ns3:SAPConnectionInfo"/>
+    <element name="SAPUserInfo" type="ns3:SAPUserInfo"/>
+    <element name="SERVERINFO" type="ns3:SERVERINFO"/>
+    <element name="SERVERINFO-SEQUENCE" type="ns3:SERVERINFO-SEQUENCE"/>
+    <element name="__caret_reply_caret_RFCClient_caret_Logoff" type="ns3:__caret_reply_caret_RFCClient_caret_Logoff"/>
+    <element name="__caret_reply_caret_RFCClient_caret_Logon" type="ns3:__caret_reply_caret_RFCClient_caret_Logon"/>
+    <element name="__caret_reply_caret_RFCClient_caret_add" type="ns3:__caret_reply_caret_RFCClient_caret_add"/>
+    <element name="__caret_reply_caret_RFCClient_caret_getListByClassRef" type="ns3:__caret_reply_caret_RFCClient_caret_getListByClassRef"/>
+    <element name="__caret_reply_caret_RFCClient_caret_remove" type="ns3:__caret_reply_caret_RFCClient_caret_remove"/>
+    <element name="__caret_reply_caret_RFCServer_caret_add" type="ns3:__caret_reply_caret_RFCServer_caret_add"/>
+    <element name="__caret_reply_caret_RFCServer_caret_getListByClassRef" type="ns3:__caret_reply_caret_RFCServer_caret_getListByClassRef"/>
+    <element name="__caret_reply_caret_RFCServer_caret_remove" type="ns3:__caret_reply_caret_RFCServer_caret_remove"/>
+    <element name="__caret_reply_caret_admin_caret_setTraceRole" type="ns3:__caret_reply_caret_admin_caret_setTraceRole"/>
+    <element name="__caret_reply_caret_idocInbound_caret_callMB" type="ns3:__caret_reply_caret_idocInbound_caret_callMB"/>
+    <element name="__caret_reply_caret_idocInbound_caret_set" type="ns3:__caret_reply_caret_idocInbound_caret_set"/>
+    <element name="__caret_reply_caret_idocOutbound_caret_callMB" type="ns3:__caret_reply_caret_idocOutbound_caret_callMB"/>
+    <element name="__caret_reply_caret_idocOutbound_caret_publish" type="ns3:__caret_reply_caret_idocOutbound_caret_publish"/>
+    <element name="__caret_reply_caret_idocOutbound_caret_set" type="ns3:__caret_reply_caret_idocOutbound_caret_set"/>
+    <element name="__caret_reply_caret_idocParser_caret_explode30" type="ns3:__caret_reply_caret_idocParser_caret_explode30"/>
+    <element name="__caret_reply_caret_idocParser_caret_explode40" type="ns3:__caret_reply_caret_idocParser_caret_explode40"/>
+    <element name="__caret_reply_caret_idocParser_caret_implode30" type="ns3:__caret_reply_caret_idocParser_caret_implode30"/>
+    <element name="__caret_reply_caret_idocParser_caret_implode40" type="ns3:__caret_reply_caret_idocParser_caret_implode40"/>
+    <element name="__caret_reply_caret_r3Inbound_caret_addInterface" type="ns3:__caret_reply_caret_r3Inbound_caret_addInterface"/>
+    <element name="__caret_reply_caret_r3Inbound_caret_getInterfaceList" type="ns3:__caret_reply_caret_r3Inbound_caret_getInterfaceList"/>
+    <element name="__caret_reply_caret_r3OutBound_caret_addInterface" type="ns3:__caret_reply_caret_r3OutBound_caret_addInterface"/>
+    <element name="__caret_reply_caret_r3OutBound_caret_getInterfaceList" type="ns3:__caret_reply_caret_r3OutBound_caret_getInterfaceList"/>
+    <element name="__caret_reply_caret_sapConnect_caret_accept" type="ns3:__caret_reply_caret_sapConnect_caret_accept"/>
+    <element name="__caret_reply_caret_sapConnect_caret_connect" type="ns3:__caret_reply_caret_sapConnect_caret_connect"/>
+    <element name="__caret_reply_caret_sapConnect_caret_getConnectionStates" type="ns3:__caret_reply_caret_sapConnect_caret_getConnectionStates"/>
+    <element name="__caret_reply_caret_sapConnect_caret_set" type="ns3:__caret_reply_caret_sapConnect_caret_set"/>
+    <element name="__caret_reply_caret_sapIDocOperations_caret_IDOC__INBOUND__ASYNCHRONOUS" type="ns3:__caret_reply_caret_sapIDocOperations_caret_IDOC__INBOUND__ASYNCHRONOUS"/>
+    <element name="__caret_reply_caret_sapIDocOperations_caret_INBOUND__IDOC__PROCESS" type="ns3:__caret_reply_caret_sapIDocOperations_caret_INBOUND__IDOC__PROCESS"/>
+    <element name="__caret_reply_caret_tidManager_caret_onCheckTid" type="ns3:__caret_reply_caret_tidManager_caret_onCheckTid"/>
+    <element name="__caret_reply_caret_tidManager_caret_onCommit" type="ns3:__caret_reply_caret_tidManager_caret_onCommit"/>
+    <element name="__caret_reply_caret_tidManager_caret_onConfirmInboundTid" type="ns3:__caret_reply_caret_tidManager_caret_onConfirmInboundTid"/>
+    <element name="__caret_reply_caret_tidManager_caret_onConfirmTid" type="ns3:__caret_reply_caret_tidManager_caret_onConfirmTid"/>
+    <element name="__caret_reply_caret_tidManager_caret_onCreateTid" type="ns3:__caret_reply_caret_tidManager_caret_onCreateTid"/>
+    <element name="__caret_reply_caret_tidManager_caret_onExecuteTid" type="ns3:__caret_reply_caret_tidManager_caret_onExecuteTid"/>
+    <element name="__caret_reply_caret_tidManager_caret_onSearchTid" type="ns3:__caret_reply_caret_tidManager_caret_onSearchTid"/>
+    <element name="__caret_reply_caret_tidManager_caret_ping" type="ns3:__caret_reply_caret_tidManager_caret_ping"/>
+    <element name="__caret_reply_caret_userExit_caret_send" type="ns3:__caret_reply_caret_userExit_caret_send"/>
+    <element name="__caret_reply_caret_userExit_caret_transform" type="ns3:__caret_reply_caret_userExit_caret_transform"/>
+    <element name="__caret_request_caret_RFCClient_caret_Logoff" type="ns3:__caret_request_caret_RFCClient_caret_Logoff"/>
+    <element name="__caret_request_caret_RFCClient_caret_Logon" type="ns3:__caret_request_caret_RFCClient_caret_Logon"/>
+    <element name="__caret_request_caret_RFCClient_caret_add" type="ns3:__caret_request_caret_RFCClient_caret_add"/>
+    <element name="__caret_request_caret_RFCClient_caret_getListByClassRef" type="ns3:__caret_request_caret_RFCClient_caret_getListByClassRef"/>
+    <element name="__caret_request_caret_RFCClient_caret_remove" type="ns3:__caret_request_caret_RFCClient_caret_remove"/>
+    <element name="__caret_request_caret_RFCServer_caret_add" type="ns3:__caret_request_caret_RFCServer_caret_add"/>
+    <element name="__caret_request_caret_RFCServer_caret_getListByClassRef" type="ns3:__caret_request_caret_RFCServer_caret_getListByClassRef"/>
+    <element name="__caret_request_caret_RFCServer_caret_remove" type="ns3:__caret_request_caret_RFCServer_caret_remove"/>
+    <element name="__caret_request_caret_admin_caret_setTraceRole" type="ns3:__caret_request_caret_admin_caret_setTraceRole"/>
+    <element name="__caret_request_caret_idocInbound_caret_callMB" type="ns3:__caret_request_caret_idocInbound_caret_callMB"/>
+    <element name="__caret_request_caret_idocInbound_caret_set" type="ns3:__caret_request_caret_idocInbound_caret_set"/>
+    <element name="__caret_request_caret_idocOutbound_caret_callMB" type="ns3:__caret_request_caret_idocOutbound_caret_callMB"/>
+    <element name="__caret_request_caret_idocOutbound_caret_publish" type="ns3:__caret_request_caret_idocOutbound_caret_publish"/>
+    <element name="__caret_request_caret_idocOutbound_caret_set" type="ns3:__caret_request_caret_idocOutbound_caret_set"/>
+    <element name="__caret_request_caret_idocParser_caret_explode30" type="ns3:__caret_request_caret_idocParser_caret_explode30"/>
+    <element name="__caret_request_caret_idocParser_caret_explode40" type="ns3:__caret_request_caret_idocParser_caret_explode40"/>
+    <element name="__caret_request_caret_idocParser_caret_implode30" type="ns3:__caret_request_caret_idocParser_caret_implode30"/>
+    <element name="__caret_request_caret_idocParser_caret_implode40" type="ns3:__caret_request_caret_idocParser_caret_implode40"/>
+    <element name="__caret_request_caret_r3Inbound_caret_addInterface" type="ns3:__caret_request_caret_r3Inbound_caret_addInterface"/>
+    <element name="__caret_request_caret_r3Inbound_caret_getInterfaceList" type="ns3:__caret_request_caret_r3Inbound_caret_getInterfaceList"/>
+    <element name="__caret_request_caret_r3OutBound_caret_addInterface" type="ns3:__caret_request_caret_r3OutBound_caret_addInterface"/>
+    <element name="__caret_request_caret_r3OutBound_caret_getInterfaceList" type="ns3:__caret_request_caret_r3OutBound_caret_getInterfaceList"/>
+    <element name="__caret_request_caret_sapConnect_caret_accept" type="ns3:__caret_request_caret_sapConnect_caret_accept"/>
+    <element name="__caret_request_caret_sapConnect_caret_connect" type="ns3:__caret_request_caret_sapConnect_caret_connect"/>
+    <element name="__caret_request_caret_sapConnect_caret_getConnectionStates" type="ns3:__caret_request_caret_sapConnect_caret_getConnectionStates"/>
+    <element name="__caret_request_caret_sapConnect_caret_set" type="ns3:__caret_request_caret_sapConnect_caret_set"/>
+    <element name="__caret_request_caret_sapIDocOperations_caret_IDOC__INBOUND__ASYNCHRONOUS" type="ns3:__caret_request_caret_sapIDocOperations_caret_IDOC__INBOUND__ASYNCHRONOUS"/>
+    <element name="__caret_request_caret_sapIDocOperations_caret_INBOUND__IDOC__PROCESS" type="ns3:__caret_request_caret_sapIDocOperations_caret_INBOUND__IDOC__PROCESS"/>
+    <element name="__caret_request_caret_tidManager_caret_onCheckTid" type="ns3:__caret_request_caret_tidManager_caret_onCheckTid"/>
+    <element name="__caret_request_caret_tidManager_caret_onCommit" type="ns3:__caret_request_caret_tidManager_caret_onCommit"/>
+    <element name="__caret_request_caret_tidManager_caret_onConfirmInboundTid" type="ns3:__caret_request_caret_tidManager_caret_onConfirmInboundTid"/>
+    <element name="__caret_request_caret_tidManager_caret_onConfirmTid" type="ns3:__caret_request_caret_tidManager_caret_onConfirmTid"/>
+    <element name="__caret_request_caret_tidManager_caret_onCreateTid" type="ns3:__caret_request_caret_tidManager_caret_onCreateTid"/>
+    <element name="__caret_request_caret_tidManager_caret_onExecuteTid" type="ns3:__caret_request_caret_tidManager_caret_onExecuteTid"/>
+    <element name="__caret_request_caret_tidManager_caret_onSearchTid" type="ns3:__caret_request_caret_tidManager_caret_onSearchTid"/>
+    <element name="__caret_request_caret_tidManager_caret_ping" type="ns3:__caret_request_caret_tidManager_caret_ping"/>
+    <element name="__caret_request_caret_userExit_caret_send" type="ns3:__caret_request_caret_userExit_caret_send"/>
+    <element name="__caret_request_caret_userExit_caret_transform" type="ns3:__caret_request_caret_userExit_caret_transform"/>
+    <element name="idocInbound" type="ns3:idocInbound"/>
+    <element name="idocOutbound" type="ns3:idocOutbound"/>
+    <element name="rfcFunctions" type="ns3:rfcFunctions"/>
+    <element name="sapConnect" type="ns3:sapConnect"/>
+    <element name="sequence_lsqb_EDI__DC40_rsqb_" type="ns3:sequence_lsqb_EDI__DC40_rsqb_"/>
+    <element name="sequence_lsqb_EDI__DC_rsqb_" type="ns3:sequence_lsqb_EDI__DC_rsqb_"/>
+    <element name="sequence_lsqb_EDI__DD40_rsqb_" type="ns3:sequence_lsqb_EDI__DD40_rsqb_"/>
+    <element name="sequence_lsqb_EDI__DD_rsqb_" type="ns3:sequence_lsqb_EDI__DD_rsqb_"/>
+    <element name="sequence_lsqb_MDataSection_rsqb_" type="ns3:sequence_lsqb_MDataSection_rsqb_"/>
+    <element name="sequence_lsqb_SERVERINFO_rsqb_" type="ns3:sequence_lsqb_SERVERINFO_rsqb_"/>
+    <element name="sequence_lsqb_rfcFunctions_rsqb_" type="ns3:sequence_lsqb_rfcFunctions_rsqb_"/>
+</schema>

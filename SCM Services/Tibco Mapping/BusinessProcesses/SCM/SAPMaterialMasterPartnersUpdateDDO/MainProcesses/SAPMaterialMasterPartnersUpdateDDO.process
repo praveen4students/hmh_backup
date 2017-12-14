@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:ns4="http://schemas.tibco.com/bw/plugins/ae/5.0/aeExceptions" xmlns:pfx="http://www.hmco.com/EAI/TIBCOMessage/ProductPriceUpdate" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://www.hmco.com/EAI/common/LookupList" xmlns:pfx4="http://www.hmco.com/schemas/sfa/material_Classification" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns9="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterClassificationUpdateSFA" xmlns:ns1="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns2="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:ns10="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:ns13="http://www.tibco.com/pe/CheckpointSchema" xmlns:pfx2="http://schemas.tibco.com/bw/plugins/xml/5.0/xmlExceptions" xmlns:ns91="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterBOMUpdateSFA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.hmco.com/schemas/sfa/material_update" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:ns12="www.tibco.com/plugin/Sleep" xmlns:ns6="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:ns71="http://www.tibco.com/pe/EngineTypes" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx5="http://www.hmco.com/schemas/ddo/material_update" xmlns:ns81="http://www.hmco.com/schemas/sfa/material_BOM" xmlns:ns3="http://www.hmco.com/EAI/common/Exception" xmlns:ns8="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterUpdateSFA">
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/TIBCOMessage/ProductPriceUpdate" schemaLocation="/SharedResources/Schemas/TibcoMessage/SAPProductPriceUpdateCanonical.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_Classification" schemaLocation="/SharedResources/Schemas/Common/SAPMaterialMasterClassificationUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <pd:name>BusinessProcesses/SCM/SAPMaterialMasterPartnersUpdateDDO/MainProcesses/SAPMaterialMasterPartnersUpdateDDO.process</pd:name>
+    <pd:startName>ReceiveInboundRequest</pd:startName>
+    <pd:startX>0</pd:startX>
+    <pd:startY>0</pd:startY>
+    <pd:returnBindings/>
+    <pd:starter name="ReceiveInboundRequest">
+        <pd:type>com.tibco.plugin.jms.JMSTopicEventSource</pd:type>
+        <pd:resourceType>ae.activities.JMSTopicEventSource</pd:resourceType>
+        <pd:x>59</pd:x>
+        <pd:y>102</pd:y>
+        <config>
+            <PermittedMessageType>XML Text</PermittedMessageType>
+            <SessionAttributes>
+                <destination>%%EMS/MIG_SCM_SAPMATMASTERUPDATE_SAPSERVICE_LEGACYCONSUMER%%</destination>
+                <durable>true</durable>
+                <subscriptionName>SAPMaterialMasterPartnersUpdateDDO</subscriptionName>
+                <acknowledgeMode>23</acknowledgeMode>
+            </SessionAttributes>
+            <ConfigurableHeaders>
+                <JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+                <JMSExpiration>0</JMSExpiration>
+                <JMSPriority>4</JMSPriority>
+            </ConfigurableHeaders>
+            <_sequenceKey>ns1:ActivityOutput/Body/EAIMessage/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR</_sequenceKey>
+            <ConnectionReference>/SharedResources/Connections/JMS/TIBCOJMSConnection.sharedjmscon</ConnectionReference>
+            <OutDataxsdString>
+                <xsd:element name="EAIMessage">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="ns2:messageHeader"/>
+                            <xsd:element ref="pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </OutDataxsdString>
+        </config>
+        <pd:inputBindings/>
+    </pd:starter>
+    <pd:endName>End</pd:endName>
+    <pd:endX>615</pd:endX>
+    <pd:endY>296</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1294654411965</pd:targetNamespace>
+    <pd:activity name="DefaultEAIHeader">
+        <pd:type>com.tibco.pe.core.SetSharedVariableActivity</pd:type>
+        <pd:resourceType>ae.activities.setSharedVariable</pd:resourceType>
+        <pd:x>183</pd:x>
+        <pd:y>53</pd:y>
+        <config>
+            <variableConfig>/CoreTechnicalServices/SharedResources/HeaderSharedVariable.jobsharedvariable</variableConfig>
+        </config>
+        <pd:inputBindings>
+            <ns2:messageHeader>
+                <ns2:source>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/ns2:messageHeader/ns2:source"/>
+                </ns2:source>
+                <ns2:destination>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO"/>
+                </ns2:destination>
+                <ns2:ebsName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/SBS/SAP_MATERIALMASTERPARTNERSDDO"/>
+                </ns2:ebsName>
+                <ns2:eventID>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/ns2:messageHeader/ns2:eventID"/>
+                </ns2:eventID>
+                <ns2:transactionID>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/ns2:messageHeader/ns2:transactionID"/>
+                </ns2:transactionID>
+            </ns2:messageHeader>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="LogEntrance">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>302</pd:x>
+        <pd:y>51</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/LogEnter.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns2:logMessage>
+                <ns2:severity>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_LOG_LEVEL_AUDIT"/>
+                </ns2:severity>
+                <ns2:sensitive>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/MIG_LOG_SENSITIVE"/>
+                </ns2:sensitive>
+                <ns2:componentName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO"/>
+                </ns2:componentName>
+                <ns2:messageText>
+                    <xsl:value-of select="concat ('Entered',  $_globalVariables/ns:GlobalVariables/SBS/SAP_MATERIALMASTERCLASSIFICATIONDDO,' process in' , $_globalVariables/ns:GlobalVariables/GLB_COMP_DDO)"/>
+                </ns2:messageText>
+                <ns2:evtActivityTimeStamp>
+                    <xsl:value-of select="current-dateTime()"/>
+                </ns2:evtActivityTimeStamp>
+            </ns2:logMessage>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="LogExit">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>824</pd:x>
+        <pd:y>159</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/LogExit.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns2:logMessage>
+                <ns2:severity>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_LOG_LEVEL_AUDIT"/>
+                </ns2:severity>
+                <ns2:sensitive>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/MIG_LOG_SENSITIVE"/>
+                </ns2:sensitive>
+                <ns2:componentName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO"/>
+                </ns2:componentName>
+                <ns2:messageText>
+                    <xsl:value-of select="concat ('Exited',  $_globalVariables/ns:GlobalVariables/SBS/SAP_MATERIALMASTERPARTNERSDDO,' process in' , $_globalVariables/ns:GlobalVariables/GLB_COMP_DDO)"/>
+                </ns2:messageText>
+                <ns2:evtActivityTimeStamp>
+                    <xsl:value-of select="current-dateTime()"/>
+                </ns2:evtActivityTimeStamp>
+            </ns2:logMessage>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Call Upsert Process">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>726</pd:x>
+        <pd:y>60</pd:y>
+        <config>
+            <processName>/BusinessProcesses/SCM/SAPMaterialMasterPartnersUpdateDDO/SubProcesses/SP_Upsert.process</processName>
+        </config>
+        <pd:inputBindings>
+            <root>
+                <xsl:copy-of select="$CallTransformation-Process/ns10:MaterialPartners"/>
+                <TransactionID>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/ns2:messageHeader/ns2:transactionID"/>
+                </TransactionID>
+                <MessageID>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/JMSHeaders/ns1:JMSMessageID"/>
+                </MessageID>
+            </root>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="ConfirmMessage">
+        <pd:type>com.tibco.pe.core.ConfirmActivity</pd:type>
+        <pd:resourceType>activity.confirm</pd:resourceType>
+        <pd:x>727</pd:x>
+        <pd:y>298</pd:y>
+        <config>
+            <ConfirmEvent>ReceiveInboundRequest</ConfirmEvent>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>42</pd:x>
+        <pd:y>225</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="DefaultEAIHeader-onError">
+        <pd:type>com.tibco.pe.core.SetSharedVariableActivity</pd:type>
+        <pd:resourceType>ae.activities.setSharedVariable</pd:resourceType>
+        <pd:x>134</pd:x>
+        <pd:y>291</pd:y>
+        <config>
+            <variableConfig>/CoreTechnicalServices/SharedResources/HeaderSharedVariable.jobsharedvariable</variableConfig>
+        </config>
+        <pd:inputBindings>
+            <ns2:messageHeader>
+                <ns2:source>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/HEADER_INFO/GLB_SYS_SAP"/>
+                </ns2:source>
+                <ns2:destination>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO"/>
+                </ns2:destination>
+                <ns2:ebsName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/SBS/SAP_MATERIALMASTERPARTNERSDDO"/>
+                </ns2:ebsName>
+                <ns2:eventID>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/ns2:messageHeader/ns2:eventID"/>
+                </ns2:eventID>
+                <ns2:transactionID>
+                    <xsl:value-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/ns2:messageHeader/ns2:transactionID"/>
+                </ns2:transactionID>
+            </ns2:messageHeader>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="LogException">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>377</pd:x>
+        <pd:y>292</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/LogException.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns2:logMessage xsi:type="ns2:errorMessage">
+                <ns2:severity>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_EXCEPTION_ERR"/>
+                </ns2:severity>
+                <ns2:sensitive>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/MIG_LOG_SENSITIVE"/>
+                </ns2:sensitive>
+                <ns2:componentName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO"/>
+                </ns2:componentName>
+                <ns2:messageText>
+                    <xsl:value-of select="$GenerateException/ns3:Exception/ns3:ExceptionMessage"/>
+                </ns2:messageText>
+                <ns2:evtActivityTimeStamp>
+                    <xsl:value-of select="$GenerateException/ns3:Exception/ns3:TimeStamp"/>
+                </ns2:evtActivityTimeStamp>
+                <ns2:errorType>
+                    <xsl:value-of select="$GenerateException/ns3:Exception/ns3:ExceptionType"/>
+                </ns2:errorType>
+                <ns2:errorFamily>
+                    <xsl:value-of select="$GenerateException/ns3:Exception/ns3:ExceptionFamily"/>
+                </ns2:errorFamily>
+                <ns2:errorStackTrace>
+                    <xsl:value-of select="string( $_error/ns71:ErrorReport )"/>
+                </ns2:errorStackTrace>
+            </ns2:logMessage>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="GenerateException">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>261</pd:x>
+        <pd:y>291</pd:y>
+        <config>
+            <processName>/UtilityServices/ExceptionHandling/ExceptionHandler.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns3:Exception>
+                <ns3:ExceptionSourceName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/SBS/SAP_MATERIALMASTERPARTNERSDDO"/>
+                </ns3:ExceptionSourceName>
+                <ns3:ExceptionFamily>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_EXCEPTION_SYS"/>
+                </ns3:ExceptionFamily>
+                <ns3:ExceptionType>
+                    <xsl:value-of select="substring-before(substring-after(tib:render-xml($Catch/exceptiondata/*),'&lt;Msg>'),'&lt;/Msg')"/>
+                </ns3:ExceptionType>
+                <ns3:ExceptionMessage>
+                    <xsl:value-of select="substring-before(substring-after(tib:render-xml($Catch/exceptiondata/*),'&lt;Msg>'),'&lt;/Msg')"/>
+                </ns3:ExceptionMessage>
+                <ns3:TimeStamp>
+                    <xsl:value-of select="current-dateTime()"/>
+                </ns3:TimeStamp>
+            </ns3:Exception>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="ConfirmMessage-onError">
+        <pd:type>com.tibco.pe.core.ConfirmActivity</pd:type>
+        <pd:resourceType>activity.confirm</pd:resourceType>
+        <pd:x>507</pd:x>
+        <pd:y>403</pd:y>
+        <config>
+            <ConfirmEvent>ReceiveInboundRequest</ConfirmEvent>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="CallTransformation Process">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>506</pd:x>
+        <pd:y>61</pd:y>
+        <config>
+            <processName>/BusinessProcesses/SCM/SAPMaterialMasterPartnersUpdateDDO/TransformationProcesses/TransformToDDO.process</processName>
+        </config>
+        <pd:inputBindings>
+            <group>
+                <xsl:copy-of select="$ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x"/>
+            </group>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Sleep">
+        <pd:type>com.tibco.plugin.timer.SleepActivity</pd:type>
+        <pd:resourceType>ae.activities.sleep</pd:resourceType>
+        <pd:x>508</pd:x>
+        <pd:y>296</pd:y>
+        <config/>
+        <pd:inputBindings>
+            <ns12:SleepInputSchema>
+                <IntervalInMillisec>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/sleepTimeInterval"/>
+                </IntervalInMillisec>
+            </ns12:SleepInputSchema>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="LogFilter">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>508</pd:x>
+        <pd:y>160</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/LogFilter.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns2:logMessage>
+                <ns2:severity>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_LOG_LEVEL_AUDIT"/>
+                </ns2:severity>
+                <ns2:sensitive>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/MIG_LOG_SENSITIVE"/>
+                </ns2:sensitive>
+                <ns2:componentName>
+                    <xsl:value-of select="$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO"/>
+                </ns2:componentName>
+                <ns2:messageText>
+                    <xsl:value-of select="concat(&quot;Record Filtered due to filtering condition and Exiting &quot;,$_globalVariables/ns:GlobalVariables/SBS/SAP_MATERIALMASTERPARTNERSDDO,&quot; process in &quot;,$_globalVariables/ns:GlobalVariables/GLB_COMP_DDO)"/>
+                </ns2:messageText>
+                <ns2:evtActivityTimeStamp>
+                    <xsl:value-of select="current-dateTime()"/>
+                </ns2:evtActivityTimeStamp>
+            </ns2:logMessage>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>DefaultEAIHeader</pd:from>
+        <pd:to>LogEntrance</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>LogExit</pd:from>
+        <pd:to>ConfirmMessage</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ReceiveInboundRequest</pd:from>
+        <pd:to>DefaultEAIHeader</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ConfirmMessage</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>DefaultEAIHeader-onError</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>DefaultEAIHeader-onError</pd:from>
+        <pd:to>GenerateException</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GenerateException</pd:from>
+        <pd:to>LogException</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>LogException</pd:from>
+        <pd:to>ConfirmMessage-onError</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>otherwise</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ConfirmMessage-onError</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Call Upsert Process</pd:from>
+        <pd:to>LogExit</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>LogException</pd:from>
+        <pd:to>Sleep</pd:to>
+        <pd:xpathDescription>Errorin_DB_Insert</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>contains($_error/ns71:ErrorReport,'JDBC') and 
+not(contains($_error/ns71:ErrorReport,'unique constraint'))</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>CallTransformation Process</pd:from>
+        <pd:to>Call Upsert Process</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Sleep</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>LogEntrance</pd:from>
+        <pd:to>CallTransformation Process</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ReceiveInboundRequest/ns1:ActivityOutput/Body/EAIMessage/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1BPBUSISM)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>LogEntrance</pd:from>
+        <pd:to>LogFilter</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>otherwise</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>LogFilter</pd:from>
+        <pd:to>ConfirmMessage</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

@@ -1,0 +1,38 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns6:shipmentDetailsList xmlns:ns12="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns11="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:ns10="http://www.hmco.com/EAI/OTS/EskerTransaction" xmlns:ns9="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns:ns8="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:ns7="http://www.hmco.com/EAI/OTS/PackingList" xmlns:ns6="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns5="http://www.hmco.com/EAI/OTS/Order" xmlns:ns4="http://www.hmco.com/EAI" xmlns:ns3="http://www.hmco.com/EAI/OTS/Material" xmlns:ns2="http://www.hmco.com/EAI/OTS/Customer" xmlns="http://www.hmco.com/EAI/OTS/TransactionNew">
+         <ns6:shipmentDetails>
+            <ns6:transactionID>0002172048</ns6:transactionID>
+            <ns6:shipmentDetailsItem>
+               <ns6:shipmentNo>0082585011</ns6:shipmentNo>
+               <ns6:shipmentCharge>0.0</ns6:shipmentCharge>
+               <ns6:shipmentCarrier>UP1P</ns6:shipmentCarrier>
+               <ns6:shipmentServiceLevel>010</ns6:shipmentServiceLevel>
+               <ns6:shipmentWeight>0.0</ns6:shipmentWeight>
+               <ns6:totalPackages>1</ns6:totalPackages>
+               <ns6:docDate>2008-03-12</ns6:docDate>
+               <ns6:shippingDate>2008-03-12</ns6:shippingDate>
+               <ns6:lineItem>
+                  <ns6:lineNo>10</ns6:lineNo>
+                  <ns6:transactionID>0002172048</ns6:transactionID>
+                  <ns6:transactionLineNo>000010</ns6:transactionLineNo>
+                  <ns6:materialID>000000000000651164</ns6:materialID>
+                  <ns6:isbn>9780807032848</ns6:isbn>
+                  <ns6:fullDescription>CAN WE TALK ABOUT RACE</ns6:fullDescription>
+                  <ns6:shipmentLocation>D300</ns6:shipmentLocation>
+                  <ns6:quantity>1.0</ns6:quantity>
+                  <ns6:productDivision>DIVISION_TRADE_AND_REFERENCE</ns6:productDivision>
+               </ns6:lineItem>
+               <ns6:trackingItem>
+                  <ns6:trackingNo>1Z00E64W1304812834</ns6:trackingNo>
+                  <ns6:shippedDate>2008-03-12</ns6:shippedDate>
+                  <ns6:shipmentServiceLevel>010</ns6:shipmentServiceLevel>
+                  <ns6:destinationZip>10022-1902</ns6:destinationZip>
+                  <ns6:weight>0.914</ns6:weight>
+                  <ns6:trackingURL><![CDATA[http://wwwapps.ups.com/WebTracking/processInputRequest?HTMLVersion=5.0&loc=en_US&Requester=UPSHome&tracknum=1Z00E64W1304812834&ignore=&track.x=29&track.y=6]]></ns6:trackingURL>
+               </ns6:trackingItem>
+            </ns6:shipmentDetailsItem>
+         </ns6:shipmentDetails>
+      </ns6:shipmentDetailsList>
+   </soap:Body>
+</soap:Envelope>

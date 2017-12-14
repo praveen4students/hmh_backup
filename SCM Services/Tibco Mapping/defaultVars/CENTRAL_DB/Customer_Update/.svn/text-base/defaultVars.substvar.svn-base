@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
+	<globalVariables>
+		<globalVariable>
+			<name>Customer_Division</name>
+			<value>CUSTOMER_DIVISION_INSERT</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1324372380706</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>Customer_PARTNERTYPE</name>
+			<value>CUSTOMER_PARTNERTYPE_INSERT</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1335957215640</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>Customer_Update</name>
+			<value>CUSTOMER_INSERT</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1324372380800</modTime>
+		</globalVariable>
+	</globalVariables>
+</repository>

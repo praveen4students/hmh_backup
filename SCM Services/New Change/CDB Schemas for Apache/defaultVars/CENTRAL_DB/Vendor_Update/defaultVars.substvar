@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
+	<globalVariables>
+		<globalVariable>
+			<name>COMPANY_CODE</name>
+			<value>HMC1</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1324892856757</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>PARTNER_FUNCTION</name>
+			<value>PI,RS</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1325054314218</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>Vendor_Remit_SP_Name</name>
+			<value>VENDOR_REMIT_INSERT</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1325068587406</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>Vendor_Email_SP_Name</name>
+			<value>VENDOR_EMAIL_INSERT</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1325068587406</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>Vendor_SP_Name</name>
+			<value>VENDOR_INSERT</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1325068587328</modTime>
+		</globalVariable>
+	</globalVariables>
+</repository>

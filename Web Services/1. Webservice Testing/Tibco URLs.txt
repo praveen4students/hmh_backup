@@ -1,0 +1,12 @@
+http://neduapp002:9003/BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions
+http://neduapp002:9003/BusinessProcesses/Transaction/GetInvoices/MainProcesses/getInvoices
+http://neduapp002:9003/BusinessProcesses/Transaction/GetShipments/MainProcesses/getShipments
+http://neduapp002:9003/BusinessProcesses/Transaction/RetrieveInvoicePDF/MainProcesses/retrieveInvoicePDF
+https://neduapp002:9101/BusinessProcesses/Order/SubmitSale/MainProcesses/submitSale
+https://neduapp002:9111/BusinessProcesses/V1.1/EnterpriseWebservicesSecure.serviceagent/orderExEndpoint1
+
+neduapp001c == neduapp002
+
+
+
+https://neduapp001c:9101/BusinessProcesses/Order/SubmitSale/MainProcesses/submitSaleAsync

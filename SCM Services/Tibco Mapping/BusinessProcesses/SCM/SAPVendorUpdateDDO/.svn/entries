@@ -1,0 +1,80 @@
+10
+
+dir
+1886
+svn://neduapp001/tibco/trunk/Sunrise1.0/SunriseCentral_Database_Consumer/BusinessProcesses/SCM/SAPVendorUpdateDDO
+svn://neduapp001
+
+
+
+2012-05-29T08:01:58.678115Z
+1284
+rajesh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bdeb329a-2704-11df-9d9c-21c6ffec8a09
+
+SubProcesses
+dir
+
+ValidationProcesses
+dir
+
+UnitTests
+dir
+
+.folder
+file
+
+
+
+
+2013-03-20T07:07:28.130941Z
+86aabe7768e85673e541ad4215ca6330
+2011-12-28T12:54:02.158993Z
+878
+shiva
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+395
+
+MainProcesses
+dir
+
+StarterProcesses
+dir
+
+TransformationProcesses
+dir
+

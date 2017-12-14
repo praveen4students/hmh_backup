@@ -1,0 +1,3300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="ApacheEnterpriseService-Neduapp001b" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="MaterialExEndpoint1Binding" type="wsdl" bindingName="{http://www.hmco.com/EAI/Tibco/EnterpriseWebServices}MaterialExEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="http://neduapp001b:7110/services/material?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://neduapp001b:7110/services/material</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/MaterialExEndpoint1/getMaterialDetail" name="getMaterialDetail" bindingOperationName="getMaterialDetail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/material</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://www.hmco.com/EAI/OTS/Material">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:getMaterialDetailRequest>
+         <mat:materialKeyList>
+            <!--Zero or more repetitions:-->
+            <mat:materialID></mat:materialID>
+            <!--Zero or more repetitions:-->
+            <mat:isbn></mat:isbn>
+         </mat:materialKeyList>
+         <!--Optional:-->
+         <mat:customerID>?</mat:customerID>
+      </mat:getMaterialDetailRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/MaterialExEndpoint1/getMaterialDetail"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/MaterialExEndpoint1/getMaterialDetailEx" name="getMaterialDetailEx" bindingOperationName="getMaterialDetailEx" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/material</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://www.hmco.com/EAI/OTS/MaterialNew">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:getMaterialDetailRequest>
+         <mat:materialKeyList>
+            <!--Zero or more repetitions:-->
+            <mat:materialID>?</mat:materialID>
+            <!--Zero or more repetitions:-->
+            <mat:isbn>?</mat:isbn>
+         </mat:materialKeyList>
+         <!--Optional:-->
+         <mat:customerID>?</mat:customerID>
+      </mat:getMaterialDetailRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/MaterialExEndpoint1/getMaterialDetailEx"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="TransactionExEndpoint1Binding" type="wsdl" bindingName="{http://www.hmco.com/EAI/Tibco/EnterpriseWebServices}TransactionExEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="http://neduapp001b:7110/services/material?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/findTransactions" name="findTransactions" bindingOperationName="findTransactions" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionSearchCriteria>
+         <!--Optional:-->
+         <tran:searchType>?</tran:searchType>
+         <!--Optional:-->
+         <tran:customerID>?</tran:customerID>
+         <!--Optional:-->
+         <tran:fromDate>?</tran:fromDate>
+         <!--Optional:-->
+         <tran:toDate>?</tran:toDate>
+         <tran:limitOfResults>?</tran:limitOfResults>
+         <!--Optional:-->
+         <tran:invoiceNo>?</tran:invoiceNo>
+         <!--Optional:-->
+         <tran:poNo>?</tran:poNo>
+         <!--Optional:-->
+         <tran:clientTransactionID>?</tran:clientTransactionID>
+         <!--Optional:-->
+         <tran:isbn>?</tran:isbn>
+         <!--Optional:-->
+         <tran:materialID>?</tran:materialID>
+         <!--Optional:-->
+         <tran:status>?</tran:status>
+         <!--Optional:-->
+         <tran:transactionType>?</tran:transactionType>
+         <!--Optional:-->
+         <tran:orderSource>?</tran:orderSource>
+         <!--Optional:-->
+         <tran:sanNumber>?</tran:sanNumber>
+         <!--Optional:-->
+         <tran:zipCode>?</tran:zipCode>
+         <!--Optional:-->
+         <tran:countryCode>?</tran:countryCode>
+         <!--Optional:-->
+         <tran:Division>?</tran:Division>
+         <!--Optional:-->
+         <tran:partnerFunctionList>
+            <!--1 or more repetitions:-->
+            <tran:partnerFunction>?</tran:partnerFunction>
+         </tran:partnerFunctionList>
+      </tran:transactionSearchCriteria>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/findTransactions"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent//getInvoices" name="getInvoices" bindingOperationName="getInvoices" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionIDList>
+         <!--1 or more repetitions:-->
+         <tran:transactionID>?</tran:transactionID>
+      </tran:transactionIDList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent//getInvoices"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent//getShipments" name="getShipments" bindingOperationName="getShipments" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionIDList>
+         <!--1 or more repetitions:-->
+         <tran:transactionID>?</tran:transactionID>
+      </tran:transactionIDList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent//getShipments"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/getTransactionDetail" name="getTransactionDetail" bindingOperationName="getTransactionDetail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionIDList>
+         <!--1 or more repetitions:-->
+         <tran:transactionID>?</tran:transactionID>
+      </tran:transactionIDList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/getTransactionDetail"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/getTransactionDetailEx" name="getTransactionDetailEx" bindingOperationName="getTransactionDetailEx" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/TransactionNew">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionIDList>
+         <!--1 or more repetitions:-->
+         <tran:transactionID>?</tran:transactionID>
+      </tran:transactionIDList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/getTransactionDetailEx"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CustomerExEndpoint1Binding" type="wsdl" bindingName="{http://www.hmco.com/EAI/Tibco/EnterpriseWebServices}CustomerExEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="http://neduapp001b:7110/services/material?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/AccountStatementPDF" name="accountStatementPDF" bindingOperationName="accountStatementPDF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:accountStatementPDFRequest>
+         <cus:billToCustomer>?</cus:billToCustomer>
+         <cus:emailSubject>?</cus:emailSubject>
+         <!--1 or more repetitions:-->
+         <cus:emailTo>?</cus:emailTo>
+         <!--Zero or more repetitions:-->
+         <cus:emailCc>?</cus:emailCc>
+         <!--Zero or more repetitions:-->
+         <cus:emailBody>?</cus:emailBody>
+      </cus:accountStatementPDFRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/AccountStatementPDF"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/asyncPoll" name="asyncPoll" bindingOperationName="asyncPoll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eai="http://www.hmco.com/EAI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <eai:asyncRequestId>
+         <eai:requestId>?</eai:requestId>
+      </eai:asyncRequestId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/asyncPoll"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createEtailCustomer" name="createEtailCustomer" bindingOperationName="createEtailCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:createEtailCustomerRequest>
+         <cus:storeID>?</cus:storeID>
+         <cus:name>?</cus:name>
+         <cus:telephone>?</cus:telephone>
+         <!--Optional:-->
+         <cus:customerEmail>?</cus:customerEmail>
+         <cus:soldToAddress>
+            <!--Optional:-->
+            <cus:customerName>?</cus:customerName>
+            <!--Optional:-->
+            <cus:addressLine1>?</cus:addressLine1>
+            <!--Optional:-->
+            <cus:addressLine2>?</cus:addressLine2>
+            <!--Optional:-->
+            <cus:addressLine3>?</cus:addressLine3>
+            <!--Optional:-->
+            <cus:poBox>?</cus:poBox>
+            <cus:city>?</cus:city>
+            <cus:state>?</cus:state>
+            <cus:zipcode>?</cus:zipcode>
+            <cus:countryCode>?</cus:countryCode>
+            <!--Zero or more repetitions:-->
+            <cus:emailAddressStruct>
+               <!--Optional:-->
+               <cus:emailAddress>?</cus:emailAddress>
+               <cus:isPrimary>?</cus:isPrimary>
+            </cus:emailAddressStruct>
+         </cus:soldToAddress>
+         <!--Optional:-->
+         <cus:billToAddress>
+            <!--Optional:-->
+            <cus:customerName>?</cus:customerName>
+            <!--Optional:-->
+            <cus:addressLine1>?</cus:addressLine1>
+            <!--Optional:-->
+            <cus:addressLine2>?</cus:addressLine2>
+            <!--Optional:-->
+            <cus:addressLine3>?</cus:addressLine3>
+            <!--Optional:-->
+            <cus:poBox>?</cus:poBox>
+            <cus:city>?</cus:city>
+            <cus:state>?</cus:state>
+            <cus:zipcode>?</cus:zipcode>
+            <cus:countryCode>?</cus:countryCode>
+            <!--Zero or more repetitions:-->
+            <cus:emailAddressStruct>
+               <!--Optional:-->
+               <cus:emailAddress>?</cus:emailAddress>
+               <cus:isPrimary>?</cus:isPrimary>
+            </cus:emailAddressStruct>
+         </cus:billToAddress>
+         <!--Optional:-->
+         <cus:shipToAddress>
+            <!--Optional:-->
+            <cus:customerName>?</cus:customerName>
+            <!--Optional:-->
+            <cus:addressLine1>?</cus:addressLine1>
+            <!--Optional:-->
+            <cus:addressLine2>?</cus:addressLine2>
+            <!--Optional:-->
+            <cus:addressLine3>?</cus:addressLine3>
+            <!--Optional:-->
+            <cus:poBox>?</cus:poBox>
+            <cus:city>?</cus:city>
+            <cus:state>?</cus:state>
+            <cus:zipcode>?</cus:zipcode>
+            <cus:countryCode>?</cus:countryCode>
+            <!--Zero or more repetitions:-->
+            <cus:emailAddressStruct>
+               <!--Optional:-->
+               <cus:emailAddress>?</cus:emailAddress>
+               <cus:isPrimary>?</cus:isPrimary>
+            </cus:emailAddressStruct>
+         </cus:shipToAddress>
+      </cus:createEtailCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createEtailCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomer" name="createSundryCustomer" bindingOperationName="createSundryCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:createSundryCustomerRequest>
+         <cus:division>?</cus:division>
+         <cus:SFASalesTerritory>?</cus:SFASalesTerritory>
+         <!--Optional:-->
+         <cus:geographicSalesTerritory>?</cus:geographicSalesTerritory>
+         <cus:name>?</cus:name>
+         <cus:customerAddress>
+            <!--Optional:-->
+            <cus:customerName>?</cus:customerName>
+            <!--Optional:-->
+            <cus:addressLine1>?</cus:addressLine1>
+            <!--Optional:-->
+            <cus:addressLine2>?</cus:addressLine2>
+            <!--Optional:-->
+            <cus:addressLine3>?</cus:addressLine3>
+            <!--Optional:-->
+            <cus:poBox>?</cus:poBox>
+            <cus:city>?</cus:city>
+            <cus:state>?</cus:state>
+            <cus:zipcode>?</cus:zipcode>
+            <cus:countryCode>?</cus:countryCode>
+            <!--Zero or more repetitions:-->
+            <cus:emailAddressStruct>
+               <!--Optional:-->
+               <cus:emailAddress>?</cus:emailAddress>
+               <cus:isPrimary>?</cus:isPrimary>
+            </cus:emailAddressStruct>
+         </cus:customerAddress>
+         <!--Optional:-->
+         <cus:telephone1>?</cus:telephone1>
+         <!--Optional:-->
+         <cus:telephone2>?</cus:telephone2>
+         <!--Optional:-->
+         <cus:fax>?</cus:fax>
+         <!--Optional:-->
+         <cus:collegeNumber>?</cus:collegeNumber>
+         <!--Optional:-->
+         <cus:customerEmail>?</cus:customerEmail>
+      </cus:createSundryCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomerAsync" name="createSundryCustomerAsync" bindingOperationName="createSundryCustomerAsync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:createSundryCustomerRequest>
+         <cus:division>?</cus:division>
+         <cus:SFASalesTerritory>?</cus:SFASalesTerritory>
+         <!--Optional:-->
+         <cus:geographicSalesTerritory>?</cus:geographicSalesTerritory>
+         <cus:name>?</cus:name>
+         <cus:customerAddress>
+            <!--Optional:-->
+            <cus:customerName>?</cus:customerName>
+            <!--Optional:-->
+            <cus:addressLine1>?</cus:addressLine1>
+            <!--Optional:-->
+            <cus:addressLine2>?</cus:addressLine2>
+            <!--Optional:-->
+            <cus:addressLine3>?</cus:addressLine3>
+            <!--Optional:-->
+            <cus:poBox>?</cus:poBox>
+            <cus:city>?</cus:city>
+            <cus:state>?</cus:state>
+            <cus:zipcode>?</cus:zipcode>
+            <cus:countryCode>?</cus:countryCode>
+            <!--Zero or more repetitions:-->
+            <cus:emailAddressStruct>
+               <!--Optional:-->
+               <cus:emailAddress>?</cus:emailAddress>
+               <cus:isPrimary>?</cus:isPrimary>
+            </cus:emailAddressStruct>
+         </cus:customerAddress>
+         <!--Optional:-->
+         <cus:telephone1>?</cus:telephone1>
+         <!--Optional:-->
+         <cus:telephone2>?</cus:telephone2>
+         <!--Optional:-->
+         <cus:fax>?</cus:fax>
+         <!--Optional:-->
+         <cus:collegeNumber>?</cus:collegeNumber>
+         <!--Optional:-->
+         <cus:customerEmail>?</cus:customerEmail>
+      </cus:createSundryCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomerAsync"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomerAsyncResult" name="createSundryCustomerAsyncResult" bindingOperationName="createSundryCustomerAsyncResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eai="http://www.hmco.com/EAI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <eai:asyncRequestId>
+         <eai:requestId>?</eai:requestId>
+      </eai:asyncRequestId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomerAsyncResult"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/findEtailCustomer" name="findEtailCustomer" bindingOperationName="findEtailCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:customerSearchCriteria>
+         <cus:name>?</cus:name>
+         <cus:address>?</cus:address>
+         <cus:zipCode>?</cus:zipCode>
+         <cus:division>?</cus:division>
+      </cus:customerSearchCriteria>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/findEtailCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/findSFDCCustomer" name="findSFDCCustomer" bindingOperationName="findSFDCCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:findSFDCCustomerRequest>
+         <!--Optional:-->
+         <cus:mdrPid>?</cus:mdrPid>
+         <!--Optional:-->
+         <cus:sapCustomerId>?</cus:sapCustomerId>
+         <!--Optional:-->
+         <cus:zipCode>?</cus:zipCode>
+      </cus:findSFDCCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/findSFDCCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetail" name="getCustomerDetail" bindingOperationName="getCustomerDetail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:customerKeyList>
+         <!--Zero or more repetitions:-->
+         <cus:customerKey>
+            <!--Optional:-->
+            <cus:customerID></cus:customerID>
+            <!--Optional:-->
+            <cus:san></cus:san>
+            <!--Optional:-->
+            <cus:mdrPID></cus:mdrPID>
+         </cus:customerKey>
+      </cus:customerKeyList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetail"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailAsync" name="getCustomerDetailAsync" bindingOperationName="getCustomerDetailAsync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:customerKeyList>
+         <!--Zero or more repetitions:-->
+         <cus:customerKey>
+            <!--Optional:-->
+            <cus:customerID>?</cus:customerID>
+            <!--Optional:-->
+            <cus:san>?</cus:san>
+            <!--Optional:-->
+            <cus:mdrPID>?</cus:mdrPID>
+         </cus:customerKey>
+      </cus:customerKeyList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailAsync"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailAsyncResult" name="getCustomerDetailAsyncResult" bindingOperationName="getCustomerDetailAsyncResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eai="http://www.hmco.com/EAI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <eai:asyncRequestId>
+         <eai:requestId>?</eai:requestId>
+      </eai:asyncRequestId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailAsyncResult"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailEx" name="getCustomerDetailEx" bindingOperationName="getCustomerDetailEx" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/CustomerNew">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:customerKeyList>
+         <!--Zero or more repetitions:-->
+         <cus:customerKey>
+            <!--Optional:-->
+            <cus:customerID>?</cus:customerID>
+            <!--Optional:-->
+            <cus:san>?</cus:san>
+            <!--Optional:-->
+            <cus:mdrPID>?</cus:mdrPID>
+         </cus:customerKey>
+      </cus:customerKeyList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailEx"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationships" name="getCustomerRelationships" bindingOperationName="getCustomerRelationships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:getCustomerRelationshipsRequest>
+         <cus:customerID>?</cus:customerID>
+         <cus:division>?</cus:division>
+         <cus:relationshipTypeList>
+            <!--1 or more repetitions:-->
+            <cus:relationshipType>?</cus:relationshipType>
+         </cus:relationshipTypeList>
+      </cus:getCustomerRelationshipsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationships"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationshipsAsync" name="getCustomerRelationshipsAsync" bindingOperationName="getCustomerRelationshipsAsync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:getCustomerRelationshipsRequest>
+         <cus:customerID>?</cus:customerID>
+         <cus:division>?</cus:division>
+         <cus:relationshipTypeList>
+            <!--1 or more repetitions:-->
+            <cus:relationshipType>?</cus:relationshipType>
+         </cus:relationshipTypeList>
+      </cus:getCustomerRelationshipsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationshipsAsync"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationshipsAsyncResult" name="getCustomerRelationshipsAsyncResult" bindingOperationName="getCustomerRelationshipsAsyncResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eai="http://www.hmco.com/EAI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <eai:asyncRequestId>
+         <eai:requestId>?</eai:requestId>
+      </eai:asyncRequestId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationshipsAsyncResult"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getSFDCRep" name="getSFDCRep" bindingOperationName="getSFDCRep" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:sfdcCustomerIdList>
+         <!--Zero or more repetitions:-->
+         <cus:sfdcCustomerId>?</cus:sfdcCustomerId>
+      </cus:sfdcCustomerIdList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getSFDCRep"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/PackingListOperation" name="PackingListOperation" bindingOperationName="PackingListOperation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/customer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pac="http://www.hmco.com/EAI/OTS/PackingList">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pac:packingListRequest>
+         <pac:Plant>?</pac:Plant>
+         <pac:Delivery_Number>?</pac:Delivery_Number>
+         <pac:HMH_From_E-mail>?</pac:HMH_From_E-mail>
+         <pac:Customer_Recipient_E-mail>?</pac:Customer_Recipient_E-mail>
+         <!--Optional:-->
+         <pac:Customer_CC_E-mail>?</pac:Customer_CC_E-mail>
+         <pac:Subject_Line>?</pac:Subject_Line>
+         <!--Optional:-->
+         <pac:Notes>?</pac:Notes>
+      </pac:packingListRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/PackingListOperation"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ATPExEndpoint1Binding" type="wsdl" bindingName="{http://www.hmco.com/EAI/Tibco/EnterpriseWebServices}ATPExEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="http://neduapp001b:7110/services/material?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://neduapp001b:7110/services/material?wsdl"><con:part><con:url>http://neduapp001b:7110/services/material?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Untitled" targetNamespace="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices" xmlns:ns0="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns:ns1="http://www.hmco.com/EAI/OTS/Material" xmlns:ns2="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns3="http://www.hmco.com/EAI/OTS/TransactionNew" xmlns:ns4="http://www.hmco.com/EAI/OTS/Customer" xmlns:ns5="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:ns6="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:ns7="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns8="http://www.hmco.com/EAI" xmlns:ns9="http://www.hmco.com/EAI/OTS/PackingList" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.hmco.com/EAI/Tibco/EnterpriseWebServices" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cus="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:eai="http://www.hmco.com/EAI" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI/OTS/Material"/>
+      <import namespace="http://www.hmco.com/EAI"/>
+      <complexType name="address">
+        <sequence>
+          <element minOccurs="0" name="customerName" type="xsd:string"/>
+          <element minOccurs="0" name="addressLine1">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="60"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element minOccurs="0" name="addressLine2">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="40"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element minOccurs="0" name="addressLine3" type="xsd:string"/>
+          <element minOccurs="0" name="poBox">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="city">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="35"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="state">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="zipcode">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="countryCode">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" ref="cus:emailAddressStruct"/>
+        </sequence>
+      </complexType>
+      <element name="SFDCCustomer">
+        <complexType>
+          <sequence>
+            <element name="sfdcCustomerId" type="xsd:string"/>
+            <element minOccurs="0" name="sapCustomerId" type="xsd:string"/>
+            <element minOccurs="0" name="mdrPid" type="xsd:string"/>
+            <element name="name" type="xsd:string"/>
+            <element minOccurs="0" name="shippingStreet" type="xsd:string"/>
+            <element minOccurs="0" name="shippingCity" type="xsd:string"/>
+            <element minOccurs="0" name="shippingState" type="xsd:string"/>
+            <element minOccurs="0" name="shippingZip" type="xsd:string"/>
+            <element minOccurs="0" name="shippingCountry" type="xsd:string"/>
+            <element minOccurs="0" name="phone" type="xsd:string"/>
+            <element minOccurs="0" name="fax" type="xsd:string"/>
+            <element minOccurs="0" name="email" type="xsd:string"/>
+            <element minOccurs="0" ref="cus:pnpAccountFlag"/>
+            <element minOccurs="0" ref="cus:insideSalesAccountFlag"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SFDCCustomerList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:SFDCCustomer"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SFDCRep">
+        <complexType>
+          <sequence>
+            <element name="sfdcUserID" type="xsd:string"/>
+            <element name="sfdcCustomerId" type="xsd:string"/>
+            <element name="userName" type="xsd:string"/>
+            <element minOccurs="0" name="phone" type="xsd:string"/>
+            <element minOccurs="0" name="market" type="xsd:string"/>
+            <element minOccurs="0" name="territoryDescription" type="xsd:string"/>
+            <element minOccurs="0" name="email" type="xsd:string"/>
+            <element minOccurs="0" ref="cus:division"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SFDCRepList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:SFDCRep"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="accountStatementPDFRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:billToCustomer"/>
+            <element ref="cus:emailSubject"/>
+            <element maxOccurs="unbounded" ref="cus:emailTo"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:emailCc"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:emailBody"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="accountStatementPDFResponse">
+        <complexType>
+          <sequence>
+            <element ref="cus:eReturn"/>
+            <element minOccurs="0" ref="cus:message"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="billToCustomer" type="xsd:string"/>
+      <element name="createEtailCustomerRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:storeID"/>
+            <element name="name">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="telephone">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="16"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="customerEmail">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="241"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="soldToAddress" type="cus:address"/>
+            <element minOccurs="0" name="billToAddress" type="cus:address"/>
+            <element minOccurs="0" name="shipToAddress" type="cus:address"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createEtailCustomerResponse">
+        <complexType>
+          <sequence>
+            <element name="soldToCustomerID" type="xsd:string"/>
+            <element name="shipToCustomerID" type="xsd:string"/>
+            <element name="billToCustomerID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSundryCustomerRequest">
+        <complexType>
+          <sequence>
+            <element name="division" type="xsd:string"/>
+            <element name="SFASalesTerritory">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="geographicSalesTerritory">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="6"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="name">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="customerAddress" type="cus:address"/>
+            <element minOccurs="0" name="telephone1">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="16"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="telephone2">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="16"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="fax">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="31"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="collegeNumber">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="customerEmail">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="241"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerDetail">
+        <complexType>
+          <sequence>
+            <element name="customerID" type="xsd:string"/>
+            <element name="customerRole" type="xsd:string"/>
+            <element name="customerClassCode" type="xsd:string"/>
+            <element name="customerClassDesc" type="xsd:string"/>
+            <element name="customerTypeCode" type="xsd:string"/>
+            <element name="customerTypeDesc" type="xsd:string"/>
+            <element minOccurs="0" name="creditStatus" type="xsd:string"/>
+            <element minOccurs="0" name="san" type="xsd:string"/>
+            <element minOccurs="0" name="mdrPID" type="xsd:string"/>
+            <element minOccurs="0" ref="cus:isPrimeMDR"/>
+            <element name="customerAddress" type="cus:address"/>
+            <element name="name" type="xsd:string"/>
+            <element name="telNumber" type="xsd:string"/>
+            <element minOccurs="0" name="altTelNumber" type="xsd:string"/>
+            <element minOccurs="0" name="customerStatus" type="xsd:string"/>
+            <element minOccurs="0" name="collegeNumber" type="xsd:string"/>
+            <element minOccurs="0" name="customerEmail" type="xsd:string"/>
+            <element minOccurs="0" name="customerFax">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="31"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="customerDivisionInfo">
+              <complexType>
+                <sequence>
+                  <element name="division" type="xsd:string"/>
+                  <element name="geographicTerritory" type="xsd:string"/>
+                  <element name="allowSubstitutionsFlag" type="xsd:boolean"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerDetailList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerDetail"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerException" type="eai:eaiException"/>
+      <element name="customerExceptionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="cus:customerException"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="10"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="customerIDList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" name="customerID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerKey">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="customerID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="san">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="12"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="mdrPID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="15"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerKeyList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerKey"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerRelationship">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="cus:relationshipType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="customerID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerRelationshipList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerRelationship"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerSearchCriteria">
+        <complexType>
+          <sequence>
+            <element name="name">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="address">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="60"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="zipCode" type="xsd:string"/>
+            <element name="division" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerSubstitution">
+        <complexType>
+          <sequence>
+            <element name="materialID" type="xsd:string"/>
+            <element maxOccurs="unbounded" ref="mat:substitutionValue"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerSubstitutionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerSubstitution"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="division" type="xsd:string"/>
+      <element name="eReturn" type="xsd:string"/>
+      <element name="emailAddress" type="xsd:string"/>
+      <element name="emailAddressStruct">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="cus:emailAddress"/>
+            <element ref="cus:isPrimary"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="emailBody" type="xsd:string"/>
+      <element name="emailCc" type="xsd:string"/>
+      <element name="emailSubject" type="xsd:string"/>
+      <element name="emailTo" type="xsd:string"/>
+      <element name="findSFDCCustomerRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="mdrPid" type="xsd:string"/>
+            <element minOccurs="0" name="sapCustomerId" type="xsd:string"/>
+            <element minOccurs="0" name="zipCode" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getCustomerRelationshipsRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:customerID"/>
+            <element ref="cus:division"/>
+            <element ref="cus:relationshipTypeList"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getCustomerSubstitutionsRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:customerID"/>
+            <element ref="cus:transactionType"/>
+            <element ref="cus:division"/>
+            <element ref="cus:titleList"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="insideSalesAccountFlag" type="xsd:boolean"/>
+      <element name="isPrimary" type="xsd:boolean"/>
+      <element name="isPrimeMDR" nillable="true" type="xsd:boolean"/>
+      <element name="lookUpFields">
+        <complexType>
+          <sequence>
+            <element name="noOfFields" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialID" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+      <element name="pnpAccountFlag" type="xsd:boolean"/>
+      <element name="relationshipType" type="xsd:string"/>
+      <element name="relationshipTypeList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="cus:relationshipType"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sfdcCustomerId" type="xsd:string"/>
+      <element name="sfdcCustomerIdList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:sfdcCustomerId"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="storeID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="30"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="titleList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:materialID"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionType" type="xsd:string"/>
+    </schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/PackingList" xmlns="http://www.hmco.com/EAI/OTS/PackingList" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Customer_CC_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Customer_Recipient_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Delivery_Number">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="15"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="HMH_From_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Notes">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Plant">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Response" type="xs:string"/>
+      <xs:element name="Subject_Line">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="packingListRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns9:Plant"/>
+            <xs:element ref="ns9:Delivery_Number"/>
+            <xs:element ref="ns9:HMH_From_E-mail"/>
+            <xs:element ref="ns9:Customer_Recipient_E-mail"/>
+            <xs:element minOccurs="0" ref="ns9:Customer_CC_E-mail"/>
+            <xs:element ref="ns9:Subject_Line"/>
+            <xs:element minOccurs="0" ref="ns9:Notes"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="packingListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="ns9:Response"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:atp="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:eai="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <element name="ATP_DETAIL_LIST">
+        <complexType>
+          <sequence>
+            <element ref="atp:MATNR"/>
+            <element ref="atp:QUANTITY"/>
+            <element minOccurs="0" ref="atp:FLEX1"/>
+            <element minOccurs="0" ref="atp:FLEX2"/>
+            <element minOccurs="0" ref="atp:FLEX3"/>
+            <element minOccurs="0" ref="atp:SUCCESS"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ATP_EXCEPTION" type="eai:eaiException"/>
+      <element name="ATP_MATERIAL_LIST">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="atp:MATNR"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="COUNTRY" type="xsd:string"/>
+      <element name="CUST_ID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="18"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="DIST_CHNL" type="xsd:string"/>
+      <element name="DIVISION" type="xsd:string"/>
+      <element name="FLEX1" type="xsd:string"/>
+      <element name="FLEX2" type="xsd:string"/>
+      <element name="FLEX3" type="xsd:string"/>
+      <element name="GET_ATP_REQUEST">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="atp:COUNTRY"/>
+            <element minOccurs="0" ref="atp:REGION"/>
+            <element minOccurs="0" ref="atp:CUST_ID"/>
+            <element minOccurs="0" ref="atp:DIST_CHNL"/>
+            <element minOccurs="0" ref="atp:DIVISION"/>
+            <element minOccurs="0" ref="atp:ITEM_TYPE"/>
+            <element minOccurs="0" ref="atp:MDR"/>
+            <element minOccurs="0" ref="atp:SALES_ORG"/>
+            <element minOccurs="0" ref="atp:ORDER_TYPE"/>
+            <element minOccurs="0" ref="atp:FLEX1"/>
+            <element minOccurs="0" ref="atp:FLEX2"/>
+            <element minOccurs="0" ref="atp:FLEX3"/>
+            <element ref="atp:ATP_MATERIAL_LIST"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GET_ATP_RESPONSE">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="atp:ATP_DETAIL_LIST"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ITEM_TYPE" type="xsd:string"/>
+      <element name="MATNR" type="xsd:string"/>
+      <element name="MDR" type="xsd:string"/>
+      <element name="ORDER_TYPE" type="xsd:string"/>
+      <element name="QUANTITY" type="xsd:string"/>
+      <element name="REGION" type="xsd:string"/>
+      <element name="SALES_ORG" type="xsd:string"/>
+      <element name="SUCCESS" type="xsd:string"/>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:atp="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:eai="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <element name="ATP_DETAIL_LIST">
+        <complexType>
+          <sequence>
+            <element ref="atp:MATNR"/>
+            <element ref="atp:QUANTITY"/>
+            <element minOccurs="0" ref="atp:FLEX1"/>
+            <element minOccurs="0" ref="atp:FLEX2"/>
+            <element minOccurs="0" ref="atp:FLEX3"/>
+            <element minOccurs="0" ref="atp:SUCCESS"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ATP_EXCEPTION" type="eai:eaiException"/>
+      <element name="ATP_MATERIAL_LIST">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="atp:MATNR"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="COUNTRY" type="xsd:string"/>
+      <element name="CUST_ID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="18"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="DIST_CHNL" type="xsd:string"/>
+      <element name="DIVISION" type="xsd:string"/>
+      <element name="FLEX1" type="xsd:string"/>
+      <element name="FLEX2" type="xsd:string"/>
+      <element name="FLEX3" type="xsd:string"/>
+      <element name="GET_ATP_REQUEST">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="atp:COUNTRY"/>
+            <element minOccurs="0" ref="atp:REGION"/>
+            <element minOccurs="0" ref="atp:CUST_ID"/>
+            <element minOccurs="0" ref="atp:DIST_CHNL"/>
+            <element minOccurs="0" ref="atp:DIVISION"/>
+            <element minOccurs="0" ref="atp:ITEM_TYPE"/>
+            <element minOccurs="0" ref="atp:MDR"/>
+            <element minOccurs="0" ref="atp:SALES_ORG"/>
+            <element minOccurs="0" ref="atp:ORDER_TYPE"/>
+            <element minOccurs="0" ref="atp:FLEX1"/>
+            <element minOccurs="0" ref="atp:FLEX2"/>
+            <element minOccurs="0" ref="atp:FLEX3"/>
+            <element ref="atp:ATP_MATERIAL_LIST"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GET_ATP_RESPONSE">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="atp:ATP_DETAIL_LIST"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ITEM_TYPE" type="xsd:string"/>
+      <element name="MATNR" type="xsd:string"/>
+      <element name="MDR" type="xsd:string"/>
+      <element name="ORDER_TYPE" type="xsd:string"/>
+      <element name="QUANTITY" type="xsd:string"/>
+      <element name="REGION" type="xsd:string"/>
+      <element name="SALES_ORG" type="xsd:string"/>
+      <element name="SUCCESS" type="xsd:string"/>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:eai="http://www.hmco.com/EAI" xmlns:mat="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <complexType name="substitution">
+        <sequence>
+          <element name="key">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" name="materialID" type="xsd:string"/>
+                <element minOccurs="0" name="isbn" type="xsd:string"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element maxOccurs="unbounded" ref="mat:substitutionValue"/>
+        </sequence>
+      </complexType>
+      <element name="Oldmaterialnumber" type="xsd:string"/>
+      <element name="component">
+        <complexType>
+          <sequence>
+            <element name="materialID" type="xsd:string"/>
+            <element minOccurs="0" name="isbn" type="xsd:string"/>
+            <element minOccurs="0" name="quantity" type="xsd:int"/>
+            <element minOccurs="0" name="bomType" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getMaterialDetailRequest">
+        <complexType>
+          <sequence>
+            <element ref="mat:materialKeyList"/>
+            <element minOccurs="0" name="customerID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialDetail">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="materialID" type="xsd:string"/>
+            <element minOccurs="0" name="isbn13" type="xsd:string"/>
+            <element minOccurs="0" name="isbn10" type="xsd:string"/>
+            <element name="internalDescription" type="xsd:string"/>
+            <element minOccurs="0" name="fullDescription" type="xsd:string"/>
+            <element minOccurs="0" name="author" type="xsd:string"/>
+            <element name="materialStatus" type="xsd:string"/>
+            <element minOccurs="0" name="materialStatusDescription" type="xsd:string"/>
+            <element minOccurs="0" name="listPrice" type="xsd:double"/>
+            <element minOccurs="0" name="netPrice" type="xsd:double"/>
+            <element minOccurs="0" name="quantityInStock" type="xsd:int"/>
+            <element minOccurs="0" name="restriction" type="xsd:string"/>
+            <element name="materialGroup" type="xsd:string"/>
+            <element name="substituted" type="xsd:boolean"/>
+            <element minOccurs="0" name="availableDate" type="xsd:date"/>
+            <element minOccurs="0" name="copyrightYear" type="xsd:string"/>
+            <element minOccurs="0" name="mediaType" type="xsd:string"/>
+            <element name="productDivision" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode1" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode2" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode3" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode4" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode5" type="xsd:string"/>
+            <element minOccurs="0" name="unitsPerCarton" type="xsd:int"/>
+            <element name="isSubscription" type="xsd:boolean"/>
+            <element minOccurs="0" name="genItemCategory" type="xsd:string"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:component"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:subscriptionTerm"/>
+            <element minOccurs="0" name="editionCategory" type="xsd:string"/>
+            <element minOccurs="0" ref="mat:Oldmaterialnumber"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialDetailList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:materialDetail"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialException" type="eai:eaiException"/>
+      <element name="materialKeyList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" name="materialID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="isbn">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialSubstitution" type="mat:substitution"/>
+      <element name="materialSubstitutionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:materialSubstitution"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subscriptionTerm">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="duration" type="xsd:int"/>
+            <element minOccurs="0" name="unit" type="xsd:string"/>
+            <element minOccurs="0" name="rate" type="xsd:double"/>
+            <element minOccurs="0" name="startDate" type="xsd:date"/>
+            <element minOccurs="0" name="endDate" type="xsd:date"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="substitutionValue">
+        <complexType>
+          <sequence>
+            <element name="substituteID" type="xsd:string"/>
+            <element name="substituteISBN" type="xsd:string"/>
+            <element name="description" type="xsd:string"/>
+            <element minOccurs="0" name="autoSubstitute" type="xsd:boolean"/>
+            <element minOccurs="0" name="usePrimePrice" type="xsd:boolean"/>
+            <element minOccurs="0" name="applySale" type="xsd:boolean"/>
+            <element minOccurs="0" name="applySample" type="xsd:boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/Customer" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer" xmlns:eai="http://www.hmco.com/EAI" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI/OTS/Material"/>
+      <import namespace="http://www.hmco.com/EAI"/>
+      <complexType name="address">
+        <sequence>
+          <element minOccurs="0" name="customerName" type="xsd:string"/>
+          <element minOccurs="0" name="addressLine1">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="60"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element minOccurs="0" name="addressLine2">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="40"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element minOccurs="0" name="addressLine3" type="xsd:string"/>
+          <element minOccurs="0" name="poBox">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="city">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="35"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="state">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="zipcode">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="10"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="countryCode">
+            <simpleType>
+              <restriction base="xsd:string">
+                <maxLength value="3"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" ref="cus:emailAddressStruct"/>
+        </sequence>
+      </complexType>
+      <element name="SFDCCustomer">
+        <complexType>
+          <sequence>
+            <element name="sfdcCustomerId" type="xsd:string"/>
+            <element minOccurs="0" name="sapCustomerId" type="xsd:string"/>
+            <element minOccurs="0" name="mdrPid" type="xsd:string"/>
+            <element name="name" type="xsd:string"/>
+            <element minOccurs="0" name="shippingStreet" type="xsd:string"/>
+            <element minOccurs="0" name="shippingCity" type="xsd:string"/>
+            <element minOccurs="0" name="shippingState" type="xsd:string"/>
+            <element minOccurs="0" name="shippingZip" type="xsd:string"/>
+            <element minOccurs="0" name="shippingCountry" type="xsd:string"/>
+            <element minOccurs="0" name="phone" type="xsd:string"/>
+            <element minOccurs="0" name="fax" type="xsd:string"/>
+            <element minOccurs="0" name="email" type="xsd:string"/>
+            <element minOccurs="0" ref="cus:pnpAccountFlag"/>
+            <element minOccurs="0" ref="cus:insideSalesAccountFlag"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SFDCCustomerList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:SFDCCustomer"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SFDCRep">
+        <complexType>
+          <sequence>
+            <element name="sfdcUserID" type="xsd:string"/>
+            <element name="sfdcCustomerId" type="xsd:string"/>
+            <element name="userName" type="xsd:string"/>
+            <element minOccurs="0" name="phone" type="xsd:string"/>
+            <element minOccurs="0" name="market" type="xsd:string"/>
+            <element minOccurs="0" name="territoryDescription" type="xsd:string"/>
+            <element minOccurs="0" name="email" type="xsd:string"/>
+            <element minOccurs="0" ref="cus:division"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SFDCRepList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:SFDCRep"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="accountStatementPDFRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:billToCustomer"/>
+            <element ref="cus:emailSubject"/>
+            <element maxOccurs="unbounded" ref="cus:emailTo"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:emailCc"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:emailBody"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="accountStatementPDFResponse">
+        <complexType>
+          <sequence>
+            <element ref="cus:eReturn"/>
+            <element minOccurs="0" ref="cus:message"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="billToCustomer" type="xsd:string"/>
+      <element name="createEtailCustomerRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:storeID"/>
+            <element name="name">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="telephone">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="16"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="customerEmail">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="241"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="soldToAddress" type="cus:address"/>
+            <element minOccurs="0" name="billToAddress" type="cus:address"/>
+            <element minOccurs="0" name="shipToAddress" type="cus:address"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createEtailCustomerResponse">
+        <complexType>
+          <sequence>
+            <element name="soldToCustomerID" type="xsd:string"/>
+            <element name="shipToCustomerID" type="xsd:string"/>
+            <element name="billToCustomerID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="createSundryCustomerRequest">
+        <complexType>
+          <sequence>
+            <element name="division" type="xsd:string"/>
+            <element name="SFASalesTerritory">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="geographicSalesTerritory">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="6"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="name">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="customerAddress" type="cus:address"/>
+            <element minOccurs="0" name="telephone1">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="16"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="telephone2">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="16"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="fax">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="31"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="collegeNumber">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="customerEmail">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="241"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerDetail">
+        <complexType>
+          <sequence>
+            <element name="customerID" type="xsd:string"/>
+            <element name="customerRole" type="xsd:string"/>
+            <element name="customerClassCode" type="xsd:string"/>
+            <element name="customerClassDesc" type="xsd:string"/>
+            <element name="customerTypeCode" type="xsd:string"/>
+            <element name="customerTypeDesc" type="xsd:string"/>
+            <element minOccurs="0" name="creditStatus" type="xsd:string"/>
+            <element minOccurs="0" name="san" type="xsd:string"/>
+            <element minOccurs="0" name="mdrPID" type="xsd:string"/>
+            <element minOccurs="0" ref="cus:isPrimeMDR"/>
+            <element name="customerAddress" type="cus:address"/>
+            <element name="name" type="xsd:string"/>
+            <element name="telNumber" type="xsd:string"/>
+            <element minOccurs="0" name="altTelNumber" type="xsd:string"/>
+            <element minOccurs="0" name="customerStatus" type="xsd:string"/>
+            <element minOccurs="0" name="collegeNumber" type="xsd:string"/>
+            <element minOccurs="0" name="customerEmail" type="xsd:string"/>
+            <element minOccurs="0" name="customerFax">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="31"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="customerDivisionInfo">
+              <complexType>
+                <sequence>
+                  <element name="division" type="xsd:string"/>
+                  <element name="geographicTerritory" type="xsd:string"/>
+                  <element name="allowSubstitutionsFlag" type="xsd:boolean"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerDetailList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerDetail"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerException" type="eai:eaiException"/>
+      <element name="customerExceptionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="cus:customerException"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="10"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="customerIDList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" name="customerID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerKey">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="customerID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="san">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="12"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="mdrPID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="15"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerKeyList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerKey"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerRelationship">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="cus:relationshipType"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="customerID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerRelationshipList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerRelationship"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerSearchCriteria">
+        <complexType>
+          <sequence>
+            <element name="name">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="address">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="60"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="zipCode" type="xsd:string"/>
+            <element name="division" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerSubstitution">
+        <complexType>
+          <sequence>
+            <element name="materialID" type="xsd:string"/>
+            <element maxOccurs="unbounded" ref="mat:substitutionValue"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="customerSubstitutionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:customerSubstitution"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="division" type="xsd:string"/>
+      <element name="eReturn" type="xsd:string"/>
+      <element name="emailAddress" type="xsd:string"/>
+      <element name="emailAddressStruct">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="cus:emailAddress"/>
+            <element ref="cus:isPrimary"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="emailBody" type="xsd:string"/>
+      <element name="emailCc" type="xsd:string"/>
+      <element name="emailSubject" type="xsd:string"/>
+      <element name="emailTo" type="xsd:string"/>
+      <element name="findSFDCCustomerRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="mdrPid" type="xsd:string"/>
+            <element minOccurs="0" name="sapCustomerId" type="xsd:string"/>
+            <element minOccurs="0" name="zipCode" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getCustomerRelationshipsRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:customerID"/>
+            <element ref="cus:division"/>
+            <element ref="cus:relationshipTypeList"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getCustomerSubstitutionsRequest">
+        <complexType>
+          <sequence>
+            <element ref="cus:customerID"/>
+            <element ref="cus:transactionType"/>
+            <element ref="cus:division"/>
+            <element ref="cus:titleList"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="insideSalesAccountFlag" type="xsd:boolean"/>
+      <element name="isPrimary" type="xsd:boolean"/>
+      <element name="isPrimeMDR" nillable="true" type="xsd:boolean"/>
+      <element name="lookUpFields">
+        <complexType>
+          <sequence>
+            <element name="noOfFields" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialID" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+      <element name="pnpAccountFlag" type="xsd:boolean"/>
+      <element name="relationshipType" type="xsd:string"/>
+      <element name="relationshipTypeList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" ref="cus:relationshipType"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sfdcCustomerId" type="xsd:string"/>
+      <element name="sfdcCustomerIdList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:sfdcCustomerId"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="storeID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="30"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="titleList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="cus:materialID"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionType" type="xsd:string"/>
+    </schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI" xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns8:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns8:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns8:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ns8:error"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/Material" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:eai="http://www.hmco.com/EAI" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <complexType name="substitution">
+        <sequence>
+          <element name="key">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" name="materialID" type="xsd:string"/>
+                <element minOccurs="0" name="isbn" type="xsd:string"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element maxOccurs="unbounded" ref="mat:substitutionValue"/>
+        </sequence>
+      </complexType>
+      <element name="component">
+        <complexType>
+          <sequence>
+            <element name="materialID" type="xsd:string"/>
+            <element minOccurs="0" name="isbn" type="xsd:string"/>
+            <element minOccurs="0" name="quantity" type="xsd:int"/>
+            <element minOccurs="0" name="bomType" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getMaterialDetailRequest">
+        <complexType>
+          <sequence>
+            <element ref="mat:materialKeyList"/>
+            <element minOccurs="0" name="customerID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialDetail">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="materialID" type="xsd:string"/>
+            <element minOccurs="0" name="isbn13" type="xsd:string"/>
+            <element minOccurs="0" name="isbn10" type="xsd:string"/>
+            <element name="internalDescription" type="xsd:string"/>
+            <element minOccurs="0" name="fullDescription" type="xsd:string"/>
+            <element minOccurs="0" name="author" type="xsd:string"/>
+            <element name="materialStatus" type="xsd:string"/>
+            <element minOccurs="0" name="materialStatusDescription" type="xsd:string"/>
+            <element minOccurs="0" name="listPrice" type="xsd:double"/>
+            <element minOccurs="0" name="netPrice" type="xsd:double"/>
+            <element minOccurs="0" name="quantityInStock" type="xsd:int"/>
+            <element minOccurs="0" name="restriction" type="xsd:string"/>
+            <element name="materialGroup" type="xsd:string"/>
+            <element name="substituted" type="xsd:boolean"/>
+            <element minOccurs="0" name="availableDate" type="xsd:date"/>
+            <element minOccurs="0" name="copyrightYear" type="xsd:string"/>
+            <element minOccurs="0" name="mediaType" type="xsd:string"/>
+            <element name="productDivision" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode1" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode2" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode3" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode4" type="xsd:string"/>
+            <element minOccurs="0" name="phLevelCode5" type="xsd:string"/>
+            <element minOccurs="0" name="unitsPerCarton" type="xsd:int"/>
+            <element name="isSubscription" type="xsd:boolean"/>
+            <element minOccurs="0" name="genItemCategory" type="xsd:string"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:component"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:subscriptionTerm"/>
+            <element minOccurs="0" name="editionCategory" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialDetailList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:materialDetail"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialException" type="eai:eaiException"/>
+      <element name="materialKeyList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" name="materialID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="isbn">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialSubstitution" type="mat:substitution"/>
+      <element name="materialSubstitutionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="mat:materialSubstitution"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subscriptionTerm">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="duration" type="xsd:int"/>
+            <element minOccurs="0" name="unit" type="xsd:string"/>
+            <element minOccurs="0" name="rate" type="xsd:double"/>
+            <element minOccurs="0" name="startDate" type="xsd:date"/>
+            <element minOccurs="0" name="endDate" type="xsd:date"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="substitutionValue">
+        <complexType>
+          <sequence>
+            <element name="substituteID" type="xsd:string"/>
+            <element name="substituteISBN" type="xsd:string"/>
+            <element name="description" type="xsd:string"/>
+            <element minOccurs="0" name="autoSubstitute" type="xsd:boolean"/>
+            <element minOccurs="0" name="usePrimePrice" type="xsd:boolean"/>
+            <element minOccurs="0" name="applySale" type="xsd:boolean"/>
+            <element minOccurs="0" name="applySample" type="xsd:boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/Transaction" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer" xmlns:eai="http://www.hmco.com/EAI" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:trn="http://www.hmco.com/EAI/OTS/Transaction" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI/OTS/Material"/>
+      <import namespace="http://www.hmco.com/EAI/OTS/Customer"/>
+      <import namespace="http://www.hmco.com/EAI"/>
+      <element name="Division" type="xsd:string"/>
+      <element name="billToCustomerEmailAddress" type="xsd:string"/>
+      <element name="billToSANNumber" type="xsd:string"/>
+      <element name="billingBlock" type="xsd:string"/>
+      <element name="countryCode" type="xsd:string"/>
+      <element name="emailBody" nillable="true" type="xsd:string"/>
+      <element name="emailCc" type="xsd:string"/>
+      <element name="emailSubject" nillable="true" type="xsd:string"/>
+      <element name="emailTo" type="xsd:string"/>
+      <element name="invoiceDetails">
+        <complexType>
+          <sequence>
+            <element name="transactionID" type="xsd:string"/>
+            <element maxOccurs="unbounded" ref="trn:invoiceTransactionItem"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="invoiceDetailsList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:invoiceDetails"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="invoiceId" type="xsd:string"/>
+      <element name="invoiceRequestType" type="xsd:string"/>
+      <element name="invoiceTransactionItem">
+        <complexType>
+          <sequence>
+            <element name="invoiceNo" type="xsd:string"/>
+            <element name="invoiceType" type="xsd:string"/>
+            <element name="billingDate" type="xsd:date"/>
+            <element name="subTotal" type="xsd:double"/>
+            <element name="salesTax" type="xsd:double"/>
+            <element name="shippingCharge" type="xsd:double"/>
+            <element name="total" type="xsd:double"/>
+            <element maxOccurs="unbounded" name="lineItem">
+              <complexType>
+                <sequence>
+                  <element ref="trn:productInfo"/>
+                  <element name="shipmentNo" type="xsd:string"/>
+                  <element name="shipmentLineNo" type="xsd:int"/>
+                  <element name="shipmentLocation" type="xsd:string"/>
+                  <element name="paymentTerm" type="xsd:string"/>
+                  <element minOccurs="0" ref="trn:transactionNo"/>
+                  <element minOccurs="0" ref="trn:transactionLineNo"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="isKitComponent" type="xsd:boolean"/>
+      <element name="itemType" type="xsd:string"/>
+      <element name="lineitemRejectionStatus" type="xsd:string"/>
+      <element name="materialID" type="xsd:string"/>
+      <element name="pdf" nillable="true" type="xsd:string"/>
+      <element name="productInfo">
+        <complexType>
+          <sequence>
+            <element name="lineNo" type="xsd:int"/>
+            <element minOccurs="0" name="salesOffice" type="xsd:string"/>
+            <element minOccurs="0" name="materialID" type="xsd:string"/>
+            <element name="isbn" type="xsd:string"/>
+            <element name="description" type="xsd:string"/>
+            <element minOccurs="0" name="couponCode" type="xsd:string"/>
+            <element minOccurs="0" name="promotionType" type="xsd:string"/>
+            <element name="quantity" type="xsd:int"/>
+            <element name="listPrice" type="xsd:double"/>
+            <element name="netPrice" type="xsd:double"/>
+            <element name="productDivision" type="xsd:string"/>
+            <element name="listDiscount" type="xsd:double"/>
+            <element name="isEGood" type="xsd:boolean"/>
+            <element name="isSubscription" type="xsd:boolean"/>
+            <element minOccurs="0" ref="mat:subscriptionTerm"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="retrieveInvoicePDFRequest">
+        <complexType>
+          <sequence>
+            <element ref="trn:invoiceId"/>
+            <element ref="trn:invoiceRequestType"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:emailTo"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:emailCc"/>
+            <element minOccurs="0" ref="trn:emailSubject"/>
+            <element minOccurs="0" ref="trn:emailBody"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="retrieveInvoicePDFResponse">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="trn:pdf"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="salesRep">
+        <complexType>
+          <sequence>
+            <element name="repID" type="xsd:string"/>
+            <element name="repName" type="xsd:string"/>
+            <element minOccurs="0" name="sfaRepID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sanNumber" type="xsd:string"/>
+      <element name="searchType" type="xsd:string"/>
+      <element name="shipToCareOf_1" type="xsd:string"/>
+      <element name="shipToCareOf_2" type="xsd:string"/>
+      <element name="shipToCustomerEmailAddress" type="xsd:string"/>
+      <element name="shipToSANNumber" type="xsd:string"/>
+      <element name="shipmentDetails">
+        <complexType>
+          <sequence>
+            <element name="transactionID" type="xsd:string"/>
+            <element maxOccurs="unbounded" ref="trn:shipmentDetailsItem"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="shipmentDetailsItem">
+        <complexType>
+          <sequence>
+            <element name="shipmentNo" type="xsd:string"/>
+            <element name="shipmentCharge" type="xsd:double"/>
+            <element name="shipmentCarrier" type="xsd:string"/>
+            <element name="shipmentServiceLevel" type="xsd:string"/>
+            <element name="shipmentWeight" type="xsd:double"/>
+            <element name="totalPackages" type="xsd:int"/>
+            <element name="docDate" type="xsd:date"/>
+            <element minOccurs="0" name="shippingDate" type="xsd:date"/>
+            <element maxOccurs="unbounded" name="lineItem">
+              <complexType>
+                <sequence>
+                  <element name="lineNo" type="xsd:int"/>
+                  <element name="transactionID" type="xsd:string"/>
+                  <element name="transactionLineNo" type="xsd:string"/>
+                  <element minOccurs="0" name="materialID" type="xsd:string"/>
+                  <element name="isbn" type="xsd:string"/>
+                  <element name="fullDescription" type="xsd:string"/>
+                  <element name="shipmentLocation" type="xsd:string"/>
+                  <element name="quantity" type="xsd:double"/>
+                  <element name="productDivision" type="xsd:string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="trackingItem">
+              <complexType>
+                <sequence>
+                  <element name="trackingNo" type="xsd:string"/>
+                  <element name="shippedDate" type="xsd:date"/>
+                  <element name="shipmentServiceLevel" type="xsd:string"/>
+                  <element name="destinationZip" type="xsd:string"/>
+                  <element name="weight" type="xsd:double"/>
+                  <element name="trackingURL" type="xsd:string"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="shipmentDetailsList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:shipmentDetails"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="soldToCustomerEmailAddress" type="xsd:string"/>
+      <element name="soldToSANNumber" type="xsd:string"/>
+      <element name="transaction">
+        <complexType>
+          <sequence>
+            <element name="transactionID" type="xsd:string"/>
+            <element name="type" type="xsd:string"/>
+            <element name="poNumber">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="status" type="xsd:string"/>
+            <element name="creationDate" type="xsd:date"/>
+            <element name="orderSource" type="xsd:string"/>
+            <element name="division" type="xsd:string"/>
+            <element minOccurs="0" name="salesOffice" type="xsd:string"/>
+            <element minOccurs="0" name="customerEmail" type="xsd:string"/>
+            <element name="soldToCustomerID" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:soldToSANNumber"/>
+            <element name="soldToCustomerName" type="xsd:string"/>
+            <element name="soldToCustomerAddress" type="cus:address"/>
+            <element minOccurs="0" ref="trn:soldToCustomerEmailAddress"/>
+            <element minOccurs="0" name="shipToCustomerID" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:shipToSANNumber"/>
+            <element minOccurs="0" name="shipToCustomerName" type="xsd:string"/>
+            <element minOccurs="0" name="shipToCustomerAddress" type="cus:address"/>
+            <element minOccurs="0" ref="trn:shipToCustomerEmailAddress"/>
+            <element minOccurs="0" name="billToCustomerID" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:billToSANNumber"/>
+            <element minOccurs="0" name="billToCustomerName" type="xsd:string"/>
+            <element minOccurs="0" name="billToCustomerAddress" type="cus:address"/>
+            <element minOccurs="0" ref="trn:billToCustomerEmailAddress"/>
+            <element name="isHeaderComplete" type="xsd:boolean"/>
+            <element minOccurs="0" ref="trn:transactionRejectionStatus"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:transactionLineItem"/>
+            <element minOccurs="0" ref="trn:shipToCareOf_1"/>
+            <element minOccurs="0" ref="trn:shipToCareOf_2"/>
+            <element minOccurs="0" ref="trn:billingBlock"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionException" type="eai:eaiException"/>
+      <element name="transactionExceptionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:transactionException"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionIDList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" name="transactionID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionLineItem">
+        <complexType>
+          <sequence>
+            <element ref="trn:productInfo"/>
+            <element name="lineitemStatus" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:lineitemRejectionStatus"/>
+            <element name="isLineitemComplete" type="xsd:boolean"/>
+            <element name="titleStatus" type="xsd:string"/>
+            <element minOccurs="0" name="deliveryBlock" type="xsd:string"/>
+            <element minOccurs="0" name="requestDate" type="xsd:date"/>
+            <element minOccurs="0" name="availableDate" type="xsd:date"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:salesRep"/>
+            <element ref="trn:itemType"/>
+            <element ref="trn:isKitComponent"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionLineNo" type="xsd:int"/>
+      <element name="transactionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:transaction"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionNo" type="xsd:string"/>
+      <element name="transactionRejectionStatus" type="xsd:string"/>
+      <element name="transactionSearchCriteria">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="trn:searchType"/>
+            <element minOccurs="0" name="customerID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="fromDate" type="xsd:date"/>
+            <element minOccurs="0" name="toDate" type="xsd:date"/>
+            <element name="limitOfResults" type="xsd:int"/>
+            <element minOccurs="0" name="invoiceNo">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="poNo">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="clientTransactionID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="12"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="isbn">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" ref="trn:materialID"/>
+            <element minOccurs="0" name="status" type="xsd:string"/>
+            <element minOccurs="0" name="transactionType" type="xsd:string"/>
+            <element minOccurs="0" name="orderSource" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:sanNumber"/>
+            <element minOccurs="0" ref="trn:zipCode"/>
+            <element minOccurs="0" ref="trn:countryCode"/>
+            <element minOccurs="0" ref="trn:Division"/>
+            <element minOccurs="0" name="partnerFunctionList">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="unbounded" name="partnerFunction" type="xsd:string"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="zipCode" type="xsd:string"/>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.hmco.com/EAI/OTS/TransactionNew" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cus="http://www.hmco.com/EAI/OTS/Customer" xmlns:eai="http://www.hmco.com/EAI" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:trn="http://www.hmco.com/EAI/OTS/TransactionNew" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.hmco.com/EAI/OTS/Material"/>
+      <import namespace="http://www.hmco.com/EAI/OTS/Customer"/>
+      <import namespace="http://www.hmco.com/EAI"/>
+      <element name="Division" type="xsd:string"/>
+      <element name="billToCustomerEmailAddress" type="xsd:string"/>
+      <element name="billToSANNumber" type="xsd:string"/>
+      <element name="billingBlock" type="xsd:string"/>
+      <element name="countryCode" type="xsd:string"/>
+      <element name="emailBody" nillable="true" type="xsd:string"/>
+      <element name="emailCc" type="xsd:string"/>
+      <element name="emailSubject" nillable="true" type="xsd:string"/>
+      <element name="emailTo" type="xsd:string"/>
+      <element name="invoiceDetails">
+        <complexType>
+          <sequence>
+            <element name="transactionID" type="xsd:string"/>
+            <element maxOccurs="unbounded" ref="trn:invoiceTransactionItem"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="invoiceDetailsList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:invoiceDetails"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="invoiceId" type="xsd:string"/>
+      <element name="invoiceRequestType" type="xsd:string"/>
+      <element name="invoiceTransactionItem">
+        <complexType>
+          <sequence>
+            <element name="invoiceNo" type="xsd:string"/>
+            <element name="invoiceType" type="xsd:string"/>
+            <element name="billingDate" type="xsd:date"/>
+            <element name="subTotal" type="xsd:double"/>
+            <element name="salesTax" type="xsd:double"/>
+            <element name="shippingCharge" type="xsd:double"/>
+            <element name="total" type="xsd:double"/>
+            <element maxOccurs="unbounded" name="lineItem">
+              <complexType>
+                <sequence>
+                  <element ref="trn:productInfo2"/>
+                  <element name="shipmentNo" type="xsd:string"/>
+                  <element name="shipmentLineNo" type="xsd:int"/>
+                  <element name="shipmentLocation" type="xsd:string"/>
+                  <element name="paymentTerm" type="xsd:string"/>
+                  <element minOccurs="0" ref="trn:transactionNo"/>
+                  <element minOccurs="0" ref="trn:transactionLineNo"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="isKitComponent" type="xsd:boolean"/>
+      <element name="itemType" type="xsd:string"/>
+      <element name="lineitemRejectionStatus" type="xsd:string"/>
+      <element name="materialID" type="xsd:string"/>
+      <element name="pdf" nillable="true" type="xsd:string"/>
+      <element name="productInfo2">
+        <complexType>
+          <sequence>
+            <element name="lineNo" type="xsd:int"/>
+            <element name="cancelledQuantity" type="xsd:string"/>
+            <element minOccurs="0" name="salesOffice" type="xsd:string"/>
+            <element minOccurs="0" name="materialID" type="xsd:string"/>
+            <element name="isbn" type="xsd:string"/>
+            <element name="description" type="xsd:string"/>
+            <element minOccurs="0" name="couponCode" type="xsd:string"/>
+            <element minOccurs="0" name="promotionType" type="xsd:string"/>
+            <element name="quantity" type="xsd:int"/>
+            <element name="promoAmount" type="xsd:string"/>
+            <element name="listPrice" type="xsd:double"/>
+            <element name="netPrice" type="xsd:double"/>
+            <element name="productDivision" type="xsd:string"/>
+            <element name="listDiscount" type="xsd:double"/>
+            <element name="isEGood" type="xsd:boolean"/>
+            <element name="isSubscription" type="xsd:boolean"/>
+            <element minOccurs="0" ref="mat:subscriptionTerm"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="retrieveInvoicePDFRequest">
+        <complexType>
+          <sequence>
+            <element ref="trn:invoiceId"/>
+            <element ref="trn:invoiceRequestType"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:emailTo"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:emailCc"/>
+            <element minOccurs="0" ref="trn:emailSubject"/>
+            <element minOccurs="0" ref="trn:emailBody"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="retrieveInvoicePDFResponse">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="trn:pdf"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="salesRep">
+        <complexType>
+          <sequence>
+            <element name="repID" type="xsd:string"/>
+            <element name="repName" type="xsd:string"/>
+            <element minOccurs="0" name="sfaRepID" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sanNumber" type="xsd:string"/>
+      <element name="searchType" type="xsd:string"/>
+      <element name="shipToCareOf_1" type="xsd:string"/>
+      <element name="shipToCareOf_2" type="xsd:string"/>
+      <element name="shipToCustomerEmailAddress" type="xsd:string"/>
+      <element name="shipToSANNumber" type="xsd:string"/>
+      <element name="shipmentDetails">
+        <complexType>
+          <sequence>
+            <element name="transactionID" type="xsd:string"/>
+            <element maxOccurs="unbounded" ref="trn:shipmentDetailsItem"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="shipmentDetailsItem">
+        <complexType>
+          <sequence>
+            <element name="shipmentNo" type="xsd:string"/>
+            <element name="shipmentCharge" type="xsd:double"/>
+            <element name="shipmentCarrier" type="xsd:string"/>
+            <element name="shipmentServiceLevel" type="xsd:string"/>
+            <element name="shipmentWeight" type="xsd:double"/>
+            <element name="totalPackages" type="xsd:int"/>
+            <element name="docDate" type="xsd:date"/>
+            <element minOccurs="0" name="shippingDate" type="xsd:date"/>
+            <element maxOccurs="unbounded" name="lineItem">
+              <complexType>
+                <sequence>
+                  <element name="lineNo" type="xsd:int"/>
+                  <element name="transactionID" type="xsd:string"/>
+                  <element name="transactionLineNo" type="xsd:string"/>
+                  <element minOccurs="0" name="materialID" type="xsd:string"/>
+                  <element name="isbn" type="xsd:string"/>
+                  <element name="fullDescription" type="xsd:string"/>
+                  <element name="shipmentLocation" type="xsd:string"/>
+                  <element name="quantity" type="xsd:double"/>
+                  <element name="productDivision" type="xsd:string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="trackingItem">
+              <complexType>
+                <sequence>
+                  <element name="trackingNo" type="xsd:string"/>
+                  <element name="shippedDate" type="xsd:date"/>
+                  <element name="shipmentServiceLevel" type="xsd:string"/>
+                  <element name="destinationZip" type="xsd:string"/>
+                  <element name="weight" type="xsd:double"/>
+                  <element name="trackingURL" type="xsd:string"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="shipmentDetailsList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:shipmentDetails"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="soldToCustomerEmailAddress" type="xsd:string"/>
+      <element name="soldToSANNumber" type="xsd:string"/>
+      <element name="transaction">
+        <complexType>
+          <sequence>
+            <element name="transactionID" type="xsd:string"/>
+            <element name="type" type="xsd:string"/>
+            <element name="poNumber">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="status" type="xsd:string"/>
+            <element name="creationDate" type="xsd:date"/>
+            <element name="orderSource" type="xsd:string"/>
+            <element name="division" type="xsd:string"/>
+            <element minOccurs="0" name="salesOffice" type="xsd:string"/>
+            <element minOccurs="0" name="customerEmail" type="xsd:string"/>
+            <element name="soldToCustomerID" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:soldToSANNumber"/>
+            <element name="soldToCustomerName" type="xsd:string"/>
+            <element name="soldToCustomerAddress" type="cus:address"/>
+            <element minOccurs="0" ref="trn:soldToCustomerEmailAddress"/>
+            <element minOccurs="0" name="shipToCustomerID" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:shipToSANNumber"/>
+            <element minOccurs="0" name="shipToCustomerName" type="xsd:string"/>
+            <element minOccurs="0" name="shipToCustomerAddress" type="cus:address"/>
+            <element minOccurs="0" ref="trn:shipToCustomerEmailAddress"/>
+            <element minOccurs="0" name="billToCustomerID" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:billToSANNumber"/>
+            <element minOccurs="0" name="billToCustomerName" type="xsd:string"/>
+            <element minOccurs="0" name="billToCustomerAddress" type="cus:address"/>
+            <element minOccurs="0" ref="trn:billToCustomerEmailAddress"/>
+            <element name="isHeaderComplete" type="xsd:boolean"/>
+            <element minOccurs="0" ref="trn:transactionRejectionStatus"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:transactionLineItem"/>
+            <element minOccurs="0" ref="trn:shipToCareOf_1"/>
+            <element minOccurs="0" ref="trn:shipToCareOf_2"/>
+            <element minOccurs="0" ref="trn:billingBlock"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionException" type="eai:eaiException"/>
+      <element name="transactionExceptionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:transactionException"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionIDList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" name="transactionID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionLineItem">
+        <complexType>
+          <sequence>
+            <element ref="trn:productInfo2"/>
+            <element name="lineitemStatus" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:lineitemRejectionStatus"/>
+            <element name="isLineitemComplete" type="xsd:boolean"/>
+            <element name="titleStatus" type="xsd:string"/>
+            <element minOccurs="0" name="deliveryBlock" type="xsd:string"/>
+            <element minOccurs="0" name="requestDate" type="xsd:date"/>
+            <element minOccurs="0" name="availableDate" type="xsd:date"/>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:salesRep"/>
+            <element ref="trn:itemType"/>
+            <element ref="trn:isKitComponent"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionLineNo" type="xsd:int"/>
+      <element name="transactionList">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" minOccurs="0" ref="trn:transaction"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="transactionNo" type="xsd:string"/>
+      <element name="transactionRejectionStatus" type="xsd:string"/>
+      <element name="transactionSearchCriteria">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" ref="trn:searchType"/>
+            <element minOccurs="0" name="customerID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="fromDate" type="xsd:date"/>
+            <element minOccurs="0" name="toDate" type="xsd:date"/>
+            <element name="limitOfResults" type="xsd:int"/>
+            <element minOccurs="0" name="invoiceNo">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="poNo">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="35"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="clientTransactionID">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="12"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" name="isbn">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element minOccurs="0" ref="trn:materialID"/>
+            <element minOccurs="0" name="status" type="xsd:string"/>
+            <element minOccurs="0" name="transactionType" type="xsd:string"/>
+            <element minOccurs="0" name="orderSource" type="xsd:string"/>
+            <element minOccurs="0" ref="trn:sanNumber"/>
+            <element minOccurs="0" ref="trn:zipCode"/>
+            <element minOccurs="0" ref="trn:countryCode"/>
+            <element minOccurs="0" ref="trn:Division"/>
+            <element minOccurs="0" name="partnerFunctionList">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="unbounded" name="partnerFunction" type="xsd:string"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="zipCode" type="xsd:string"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="transactionException">
+    <wsdl:part element="ns2:transactionException" name="transactionException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerRelationshipsResponse">
+    <wsdl:part element="ns4:customerRelationshipList" name="customerRelationshipList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createEtailCustomerRequest">
+    <wsdl:part element="ns4:createEtailCustomerRequest" name="createEtailCustomerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="asyncRequestStatus">
+    <wsdl:part element="ns8:asyncRequestStatus" name="asyncRequestStatus"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialSubstitutionsRequest">
+    <wsdl:part element="ns1:materialKeyList" name="materialKeyList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findEtailCustomerResponse">
+    <wsdl:part element="ns4:customerIDList" name="customerIDList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findTransactionsResponse">
+    <wsdl:part element="ns2:transactionList" name="transactionList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerDetailRequest">
+    <wsdl:part element="ns4:customerKeyList" name="getCustomerDetailRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findTransactionsRequest">
+    <wsdl:part element="ns2:transactionSearchCriteria" name="transactionSearchCriteria"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerDetailServiceResponse">
+    <wsdl:part element="ns5:customerDetailList" name="getCustomerDetailServiceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findEtailCustomerRequest">
+    <wsdl:part element="ns4:customerSearchCriteria" name="customerSearchCriteria"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialDetailRequest">
+    <wsdl:part element="ns1:getMaterialDetailRequest" name="getMaterialDetailRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSFDCRepRequest">
+    <wsdl:part element="ns4:sfdcCustomerIdList" name="sfdcCustomerIdList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialDetailServiceRequest">
+    <wsdl:part element="ns0:getMaterialDetailRequest" name="getMaterialDetailServiceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getShipmentsResponse">
+    <wsdl:part element="ns2:shipmentDetailsList" name="shipmentDetailsList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PackingListResponse">
+    <wsdl:part element="ns9:packingListResponse" name="PackingListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoicesRequest">
+    <wsdl:part element="ns2:transactionIDList" name="transactionIDList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="accountStatementPDFResponse">
+    <wsdl:part element="ns4:accountStatementPDFResponse" name="accountStatementPDFResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerDetailServiceRequest">
+    <wsdl:part element="ns5:customerKeyList" name="getCustomerDetailServiceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialDetailResponse">
+    <wsdl:part element="ns1:materialDetailList" name="materialDetails"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailServiceResponse">
+    <wsdl:part element="ns3:transactionList" name="transactionList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoicesServiceRequest">
+    <wsdl:part element="ns3:transactionIDList" name="invoiceDetails"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerRelationshipsRequest">
+    <wsdl:part element="ns4:getCustomerRelationshipsRequest" name="relationshipTypeList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="materialException">
+    <wsdl:part element="ns1:materialException" name="materialException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findTransactionsServiceResponse">
+    <wsdl:part element="ns3:transactionList" name="transactionList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getShipmentsRequest">
+    <wsdl:part element="ns2:transactionIDList" name="transactionIDList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPServiceRequest">
+    <wsdl:part element="ns6:GET_ATP_REQUEST" name="GET_ATP_REQUEST"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPResponse">
+    <wsdl:part element="ns7:GET_ATP_RESPONSE" name="getMaterialATPResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="accountStatementPDFRequest">
+    <wsdl:part element="ns4:accountStatementPDFRequest" name="accountStatementPDFRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eaiException">
+    <wsdl:part name="eaiException" type="ns8:eaiException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoicesServiceResponse">
+    <wsdl:part element="ns3:invoiceDetailsList" name="invoiceDetailsList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailResponse">
+    <wsdl:part element="ns2:transactionList" name="transactionList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="customerException">
+    <wsdl:part element="ns4:customerException" name="customerException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSFDCRepResponse">
+    <wsdl:part element="ns4:SFDCRepList" name="SFDCRepList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPServiceResponse">
+    <wsdl:part element="ns6:GET_ATP_RESPONSE" name="GET_ATP_RESPONSE"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="asyncRequestId">
+    <wsdl:part element="ns8:asyncRequestId" name="asyncRequestId"></wsdl:part>
+    <wsdl:part element="ns8:asyncRequestId" name="asyncRequestId"></wsdl:part>
+    <wsdl:part element="ns8:asyncRequestId" name="asyncRequestId"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSundryCustomerResponse">
+    <wsdl:part element="ns4:customerID" name="customerID"></wsdl:part>
+    <wsdl:part element="ns4:customerID" name="customerID"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createEtailCustomerResponse">
+    <wsdl:part element="ns4:createEtailCustomerResponse" name="createEtailCustomerResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSundryCustomerRequest">
+    <wsdl:part element="ns4:createSundryCustomerRequest" name="createSundryCustomerRequest"></wsdl:part>
+    <wsdl:part element="ns4:createSundryCustomerRequest" name="createSundryCustomerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PackingListRequest">
+    <wsdl:part element="ns9:packingListRequest" name="PackingListRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getShipmentsServiceRequest">
+    <wsdl:part element="ns3:transactionIDList" name="transactionIDList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findTransactionsServiceRequest">
+    <wsdl:part element="ns3:transactionSearchCriteria" name="transactionSearchCriteria"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findSFDCCustomerResponse">
+    <wsdl:part element="ns4:SFDCCustomerList" name="SFDCCustomerList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPException">
+    <wsdl:part element="ns7:ATP_EXCEPTION" name="getMaterialATPException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPRequest">
+    <wsdl:part element="ns7:GET_ATP_REQUEST" name="getMaterialATPRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailServiceRequest">
+    <wsdl:part element="ns3:transactionIDList" name="transactionIDList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialSubstitutionsResponse">
+    <wsdl:part element="ns1:materialSubstitutionList" name="materialSubstitutionList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findSFDCCustomerRequest">
+    <wsdl:part element="ns4:findSFDCCustomerRequest" name="findSFDCCustomerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerDetailResponse">
+    <wsdl:part element="ns4:customerDetailList" name="getCustomerDetailResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaterialDetailServiceResponse">
+    <wsdl:part element="ns0:materialDetailList" name="getMaterialDetailServiceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoicesResponse">
+    <wsdl:part element="ns2:invoiceDetailsList" name="invoiceDetailsList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getShipmentsServiceResponse">
+    <wsdl:part element="ns3:shipmentDetailsList" name="shipmentDetailsList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTransactionDetailRequest">
+    <wsdl:part element="ns2:transactionIDList" name="transactionIDList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ATPEx">
+    <wsdl:operation name="getMaterialATPEx">
+      <wsdl:input message="tns:getMaterialATPServiceRequest" wsam:Action="ATPEx/getMaterialATPEx"></wsdl:input>
+      <wsdl:output message="tns:getMaterialATPServiceResponse"></wsdl:output>
+      <wsdl:fault message="tns:getMaterialATPException" name="getMaterialATPException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialATP">
+      <wsdl:input message="tns:getMaterialATPRequest" wsam:Action="ATPEx/getMaterialATP"></wsdl:input>
+      <wsdl:output message="tns:getMaterialATPResponse"></wsdl:output>
+      <wsdl:fault message="tns:getMaterialATPException" name="getMaterialATPException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialATPAsync">
+      <wsdl:input message="tns:getMaterialATPRequest" wsam:Action="ATPEx/getMaterialATPAsync"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestId"></wsdl:output>
+      <wsdl:fault message="tns:getMaterialATPException" name="getMaterialATPException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialATPAsyncResult">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="ATPEx/getMaterialATPAsyncResult"></wsdl:input>
+      <wsdl:output message="tns:getMaterialATPResponse"></wsdl:output>
+      <wsdl:fault message="tns:getMaterialATPException" name="getMaterialATPException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="asyncPoll">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="ATPEx/asyncPoll"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestStatus"></wsdl:output>
+      <wsdl:fault message="tns:eaiException" name="eaiException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MaterialEx">
+    <wsdl:operation name="getMaterialDetailEx">
+      <wsdl:input message="tns:getMaterialDetailServiceRequest" wsam:Action="MaterialEx/getMaterialDetailEx"></wsdl:input>
+      <wsdl:output message="tns:getMaterialDetailServiceResponse"></wsdl:output>
+      <wsdl:fault message="tns:materialException" name="materialException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialDetail">
+      <wsdl:input message="tns:getMaterialDetailRequest" wsam:Action="MaterialEx/getMaterialDetail"></wsdl:input>
+      <wsdl:output message="tns:getMaterialDetailResponse"></wsdl:output>
+      <wsdl:fault message="tns:materialException" name="materialException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialSubstitutions">
+      <wsdl:input message="tns:getMaterialSubstitutionsRequest" wsam:Action="MaterialEx/getMaterialSubstitutions"></wsdl:input>
+      <wsdl:output message="tns:getMaterialSubstitutionsResponse"></wsdl:output>
+      <wsdl:fault message="tns:materialException" name="materialException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialDetailAsync">
+      <wsdl:input message="tns:getMaterialDetailRequest" wsam:Action="MaterialEx/getMaterialDetailAsync"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestId"></wsdl:output>
+      <wsdl:fault message="tns:materialException" name="materialException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialDetailAsyncResult">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="MaterialEx/getMaterialDetailAsyncResult"></wsdl:input>
+      <wsdl:output message="tns:getMaterialDetailResponse"></wsdl:output>
+      <wsdl:fault message="tns:materialException" name="materialException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="asyncPoll">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="MaterialEx/asyncPoll"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestStatus"></wsdl:output>
+      <wsdl:fault message="tns:eaiException" name="eaiException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransactionEx">
+    <wsdl:operation name="getTransactionDetail">
+      <wsdl:input message="tns:getTransactionDetailRequest" wsam:Action="TransactionEx/getTransactionDetail"></wsdl:input>
+      <wsdl:output message="tns:getTransactionDetailResponse"></wsdl:output>
+      <wsdl:fault message="tns:transactionException" name="transactionException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoices">
+      <wsdl:input message="tns:getInvoicesRequest" wsam:Action="TransactionEx/getInvoices"></wsdl:input>
+      <wsdl:output message="tns:getInvoicesResponse"></wsdl:output>
+      <wsdl:fault message="tns:transactionException" name="transactionException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getShipments">
+      <wsdl:input message="tns:getShipmentsRequest" wsam:Action="TransactionEx/getShipments"></wsdl:input>
+      <wsdl:output message="tns:getShipmentsResponse"></wsdl:output>
+      <wsdl:fault message="tns:transactionException" name="transactionException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findTransactions">
+      <wsdl:input message="tns:findTransactionsRequest" wsam:Action="TransactionEx/findTransactions"></wsdl:input>
+      <wsdl:output message="tns:findTransactionsResponse"></wsdl:output>
+      <wsdl:fault message="tns:transactionException" name="transactionException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetailEx">
+      <wsdl:input message="tns:getTransactionDetailServiceRequest" wsam:Action="TransactionEx/getTransactionDetailEx"></wsdl:input>
+      <wsdl:output message="tns:getTransactionDetailServiceResponse"></wsdl:output>
+      <wsdl:fault message="tns:transactionException" name="transactionException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CustomerEx">
+    <wsdl:operation name="asyncPoll">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="CustomerEx/asyncPoll"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestStatus"></wsdl:output>
+      <wsdl:fault message="tns:eaiException" name="eaiException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetail">
+      <wsdl:input message="tns:getCustomerDetailRequest" wsam:Action="CustomerEx/getCustomerDetail"></wsdl:input>
+      <wsdl:output message="tns:getCustomerDetailResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetailAsync">
+      <wsdl:input message="tns:getCustomerDetailRequest" wsam:Action="CustomerEx/getCustomerDetailAsync"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestId"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetailAsyncResult">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="CustomerEx/getCustomerDetailAsyncResult"></wsdl:input>
+      <wsdl:output message="tns:getCustomerDetailResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="accountStatementPDF">
+      <wsdl:input message="tns:accountStatementPDFRequest" wsam:Action="CustomerEx/accountStatementPDF"></wsdl:input>
+      <wsdl:output message="tns:accountStatementPDFResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createEtailCustomer">
+      <wsdl:input message="tns:createEtailCustomerRequest" wsam:Action="CustomerEx/createEtailCustomer"></wsdl:input>
+      <wsdl:output message="tns:createEtailCustomerResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSundryCustomer">
+      <wsdl:input message="tns:createSundryCustomerRequest" wsam:Action="CustomerEx/createSundryCustomer"></wsdl:input>
+      <wsdl:output message="tns:createSundryCustomerResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSundryCustomerAsync">
+      <wsdl:input message="tns:createSundryCustomerRequest" wsam:Action="CustomerEx/createSundryCustomerAsync"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestId"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSundryCustomerAsyncResult">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="CustomerEx/createSundryCustomerAsyncResult"></wsdl:input>
+      <wsdl:output message="tns:createSundryCustomerResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findEtailCustomer">
+      <wsdl:input message="tns:findEtailCustomerRequest" wsam:Action="CustomerEx/findEtailCustomer"></wsdl:input>
+      <wsdl:output message="tns:findEtailCustomerResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findSFDCCustomer">
+      <wsdl:input message="tns:findSFDCCustomerRequest" wsam:Action="CustomerEx/findSFDCCustomer"></wsdl:input>
+      <wsdl:output message="tns:findSFDCCustomerResponse"></wsdl:output>
+      <wsdl:fault message="tns:eaiException" name="eaiException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerRelationships">
+      <wsdl:input message="tns:getCustomerRelationshipsRequest" wsam:Action="CustomerEx/getCustomerRelationships"></wsdl:input>
+      <wsdl:output message="tns:getCustomerRelationshipsResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerRelationshipsAsync">
+      <wsdl:input message="tns:getCustomerRelationshipsRequest" wsam:Action="CustomerEx/getCustomerRelationshipsAsync"></wsdl:input>
+      <wsdl:output message="tns:asyncRequestId"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerRelationshipsAsyncResult">
+      <wsdl:input message="tns:asyncRequestId" wsam:Action="CustomerEx/getCustomerRelationshipsAsyncResult"></wsdl:input>
+      <wsdl:output message="tns:getCustomerRelationshipsResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSFDCRep">
+      <wsdl:input message="tns:getSFDCRepRequest" wsam:Action="CustomerEx/getSFDCRep"></wsdl:input>
+      <wsdl:output message="tns:getSFDCRepResponse"></wsdl:output>
+      <wsdl:fault message="tns:eaiException" name="eaiException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PackingListOperation">
+      <wsdl:input message="tns:PackingListRequest" wsam:Action="CustomerEx/PackingListOperation"></wsdl:input>
+      <wsdl:output message="tns:PackingListResponse"></wsdl:output>
+      <wsdl:fault message="tns:eaiException" name="PackingListException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetailEx">
+      <wsdl:input message="tns:getCustomerDetailServiceRequest" wsam:Action="CustomerEx/getCustomerDetailEx"></wsdl:input>
+      <wsdl:output message="tns:getCustomerDetailServiceResponse"></wsdl:output>
+      <wsdl:fault message="tns:customerException" name="customerException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MaterialExEndpoint1Binding" type="tns:MaterialEx">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMaterialDetailEx">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/MaterialExEndpoint1/getMaterialDetailEx" style="document"/>
+      <wsdl:input>
+        <soap:body parts="getMaterialDetailServiceRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="getMaterialDetailServiceResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="materialException">
+        <soap:fault name="materialException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialDetail">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/MaterialExEndpoint1/getMaterialDetail" style="document"/>
+      <wsdl:input>
+        <soap:body parts="getMaterialDetailRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="materialDetails" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="materialException">
+        <soap:fault name="materialException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransactionExEndpoint1Binding" type="tns:TransactionEx">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTransactionDetail">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/getTransactionDetail" style="document"/>
+      <wsdl:input>
+        <soap:body parts="transactionIDList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="transactionList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="transactionException">
+        <soap:fault name="transactionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoices">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent//getInvoices" style="document"/>
+      <wsdl:input>
+        <soap:body parts="transactionIDList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="invoiceDetailsList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="transactionException">
+        <soap:fault name="transactionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getShipments">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent//getShipments" style="document"/>
+      <wsdl:input>
+        <soap:body parts="transactionIDList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="shipmentDetailsList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="transactionException">
+        <soap:fault name="transactionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findTransactions">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/findTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body parts="transactionSearchCriteria" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="transactionList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="transactionException">
+        <soap:fault name="transactionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetailEx">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/getTransactionDetailEx" style="document"/>
+      <wsdl:input>
+        <soap:body parts="transactionIDList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="transactionList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="transactionException">
+        <soap:fault name="transactionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomerExEndpoint1Binding" type="tns:CustomerEx">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCustomerDetail">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetail" style="document"/>
+      <wsdl:input>
+        <soap:body parts="getCustomerDetailRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="getCustomerDetailResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="asyncPoll">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/asyncPoll" style="document"/>
+      <wsdl:input>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="asyncRequestStatus" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="eaiException">
+        <soap:fault name="eaiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="accountStatementPDF">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/AccountStatementPDF" style="document"/>
+      <wsdl:input>
+        <soap:body parts="accountStatementPDFRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="accountStatementPDFResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createEtailCustomer">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createEtailCustomer" style="document"/>
+      <wsdl:input>
+        <soap:body parts="createEtailCustomerRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="createEtailCustomerResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSundryCustomer">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomer" style="document"/>
+      <wsdl:input>
+        <soap:body parts="createSundryCustomerRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="customerID" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSundryCustomerAsync">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomerAsync" style="document"/>
+      <wsdl:input>
+        <soap:body parts="createSundryCustomerRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSundryCustomerAsyncResult">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/createSundryCustomerAsyncResult" style="document"/>
+      <wsdl:input>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="customerID" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findEtailCustomer">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/findEtailCustomer" style="document"/>
+      <wsdl:input>
+        <soap:body parts="customerSearchCriteria" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="customerIDList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findSFDCCustomer">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/findSFDCCustomer" style="document"/>
+      <wsdl:input>
+        <soap:body parts="findSFDCCustomerRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="SFDCCustomerList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="eaiException">
+        <soap:fault name="eaiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetailAsync">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailAsync" style="document"/>
+      <wsdl:input>
+        <soap:body parts="getCustomerDetailRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetailAsyncResult">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailAsyncResult" style="document"/>
+      <wsdl:input>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="getCustomerDetailResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerRelationships">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationships" style="document"/>
+      <wsdl:input>
+        <soap:body parts="relationshipTypeList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="customerRelationshipList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerRelationshipsAsync">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationshipsAsync" style="document"/>
+      <wsdl:input>
+        <soap:body parts="relationshipTypeList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerRelationshipsAsyncResult">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerRelationshipsAsyncResult" style="document"/>
+      <wsdl:input>
+        <soap:body parts="asyncRequestId" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="customerRelationshipList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSFDCRep">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getSFDCRep" style="document"/>
+      <wsdl:input>
+        <soap:body parts="sfdcCustomerIdList" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="SFDCRepList" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="eaiException">
+        <soap:fault name="eaiException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PackingListOperation">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/PackingListOperation" style="document"/>
+      <wsdl:input>
+        <soap:body parts="PackingListRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="PackingListResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PackingListException">
+        <soap:fault name="PackingListException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerDetailEx">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1/getCustomerDetailEx" style="document"/>
+      <wsdl:input>
+        <soap:body parts="getCustomerDetailServiceRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="getCustomerDetailServiceResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="customerException">
+        <soap:fault name="customerException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ATPExEndpoint1Binding" type="tns:ATPEx">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMaterialATPEx">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1/getMaterialATPEx" style="document"/>
+      <wsdl:input>
+        <soap:body parts="GET_ATP_REQUEST" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="GET_ATP_RESPONSE" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="getMaterialATPException">
+        <soap:fault name="getMaterialATPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialATP">
+      <soap:operation soapAction="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1/getMaterialATP" style="document"/>
+      <wsdl:input>
+        <soap:body parts="getMaterialATPRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="getMaterialATPResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="getMaterialATPException">
+        <soap:fault name="getMaterialATPException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EnterpriseWebServices.serviceagent">
+    <wsdl:port binding="tns:TransactionExEndpoint1Binding" name="TransactionExEndpoint1">
+      <soap:address location="http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:MaterialExEndpoint1Binding" name="MaterialExEndpoint1">
+      <soap:address location="http://neduapp001b:7110/services/material"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:CustomerExEndpoint1Binding" name="CustomerExEndpoint1">
+      <soap:address location="http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/CustomerExEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:ATPExEndpoint1Binding" name="ATPExEndpoint1">
+      <soap:address location="http://localhost:9110/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://neduapp001b:7110/services/material</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1/getMaterialATP" name="getMaterialATP" bindingOperationName="getMaterialATP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/material</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>?</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>?</get:REGION>
+         <!--Optional:-->
+         <get:CUST_ID>?</get:CUST_ID>
+         <!--Optional:-->
+         <get:DIST_CHNL>?</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>?</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>?</get:ITEM_TYPE>
+         <!--Optional:-->
+         <get:MDR>?</get:MDR>
+         <!--Optional:-->
+         <get:SALES_ORG>?</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>?</get:ORDER_TYPE>
+         <!--Optional:-->
+         <get:FLEX1>?</get:FLEX1>
+         <!--Optional:-->
+         <get:FLEX2>?</get:FLEX2>
+         <!--Optional:-->
+         <get:FLEX3>?</get:FLEX3>
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>?</get:MATNR>
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1/getMaterialATPEx" name="getMaterialATPEx" bindingOperationName="getMaterialATPEx" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:7110/services/material</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATPNew">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>?</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>?</get:REGION>
+         <!--Optional:-->
+         <get:CUST_ID>?</get:CUST_ID>
+         <!--Optional:-->
+         <get:DIST_CHNL>?</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>?</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>?</get:ITEM_TYPE>
+         <!--Optional:-->
+         <get:MDR>?</get:MDR>
+         <!--Optional:-->
+         <get:SALES_ORG>?</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>?</get:ORDER_TYPE>
+         <!--Optional:-->
+         <get:FLEX1>?</get:FLEX1>
+         <!--Optional:-->
+         <get:FLEX2>?</get:FLEX2>
+         <!--Optional:-->
+         <get:FLEX3>?</get:FLEX3>
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>?</get:MATNR>
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/ATPExEndpoint1/getMaterialATPEx"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

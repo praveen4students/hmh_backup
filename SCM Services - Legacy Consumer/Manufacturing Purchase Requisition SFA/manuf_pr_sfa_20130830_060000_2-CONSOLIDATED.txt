@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:purchaseReqList xmlns:ns0="http://www.hmco.com/schemas/sfa/purchase_req_update" FileName="manuf_pr" purchaseReqListDateTime="2013-08-30T06:00:00" Count="1">
+    <ns0:purchaseReqItem xmlns:ns0="http://www.hmco.com/schemas/sfa/purchase_req_update">
+        <ns0:purchaseReqNumber>0017747246</ns0:purchaseReqNumber>
+        <ns0:purchaseReqItemNumber>00010</ns0:purchaseReqItemNumber>
+        <ns0:purchaseOrderNumber>4500401050</ns0:purchaseOrderNumber>
+        <ns0:purchaseOrderItemNumber>00010</ns0:purchaseOrderItemNumber>
+        <ns0:materialNumber>000000000000923791</ns0:materialNumber>
+        <ns0:ContentCategory>13</ns0:ContentCategory>
+        <ns0:Division>70</ns0:Division>
+        <ns0:XPlantStatus>IP</ns0:XPlantStatus>
+        <ns0:PHLevel4Code>C14</ns0:PHLevel4Code>
+        <ns0:PHLevel5Code>BB</ns0:PHLevel5Code>
+        <ns0:quantity>35000</ns0:quantity>
+        <ns0:itemDeliveryDate>2013-02-05</ns0:itemDeliveryDate>
+        <ns0:desiredVendor/>
+        <ns0:fixedVendor>5000000928</ns0:fixedVendor>
+        <ns0:purchaseReqIsFixed>X</ns0:purchaseReqIsFixed>
+        <ns0:lastChangeDate>2013-08-30</ns0:lastChangeDate>
+        <ns0:purchaseReqDate>2012-09-25</ns0:purchaseReqDate>
+        <ns0:deletionIndicator/>
+    </ns0:purchaseReqItem>
+</ns0:purchaseReqList>

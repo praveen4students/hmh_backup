@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.hmco.com/schemas/sfa/material_Subscription"
+	 xmlns:sfa="http://www.hmco.com/sfa"
+	 targetNamespace="http://www.hmco.com/schemas/sfa/material_Subscription"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:notation name="Material_Subscription" public="http://www.hmco.com/schemas/sfa/material_Subscription"/>
+	<xsd:element name="Subscription">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SubscriptionTerms" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="MaterialNumber"/>
+							<xsd:element name="TermUnit" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="TermDuration" type="xsd:positiveInteger" minOccurs="0"/>
+							<xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="EndDate" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="ListPrice" type="xsd:double" minOccurs="0"/>
+							<xsd:element ref="iDocNumber"/>
+							<xsd:element ref="Update_User" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MaterialSubscription">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Subscription" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="fileAttributeGroup"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MaterialNumber" type="xsd:string"/>
+	<xsd:element name="iDocNumber" type="xsd:string"/>
+	<xsd:element name="Update_User" type="xsd:string"/>
+</xsd:schema>

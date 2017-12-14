@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<ns0:Customer CentralOrderBlock = "" ClassCode = "D" ClassName = "Individual" CollegeNumber = "" CustomerAccountGroup = "Z001" CustomerID = "0000639260" CustomerName = "Priya Udayashankar" DeliveredOrNot = "" EMail = "priya.udayashankar@meplusyou.com" Fax = "" HMH_ID = "WEB ACCOUNT" HMH_ID_changed = "N" MDRPID = "" MDR_changed = "N" Old_HMH_ID = "WEB ACCOUNT" Old_MDR_PID = "" POBox = "" PeriodAccntInd = "2" SFARepID = "" Status = "A" Telephone1 = "2142241000" Telephone2 = "" TypeCode = "DD" TypeName = "Consumer" Update_User = "TIBCO" VendorAccntNumber = "" createDate_SAP = "20130326" createdBy_SAP = "APACHE" iDocNumber = "0000000196271933" xmlns:ns0 = "http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/OTS/Schema.xsd">
+	<ns0:Action DateTime = "2013-03-26T09:36:36" Flag = "CHANGE"/>
+	<ns0:Address AddressLine1 = "12404 Park Central Dr" AddressLine2 = "Ste 400" AddressLine3 = "" City = "Dallas" CountryCode = "US" CountryName = "USA" CountyName = "DALLAS" State = "TX" ZipCode = "75251"/>
+	<ns0:Divisional CentralOrderBlock = "" CustomerClassification = "" CustomerDeliveryBlock = "" DefaultBilltoCustomerID = "" DefaultBilltoCustomerName = "" DiscountCode = "33" DiscountDescription = "Consumer Account" Division = "20" IncoTerm1 = "FO2" IncoTerm2 = "SHIPPING POINT" OrderBlock = "" PaymentTermsCode = "Y090" PaymentTermsDescription = "" PriceGroup = "33" PriceList = "" SalesGroup = "" SalesOffice = "" SanNum = "" ServiceLevel = "000" ShipperAccountNumber = "" TerritoryCode = "">
+		<ns0:SalesRepresentative DefaultPartner = "" MessageFunction = "" ParnterDescription = "" PartnerCounter = "000" PartnerFunction = "AG" PartnerNumber = "0000639260"/>
+		<ns0:SalesRepresentative DefaultPartner = "" MessageFunction = "" ParnterDescription = "" PartnerCounter = "000" PartnerFunction = "RE" PartnerNumber = "0000639260"/>
+		<ns0:SalesRepresentative DefaultPartner = "" MessageFunction = "" ParnterDescription = "" PartnerCounter = "000" PartnerFunction = "RG" PartnerNumber = "0000639260"/>
+		<ns0:SalesRepresentative DefaultPartner = "" MessageFunction = "" ParnterDescription = "" PartnerCounter = "000" PartnerFunction = "WE" PartnerNumber = "0000639260"/>
+		<ns0:SalesRepresentative DefaultPartner = "" MessageFunction = "" ParnterDescription = "" PartnerCounter = "000" PartnerFunction = "ZA" PartnerNumber = "0000020000"/>
+		<ns0:SalesRepresentative DefaultPartner = "" MessageFunction = "" ParnterDescription = "" PartnerCounter = "000" PartnerFunction = "ZB" PartnerNumber = "0000020000"/>
+	</ns0:Divisional>
+</ns0:Customer>

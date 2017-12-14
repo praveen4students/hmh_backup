@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd"
+	 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:attributeGroup name="fileAttributeGroup">
+		<xs:attribute name="FileName" type="xs:string"/>
+		<xs:attribute name="inventoryListDateTime" type="xs:dateTime"/>
+		<xs:attribute name="Count" type="xs:positiveInteger"/>
+	</xs:attributeGroup>
+
+	<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Houghton Mifflin (Houghton Mifflin) -->
+	<!--	<xs:notation name="VendorUpdateList"/> -->
+	<xs:element name="InventoryList">
+		<xs:annotation>
+			<xs:documentation>Root element. A list of inventory levels by material by location.  This is a total replace of the information from the preceding day.
+
+			
+			
+			
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InventoryInfo" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InventoryInfo">
+		<xs:annotation>
+			<xs:documentation>Inventory level for a single material/location.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MaterialNumber">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Plant">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ATPQuantity" type="xs:decimal"/>
+				<xs:element name="ATPDate" type="xs:date"/>
+				<xs:element name="Division" type="xs:string"/>
+				<xs:element ref="iDocNumber"/>
+				<xs:element ref="Update_User"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="iDocNumber" type="xs:string"/>
+	<xs:element name="Update_User" type="xs:string"/>
+</xs:schema>

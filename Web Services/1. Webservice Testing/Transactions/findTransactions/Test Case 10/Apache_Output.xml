@@ -1,0 +1,100 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns6:transactionList xmlns:ns12="http://www.hmco.com/EAI/OTS/EskerTransaction" xmlns:ns11="http://www.hmco.com/EAI/OTS/PackingList" xmlns:ns10="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns:ns9="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:ns8="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:ns7="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns6="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns5="http://www.hmco.com/EAI/OTS/Order" xmlns:ns4="http://www.hmco.com/EAI" xmlns:ns3="http://www.hmco.com/EAI/OTS/Material" xmlns:ns2="http://www.hmco.com/EAI/OTS/Customer" xmlns="http://www.hmco.com/EAI/OTS/TransactionNew">
+         <ns6:transaction>
+            <ns6:transactionID>0006031640</ns6:transactionID>
+            <ns6:type>TRANSACTION_TYPE_STANDARD</ns6:type>
+            <ns6:poNumber>200134</ns6:poNumber>
+            <ns6:status>TRANSACTION_STATUS_PARTIALLY_PROCESSED</ns6:status>
+            <ns6:creationDate>2011-08-22</ns6:creationDate>
+            <ns6:orderSource>ORDER_SOURCE_FAX</ns6:orderSource>
+            <ns6:division>DIVISION_RIVERSIDE</ns6:division>
+            <ns6:salesOffice/>
+            <ns6:customerEmail>jpoulin@irvingisd.net</ns6:customerEmail>
+            <ns6:soldToCustomerID>0000250738</ns6:soldToCustomerID>
+            <ns6:soldToSANNumber/>
+            <ns6:soldToCustomerName>IRVING IND SCHOOL DISTRICT</ns6:soldToCustomerName>
+            <ns6:soldToCustomerAddress>
+               <ns2:addressLine1/>
+               <ns2:addressLine2/>
+               <ns2:poBox>152637</ns2:poBox>
+               <ns2:city>IRVING</ns2:city>
+               <ns2:state>TX</ns2:state>
+               <ns2:zipcode>75015-2637</ns2:zipcode>
+               <ns2:countryCode>US</ns2:countryCode>
+               <ns2:emailAddressStruct>
+                  <ns2:emailAddress>jpoulin@irvingisd.net</ns2:emailAddress>
+                  <ns2:isPrimary>true</ns2:isPrimary>
+               </ns2:emailAddressStruct>
+            </ns6:soldToCustomerAddress>
+            <ns6:soldToCustomerEmailAddress>jpoulin@irvingisd.net</ns6:soldToCustomerEmailAddress>
+            <ns6:shipToCustomerID>0000250739</ns6:shipToCustomerID>
+            <ns6:shipToSANNumber/>
+            <ns6:shipToCustomerName>IRVING IND SCHOOL DISTRICT</ns6:shipToCustomerName>
+            <ns6:shipToCustomerAddress>
+               <ns2:addressLine1>2621 W AIRPORT FWY</ns2:addressLine1>
+               <ns2:addressLine2/>
+               <ns2:poBox/>
+               <ns2:city>IRVING</ns2:city>
+               <ns2:state>TX</ns2:state>
+               <ns2:zipcode>75062-6020</ns2:zipcode>
+               <ns2:countryCode>US</ns2:countryCode>
+            </ns6:shipToCustomerAddress>
+            <ns6:shipToCustomerEmailAddress>jpoulin@irvingisd.net</ns6:shipToCustomerEmailAddress>
+            <ns6:billToCustomerID>0000250738</ns6:billToCustomerID>
+            <ns6:billToSANNumber/>
+            <ns6:billToCustomerName>IRVING IND SCHOOL DISTRICT</ns6:billToCustomerName>
+            <ns6:billToCustomerAddress>
+               <ns2:addressLine1/>
+               <ns2:addressLine2/>
+               <ns2:poBox>152637</ns2:poBox>
+               <ns2:city>IRVING</ns2:city>
+               <ns2:state>TX</ns2:state>
+               <ns2:zipcode>75015-2637</ns2:zipcode>
+               <ns2:countryCode>US</ns2:countryCode>
+               <ns2:emailAddressStruct>
+                  <ns2:emailAddress>jpoulin@irvingisd.net</ns2:emailAddress>
+                  <ns2:isPrimary>true</ns2:isPrimary>
+               </ns2:emailAddressStruct>
+            </ns6:billToCustomerAddress>
+            <ns6:billToCustomerEmailAddress>jpoulin@irvingisd.net</ns6:billToCustomerEmailAddress>
+            <ns6:isHeaderComplete>true</ns6:isHeaderComplete>
+            <ns6:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns6:transactionRejectionStatus>
+            <ns6:transactionLineItem>
+               <ns6:productInfo>
+                  <ns6:lineNo>110</ns6:lineNo>
+                  <ns6:materialID>000000000000949115</ns6:materialID>
+                  <ns6:isbn>9780782991376</ns6:isbn>
+                  <ns6:description>LOGRAMOS PRAC TST LV 9 PK25</ns6:description>
+                  <ns6:couponCode/>
+                  <ns6:promotionType/>
+                  <ns6:quantity>44</ns6:quantity>
+                  <ns6:listPrice>1299.11</ns6:listPrice>
+                  <ns6:netPrice>1299.11</ns6:netPrice>
+                  <ns6:productDivision>DIVISION_RIVERSIDE</ns6:productDivision>
+                  <ns6:listDiscount>0.0</ns6:listDiscount>
+                  <ns6:isEGood>false</ns6:isEGood>
+                  <ns6:isSubscription>false</ns6:isSubscription>
+               </ns6:productInfo>
+               <ns6:lineitemStatus>LINE_ITEM_STATUS_NOT_YET_PROCESSED</ns6:lineitemStatus>
+               <ns6:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns6:lineitemRejectionStatus>
+               <ns6:isLineitemComplete>true</ns6:isLineitemComplete>
+               <ns6:titleStatus>MATERIAL_STATUS_IN_PRINT</ns6:titleStatus>
+               <ns6:deliveryBlock>DELIVERY_BLOCK_UNEXPECTED</ns6:deliveryBlock>
+               <ns6:requestDate>2011-08-22</ns6:requestDate>
+               <ns6:availableDate>2012-01-18</ns6:availableDate>
+               <ns6:salesRep>
+                  <ns6:repID>0000022541</ns6:repID>
+                  <ns6:repName>HEATHER QUEENER 33-378</ns6:repName>
+                  <ns6:sfaRepID>703378</ns6:sfaRepID>
+               </ns6:salesRep>
+               <ns6:itemType>ITEM_TYPE_SALE</ns6:itemType>
+               <ns6:isKitComponent>false</ns6:isKitComponent>
+            </ns6:transactionLineItem>
+            <ns6:shipToCareOf_1>DR. WHIT JOHNSTONE</ns6:shipToCareOf_1>
+            <ns6:shipToCareOf_2/>
+            <ns6:billingBlock>BILLING_BLOCK_UNEXPECTED</ns6:billingBlock>
+         </ns6:transaction>
+      </ns6:transactionList>
+   </soap:Body>
+</soap:Envelope>

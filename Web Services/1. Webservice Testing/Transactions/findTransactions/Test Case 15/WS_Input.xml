@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionSearchCriteria>
+        <!--<tran:searchType>BO</tran:searchType>-->
+         <tran:fromDate>2009-06-01</tran:fromDate>
+         <!--Optional:-->
+         <tran:toDate>2009-08-30</tran:toDate>
+         <tran:limitOfResults>1</tran:limitOfResults>
+         <tran:poNo>3048171</tran:poNo>
+        
+
+         <tran:zipCode>91101</tran:zipCode>
+
+ <tran:partnerFunctionList>
+           
+            <tran:partnerFunction>PARTNER_FUNCTION_SHIPTO</tran:partnerFunction>
+	<tran:partnerFunction>PARTNER_FUNCTION_BILLTO</tran:partnerFunction>
+<tran:partnerFunction>PARTNER_FUNCTION_SOLDTO</tran:partnerFunction>
+         </tran:partnerFunctionList>
+         </tran:transactionSearchCriteria>
+   </soapenv:Body>
+</soapenv:Envelope>

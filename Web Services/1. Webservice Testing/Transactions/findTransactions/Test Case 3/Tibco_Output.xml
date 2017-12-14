@@ -1,0 +1,58 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <SOAP-ENV:Fault>
+         <faultcode>SOAP-ENV:Exception</faultcode>
+         <faultstring>An error occurred while processing SOAP request.</faultstring>
+         <faultactor/>
+         <detail>
+            <ns:transactionException xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/">
+               <ns1:errorList xmlns:ns1="http://www.hmco.com/EAI">
+                  <ns1:error>
+                     <ns1:errorCategory>1</ns1:errorCategory>
+                     <ns1:errorCode>100</ns1:errorCode>
+                     <ns1:errorMessage>Job-13171419 Error in [BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions.process/SOAPEventSource]
+Output data invalid
+	at com.tibco.pe.core.ProcessGroup.a(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.eval(Unknown Source)
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)
+caused by: org.xml.sax.SAXException: validation error: unexpected content "{http://www.hmco.com/EAI/OTS/Transaction}customerID"; expected "{http://www.hmco.com/EAI/OTS/Transaction}invoiceNo" or "{http://www.hmco.com/EAI/OTS/Transaction}poNo" or "{http://www.hmco.com/EAI/OTS/Transaction}clientTransactionID" or "{http://www.hmco.com/EAI/OTS/Transaction}isbn" or "{http://www.hmco.com/EAI/OTS/Transaction}materialID" or "{http://www.hmco.com/EAI/OTS/Transaction}status" or "{http://www.hmco.com/EAI/OTS/Transaction}transactionType" or "{http://www.hmco.com/EAI/OTS/Transaction}orderSource" or "{http://www.hmco.com/EAI/OTS/Transaction}sanNumber" or "{http://www.hmco.com/EAI/OTS/Transaction}zipCode" or "{http://www.hmco.com/EAI/OTS/Transaction}countryCode" or "{http://www.hmco.com/EAI/OTS/Transaction}Division" or "{http://www.hmco.com/EAI/OTS/Transaction}partnerFunctionList"   ({com.tibco.xml.validation}COMPLEX_E_UNEXPECTED_CONTENT) at /inputMessage[1]/tran:transactionSearchCriteria[1]/tran:customerID[1]
+com.tibco.xml.validation.exception.UnexpectedElementException: unexpected content "{http://www.hmco.com/EAI/OTS/Transaction}customerID"; expected "{http://www.hmco.com/EAI/OTS/Transaction}invoiceNo" or "{http://www.hmco.com/EAI/OTS/Transaction}poNo" or "{http://www.hmco.com/EAI/OTS/Transaction}clientTransactionID" or "{http://www.hmco.com/EAI/OTS/Transaction}isbn" or "{http://www.hmco.com/EAI/OTS/Transaction}materialID" or "{http://www.hmco.com/EAI/OTS/Transaction}status" or "{http://www.hmco.com/EAI/OTS/Transaction}transactionType" or "{http://www.hmco.com/EAI/OTS/Transaction}orderSource" or "{http://www.hmco.com/EAI/OTS/Transaction}sanNumber" or "{http://www.hmco.com/EAI/OTS/Transaction}zipCode" or "{http://www.hmco.com/EAI/OTS/Transaction}countryCode" or "{http://www.hmco.com/EAI/OTS/Transaction}Division" or "{http://www.hmco.com/EAI/OTS/Transaction}partnerFunctionList"
+	at com.tibco.xml.validation.state.driver.ValidationJazz.c(ValidationJazz.java:990)
+	at com.tibco.xml.validation.state.driver.ValidationJazz.b(ValidationJazz.java:882)
+	at com.tibco.xml.validation.state.driver.ValidationJazz.endAttributes(ValidationJazz.java:767)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:87)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:92)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:92)
+	at com.tibco.xml.validation.state.glue.XmlTreeNodeValidationDriver.xmlTreeNode(XmlTreeNodeValidationDriver.java:129)
+	at com.tibco.xml.xdata.bind.BindingRunner.validate(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.a(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.eval(Unknown Source)
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)
+
+	at com.tibco.xml.xdata.bind.BindingRemarkHandler.assertNoErrors(Unknown Source)
+	at com.tibco.xml.xdata.bind.BindingRunner.validate(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.a(Unknown Source)
+	at com.tibco.pe.core.ProcessGroup.eval(Unknown Source)
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)</ns1:errorMessage>
+                  </ns1:error>
+               </ns1:errorList>
+            </ns:transactionException>
+         </detail>
+      </SOAP-ENV:Fault>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

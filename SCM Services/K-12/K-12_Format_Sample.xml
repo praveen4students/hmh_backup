@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formats>
+	<format id="0001"> <!-- Mandatory field. Unique Id. SAP classification field. Max size 4 Alphanumeric -->		
+		<desc>Hardcover</desc> <!-- Mandatory field. Description of format. SAP classification field. Max size 30 Alphanumeric-->			
+	</format>
+	<format id="0002">		
+		<desc>Softcover/desc>				
+	</format>
+</formats>

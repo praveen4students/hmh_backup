@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx6:MaterialPricing xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterPricingUpdateSFA" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx6="http://www.hmco.com/schemas/sfa/material_Pricing" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <xsl:attribute name="FileName">
+        <xsl:value-of select="''"/>
+    </xsl:attribute>
+    <xsl:attribute name="MaterialPricingDateTime">
+        <xsl:value-of select="current-dateTime()"/>
+    </xsl:attribute>
+    <xsl:attribute name="Count">
+        <xsl:value-of select="1"/>
+    </xsl:attribute>
+    <pfx6:MaterialPrice>
+        <pfx6:MaterialNumber>
+            <xsl:value-of select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/MATNR"/>
+        </pfx6:MaterialNumber>
+        <xsl:if test="not($Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/ISMCONTTYPE/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+            <pfx6:ContentCategory>
+                <xsl:value-of select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/ISMCONTTYPE"/>
+            </pfx6:ContentCategory>
+        </xsl:if>
+        <pfx6:Division>
+            <xsl:value-of select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/SPART"/>
+        </pfx6:Division>
+        <pfx6:XPlantStatus>
+            <xsl:value-of select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/MSTAE"/>
+        </pfx6:XPlantStatus>
+        <pfx6:PHLevel4Code>
+            <xsl:value-of select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/PRDHA__4"/>
+        </pfx6:PHLevel4Code>
+        <pfx6:PHLevel5Code>
+            <xsl:value-of select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/FIELDS/PRDHA__5"/>
+        </pfx6:PHLevel5Code>
+        <xsl:for-each select="$Start/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item/CHILDREN/ZE1KONP/item">
+            <pfx6:Price>
+                <xsl:if test="exists(current()/FIELDS/KBETR)">
+                    <pfx6:ListPrice>
+                        <xsl:value-of select="current()/FIELDS/KBETR"/>
+                    </pfx6:ListPrice>
+                </xsl:if>
+                <xsl:if test="exists(current()/FIELDS/DATAB)">
+                    <pfx6:ListEffectiveDate>
+                        <xsl:value-of select="concat(substring(current()/FIELDS/DATAB, 1, 4),&quot;-&quot;,substring(current()/FIELDS/DATAB, 5,2),&quot;-&quot;,substring(current()/FIELDS/DATAB, 7,2))"/>
+                    </pfx6:ListEffectiveDate>
+                </xsl:if>
+                <xsl:if test="exists(current()/FIELDS/DATBI)">
+                    <pfx6:ListEndDate>
+                        <xsl:value-of select="concat(substring(current()/FIELDS/DATBI, 1, 4),&quot;-&quot;,substring(current()/FIELDS/DATBI, 5,2),&quot;-&quot;,substring(current()/FIELDS/DATBI, 7,2))"/>
+                    </pfx6:ListEndDate>
+                </xsl:if>
+            </pfx6:Price>
+        </xsl:for-each>
+    </pfx6:MaterialPrice>
+</pfx6:MaterialPricing>

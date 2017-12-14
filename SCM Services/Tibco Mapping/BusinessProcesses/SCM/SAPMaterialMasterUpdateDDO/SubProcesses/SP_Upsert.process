@@ -1,0 +1,1863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:pfx2="http://www.hmco.com/schemas/sfa/material_update" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.hmco.com/schemas/ddo/material_update" xmlns:pfx="http://www.hmco.com/EAI/common/QueryRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema">
+    <xsd:import namespace="http://www.hmco.com/EAI/common/QueryRequest" schemaLocation="/SharedResources/Schemas/Query.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_update" schemaLocation="/SharedResources/Schemas/Common/SCM/MatMasterUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/ddo/material_update" schemaLocation="/SharedResources/Schemas/SCM/MatMasterUpdate.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Master_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPMaterialMasterUpdateDDO/SubProcesses/SP_Upsert.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="MaterialMasterRequest">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element ref="pfx4:Material_Master_Update"/>
+                    <xsd:element name="JMS_Message_ID" type="xsd:string"/>
+                    <xsd:element name="Idoc_Number" type="xsd:string"/>
+                    <xsd:element name="Material_Number" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>27</pd:startX>
+    <pd:startY>210</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>854</pd:endX>
+    <pd:endY>238</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables>
+        <Operation>
+            <xsd:element name="Operation">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Op_type" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Op_flag" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Count" type="xsd:int" minOccurs="0"/>
+                        <xsd:element name="Error_Count" type="xsd:int" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </Operation>
+    </pd:processVariables>
+    <pd:targetNamespace>http://xmlns.example.com/1305632190574</pd:targetNamespace>
+    <pd:group name="Transaction">
+        <pd:type>com.tibco.pe.core.TransactionGroup</pd:type>
+        <pd:resourceType>ae.process.group</pd:resourceType>
+        <pd:x>119</pd:x>
+        <pd:y>1</pd:y>
+        <pd:width>538</pd:width>
+        <pd:height>336</pd:height>
+        <pd:collapsedWidth>57</pd:collapsedWidth>
+        <pd:collapsedHeight>70</pd:collapsedHeight>
+        <pd:groupVariables/>
+        <pd:joinToggle>inherit</pd:joinToggle>
+        <config>
+            <pd:groupType>transactionGroup</pd:groupType>
+            <pd:serializable>false</pd:serializable>
+            <pd:transactionType>JDBCTransaction</pd:transactionType>
+            <pd:includeCheckpoint>false</pd:includeCheckpoint>
+        </config>
+        <pd:inputBindings/>
+        <pd:expanded>true</pd:expanded>
+        <pd:transition>
+            <pd:from>start</pd:from>
+            <pd:to>JDBC_Upsert</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>JDBC_Upsert</pd:from>
+            <pd:to>end</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:group name="JDBC_Upsert">
+            <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
+            <pd:resourceType>ae.process.group</pd:resourceType>
+            <pd:x>188</pd:x>
+            <pd:y>26</pd:y>
+            <pd:width>427</pd:width>
+            <pd:height>270</pd:height>
+            <pd:collapsedWidth>57</pd:collapsedWidth>
+            <pd:collapsedHeight>70</pd:collapsedHeight>
+            <pd:groupVariables/>
+            <pd:joinToggle>inherit</pd:joinToggle>
+            <config>
+                <pd:groupType>errorLoop</pd:groupType>
+                <pd:serializable>false</pd:serializable>
+                <pd:indexSlot>K</pd:indexSlot>
+                <pd:errorCondition>$K=$_globalVariables/ns1:GlobalVariables/maxRetryAttempts</pd:errorCondition>
+                <pd:suspendAfterErrorRetry>false</pd:suspendAfterErrorRetry>
+            </config>
+            <pd:inputBindings/>
+            <pd:expanded>true</pd:expanded>
+            <pd:transition>
+                <pd:from>start</pd:from>
+                <pd:to>JDBC_SP_Master</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>JDBC_SP_Master</pd:from>
+                <pd:to>end</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>Catch</pd:from>
+                <pd:to>Log</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>Log</pd:from>
+                <pd:to>Generate-Error-Subprocess</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:activity name="JDBC_SP_Master">
+                <pd:type>com.tibco.plugin.jdbc.JDBCCallActivity</pd:type>
+                <pd:resourceType>ae.activities.JDBCCallActivity</pd:resourceType>
+                <pd:x>383</pd:x>
+                <pd:y>96</pd:y>
+                <config>
+                    <timeout>%%CENTRAL_DB/JDBC_TIMEOUT%%</timeout>
+                    <maxRows>%%CENTRAL_DB/JDBC_MAXROWS%%</maxRows>
+                    <emptyStrAsNil>true</emptyStrAsNil>
+                    <jdbcSharedConfig>/SharedResources/Connections/Database/CentralDBJdbcConnection.sharedjdbc</jdbcSharedConfig>
+                    <schema>%%CENTRAL_DB/Schema%%</schema>
+                    <ProcedureName>%%CENTRAL_DB/MaterialMaster/Material_SP_Name%%</ProcedureName>
+                    <parameterTypes>
+                        <parameter>
+                            <colName>IN_MATERIALNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_AUTHORARTIST</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_TITLE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CONTENTCATEGORY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_YEARNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DIVISION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EAN</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EANCATEGORY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EDITIONCOUNTER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ISBN_13</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ISBN_10</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_LANGUAGES</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MATERIALGROUP</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_NETWEIGHT</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PRICINGUNIT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PRIMARYISBN</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MEDIATYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PRODUCTPRESENTATION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PUBLICATIONDATE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PUBLICATIONTYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_RESENDWORKID</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_RETURNEDCODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EGOODINDICATOR</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ROYALTYACTIVITYFLAG</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_STDLSSVARTYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_REPRINTINGTYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MATERIALDESCRIPTION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_XPLANTSTATUS</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CASE</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_TITLEUPDATEDDATE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_UPCCATEGORY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_UPC</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_VENDOR</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MEDIAPRODUCT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MATERIALTYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MRPCONTROLLER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ROYALTYRELEVANCE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_SUBTITLE1</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_SUBTITLE2</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_SUBTITLE3</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_STANDARDPRICE</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DOCUMENTVERSION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_GTIN</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_COUNTRYNAME</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DCHAINSPECSTATUS</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MATERIALGROUPPRICING</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EXTERNALMATERIALGROUP</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_IMPRINT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ORIGINALPUBLISHER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CREATEDON</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_OLDMATERIALNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_BASEUNITOFMEASURE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PURCHASINGVALUEKEY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_WEIGHTUNIT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CROSSPLANTMATSTATUS</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_GENERALITEMCATEGORY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EDITIONKEY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EMPLRESPFORPLAN</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INTLSHIPPINGDATE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PLANT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DELETIONINDICATOR</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ABCINDICATOR</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PURCHASINGGROUP</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MRPTYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PLANNEDDELIVERYTIME</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_GRPROCESSINGTIME</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PROCUREMENTTYPE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_REORDERPOINT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_SAFETYSTOCK</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MINIMUMLOTSIZE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MAXIMUMLOTSIZE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ROUNDINGVALUEPOQUANTITY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DISCONTINDICATOR</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EFFECTIVEOUTDATE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_FOLLOWUPMATERIAL</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INHOUSEPRODUCTION</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_AVAILABILITYCHECK</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_COMMODITYCODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PROFITCENTER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CONSUMPTIONMODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_BACKWDCONSUMPTIONPER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_FORWARDCONSUMPTIONPER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PLANNINGSTRATEGYGROUP</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_MINSAFETYSTOCK</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_COUNTRYOFORIGIN</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_SPECIALPROCUREMENT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_LENGTH</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_WIDTH</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_HEIGHT</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_VOLUME</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>FLOAT</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_VALUATIONCLASS</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_STATISTICSGROUP</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DELIVERINGPLANT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_ACCOUNTASSIGNMENTGROUP</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CARTONROUNDING</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_CONTRACTSALESONLY</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PRINTSUBSCRIPTION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INSPECTIONTEXT</colName>
+                            <colType>1</colType>
+                            <dataType>2005</dataType>
+                            <typeName>CLOB</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_BASICDATATEXT</colName>
+                            <colType>1</colType>
+                            <dataType>2005</dataType>
+                            <typeName>CLOB</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_POTEXT</colName>
+                            <colType>1</colType>
+                            <dataType>2005</dataType>
+                            <typeName>CLOB</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_SALESTEXT</colName>
+                            <colType>1</colType>
+                            <dataType>2005</dataType>
+                            <typeName>CLOB</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PHLEVEL1CODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PHLEVEL2CODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PHLEVEL3CODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PHLEVEL4CODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PHLEVEL5CODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                    </parameterTypes>
+                </config>
+                <pd:inputBindings>
+                    <inputs>
+                        <inputSet>
+                            <IN_MATERIALNUMBER>
+                                <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialNumber"/>
+                            </IN_MATERIALNUMBER>
+                            <IN_AUTHORARTIST>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:AuthorArtist)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:AuthorArtist"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_AUTHORARTIST>
+                            <IN_TITLE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Title)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Title"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_TITLE>
+                            <IN_CONTENTCATEGORY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ContentCategory)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ContentCategory"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CONTENTCATEGORY>
+                            <IN_YEARNUMBER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:YearNumber)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:YearNumber"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_YEARNUMBER>
+                            <IN_DIVISION>
+                                <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Division"/>
+                            </IN_DIVISION>
+                            <IN_EAN>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EAN)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EAN"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EAN>
+                            <IN_EANCATEGORY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EANCategory)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EANCategory"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EANCATEGORY>
+                            <IN_EDITIONCOUNTER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EditionCounter)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EditionCounter"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EDITIONCOUNTER>
+                            <IN_ISBN_13>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ISBN_13)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ISBN_13"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ISBN_13>
+                            <IN_ISBN_10>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ISBN_10)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ISBN_10"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ISBN_10>
+                            <IN_LANGUAGES>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Languages)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Languages"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_LANGUAGES>
+                            <IN_MATERIALGROUP>
+                                <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialGroup"/>
+                            </IN_MATERIALGROUP>
+                            <IN_NETWEIGHT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:NetWeight)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:NetWeight"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_NETWEIGHT>
+                            <IN_PRICINGUNIT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PricingUnit)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PricingUnit"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PRICINGUNIT>
+                            <IN_PRIMARYISBN>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PrimaryISBN)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PrimaryISBN"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PRIMARYISBN>
+                            <IN_MEDIATYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MediaType)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MediaType"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MEDIATYPE>
+                            <IN_PRODUCTPRESENTATION>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductPresentation)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductPresentation"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PRODUCTPRESENTATION>
+                            <IN_PUBLICATIONDATE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PublicationDate)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PublicationDate"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PUBLICATIONDATE>
+                            <IN_PUBLICATIONTYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PublicationType)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PublicationType"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PUBLICATIONTYPE>
+                            <IN_RESENDWORKID>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ResendWorkId)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ResendWorkId"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_RESENDWORKID>
+                            <IN_RETURNEDCODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ReturnedCode)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ReturnedCode"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_RETURNEDCODE>
+                            <IN_EGOODINDICATOR>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EgoodIndicator)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EgoodIndicator"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EGOODINDICATOR>
+                            <IN_ROYALTYACTIVITYFLAG>
+                                <xsl:choose>
+                                    <xsl:when test="exists(if($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:RoyaltyActivityFlag = 'true')&#xA;then&#xA;1&#xA;else&#xA;0)">
+                                        <xsl:value-of select="if($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:RoyaltyActivityFlag = 'true')&#xA;then&#xA;1&#xA;else&#xA;0"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ROYALTYACTIVITYFLAG>
+                            <IN_STDLSSVARTYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:StdlssVartype)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:StdlssVartype"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_STDLSSVARTYPE>
+                            <IN_REPRINTINGTYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ReprintingType)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ReprintingType"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_REPRINTINGTYPE>
+                            <IN_MATERIALDESCRIPTION>
+                                <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialDescription"/>
+                            </IN_MATERIALDESCRIPTION>
+                            <IN_XPLANTSTATUS>
+                                <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:XPlantStatus"/>
+                            </IN_XPLANTSTATUS>
+                            <IN_CASE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Case)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Case"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CASE>
+                            <IN_TITLEUPDATEDDATE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:TitleUpdatedDate)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:TitleUpdatedDate"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_TITLEUPDATEDDATE>
+                            <IN_UPCCATEGORY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:UPCCategory)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:UPCCategory"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_UPCCATEGORY>
+                            <IN_UPC>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:UPC)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:UPC"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_UPC>
+                            <IN_VENDOR>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Vendor)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Vendor"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_VENDOR>
+                            <IN_MEDIAPRODUCT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MediaProduct)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MediaProduct"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MEDIAPRODUCT>
+                            <IN_MATERIALTYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialType)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialType"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MATERIALTYPE>
+                            <IN_MRPCONTROLLER>
+                                <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MRPController"/>
+                            </IN_MRPCONTROLLER>
+                            <IN_ROYALTYRELEVANCE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:RoyaltyRelevance)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:RoyaltyRelevance"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ROYALTYRELEVANCE>
+                            <IN_SUBTITLE1>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Subtitle1)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Subtitle1"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_SUBTITLE1>
+                            <IN_SUBTITLE2>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Subtitle2)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Subtitle2"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_SUBTITLE2>
+                            <IN_SUBTITLE3>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Subtitle3)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Subtitle3"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_SUBTITLE3>
+                            <IN_STANDARDPRICE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:StandardPrice)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:StandardPrice"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_STANDARDPRICE>
+                            <IN_DOCUMENTVERSION>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DocumentVersion)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DocumentVersion"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_DOCUMENTVERSION>
+                            <IN_GTIN>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:GTIN)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:GTIN"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_GTIN>
+                            <IN_COUNTRYNAME>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CountryName)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CountryName"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_COUNTRYNAME>
+                            <IN_DCHAINSPECSTATUS>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DchainSpecStatus)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DchainSpecStatus"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_DCHAINSPECSTATUS>
+                            <IN_MATERIALGROUPPRICING>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialGroupPricing)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialGroupPricing"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MATERIALGROUPPRICING>
+                            <IN_EXTERNALMATERIALGROUP>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ExternalMaterialGroup)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ExternalMaterialGroup"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EXTERNALMATERIALGROUP>
+                            <IN_IMPRINT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Imprint)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Imprint"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_IMPRINT>
+                            <IN_ORIGINALPUBLISHER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:OriginalPublisher)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:OriginalPublisher"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ORIGINALPUBLISHER>
+                            <IN_CREATEDON>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CreatedOn)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CreatedOn"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CREATEDON>
+                            <IN_OLDMATERIALNUMBER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:OldMaterialNumber)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:OldMaterialNumber"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_OLDMATERIALNUMBER>
+                            <IN_BASEUNITOFMEASURE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:BaseUnitofMeasure)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:BaseUnitofMeasure"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_BASEUNITOFMEASURE>
+                            <IN_PURCHASINGVALUEKEY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PurchasingValueKey)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PurchasingValueKey"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PURCHASINGVALUEKEY>
+                            <IN_WEIGHTUNIT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:WeightUnit)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:WeightUnit"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_WEIGHTUNIT>
+                            <IN_CROSSPLANTMATSTATUS>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CrossPlantMatStatus)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CrossPlantMatStatus"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CROSSPLANTMATSTATUS>
+                            <IN_GENERALITEMCATEGORY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:GeneralItemCategory)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:GeneralItemCategory"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_GENERALITEMCATEGORY>
+                            <IN_EDITIONKEY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EditionKey)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EditionKey"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EDITIONKEY>
+                            <IN_EMPLRESPFORPLAN>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EmplRespForPlan)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EmplRespForPlan"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EMPLRESPFORPLAN>
+                            <IN_INTLSHIPPINGDATE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:IntlShippingDate)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:IntlShippingDate"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_INTLSHIPPINGDATE>
+                            <IN_PLANT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Plant)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Plant"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PLANT>
+                            <IN_DELETIONINDICATOR>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DeletionIndicator)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DeletionIndicator"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_DELETIONINDICATOR>
+                            <IN_ABCINDICATOR>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ABCIndicator)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ABCIndicator"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ABCINDICATOR>
+                            <IN_PURCHASINGGROUP>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PurchasingGroup)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PurchasingGroup"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PURCHASINGGROUP>
+                            <IN_MRPTYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MRPType)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MRPType"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MRPTYPE>
+                            <IN_PLANNEDDELIVERYTIME>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PlannedDeliveryTime)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PlannedDeliveryTime"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PLANNEDDELIVERYTIME>
+                            <IN_GRPROCESSINGTIME>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:GRProcessingTime)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:GRProcessingTime"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_GRPROCESSINGTIME>
+                            <IN_PROCUREMENTTYPE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProcurementType)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProcurementType"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PROCUREMENTTYPE>
+                            <IN_REORDERPOINT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ReorderPoint)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ReorderPoint"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_REORDERPOINT>
+                            <IN_SAFETYSTOCK>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:SafetyStock)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:SafetyStock"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_SAFETYSTOCK>
+                            <IN_MINIMUMLOTSIZE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MinimumLotSize)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MinimumLotSize"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MINIMUMLOTSIZE>
+                            <IN_MAXIMUMLOTSIZE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaximumLotSize)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaximumLotSize"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MAXIMUMLOTSIZE>
+                            <IN_ROUNDINGVALUEPOQUANTITY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:RoundingValuePOQuantity)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:RoundingValuePOQuantity"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ROUNDINGVALUEPOQUANTITY>
+                            <IN_DISCONTINDICATOR>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DiscontIndicator)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DiscontIndicator"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_DISCONTINDICATOR>
+                            <IN_EFFECTIVEOUTDATE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EffectiveOutDate)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:EffectiveOutDate"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EFFECTIVEOUTDATE>
+                            <IN_FOLLOWUPMATERIAL>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:FollowupMaterial)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:FollowupMaterial"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_FOLLOWUPMATERIAL>
+                            <IN_INHOUSEPRODUCTION>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:InhouseProduction)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:InhouseProduction"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_INHOUSEPRODUCTION>
+                            <IN_AVAILABILITYCHECK>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:AvailabilityCheck)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:AvailabilityCheck"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_AVAILABILITYCHECK>
+                            <IN_COMMODITYCODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CommodityCode)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CommodityCode"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_COMMODITYCODE>
+                            <IN_PROFITCENTER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProfitCenter)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProfitCenter"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PROFITCENTER>
+                            <IN_CONSUMPTIONMODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ConsumptionMode)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ConsumptionMode"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CONSUMPTIONMODE>
+                            <IN_BACKWDCONSUMPTIONPER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:BackwdConsumptionPer)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:BackwdConsumptionPer"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_BACKWDCONSUMPTIONPER>
+                            <IN_FORWARDCONSUMPTIONPER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ForwardConsumptionPer)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ForwardConsumptionPer"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_FORWARDCONSUMPTIONPER>
+                            <IN_PLANNINGSTRATEGYGROUP>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PlanningStrategyGroup)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PlanningStrategyGroup"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PLANNINGSTRATEGYGROUP>
+                            <IN_MINSAFETYSTOCK>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MinSafetyStock)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MinSafetyStock"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_MINSAFETYSTOCK>
+                            <IN_COUNTRYOFORIGIN>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CountryofOrigin)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CountryofOrigin"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_COUNTRYOFORIGIN>
+                            <IN_SPECIALPROCUREMENT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:SpecialProcurement)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:SpecialProcurement"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_SPECIALPROCUREMENT>
+                            <IN_LENGTH>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Length)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Length"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_LENGTH>
+                            <IN_WIDTH>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Width)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Width"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_WIDTH>
+                            <IN_HEIGHT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Height)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Height"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_HEIGHT>
+                            <IN_VOLUME>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Volume)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:Volume"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_VOLUME>
+                            <IN_VALUATIONCLASS>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ValuationClass)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ValuationClass"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_VALUATIONCLASS>
+                            <IN_STATISTICSGROUP>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialStatisticsGroup)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:MaterialStatisticsGroup"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_STATISTICSGROUP>
+                            <IN_DELIVERINGPLANT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DeliveringPlant)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:DeliveringPlant"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_DELIVERINGPLANT>
+                            <IN_ACCOUNTASSIGNMENTGROUP>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:AccountAssignmentGroup)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:AccountAssignmentGroup"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_ACCOUNTASSIGNMENTGROUP>
+                            <IN_CARTONROUNDING>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CartonRounding)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:CartonRounding"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CARTONROUNDING>
+                            <IN_CONTRACTSALESONLY>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ContractSalesOnly)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ContractSalesOnly"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_CONTRACTSALESONLY>
+                            <IN_PRINTSUBSCRIPTION>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PrintSubscription)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PrintSubscription"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PRINTSUBSCRIPTION>
+                            <IN_INSPECTIONTEXT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:InspectionText)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:InspectionText"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_INSPECTIONTEXT>
+                            <IN_BASICDATATEXT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:BasicdataText)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:BasicdataText"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_BASICDATATEXT>
+                            <IN_POTEXT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PoText)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:PoText"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_POTEXT>
+                            <IN_SALESTEXT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:salesText)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:salesText"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_SALESTEXT>
+                            <IN_PHLEVEL1CODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel1Code)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel1Code"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PHLEVEL1CODE>
+                            <IN_PHLEVEL2CODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel2Code)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel2Code"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PHLEVEL2CODE>
+                            <IN_PHLEVEL3CODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel3Code)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel3Code"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PHLEVEL3CODE>
+                            <IN_PHLEVEL4CODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel4Code)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel4Code"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PHLEVEL4CODE>
+                            <IN_PHLEVEL5CODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel5Code)">
+                                        <xsl:value-of select="$Start/MaterialMasterRequest/pfx4:Material_Master_Update/pfx4:ProductHierarchy/pfx4:PHlevel5Code"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PHLEVEL5CODE>
+                        </inputSet>
+                    </inputs>
+                </pd:inputBindings>
+            </pd:activity>
+            <pd:activity name="Catch">
+                <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+                <pd:resourceType>ae.activities.catch</pd:resourceType>
+                <pd:x>249</pd:x>
+                <pd:y>242</pd:y>
+                <pd:handler>true</pd:handler>
+                <config>
+                    <catchAll>true</catchAll>
+                </config>
+                <pd:inputBindings/>
+            </pd:activity>
+            <pd:activity name="Log">
+                <pd:type>com.tibco.pe.core.WriteToLogActivity</pd:type>
+                <pd:resourceType>ae.activities.log</pd:resourceType>
+                <pd:x>409</pd:x>
+                <pd:y>241</pd:y>
+                <config>
+                    <role>User</role>
+                </config>
+                <pd:inputBindings>
+                    <ns2:ActivityInput>
+                        <message>
+                            <xsl:value-of select="concat('Error encountered for Idoc number # : ',$Start/MaterialMasterRequest/Idoc_Number,' ' , 'for material number  ' ,$Start/MaterialMasterRequest/Material_Number , 'and JMS Message ID ' ,$Start/MaterialMasterRequest/JMS_Message_ID , '    The  error is ' , $Catch/exceptiondata/*)"/>
+                        </message>
+                    </ns2:ActivityInput>
+                </pd:inputBindings>
+            </pd:activity>
+            <pd:activity name="Generate-Error-Subprocess">
+                <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+                <pd:resourceType>ae.activities.throw</pd:resourceType>
+                <pd:x>540</pd:x>
+                <pd:y>242</pd:y>
+                <config>
+                    <faultName/>
+                </config>
+                <pd:inputBindings>
+                    <ns:ActivityInput>
+                        <xsl:choose>
+                            <xsl:when test="$_error_JDBC_SP_Master/ActivityErrors/*">
+                                <message>
+                                    <xsl:value-of select="string($_error_JDBC_SP_Master)"/>
+                                </message>
+                            </xsl:when>
+                        </xsl:choose>
+                    </ns:ActivityInput>
+                </pd:inputBindings>
+            </pd:activity>
+        </pd:group>
+    </pd:group>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Transaction</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Transaction</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

@@ -1,0 +1,80 @@
+10
+
+dir
+1886
+svn://neduapp001/tibco/trunk/Sunrise1.0/SunriseCentral_Database_Consumer/BusinessProcesses/SCM/SAPMaterialMasterUpdateDDO
+svn://neduapp001
+
+
+
+2013-03-07T10:09:40.943293Z
+1871
+rajesh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bdeb329a-2704-11df-9d9c-21c6ffec8a09
+
+SubProcesses
+dir
+
+ValidationProcesses
+dir
+
+UnitTests
+dir
+
+.folder
+file
+
+
+
+
+2013-03-20T07:07:11.109239Z
+4e3b6a439a6d6402df202508ae7fcc5e
+2011-12-22T09:38:26.616191Z
+869
+shiva
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+398
+
+MainProcesses
+dir
+
+StarterProcesses
+dir
+
+TransformationProcesses
+dir
+

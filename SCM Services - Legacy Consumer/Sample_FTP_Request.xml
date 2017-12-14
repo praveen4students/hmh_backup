@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:EAIMessage xmlns:ns2="http://www.hmco.com/EAI/common/FTPRequest" 
+				xmlns="http://www.hmco.com/EAI/CoreTechnicalServices" 
+				xmlns:ns3="http://www.hmco.com/EAI/EAIMessage">
+    <messageHeader>
+        <source>SAP</source>
+        <destination>SFA</destination>
+        <ebsName>SAPMaterialClassificationUpdateSFA</ebsName>
+        <eventID>22040318115281.446.172.17.98.128</eventID>
+        <transactionID>ID-PC177262-51275-1377519697941-1-9</transactionID>
+    </messageHeader>
+    <ns2:FTPRequest>
+        <ns2:processID>SAPMaterialClassificationUpdateSFA</ns2:processID>
+        <ns2:targetSystem>SFA</ns2:targetSystem>
+        <ns2:localFileNameWithPath>
+			/opt/tibcoa/projects-camel/sunrise/sfa/scm/sapmaterialmasterclassupdate/ftp/work\matrclas_sfa_20130826_175442_21.dat
+		</ns2:localFileNameWithPath>
+        <ns2:remoteFileNameWithPath>
+			/opt/tibcoa/tmp/praveen/\matrclas_sfa_20130826_175442_21.dat
+		</ns2:remoteFileNameWithPath>
+        <ns2:timeoutVal>20</ns2:timeoutVal>
+        <ns2:successPath>
+			/opt/tibcoa/projects-camel/sunrise/sfa/scm/sapmaterialmasterclassupdate/ftp/success</ns2:successPath>
+        <ns2:errorPath>/opt/tibcoa/projects-camel/sunrise/sfa/scm/sapmaterialmasterclassupdate/ftp/error</ns2:errorPath>
+    </ns2:FTPRequest>
+</ns3:EAIMessage>
+

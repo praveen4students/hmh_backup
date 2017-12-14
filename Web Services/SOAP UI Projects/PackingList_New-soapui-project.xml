@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="PackingList_New" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SOAPEventSourceBinding" type="wsdl" bindingName="{http://www.hmco.com/EAI/OTS/PackingList/PackingListOperationImpl}SOAPEventSourceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Documents%20and%20Settings/195361/My%20Documents/PackingList_New.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Documents%20and%20Settings/195361/My%20Documents/PackingList_New.wsdl"><con:part><con:url>file:/C:/Documents%20and%20Settings/195361/My%20Documents/PackingList_New.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.hmco.com/EAI/OTS/PackingList/PackingListOperationImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.hmco.com/EAI/OTS/PackingList/PackingListOperationImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.hmco.com/EAI/OTS/PackingList" xmlns:ns1="http://www.hmco.com/EAI">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns1:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns1:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <xs:schema targetNamespace="http://www.hmco.com/EAI/OTS/PackingList" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hmco.com/EAI/OTS/PackingList">
+      <xs:element name="Customer_CC_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Customer_Recipient_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Delivery_Number">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="15"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="HMH_From_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Notes">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Plant">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Response" type="xs:string"/>
+      <xs:element name="Subject_Line">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="packingListRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:Plant"/>
+            <xs:element ref="ns0:Delivery_Number"/>
+            <xs:element ref="ns0:HMH_From_E-mail"/>
+            <xs:element ref="ns0:Customer_Recipient_E-mail"/>
+            <xs:element ref="ns0:Customer_CC_E-mail" minOccurs="0"/>
+            <xs:element ref="ns0:Subject_Line"/>
+            <xs:element ref="ns0:Notes" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="packingListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:Response" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="SubmitPackingList">
+    <wsdl:documentation>.</wsdl:documentation>
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://hyddl2213:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="PackingListTransaction">
+    <wsdl:operation name="PackingListOperation">
+      <wsdl:input message="tns:PackingListRequest"/>
+      <wsdl:output message="tns:PackingListResponse"/>
+      <wsdl:fault name="PackingListException" message="tns:eaiException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:PackingListTransaction">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PackingListOperation">
+      <soap:operation style="document" soapAction="/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="PackingListRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="PackingListResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="PackingListException">
+        <soap:fault use="literal" name="PackingListException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="PackingListRequest">
+    <wsdl:part name="PackingListRequest" element="ns0:packingListRequest"/>
+  </wsdl:message>
+  <wsdl:message name="PackingListResponse">
+    <wsdl:part name="PackingListResponse" element="ns0:packingListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="eaiException">
+    <wsdl:part name="eaiException" type="ns1:eaiException"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://hyddl2213:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:endpoint>http://neduapp001c:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:endpoint>http://wdcqaua01:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:endpoint>http://neduapp001b:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList" name="PackingListOperation" bindingOperationName="PackingListOperation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pac="http://www.hmco.com/EAI/OTS/PackingList">
+   <soapenv:Header/>
+   <soapenv:Body>
+       <pac:packingListRequest>
+
+         <pac:Plant>IND</pac:Plant>
+
+         <pac:Delivery_Number>86334292</pac:Delivery_Number>
+
+         <pac:HMH_From_E-mail>rajesh.maryada@hmhpub.com</pac:HMH_From_E-mail>
+
+         <pac:Customer_Recipient_E-mail>krishna.karnati@hmhpub.com</pac:Customer_Recipient_E-mail>
+
+         <!--Optional:-->
+
+         <pac:Customer_CC_E-mail>krishna.karnati@hmhpub.com</pac:Customer_CC_E-mail>
+
+         <pac:Subject_Line>Ship consolidated with dely 86333102</pac:Subject_Line>
+
+         <!--Optional:-->
+
+         <pac:Notes>testing for the 7th time</pac:Notes>
+
+      </pac:packingListRequest>
+
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://hyddl2213:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pac="http://www.hmco.com/EAI/OTS/PackingList">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pac:packingListRequest>
+         <pac:Plant>TRO</pac:Plant>
+         <pac:Delivery_Number>86333302</pac:Delivery_Number>
+         <pac:HMH_From_E-mail>rajesh.maryada@hmhpub.com</pac:HMH_From_E-mail>
+         <pac:Customer_Recipient_E-mail>krishna.karnati@hmhpub.com</pac:Customer_Recipient_E-mail>
+         <!--Optional:-->
+         <pac:Customer_CC_E-mail>sadf</pac:Customer_CC_E-mail>
+         <pac:Subject_Line>Houghton Mifflin Harcourt Pack List 85164515</pac:Subject_Line>
+         <!--Optional:-->
+         <pac:Notes>Attached please find the Houghton Mifflin Harcourt Packing list you requested from our Customer Care Online Service Center.</pac:Notes>
+      </pac:packingListRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pac="http://www.hmco.com/EAI/OTS/PackingList">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pac:packingListRequest>
+         <pac:Plant>TRO</pac:Plant>
+         <pac:Delivery_Number>86333387</pac:Delivery_Number>
+         <pac:HMH_From_E-mail>rajesh.maryada@hmhpub.com</pac:HMH_From_E-mail>
+         <pac:Customer_Recipient_E-mail>rajesh.maryada@hmhpub.com</pac:Customer_Recipient_E-mail>
+         <!--Optional:-->
+         <pac:Customer_CC_E-mail>rajesh.maryada@hmhpub.com</pac:Customer_CC_E-mail>
+         <pac:Subject_Line>testing</pac:Subject_Line>
+         <!--Optional:-->
+         <pac:Notes>testing for cc</pac:Notes>
+      </pac:packingListRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" id="7865ca2a-3bfd-4fe2-8b45-606835617311"><con:settings/><con:testStep type="request" name="PackingListOperation - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPEventSourceBinding</con:interface><con:operation>PackingListOperation</con:operation><con:request name="PackingListOperation - Request 1" outgoingWss="" incomingWss="" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9001/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pac="http://www.hmco.com/EAI/OTS/PackingList">
+   <soapenv:Header/>
+   <soapenv:Body>
+       <pac:packingListRequest>
+
+         <pac:Plant>ZXC</pac:Plant>
+         <pac:Delivery_Number>2324354</pac:Delivery_Number>
+         <pac:HMH_From_E-mail>rajesh.maryada@hmhpub.com</pac:HMH_From_E-mail>
+         <pac:Customer_Recipient_E-mail>rajesh.maryada@hmhpub.com</pac:Customer_Recipient_E-mail>
+         <!--Optional:-->
+         <pac:Customer_CC_E-mail>rajesh.maryada@hmhpub.com</pac:Customer_CC_E-mail>
+         <pac:Subject_Line>Testing for new webservice</pac:Subject_Line>
+         <!--Optional:-->
+         <pac:Notes>testing for the 3rd time</pac:Notes>
+      </pac:packingListRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Customer/SubmitPackingList/MainProcesses/SubmitPackingList"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>10</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

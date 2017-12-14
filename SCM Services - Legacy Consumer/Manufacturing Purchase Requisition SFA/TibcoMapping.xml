@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx7:purchaseReqList xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.hmco.com/schemas/sfa/purchase_req_update" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/inventory_update" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:for-each select="$Start/pfx3:ZPREQCR03-4x/CHILDREN/Z1PREQCR/item/CHILDREN/Z1EBAN/item/FIELDS">
+        <pfx7:purchaseReqItem>
+            <pfx7:purchaseReqNumber>
+                <xsl:value-of select="../../../../FIELDS/BANFN"/>
+            </pfx7:purchaseReqNumber>
+            <pfx7:purchaseReqItemNumber>
+                <xsl:value-of select="BNFPO"/>
+            </pfx7:purchaseReqItemNumber>
+            <xsl:if test="not(EBELN/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx7:purchaseOrderNumber>
+                    <xsl:value-of select="EBELN"/>
+                </pfx7:purchaseOrderNumber>
+            </xsl:if>
+            <xsl:if test="EBELP">
+                <pfx7:purchaseOrderItemNumber>
+                    <xsl:value-of select="EBELP"/>
+                </pfx7:purchaseOrderItemNumber>
+            </xsl:if>
+            <pfx7:materialNumber>
+                <xsl:value-of select="MATNR"/>
+            </pfx7:materialNumber>
+            <pfx7:ContentCategory>
+                <xsl:value-of select="ISMCONTTYPE"/>
+            </pfx7:ContentCategory>
+            <pfx7:Division>
+                <xsl:value-of select="SPART"/>
+            </pfx7:Division>
+            <pfx7:XPlantStatus>
+                <xsl:value-of select="MSTAE"/>
+            </pfx7:XPlantStatus>
+            <pfx7:PHLevel4Code>
+                <xsl:value-of select="PRDHA__4"/>
+            </pfx7:PHLevel4Code>
+            <pfx7:PHLevel5Code>
+                <xsl:value-of select="PRDHA__5"/>
+            </pfx7:PHLevel5Code>
+            <pfx7:quantity>
+                <xsl:value-of select="MENGE"/>
+            </pfx7:quantity>
+            <pfx7:itemDeliveryDate>
+                <xsl:value-of select="tib:parse-date('yyyyMMdd',LFDAT)"/>
+            </pfx7:itemDeliveryDate>
+            <xsl:if test="not(LIFNR/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx7:desiredVendor>
+                    <xsl:value-of select="LIFNR"/>
+                </pfx7:desiredVendor>
+            </xsl:if>
+            <xsl:if test="not(FLIEF/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx7:fixedVendor>
+                    <xsl:value-of select="FLIEF"/>
+                </pfx7:fixedVendor>
+            </xsl:if>
+            <xsl:if test="not(FIXKZ/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx7:purchaseReqIsFixed>
+                    <xsl:value-of select="FIXKZ"/>
+                </pfx7:purchaseReqIsFixed>
+            </xsl:if>
+            <pfx7:lastChangeDate>
+                <xsl:value-of select="tib:parse-date('yyyyMMdd',ERDAT)"/>
+            </pfx7:lastChangeDate>
+            <pfx7:purchaseReqDate>
+                <xsl:value-of select="tib:parse-date('yyyyMMdd',BADAT)"/>
+            </pfx7:purchaseReqDate>
+            <xsl:if test="not(LOEKZ/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx7:deletionIndicator>
+                    <xsl:value-of select="LOEKZ"/>
+                </pfx7:deletionIndicator>
+            </xsl:if>
+        </pfx7:purchaseReqItem>
+    </xsl:for-each>
+</pfx7:purchaseReqList>

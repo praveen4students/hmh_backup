@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:invoiceIDList>
+         <!--1 or more repetitions:-->
+         <tran:transactionID>0002172048</tran:transactionID>
+      </tran:invoiceIDList>
+   </soapenv:Body>
+</soapenv:Envelope>

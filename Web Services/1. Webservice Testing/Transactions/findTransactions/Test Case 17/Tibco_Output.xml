@@ -1,0 +1,576 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:transactionList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:transaction>
+            <ns0:transactionID>0000924484</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_SAMPLE</ns0:type>
+            <ns0:poNumber>SAMPLE-DEL NAVEZ</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2007-05-17</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_SALES_REP</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000260401</ns0:materialID>
+                  <ns0:isbn>9780618050451</ns0:isbn>
+                  <ns0:description>C&amp;S 01 PE CSE1 CA</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2007-05-23</ns0:requestDate>
+               <ns0:availableDate>2007-05-24</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020760</ns0:repID>
+                  <ns0:repName>PAT WILLIAMS 40-546</ns0:repName>
+                  <ns0:sfaRepID>401546</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000000261293</ns0:materialID>
+                  <ns0:isbn>9780618086030</ns0:isbn>
+                  <ns0:description>LARSON CA MS MATH CS 2 SAMPAK    01</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2007-05-23</ns0:requestDate>
+               <ns0:availableDate>2007-05-24</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020760</ns0:repID>
+                  <ns0:repName>PAT WILLIAMS 40-546</ns0:repName>
+                  <ns0:sfaRepID>401546</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>30</ns0:lineNo>
+                  <ns0:materialID>000000000000278051</ns0:materialID>
+                  <ns0:isbn>9780618163830</ns0:isbn>
+                  <ns0:description>C&amp;S 01 PE ALGEBRA 1 CA</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2007-05-23</ns0:requestDate>
+               <ns0:availableDate>2007-05-24</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020760</ns0:repID>
+                  <ns0:repName>PAT WILLIAMS 40-546</ns0:repName>
+                  <ns0:sfaRepID>401546</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1/>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0001228304</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_SAMPLE</ns0:type>
+            <ns0:poNumber>TEST</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2007-08-02</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_MCDOUGAL_LITTELL_SFA</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000356534</ns0:materialID>
+                  <ns0:isbn/>
+                  <ns0:description>TRIMMER GUIDE TO MLA DOCUMENT   7ED</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_COLLEGE</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2007-08-02</ns0:requestDate>
+               <ns0:availableDate>2007-08-10</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000022099</ns0:repID>
+                  <ns0:repName>MOLLY O'CONNOR 07-584</ns0:repName>
+                  <ns0:sfaRepID>407584</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1/>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0002280777</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_SAMPLE</ns0:type>
+            <ns0:poNumber>LA USD ADULT-CAREER ED DIV MCD 4/2</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2008-04-22</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_MCDOUGAL_LITTELL_SFA</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000280901</ns0:materialID>
+                  <ns0:isbn>9780618115730</ns0:isbn>
+                  <ns0:description>LOL02 REV PE GR8 CA</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2008-04-22</ns0:requestDate>
+               <ns0:availableDate>2008-04-30</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020760</ns0:repID>
+                  <ns0:repName>PAT WILLIAMS 40-546</ns0:repName>
+                  <ns0:sfaRepID>401546</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1/>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0001224498</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_SAMPLE</ns0:type>
+            <ns0:poNumber>SAMPLE-YEE</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2007-08-01</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_SALES_REP</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000203900</ns0:materialID>
+                  <ns0:isbn>9780618725151</ns0:isbn>
+                  <ns0:description>MLBIO 08 TE CA</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>2</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2007-08-01</ns0:requestDate>
+               <ns0:availableDate>2007-08-10</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020760</ns0:repID>
+                  <ns0:repName>PAT WILLIAMS 40-546</ns0:repName>
+                  <ns0:sfaRepID>401546</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000000377502</ns0:materialID>
+                  <ns0:isbn/>
+                  <ns0:description>ZUMDAHL WOC CA SPECIFIC TE 2E</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>2</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_COLLEGE</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2007-08-01</ns0:requestDate>
+               <ns0:availableDate>2007-08-10</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020760</ns0:repID>
+                  <ns0:repName>PAT WILLIAMS 40-546</ns0:repName>
+                  <ns0:sfaRepID>401546</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1/>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0002854888</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_SAMPLE</ns0:type>
+            <ns0:poNumber>LA USD ADULT-CAREER ED DI</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2009-01-14</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_GREAT_SOURCE_SFA</ns0:orderSource>
+            <ns0:division>DIVISION_GREAT_SOURCE</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000001245771</ns0:materialID>
+                  <ns0:isbn>9781419058264</ns0:isbn>
+                  <ns0:description>SV PGED GET STRT SE 2009</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_NOT_YET_PUBLISHED</ns0:titleStatus>
+               <ns0:requestDate>2009-01-14</ns0:requestDate>
+               <ns0:availableDate>2009-02-03</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000023316</ns0:repID>
+                  <ns0:repName>OPEN 50-515</ns0:repName>
+                  <ns0:sfaRepID>501515</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000001245777</ns0:materialID>
+                  <ns0:isbn>9781419058288</ns0:isbn>
+                  <ns0:description>SV PGED LA/RDG SE 2009</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_NOT_YET_PUBLISHED</ns0:titleStatus>
+               <ns0:requestDate>2009-01-14</ns0:requestDate>
+               <ns0:availableDate>2009-02-03</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000023316</ns0:repID>
+                  <ns0:repName>OPEN 50-515</ns0:repName>
+                  <ns0:sfaRepID>501515</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>40</ns0:lineNo>
+                  <ns0:materialID>000000000001245783</ns0:materialID>
+                  <ns0:isbn>9781419058301</ns0:isbn>
+                  <ns0:description>SV PGED MATH SE 2009</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_NOT_YET_PUBLISHED</ns0:titleStatus>
+               <ns0:requestDate>2009-01-14</ns0:requestDate>
+               <ns0:availableDate>2009-02-03</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000023316</ns0:repID>
+                  <ns0:repName>OPEN 50-515</ns0:repName>
+                  <ns0:sfaRepID>501515</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>60</ns0:lineNo>
+                  <ns0:materialID>000000000001245789</ns0:materialID>
+                  <ns0:isbn>9781419058325</ns0:isbn>
+                  <ns0:description>SV PGED SS SE 2009</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_NOT_YET_PUBLISHED</ns0:titleStatus>
+               <ns0:requestDate>2009-01-14</ns0:requestDate>
+               <ns0:availableDate>2009-02-03</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000023316</ns0:repID>
+                  <ns0:repName>OPEN 50-515</ns0:repName>
+                  <ns0:sfaRepID>501515</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>ATTN: STEPHEN DOLAINSKI/ 18 TH FLOOR</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+      </ns0:transactionList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

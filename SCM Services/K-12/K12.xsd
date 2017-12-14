@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hmco.com/schemas/sfa/K12" xmlns:tns="http://www.hmco.com/schemas/sfa/K12" elementFormDefault="qualified">
+
+    <complexType name="CategoryT">
+    	<sequence>
+    		<element name="Discipline" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Subject" type="tns:SubjectT" minOccurs="1"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="SubjectT">
+    	<sequence>
+    		<element name="desc" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="FormatT">
+    	<sequence>
+    		<element name="desc" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="ImprintT">
+    	<sequence>
+    		<element name="desc" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="PriceT">
+    	<sequence>
+			<element name="materialid" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="from" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="to" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="amount" type="double" maxOccurs="1" minOccurs="1"></element>
+    		<element name="duration" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="unit" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="MaterialidT">
+    	<sequence>
+    		<element name="price" type="tns:PriceT"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="ComponentT">
+    	<sequence>
+    		<element name="materialid" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="versionid" type="string" minOccurs="1" maxOccurs="unbounded"></element>
+    		<element name="isbn13" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="isbn10" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="format" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="imprint" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="title" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="pubdate" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="status" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="pages" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="age" type="int" maxOccurs="unbounded" minOccurs="0"></element>
+    		<element name="grade" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="cartonqty" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="lang" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="copyright" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="cpsia" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="chokehazardind" type="string" maxOccurs="1" minOccurs="1"></element>
+			
+			<xs:element name="categories">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="category" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="category" type="xs:string"/>
+			<!-- <element name="categories" type="string" maxOccurs="unbounded" minOccurs="1"></element> -->
+			
+			
+    		<element name="topic" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="producttype" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="state" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="salesrestriction" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ProducttypeT">
+    	<sequence>
+    		<element name="desc" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="ProgramT">
+    	<sequence>
+    		<element name="name" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="version" type="tns:VersionT" maxOccurs="unbounded"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="VersionT">
+    	<sequence>
+    		<element name="copyright" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="state" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+    <complexType name="TopicT">
+    	<sequence>
+    		<element name="desc" type="string"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+
+    
+    <element name="Components">
+    	<complexType>
+    		<sequence>
+    			<element name="component" type="tns:ComponentT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="Producttypes">
+    	<complexType>
+    		<sequence>
+    			<element name="producttype" type="tns:ProducttypeT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="Categories">
+    	<complexType>
+    		<sequence>
+    			<element name="category" type="tns:CategoryT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="Formats">
+    	<complexType>
+    		<sequence>
+    			<element name="format" type="tns:FormatT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="Prices">
+    	<complexType>
+    		<sequence>
+    			<element name="materialid" type="tns:MaterialidT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="Imprints">
+    	<complexType>
+    		<sequence>
+    			<element name="imprint" type="tns:ImprintT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+    
+    <element name="Programs">
+    	<complexType>
+    		<sequence>
+    			<element name="program" type="tns:ProgramT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="Topics">
+    	<complexType>
+    		<sequence>
+    			<element name="topic" type="tns:TopicT" maxOccurs="unbounded" minOccurs="1"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

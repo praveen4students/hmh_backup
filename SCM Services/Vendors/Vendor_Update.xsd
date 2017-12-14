@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="VendorInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VendorNumber"/>
+				<xs:element ref="VendorType" minOccurs="0"/>
+				<xs:element ref="VendorName" minOccurs="0"/>
+				<xs:element ref="tibco__ry__vendor" minOccurs="0"/>
+				<xs:element ref="iDocNumber"/>
+				<xs:element ref="Update_User" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MfgVendor" type="xs:string"/>
+	<xs:element name="VendorType" type="xs:string"/>
+	<xs:element name="VendorName" type="xs:string"/>
+	<xs:element name="tibco__ry__vendor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VendorNumber"/>
+				<xs:element ref="Country" minOccurs="0"/>
+				<xs:element ref="Name1" minOccurs="0"/>
+				<xs:element ref="Name2" minOccurs="0"/>
+				<xs:element ref="Name3" minOccurs="0"/>
+				<xs:element ref="Name4" minOccurs="0"/>
+				<xs:element ref="City" minOccurs="0"/>
+				<xs:element ref="County" minOccurs="0"/>
+				<xs:element ref="PO_Box" minOccurs="0"/>
+				<xs:element ref="PO_Box_Post_Cd" minOccurs="0"/>
+				<xs:element ref="Postal_Code" minOccurs="0"/>
+				<xs:element ref="Region_State" minOccurs="0"/>
+				<xs:element ref="sort_name" minOccurs="0"/>
+				<xs:element ref="Street" minOccurs="0"/>
+				<xs:element ref="adrc_str_suppl1" minOccurs="0"/>
+				<xs:element ref="adrc_str_suppl2" minOccurs="0"/>
+				<xs:element ref="adrc_str_suppl3" minOccurs="0"/>
+				<xs:element ref="adrc_location" minOccurs="0"/>
+				<xs:element ref="SAP_Addr_No" minOccurs="0"/>
+				<xs:element ref="PS_Vendor-Loc" minOccurs="0"/>
+				<xs:element ref="Vendor_Group" minOccurs="0"/>
+				<xs:element ref="AlternatePayeeID" minOccurs="0"/>
+				<xs:element ref="Central_Delete_Flag" minOccurs="0"/>
+				<xs:element ref="Central_Post_Block" minOccurs="0"/>
+				<xs:element ref="Central_Purch_Block" minOccurs="0"/>
+				<xs:element ref="Telephone" minOccurs="0"/>
+				<xs:element ref="Mobile_Phone" minOccurs="0"/>
+				<xs:element ref="Fax_Number" minOccurs="0"/>
+				<xs:element ref="AlternatePayeeAllowed" minOccurs="0"/>
+				<xs:element ref="Tax_Jurisdiction" minOccurs="0"/>
+				<xs:element ref="Central_Delete_Block" minOccurs="0"/>
+				<xs:element ref="Company" minOccurs="0"/>
+				<xs:element ref="Company_Post_Block" minOccurs="0"/>
+				<xs:element ref="Company_Delete_Flag" minOccurs="0"/>
+				<xs:element ref="Reconcile_Acct" minOccurs="0"/>
+				<xs:element ref="Payment_Methods" minOccurs="0"/>
+				<xs:element ref="Payment_Block" minOccurs="0"/>
+				<xs:element ref="Payment_Terms" minOccurs="0"/>
+				<xs:element ref="AlternatePayeeAccountNumber" minOccurs="0"/>
+				<xs:element ref="Check_Dup_Invoice" minOccurs="0"/>
+				<xs:element ref="Individual_Payments" minOccurs="0"/>
+				<xs:element ref="Minority_Indicators" minOccurs="0"/>
+				<xs:element ref="Legacy_Vendor_No" minOccurs="0"/>
+				<xs:element ref="Pay_Method_Supplmt" minOccurs="0"/>
+				<xs:element ref="WH_Tax_Country" minOccurs="0"/>
+				<xs:element ref="WH_TaxType" minOccurs="0"/>
+				<xs:element ref="CareOf" minOccurs="0"/>
+				<xs:element ref="tibco__ry__vendor__remit" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="tibco__ry__vendor__email" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FieldDescription" type="xs:string"/>
+	<xs:element name="VendorNumber">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Country" type="xs:string"/>
+	<xs:element name="Name1" type="xs:string"/>
+	<xs:element name="Name2" type="xs:string"/>
+	<xs:element name="Name3" type="xs:string"/>
+	<xs:element name="Name4" type="xs:string"/>
+	<xs:element name="City" type="xs:string"/>
+	<xs:element name="County" type="xs:string"/>
+	<xs:element name="PO_Box" type="xs:string"/>
+	<xs:element name="PO_Box_Post_Cd" type="xs:string"/>
+	<xs:element name="Postal_Code" type="xs:string"/>
+	<xs:element name="Region_State" type="xs:string"/>
+	<xs:element name="sort_name" type="xs:string"/>
+	<xs:element name="Street" type="xs:string"/>
+	<xs:element name="adrc_str_suppl1" type="xs:string"/>
+	<xs:element name="adrc_str_suppl2" type="xs:string"/>
+	<xs:element name="adrc_str_suppl3" type="xs:string"/>
+	<xs:element name="adrc_location" type="xs:string"/>
+	<xs:element name="SAP_Addr_No" type="xs:string"/>
+	<xs:element name="PS_Vendor-Loc" type="xs:string"/>
+	<xs:element name="Vendor_Group" type="xs:string"/>
+	<xs:element name="AlternatePayeeID" type="xs:string"/>
+	<xs:element name="Central_Delete_Flag" type="xs:string"/>
+	<xs:element name="Central_Post_Block" type="xs:string"/>
+	<xs:element name="Central_Purch_Block" type="xs:string"/>
+	<xs:element name="Telephone" type="xs:string"/>
+	<xs:element name="Mobile_Phone" type="xs:string"/>
+	<xs:element name="Fax_Number" type="xs:string"/>
+	<xs:element name="AlternatePayeeAllowed" type="xs:string"/>
+	<xs:element name="Tax_Jurisdiction" type="xs:string"/>
+	<xs:element name="Central_Delete_Block" type="xs:string"/>
+	<xs:element name="Company" type="xs:string"/>
+	<xs:element name="Company_Post_Block" type="xs:string"/>
+	<xs:element name="Company_Delete_Flag" type="xs:string"/>
+	<xs:element name="Reconcile_Acct" type="xs:string"/>
+	<xs:element name="Payment_Methods" type="xs:string"/>
+	<xs:element name="Payment_Block" type="xs:string"/>
+	<xs:element name="Payment_Terms" type="xs:string"/>
+	<xs:element name="AlternatePayeeAccountNumber" type="xs:string"/>
+	<xs:element name="Check_Dup_Invoice" type="xs:string"/>
+	<xs:element name="Individual_Payments" type="xs:string"/>
+	<xs:element name="Minority_Indicators" type="xs:string"/>
+	<xs:element name="Legacy_Vendor_No" type="xs:string"/>
+	<xs:element name="Pay_Method_Supplmt" type="xs:string"/>
+	<xs:element name="WH_Tax_Country" type="xs:string"/>
+	<xs:element name="tibco__ry__vendor__remit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VendorNumber"/>
+				<xs:element ref="Purchase_Org"/>
+				<xs:element ref="Purch_Block" minOccurs="0"/>
+				<xs:element ref="Purch_Delete_Flag" minOccurs="0"/>
+				<xs:element ref="Payment_Terms" minOccurs="0"/>
+				<xs:element ref="Incoterms_Code" minOccurs="0"/>
+				<xs:element ref="Incoterms_Descr" minOccurs="0"/>
+				<xs:element ref="Partner_Function"/>
+				<xs:element ref="Remit_to_vendor_no" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Purchase_Org" type="xs:string"/>
+	<xs:element name="Purch_Block" type="xs:string"/>
+	<xs:element name="Purch_Delete_Flag" type="xs:string"/>
+	<xs:element name="Incoterms_Code" type="xs:string"/>
+	<xs:element name="Incoterms_Descr" type="xs:string"/>
+	<xs:element name="Partner_Function" type="xs:string"/>
+	<xs:element name="Remit_to_vendor_no" type="xs:string"/>
+	<xs:element name="iDocNumber" type="xs:string"/>
+	<xs:element name="Update_User" type="xs:string"/>
+	<xs:element name="WH_TaxType" type="xs:string"/>
+	<xs:element name="CareOf" type="xs:string"/>
+	<xs:element name="tibco__ry__vendor__email">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VendorNumber"/>
+				<xs:element ref="Emailid" minOccurs="0"/>
+				<xs:element ref="DefaultEmail" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Emailid" type="xs:string"/>
+	<xs:element name="DefaultEmail" type="xs:string"/>
+</xs:schema>

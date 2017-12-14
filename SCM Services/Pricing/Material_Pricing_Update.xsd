@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Houghton Mifflin (Houghton Mifflin) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.hmco.com/schemas/sfa/material_Pricing"
+	 xmlns:sfa="http://www.hmco.com/sfa"
+	 targetNamespace="http://www.hmco.com/schemas/sfa/material_Pricing"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:notation name="Material_Pricing" public="http://www.hmco.com/schemas/sfa/material_Pricing"/>
+	<xsd:attributeGroup name="fileAttributeGroup">
+		<xsd:attribute name="FileName" type="xsd:string"/>
+		<xsd:attribute name="MaterialPricingDateTime" type="xsd:dateTime"/>
+		<xsd:attribute name="Count" type="xsd:positiveInteger"/>
+	</xsd:attributeGroup>
+	<xsd:element name="MaterialPricing">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="MaterialPrice" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MaterialPrice">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="MaterialNumber">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ListPrice" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ListEffectiveDate" type="xsd:date" minOccurs="0"/>
+				<xsd:element name="ListEndDate" type="xsd:date" minOccurs="0"/>
+				<xsd:element ref="iDocNumber"/>
+				<xsd:element ref="Update_User" minOccurs="0"/>
+				<xsd:element ref="termUnit" minOccurs="0"/>
+				<xsd:element ref="termDuration" minOccurs="0"/>
+				<xsd:element ref="Variant" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="iDocNumber" type="xsd:string"/>
+	<xsd:element name="Update_User" type="xsd:string"/>
+	<xsd:element name="termUnit" type="xsd:string"/>
+	<xsd:element name="termDuration" type="xsd:string"/>
+	<xsd:element name="Variant" type="xsd:string"/>
+</xsd:schema>

@@ -1,0 +1,10 @@
+<MaterialPartners xmlns="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd">
+    <PartnerInfo>
+        <MaterialNumber>000000000000489852</MaterialNumber>
+        <AuthorID>0000001167</AuthorID>
+        <Role>ISM110</Role>
+        <FirstName>Alison</FirstName>
+        <LastName>Lester</LastName>
+        <iDocNumber>0000000196310893</iDocNumber>
+    </PartnerInfo>
+</MaterialPartners>

@@ -1,0 +1,36 @@
+ 1st Set
+ 
+ Start Date & Time ======> Tue Aug 20 12:39:51 IST 2013
+						   Tue Aug 20 12:39:54 IST 2013
+						   
+2nd Set
+
+Date & Time ======> Tue Aug 20 12:40:55 IST 2013
+Completed Date & Time ======> Tue Aug 20 12:40:57 IST 2013
+
+
+3rd Set
+Date & Time ======> Tue Aug 20 12:41:58 IST 2013
+Completed Date & Time ======> Tue Aug 20 12:41:59 IST 2013
+
+
+In Tibco No Restriction on the messages needs to be polled 
+Max file size of a baby file may not be more than 10 KB						   
+
+
+10,000
+Date & Time ======> Tue Aug 20 13:07:13 IST 2013
+Completed Date & Time ======> Tue Aug 20 13:08:08 IST 2013
+
+
+1 Lakh
+Date & Time ======> Tue Aug 20 13:41:24 IST 2013
+
+10K Batch
+1st
+Date & Time ======> Tue Aug 20 14:04:05 IST 2013
+Completed Date & Time ======> Tue Aug 20 14:06:22 IST 2013
+
+2nd
+Date & Time ======> Tue Aug 20 14:12:52 IST 2013
+Completed Date & Time ======> Tue Aug 20 14:15:34 IST 2013

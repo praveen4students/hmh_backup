@@ -1,0 +1,361 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:transactionList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:transaction>
+            <ns0:transactionID>0060428364</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_RETURN</ns0:type>
+            <ns0:poNumber>1175966/EC</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-01-27</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_E-MAIL</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>GCS1</ns0:salesOffice>
+            <ns0:customerEmail>polly.porter@hmhpub.com</ns0:customerEmail>
+            <ns0:soldToCustomerID>0000558913</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>Polly Porter</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:soldToCustomerEmailAddress>
+            <ns0:shipToCustomerID>0000558913</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>Polly Porter</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">AUSTIN</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:shipToCustomerEmailAddress>
+            <ns0:billToCustomerID>0000558913</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>Polly Porter</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:billToCustomerEmailAddress>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000001114051</ns0:materialID>
+                  <ns0:isbn>9780030388743</ns0:isbn>
+                  <ns0:description>GD RDG STRATEGIES WGT 2005</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>3.213E1</ns0:listPrice>
+                  <ns0:netPrice>2.41E1</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>8.03E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_CREDIT_RETURN_SALES_ITEM</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1/>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0004146513</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_STANDARD</ns0:type>
+            <ns0:poNumber>1175966/EC</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-01-16</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_MCDOUGAL_ECOMMERCE</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>GCS1</ns0:salesOffice>
+            <ns0:customerEmail>polly.porter@hmhpub.com</ns0:customerEmail>
+            <ns0:soldToCustomerID>0000558913</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>Polly Porter</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:soldToCustomerEmailAddress>
+            <ns0:shipToCustomerID>0000558913</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>Polly Porter</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">AUSTIN</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:shipToCustomerEmailAddress>
+            <ns0:billToCustomerID>0000558913</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>Polly Porter</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:billToCustomerEmailAddress>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>100</ns0:lineNo>
+                  <ns0:materialID>000000000001114051</ns0:materialID>
+                  <ns0:isbn>9780030388743</ns0:isbn>
+                  <ns0:description>GD RDG STRATEGIES WGT 2005</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>3.213E1</ns0:listPrice>
+                  <ns0:netPrice>2.41E1</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>8.03E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-01-19</ns0:requestDate>
+               <ns0:availableDate>2010-01-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SALE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1/>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0060432016</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_RETURN</ns0:type>
+            <ns0:poNumber>1175966/EC</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_UNEXPECTED</ns0:status>
+            <ns0:creationDate>2010-02-10</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_INTERNAL</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail>polly.porter@hmhpub.com</ns0:customerEmail>
+            <ns0:soldToCustomerID>0000558913</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>Polly Porter</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:soldToCustomerEmailAddress>
+            <ns0:shipToCustomerID>0000558913</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>Polly Porter</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">AUSTIN</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:shipToCustomerEmailAddress>
+            <ns0:billToCustomerID>0000558913</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>Polly Porter</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:billToCustomerEmailAddress>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>11</ns0:lineNo>
+                  <ns0:materialID>000000000001114051</ns0:materialID>
+                  <ns0:isbn>9780030388743</ns0:isbn>
+                  <ns0:description>GD RDG STRATEGIES WGT 2005</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_UNEXPECTED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_RETURN_CREDIT_FREE_ITEM</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>DO NOT SHIP</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0004271765</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_STANDARD</ns0:type>
+            <ns0:poNumber>TESTFACTSFIRST</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_UNEXPECTED</ns0:status>
+            <ns0:creationDate>2010-02-28</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_SAXON_HOME_SCHOOL_ECOMMERCE</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail>polly.porter@hmhpub.com</ns0:customerEmail>
+            <ns0:soldToCustomerID>0000558913</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>Polly Porter</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:soldToCustomerEmailAddress>
+            <ns0:shipToCustomerID>0000558913</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>Polly Porter</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">AUSTIN</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:shipToCustomerEmailAddress>
+            <ns0:billToCustomerID>0000558913</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>Polly Porter</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">4105 Greystone</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">Austin</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">TX</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">78731</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>polly.porter@hmhpub.com</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress>polly.porter@hmhpub.com</ns0:billToCustomerEmailAddress>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>100</ns0:lineNo>
+                  <ns0:materialID>000000000001418321</ns0:materialID>
+                  <ns0:isbn>9780547291543</ns0:isbn>
+                  <ns0:description>SKILLS TUTOR: FACTS FIRST</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>6.665E1</ns0:listPrice>
+                  <ns0:netPrice>4.999E1</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+                  <ns0:listDiscount>1.666E1</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>true</ns0:isSubscription>
+                  <ns1:subscriptionTerm xmlns:ns1="http://www.hmco.com/EAI/OTS/Material">
+                     <ns1:duration>1</ns1:duration>
+                     <ns1:unit>SUBSCRIPTION_TERM_UNIT_YEAR</ns1:unit>
+                     <ns1:rate>4.899E1</ns1:rate>
+                     <ns1:startDate>2010-02-28</ns1:startDate>
+                     <ns1:endDate>2011-02-27</ns1:endDate>
+                  </ns1:subscriptionTerm>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_UNEXPECTED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-03-01</ns0:requestDate>
+               <ns0:availableDate>2010-03-01</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_TIME_BASED_SALE_SVC</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>DO NOT SHIP</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+      </ns0:transactionList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionSearchCriteria>
+<tran:searchType>BO</tran:searchType>
+         <!--Optional:-->
+
+         <tran:customerID>558913</tran:customerID>
+         <!--Optional:-->
+         <tran:fromDate>2009-01-01</tran:fromDate>
+         <!--Optional:-->
+         <tran:toDate>2009-01-15</tran:toDate>
+         <tran:limitOfResults>1</tran:limitOfResults>
+         <tran:partnerFunctionList>
+
+             <tran:partnerFunction>PARTNER_FUNCTION_SHIPTO</tran:partnerFunction>
+	  <tran:partnerFunction>PARTNER_FUNCTION_BILLTO</tran:partnerFunction>
+<tran:partnerFunction>PARTNER_FUNCTION_SOLDTO</tran:partnerFunction>
+         
+         </tran:partnerFunctionList>
+
+       
+      </tran:transactionSearchCriteria>
+   </soapenv:Body>
+</soapenv:Envelope>

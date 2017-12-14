@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:InventoryList xmlns:ns0="http://www.hmco.com/schemas/sfa/inventory_update" FileName="Target_sfa.xml" inventoryListDateTime="2013-07-24T06:00:00" Count="1">
+<ns0:InventoryInfo>
+        <ns0:MaterialNumber>000000000001014853</ns0:MaterialNumber>
+        <ns0:Plant>0300</ns0:Plant>
+        <ns0:ATPQuantity>0</ns0:ATPQuantity>
+        <ns0:ATPDate>2013-03-26</ns0:ATPDate>
+        <ns0:Division>30</ns0:Division>
+    </ns0:InventoryInfo>
+    <ns0:InventoryInfo>
+        <ns0:MaterialNumber>000000000001014853</ns0:MaterialNumber>
+        <ns0:Plant>0400</ns0:Plant>
+        <ns0:ATPQuantity>0</ns0:ATPQuantity>
+        <ns0:ATPDate>2013-03-26</ns0:ATPDate>
+        <ns0:Division>30</ns0:Division>
+    </ns0:InventoryInfo>
+</ns0:InventoryList>

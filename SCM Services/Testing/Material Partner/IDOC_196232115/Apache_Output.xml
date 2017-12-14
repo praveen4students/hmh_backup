@@ -1,0 +1,10 @@
+<MaterialPartners xmlns="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd">
+    <PartnerInfo>
+        <MaterialNumber>J36106</MaterialNumber>
+        <AuthorID>0000004268</AuthorID>
+        <Role>ZSM125</Role>
+        <FirstName>Editors of</FirstName>
+        <LastName>The American Heritage Dictionaries</LastName>
+        <iDocNumber>0000000196310883</iDocNumber>
+    </PartnerInfo>
+</MaterialPartners>

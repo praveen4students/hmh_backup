@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx5:Material xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:TrimMATNR="java://TrimMATNR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <pfx5:MaterialNumber>
+        <xsl:value-of select="$current_value/item/FIELDS/MATNR"/>
+    </pfx5:MaterialNumber>
+    <pfx5:CompactMaterial>
+        <xsl:value-of select="TrimMATNR:trim($current_value/item/FIELDS/MATNR)"/>
+    </pfx5:CompactMaterial>
+    <pfx5:AuthorArtist>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMARTIST"/>
+    </pfx5:AuthorArtist>
+    <pfx5:Title>
+        <xsl:value-of select="concat($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1,' ',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2,' ',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3)"/>
+    </pfx5:Title>
+    <pfx5:ContentCategory>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMCONTTYPE"/>
+    </pfx5:ContentCategory>
+    <xsl:if test="exists(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR)) and  (number($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR)!=0)">
+        <pfx5:YearNumber>
+            <xsl:value-of select="round(number($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR))"/>
+        </pfx5:YearNumber>
+    </xsl:if>
+    <pfx5:Division>
+        <xsl:value-of select="$current_value/item/FIELDS/SPART"/>
+    </pfx5:Division>
+    <pfx5:EAN>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARMM/item[exists (CHILDREN/E1MEANM) ]/CHILDREN/E1MEANM/item[FIELDS/EANTP='HE']/FIELDS/EAN11"/>
+    </pfx5:EAN>
+    <pfx5:EANCategory>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARMM/item[ exists(CHILDREN/E1MEANM) ]/CHILDREN/E1MEANM/item[FIELDS/EANTP='HE']/FIELDS/EANTP"/>
+    </pfx5:EANCategory>
+    <pfx5:EditionCounter>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONNUM"/>
+    </pfx5:EditionCounter>
+    <pfx5:ISBN_13>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE=&quot;0001&quot;]/FIELDS/IDENTCODE"/>
+    </pfx5:ISBN_13>
+    <pfx5:ISBN_10>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE=&quot;0002&quot;]/FIELDS/IDENTCODE"/>
+    </pfx5:ISBN_10>
+    <xsl:if test="boolean(tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMLANGUAGES))">
+        <pfx5:Languages>
+            <xsl:value-of select="round(number($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMLANGUAGES))"/>
+        </pfx5:Languages>
+    </xsl:if>
+    <pfx5:MaterialGroup>
+        <xsl:value-of select="$current_value/item/FIELDS/MATKL"/>
+    </pfx5:MaterialGroup>
+    <xsl:if test="boolean(tib:trim($current_value/item/FIELDS/BRGEW))">
+        <pfx5:NetWeight>
+            <xsl:value-of select="number($current_value/item/FIELDS/BRGEW)"/>
+        </pfx5:NetWeight>
+    </xsl:if>
+    <pfx5:PricingUnit>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH='PU']/FIELDS/UMREN"/>
+    </pfx5:PricingUnit>
+    <pfx5:PrimaryISBN>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIDCODE"/>
+    </pfx5:PrimaryISBN>
+    <pfx5:MediaType>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMMEDIATYPE"/>
+    </pfx5:MediaType>
+    <pfx5:ProductPresentation>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMDESIGN"/>
+    </pfx5:ProductPresentation>
+    <xsl:if test="exists($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE) and tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE) !=''">
+        <pfx5:PublicationDate>
+            <xsl:value-of select="tib:parse-date('yyyyMMdd',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE)"/>
+        </pfx5:PublicationDate>
+    </xsl:if>
+    <pfx5:PublicationType>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLTYPE"/>
+    </pfx5:PublicationType>
+    <pfx5:ResendWorkID>
+        <xsl:value-of select="$current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/RESEND__WORK__ID"/>
+    </pfx5:ResendWorkID>
+    <pfx5:ReturnedCode>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1"/>
+    </pfx5:ReturnedCode>
+    <pfx5:EgoodIndicator>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR4"/>
+    </pfx5:EgoodIndicator>
+    <xsl:if test="exists($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/ROYALTY__ACTIVITY)">
+        <pfx5:RoyaltyActivityFlag>
+            <xsl:value-of select="if ($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/ROYALTY__ACTIVITY=&quot;Y&quot;) then true() else false()"/>
+        </pfx5:RoyaltyActivityFlag>
+    </xsl:if>
+    <pfx5:StdlssVartype>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMISSUETYPEST"/>
+    </pfx5:StdlssVartype>
+    <pfx5:ReprintingType>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREPRINTTYPE"/>
+    </pfx5:ReprintingType>
+    <pfx5:MaterialDescription>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX"/>
+    </pfx5:MaterialDescription>
+    <pfx5:XPlantStatus>
+        <xsl:value-of select="$current_value/item/FIELDS/MSTAE"/>
+    </pfx5:XPlantStatus>
+    <xsl:if test="boolean(tib:trim($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH='CS']/FIELDS/UMREZ))">
+        <pfx5:Case>
+            <xsl:value-of select="round(number($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH='CS']/FIELDS/UMREZ))"/>
+        </pfx5:Case>
+    </xsl:if>
+    <xsl:if test="boolean(tib:trim($current_value/item/FIELDS/LAEDA))">
+        <pfx5:TitleUpdatedDate>
+            <xsl:value-of select="tib:parse-date('yyyyMMdd',$current_value/item/FIELDS/LAEDA)"/>
+        </pfx5:TitleUpdatedDate>
+    </xsl:if>
+    <pfx5:UPCCategory>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARMM/item[ exists(CHILDREN/E1MEANM) ]/CHILDREN/E1MEANM/item[FIELDS/EANTP='UC']/FIELDS/EANTP"/>
+    </pfx5:UPCCategory>
+    <pfx5:UPC>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARMM/item[ exists(CHILDREN/E1MEANM) ]/CHILDREN/E1MEANM/item[FIELDS/EANTP='UC']/FIELDS/EAN11"/>
+    </pfx5:UPC>
+    <pfx5:Vendor>
+        <xsl:value-of select="$current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/LIFNR"/>
+    </pfx5:Vendor>
+    <pfx5:MediaProduct>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREFMDPROD"/>
+    </pfx5:MediaProduct>
+    <pfx5:MaterialType>
+        <xsl:value-of select="$current_value/item/FIELDS/MTART"/>
+    </pfx5:MaterialType>
+    <pfx5:MRPController>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISPO"/>
+    </pfx5:MRPController>
+    <pfx5:RoyaltyRelevance>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR5"/>
+    </pfx5:RoyaltyRelevance>
+    <pfx5:Subtitle1>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1"/>
+    </pfx5:Subtitle1>
+    <pfx5:Subtitle2>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2"/>
+    </pfx5:Subtitle2>
+    <pfx5:Subtitle3>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3"/>
+    </pfx5:Subtitle3>
+    <xsl:if test="$current_value/item/CHILDREN/E1MBEWM/item[FIELDS/BWKEY= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/STPRS">
+        <pfx5:StandardPrice>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MBEWM/item[FIELDS/BWKEY= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/STPRS"/>
+        </pfx5:StandardPrice>
+    </xsl:if>
+    <pfx5:DocumentVersion>
+        <xsl:value-of select="$current_value/item/FIELDS/ZEIVR"/>
+    </pfx5:DocumentVersion>
+    <pfx5:GTIN>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE=&quot;0003&quot;]/FIELDS/IDENTCODE"/>
+    </pfx5:GTIN>
+    <pfx5:CountryName>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/HERKL"/>
+    </pfx5:CountryName>
+    <pfx5:DchainSpecStatus>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTA"/>
+    </pfx5:DchainSpecStatus>
+    <pfx5:MaterialGroupPricing>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KONDM"/>
+    </pfx5:MaterialGroupPricing>
+    <pfx5:ExternalMaterialGroup>
+        <xsl:value-of select="$Start/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/EXTWG"/>
+    </pfx5:ExternalMaterialGroup>
+    <pfx5:OriginalTitle>
+        <xsl:copy-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIGTITLE/@xsi:nil"/>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIGTITLE"/>
+    </pfx5:OriginalTitle>
+    <xsl:if test="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONTYPE">
+        <pfx5:EditionType>
+            <xsl:copy-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONTYPE/@xsi:nil"/>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONTYPE"/>
+        </pfx5:EditionType>
+    </xsl:if>
+    <xsl:if test="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRELEASE">
+        <pfx5:CopyrightStatus>
+            <xsl:copy-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRELEASE/@xsi:nil"/>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRELEASE"/>
+        </pfx5:CopyrightStatus>
+    </xsl:if>
+    <pfx5:MinOrderQty>
+        <xsl:copy-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/AUMNG/@xsi:nil"/>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/AUMNG"/>
+    </pfx5:MinOrderQty>
+    <pfx5:DeliveryUnit>
+        <xsl:copy-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/SCMNG/@xsi:nil"/>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/SCMNG"/>
+    </pfx5:DeliveryUnit>
+    <pfx5:ISMTitle>
+        <xsl:copy-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMTITLE/@xsi:nil"/>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMTITLE"/>
+    </pfx5:ISMTitle>
+    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT/@xsi:nil=(&quot;1&quot;)))">
+        <pfx5:Imprint>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT"/>
+        </pfx5:Imprint>
+    </xsl:if>
+    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER/@xsi:nil=(&quot;1&quot;)))">
+        <pfx5:OriginalPublisher>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER"/>
+        </pfx5:OriginalPublisher>
+    </xsl:if>
+    <pfx5:ProductHierarchy>
+        <pfx5:PHLevel1Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 1, 2)"/>
+        </pfx5:PHLevel1Code>
+        <pfx5:PHLevel2Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 3, 2)"/>
+        </pfx5:PHLevel2Code>
+        <pfx5:PHLevel3Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 5, 2)"/>
+        </pfx5:PHLevel3Code>
+        <pfx5:PHLevel4Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 7, 3)"/>
+        </pfx5:PHLevel4Code>
+        <pfx5:PHLevel5Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 10,2)"/>
+        </pfx5:PHLevel5Code>
+    </pfx5:ProductHierarchy>
+</pfx5:Material>

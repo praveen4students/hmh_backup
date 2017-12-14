@@ -1,0 +1,39 @@
+2013-08-16 05:04:04,287 | INFO  | ://customerAudit | UtilDAOImpl                      | Enterprise_WebService - asyncPoll - LogEnter - event-id 22026301508593.852288.10.198.51.19
+2013-08-16 05:04:04,299 | INFO  | ://customerAudit | UtilDAOImpl                      | Enterprise_WebService - asyncPoll - LogExit - event-id 22026301508593.852288.10.198.51.19
+
+
+
+
+
+2013-08-16 05:18:57,116 | DEBUG | p582377195-28163 | MaterialRoutes                   | OperationName: getMaterialDetail
+2013-08-16 05:18:57,116 | DEBUG | p582377195-28163 | MaterialImpl                     | getMaterialDetail begin
+2013-08-16 05:18:57,116 | INFO  | p582377195-28163 | MaterialImpl                     | Material ID List Size ::: 1
+2013-08-16 05:18:57,117 | INFO  | p582377195-28163 | MaterialImpl                     | ISBN List Size ::: 1
+2013-08-16 05:18:57,117 | DEBUG | p582377195-28163 | MaterialBean                     | getMaterialDetail begin
+2013-08-16 05:18:57,118 | DEBUG | ://materialAudit | MaterialImpl                     | send audit of LogEnter
+2013-08-16 05:18:57,119 | DEBUG | ://materialAudit | MaterialImpl                     | send audit of LogEnter
+2013-08-16 05:18:57,119 | DEBUG | ://materialAudit | MaterialImpl                     | send audit of LogRequest
+2013-08-16 05:18:57,419 | DEBUG | p582377195-28163 | MaterialBean                     | getMaterialDetail ends
+2013-08-16 05:18:57,419 | DEBUG | p582377195-28163 | MaterialImpl                     | SAP time was 302 ms.
+2013-08-16 05:18:57,419 | DEBUG | ://materialAudit | MaterialImpl                     | send audit of LogResponse
+2013-08-16 05:18:57,421 | DEBUG | p582377195-28163 | MaterialImpl                     | servicemix time was 3 ms.
+2013-08-16 05:18:57,421 | DEBUG | p582377195-28163 | MaterialImpl                     | execution time was 305 ms.
+2013-08-16 05:18:57,421 | DEBUG | p582377195-28163 | MaterialImpl                     | getMaterialDetail ends
+2013-08-16 05:18:57,421 | DEBUG | ://materialAudit | MaterialImpl                     | send audit of LogExit
+
+
+
+
+
+
+
+2013-08-16 05:20:31,488 | DEBUG | 407813158-852012 | MaterialRoutes                   | OperationName: getMaterialDetail
+2013-08-16 05:20:31,489 | DEBUG | 407813158-852012 | MaterialImpl                     | getMaterialDetail begin
+2013-08-16 05:20:31,489 | INFO  | 407813158-852012 | MaterialImpl                     | Material ID List Size ::: 1
+2013-08-16 05:20:31,489 | INFO  | 407813158-852012 | MaterialImpl                     | ISBN List Size ::: 1
+2013-08-16 05:20:31,489 | DEBUG | 407813158-852012 | MaterialBean                     | getMaterialDetail begin
+2013-08-16 05:20:31,961 | DEBUG | 407813158-852012 | MaterialBean                     | getMaterialDetail ends
+2013-08-16 05:20:31,961 | DEBUG | 407813158-852012 | MaterialImpl                     | SAP time was 472 ms.
+2013-08-16 05:20:31,962 | DEBUG | 407813158-852012 | MaterialImpl                     | servicemix time was 1 ms.
+2013-08-16 05:20:31,962 | DEBUG | 407813158-852012 | MaterialImpl                     | execution time was 473 ms.
+2013-08-16 05:20:31,962 | DEBUG | 407813158-852012 | MaterialImpl                     | getMaterialDetail ends

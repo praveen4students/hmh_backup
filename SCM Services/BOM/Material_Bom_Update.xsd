@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:sfa="http://www.hmco.com/sfa"
+	 xmlns="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:notation name="Material_BOM" public="http://www.hmco.com/schemas/sfa/material_BOM"/>
+	<xsd:attributeGroup name="fileAttributeGroup">
+		<xsd:attribute name="FileName" type="xsd:string"/>
+		<xsd:attribute name="MaterialBOMDateTime" type="xsd:dateTime"/>
+		<xsd:attribute name="Count" type="xsd:positiveInteger"/>
+	</xsd:attributeGroup>
+	<xsd:element name="BillOfMaterial">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="KitComponents" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="MaterialNumber">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:minLength value="1"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="Component" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:minLength value="1"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="CreatedDate" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="ChangeCreatedDate" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="Quantity" type="xsd:double" minOccurs="0"/>
+							<xsd:element ref="BomStatus" minOccurs="0"/>
+							<xsd:element ref="iDocNumber"/>
+							<xsd:element ref="Update_User" minOccurs="0"/>
+							<xsd:element ref="itemNumber" minOccurs="0"/>
+							<xsd:element ref="itemCategory" minOccurs="0"/>
+							<xsd:element ref="FixedIndicator" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MaterialBOM"/>
+	<xsd:element name="BomStatus" type="xsd:string"/>
+	<xsd:element name="Update_User" type="xsd:string"/>
+	<xsd:element name="iDocNumber" type="xsd:string"/>
+	<xsd:element name="itemNumber" type="xsd:string"/>
+	<xsd:element name="itemCategory" type="xsd:string"/>
+	<xsd:element name="FixedIndicator" type="xsd:string"/>
+</xsd:schema>

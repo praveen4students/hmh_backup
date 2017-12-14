@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <pd:name>CoreTechnicalServices/Subprocesses/LogFilter.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="ns:logMessage"/>
+    <pd:startX>34</pd:startX>
+    <pd:startY>71</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>322</pd:endX>
+    <pd:endY>71</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1313493821871</pd:targetNamespace>
+    <pd:activity name="Call Log Sub">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>221</pd:x>
+        <pd:y>69</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/LogSub.process</processName>
+        </config>
+        <pd:inputBindings>
+            <xsl:for-each select="$Start/*">
+                <ns:logMessage>
+                    <ns:severity>
+                        <xsl:value-of select="ns:severity"/>
+                    </ns:severity>
+                    <ns:sensitive>
+                        <xsl:value-of select="ns:sensitive"/>
+                    </ns:sensitive>
+                    <ns:componentName>
+                        <xsl:value-of select="ns:componentName"/>
+                    </ns:componentName>
+                    <ns:messageText>
+                        <xsl:value-of select="ns:messageText"/>
+                    </ns:messageText>
+                    <ns:payload>
+                        <xsl:value-of select="ns:payload"/>
+                    </ns:payload>
+                    <ns:evtActivityTimeStamp>
+                        <xsl:value-of select="ns:evtActivityTimeStamp"/>
+                    </ns:evtActivityTimeStamp>
+                </ns:logMessage>
+            </xsl:for-each>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Call Publish Trail Message">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>117</pd:x>
+        <pd:y>78</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/PublishTrailMessage.process</processName>
+        </config>
+        <pd:inputBindings>
+            <xsl:for-each select="$Start/*">
+                <ns:logMessage>
+                    <ns:severity>
+                        <xsl:value-of select="ns:severity"/>
+                    </ns:severity>
+                    <ns:sensitive>
+                        <xsl:value-of select="ns:sensitive"/>
+                    </ns:sensitive>
+                    <ns:componentName>
+                        <xsl:value-of select="ns:componentName"/>
+                    </ns:componentName>
+                    <ns:messageText>
+                        <xsl:value-of select="$_globalVariables/ns1:GlobalVariables/LOG_MESSAGE/LOG_FILTER"/>
+                    </ns:messageText>
+                    <ns:evtActivityTimeStamp>
+                        <xsl:value-of select="ns:evtActivityTimeStamp"/>
+                    </ns:evtActivityTimeStamp>
+                </ns:logMessage>
+            </xsl:for-each>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Call Publish Trail Message</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Call Log Sub</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Call Publish Trail Message</pd:from>
+        <pd:to>Call Log Sub</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

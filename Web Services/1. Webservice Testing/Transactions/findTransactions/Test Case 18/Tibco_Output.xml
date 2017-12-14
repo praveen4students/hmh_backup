@@ -1,0 +1,372 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:transactionList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:transaction>
+            <ns0:transactionID>0002909968</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_SAMPLE</ns0:type>
+            <ns0:poNumber>IL HSP SS GR 2</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2009-02-02</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_E-MAIL</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice/>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000001157616</ns0:materialID>
+                  <ns0:isbn>9780153534751</ns0:isbn>
+                  <ns0:description>IL INTERACTIVE MAP TRNSP GR 4 HRZNS 05</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-02-04</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000001191562</ns0:materialID>
+                  <ns0:isbn>9780153672729</ns0:isbn>
+                  <ns0:description>IL TE PEOPLE WE KNOW GR 2 SS 09</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-07-14</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>30</ns0:lineNo>
+                  <ns0:materialID>000000000001195327</ns0:materialID>
+                  <ns0:isbn>9780153686931</ns0:isbn>
+                  <ns0:description>IL SE PEOPLE WE KNOW G2 SS 09</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-02-04</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>40</ns0:lineNo>
+                  <ns0:materialID>000000000001371671</ns0:materialID>
+                  <ns0:isbn/>
+                  <ns0:description>HSP SOC STUD BRCHR:SCOPE&amp;SEQ(S/BX)GR K-6</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-02-04</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>50</ns0:lineNo>
+                  <ns0:materialID>000000000001360774</ns0:materialID>
+                  <ns0:isbn/>
+                  <ns0:description>TIMELINKS BRCHR(S/B)PRIMARY K-3 SS 07</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-02-04</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>60</ns0:lineNo>
+                  <ns0:materialID>000000000001360335</ns0:materialID>
+                  <ns0:isbn/>
+                  <ns0:description>LVLD RDR SMPLR PKG(S/B) 2 SS 07</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-02-04</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>70</ns0:lineNo>
+                  <ns0:materialID>000000000001153425</ns0:materialID>
+                  <ns0:isbn>9780153518027</ns0:isbn>
+                  <ns0:description>TCHR RES PKG GR 2 SS 07</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>1</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-02-04</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020868</ns0:repID>
+                  <ns0:repName>BECKY SMITH 04-044</ns0:repName>
+                  <ns0:sfaRepID>304044</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SAMPLE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>Maxine Portis</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0002909527</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_STANDARD</ns0:type>
+            <ns0:poNumber>1685423G</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2009-02-02</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_PHONE</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>OCS1</ns0:salesOffice>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName/>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID/>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName/>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID/>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName/>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000001142483</ns0:materialID>
+                  <ns0:isbn>9780153471254</ns0:isbn>
+                  <ns0:description>SE A CHILD'S VIEW GR 1 SS 07</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>4</ns0:quantity>
+                  <ns0:listPrice>1.506E2</ns0:listPrice>
+                  <ns0:netPrice>1.506E2</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-06-15</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000023067</ns0:repID>
+                  <ns0:repName>OPEN 30-264</ns0:repName>
+                  <ns0:sfaRepID>301264</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SALE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000001149738</ns0:materialID>
+                  <ns0:isbn>9780153496615</ns0:isbn>
+                  <ns0:description>SE GR 1 SPAN SS 08</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>62</ns0:quantity>
+                  <ns0:listPrice>2.56804E3</ns0:listPrice>
+                  <ns0:netPrice>2.56804E3</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2009-02-02</ns0:requestDate>
+               <ns0:availableDate>2009-05-06</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000023067</ns0:repID>
+                  <ns0:repName>OPEN 30-264</ns0:repName>
+                  <ns0:sfaRepID>301264</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SALE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>MISS MARIA ELENA MUNOZ</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+      </ns0:transactionList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

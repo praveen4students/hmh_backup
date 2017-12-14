@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:goodsMovementList xmlns:ns0="http://www.hmco.com/schemas/sfa/goods_movement_update" FileName="manuf_gm" goodsMovementListDateTime="2013-08-30T06:15:00" Count="1">
+    <ns0:goodsMovementInfo xmlns:ns0="http://www.hmco.com/schemas/sfa/goods_movement_update">
+        <ns0:goodsMovementNumber>5017657171</ns0:goodsMovementNumber>
+        <ns0:postingDate>2013-08-30</ns0:postingDate>
+        <ns0:documentDate>2013-08-30</ns0:documentDate>
+        <ns0:goodsMovementItem>
+            <ns0:goodsMovementItemNumber>0001</ns0:goodsMovementItemNumber>
+            <ns0:purchaseOrderNumber>4500405767</ns0:purchaseOrderNumber>
+            <ns0:purchaseOrderItemNumber>00020</ns0:purchaseOrderItemNumber>
+            <ns0:materialNumber>000000000001497480</ns0:materialNumber>
+            <ns0:ContentCategory>13</ns0:ContentCategory>
+            <ns0:Division>30</ns0:Division>
+            <ns0:XPlantStatus>IP</ns0:XPlantStatus>
+            <ns0:PHLevel4Code>004</ns0:PHLevel4Code>
+            <ns0:PHLevel5Code>08</ns0:PHLevel5Code>
+            <ns0:movementType>101</ns0:movementType>
+            <ns0:quantity>15</ns0:quantity>
+            <ns0:deliveryCompletedIndicator/>
+        </ns0:goodsMovementItem>
+        <ns0:goodsMovementItem>
+            <ns0:goodsMovementItemNumber>0003</ns0:goodsMovementItemNumber>
+            <ns0:purchaseOrderNumber>4500405767</ns0:purchaseOrderNumber>
+            <ns0:purchaseOrderItemNumber>00030</ns0:purchaseOrderItemNumber>
+            <ns0:materialNumber>000000000001497487</ns0:materialNumber>
+            <ns0:ContentCategory>13</ns0:ContentCategory>
+            <ns0:Division>30</ns0:Division>
+            <ns0:XPlantStatus>IP</ns0:XPlantStatus>
+            <ns0:PHLevel4Code>004</ns0:PHLevel4Code>
+            <ns0:PHLevel5Code>08</ns0:PHLevel5Code>
+            <ns0:movementType>101</ns0:movementType>
+            <ns0:quantity>20</ns0:quantity>
+            <ns0:deliveryCompletedIndicator/>
+        </ns0:goodsMovementItem>
+    </ns0:goodsMovementInfo>
+</ns0:goodsMovementList>

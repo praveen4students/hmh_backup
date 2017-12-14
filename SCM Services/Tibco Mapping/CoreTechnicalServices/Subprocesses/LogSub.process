@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:ns4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/ADB/LoggingADBConfiguration" xmlns:pfx2="http://www.hmco.com/EAI/CoreTechnicalServices/ErrorMessage" xmlns:ns7="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.hmco.com/EAI/CoreTechnicalServices/LogMessage" xmlns:pfx="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://www.tibco.com/pe/EngineTypes" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/ADB/SecureLoggingADBConfiguration" xmlns:ns6="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/ADB/ExceptionLoggingADBConfiguration" xmlns:ns3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/ADB/SecureActiveDatabaseAdapterConfiguration" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/file">
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices/ErrorMessage" schemaLocation="/SharedResources/Schemas/ErrorMessage.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices/LogMessage" schemaLocation="/SharedResources/Schemas/LogMessage.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <pd:name>CoreTechnicalServices/Subprocesses/LogSub.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx:logMessage"/>
+    <pd:startX>28</pd:startX>
+    <pd:startY>56</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>630</pd:endX>
+    <pd:endY>141</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1313495862137</pd:targetNamespace>
+    <pd:activity name="GetHeaderVariable">
+        <pd:type>com.tibco.pe.core.GetSharedVariableActivity</pd:type>
+        <pd:resourceType>ae.activities.getSharedVariable</pd:resourceType>
+        <pd:x>262</pd:x>
+        <pd:y>141</pd:y>
+        <config>
+            <variableConfig>/CoreTechnicalServices/SharedResources/HeaderSharedVariable.jobsharedvariable</variableConfig>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="GetLoggingLevelVariable">
+        <pd:type>com.tibco.pe.core.GetSharedVariableActivity</pd:type>
+        <pd:resourceType>ae.activities.getSharedVariable</pd:resourceType>
+        <pd:x>144</pd:x>
+        <pd:y>220</pd:y>
+        <config>
+            <variableConfig>/CoreTechnicalServices/SharedResources/LoggingLevelSharedVariable.sharedvariable</variableConfig>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Send to Logger Queue">
+        <pd:type>com.tibco.plugin.jms.JMSQueueSendActivity</pd:type>
+        <pd:resourceType>ae.activities.JMSQueueSendActivity</pd:resourceType>
+        <pd:x>405</pd:x>
+        <pd:y>57</pd:y>
+        <config>
+            <PermittedMessageType>XML Text</PermittedMessageType>
+            <SessionAttributes>
+                <transacted>false</transacted>
+                <acknowledgeMode>1</acknowledgeMode>
+                <maxSessions>1</maxSessions>
+                <destination>%%GLB_JMSQ_LOG%%</destination>
+            </SessionAttributes>
+            <ConfigurableHeaders>
+                <JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+                <JMSExpiration>0</JMSExpiration>
+                <JMSPriority>4</JMSPriority>
+            </ConfigurableHeaders>
+            <ConnectionReference>/CoreTechnicalServices/SharedResources/Connections/InfrastructureJMSConnection.sharedjmscon</ConnectionReference>
+            <InDataxsdString>
+                <xsd:element name="logMessageWire">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="pfx:messageHeader"/>
+                            <xsd:element ref="pfx:logMessage"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </InDataxsdString>
+        </config>
+        <pd:inputBindings>
+            <ns6:ActivityInput>
+                <Body>
+                    <logMessageWire>
+                        <xsl:copy-of select="$GetHeaderVariable/pfx:messageHeader"/>
+                        <xsl:choose>
+                            <xsl:when test="not((lower-case($Start/pfx:logMessage/pfx:severity)='error'))">
+                                <xsl:for-each select="$Start/*">
+                                    <pfx:logMessage>
+                                        <pfx:severity>
+                                            <xsl:value-of select="/*/pfx:severity"/>
+                                        </pfx:severity>
+                                        <pfx:sensitive>
+                                            <xsl:value-of select="/*/pfx:sensitive"/>
+                                        </pfx:sensitive>
+                                        <pfx:componentName>
+                                            <xsl:value-of select="/*/pfx:componentName"/>
+                                        </pfx:componentName>
+                                        <xsl:if test="/*/pfx:messageText">
+                                            <pfx:messageText>
+                                                <xsl:value-of select="/*/pfx:messageText"/>
+                                            </pfx:messageText>
+                                        </xsl:if>
+                                        <pfx:payload>
+                                            <xsl:value-of select="/*/pfx:payload"/>
+                                        </pfx:payload>
+                                        <pfx:evtActivityTimeStamp>
+                                            <xsl:value-of select="/*/pfx:evtActivityTimeStamp"/>
+                                        </pfx:evtActivityTimeStamp>
+                                    </pfx:logMessage>
+                                </xsl:for-each>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:for-each select="$Start/*">
+                                    <pfx:errorMessage xsi:type="pfx:errorMessage">
+                                        <pfx:severity>
+                                            <xsl:value-of select="/*/pfx:severity"/>
+                                        </pfx:severity>
+                                        <pfx:sensitive>
+                                            <xsl:value-of select="/*/pfx:sensitive"/>
+                                        </pfx:sensitive>
+                                        <pfx:componentName>
+                                            <xsl:value-of select="/*/pfx:componentName"/>
+                                        </pfx:componentName>
+                                        <xsl:if test="/*/pfx:messageText">
+                                            <pfx:messageText>
+                                                <xsl:value-of select="/*/pfx:messageText"/>
+                                            </pfx:messageText>
+                                        </xsl:if>
+                                        <pfx:payload>
+                                            <xsl:value-of select="/*/pfx:payload"/>
+                                        </pfx:payload>
+                                        <pfx:evtActivityTimeStamp>
+                                            <xsl:value-of select="/*/pfx:evtActivityTimeStamp"/>
+                                        </pfx:evtActivityTimeStamp>
+                                        <pfx:errorType>
+                                            <xsl:value-of select="/*/pfx:errorType"/>
+                                        </pfx:errorType>
+                                        <pfx:errorFamily>
+                                            <xsl:value-of select="/*/pfx:errorFamily"/>
+                                        </pfx:errorFamily>
+                                        <xsl:if test="/*/pfx:errorStackTrace">
+                                            <pfx:errorStackTrace>
+                                                <xsl:value-of select="/*/pfx:errorStackTrace"/>
+                                            </pfx:errorStackTrace>
+                                        </xsl:if>
+                                    </pfx:errorMessage>
+                                </xsl:for-each>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </logMessageWire>
+                </Body>
+            </ns6:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Log">
+        <pd:type>com.tibco.pe.core.WriteToLogActivity</pd:type>
+        <pd:resourceType>ae.activities.log</pd:resourceType>
+        <pd:x>542</pd:x>
+        <pd:y>140</pd:y>
+        <config>
+            <role>User</role>
+        </config>
+        <pd:inputBindings>
+            <ns7:ActivityInput>
+                <message>
+                    <xsl:value-of select="concat('header: &#xA;', tib:render-xml($GetHeaderVariable/pfx:messageHeader, true(), true()),'&#xA;context: &#xA;', tib:render-xml($To-Log-Format/context, true(), true()), '&#xA;payload:&#xA;', $Start/*/pfx:payload)"/>
+                </message>
+            </ns7:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="To Log Format">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>410</pd:x>
+        <pd:y>141</pd:y>
+        <config>
+            <element>
+                <xsd:element name="context">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="severity" type="xsd:string"/>
+                            <xsd:element name="componentName" type="xsd:string"/>
+                            <xsd:element name="messageText" type="xsd:string"/>
+                            <xsd:element name="evtActivityTimestamp" type="xsd:string"/>
+                            <xsd:element name="errorType" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="errorFamily" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="stackTrace" type="xsd:string" minOccurs="0"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </element>
+        </config>
+        <pd:inputBindings>
+            <context>
+                <severity>
+                    <xsl:value-of select="$Start/*/pfx:severity"/>
+                </severity>
+                <componentName>
+                    <xsl:value-of select="$Start/*/pfx:componentName"/>
+                </componentName>
+                <messageText>
+                    <xsl:value-of select="$Start/*/pfx:messageText"/>
+                </messageText>
+                <evtActivityTimestamp>
+                    <xsl:value-of select="$Start/*/pfx:evtActivityTimeStamp"/>
+                </evtActivityTimestamp>
+                <xsl:if test="$Start/*/pfx:errorType">
+                    <errorType>
+                        <xsl:value-of select="$Start/*/pfx:errorType"/>
+                    </errorType>
+                </xsl:if>
+                <xsl:if test="$Start/*/pfx:errorFamily">
+                    <errorFamily>
+                        <xsl:value-of select="$Start/*/pfx:errorFamily"/>
+                    </errorFamily>
+                </xsl:if>
+                <xsl:if test="$Start/*/pfx:errorStackTrace">
+                    <stackTrace>
+                        <xsl:value-of select="$Start/*/pfx:errorStackTrace"/>
+                    </stackTrace>
+                </xsl:if>
+            </context>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Get Logging Level Filter">
+        <pd:type>com.tibco.pe.core.GetSharedVariableActivity</pd:type>
+        <pd:resourceType>ae.activities.getSharedVariable</pd:resourceType>
+        <pd:x>146</pd:x>
+        <pd:y>62</pd:y>
+        <config>
+            <variableConfig>/CoreTechnicalServices/SharedResources/LoggingLevelSharedVariableFilter.sharedvariable</variableConfig>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>GetHeaderVariable</pd:from>
+        <pd:to>Send to Logger Queue</pd:to>
+        <pd:xpathDescription>if error or audit</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>$Start/pfx:errorMessage or $Start/pfx:logMessage/pfx:severity = 'error'</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetHeaderVariable</pd:from>
+        <pd:to>To Log Format</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Get Logging Level Filter</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetLoggingLevelVariable</pd:from>
+        <pd:to>GetHeaderVariable</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>otherwise</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetLoggingLevelVariable</pd:from>
+        <pd:to>End</pd:to>
+        <pd:xpathDescription>Log Level Filter</pd:xpathDescription>
+        <pd:lineType>One Bend</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>($Get-Logging-Level-Filter/root/level/value[../name=$Start/*/pfx:severity]) &gt; ($Get-Logging-Level-Filter/root/level/value[../name=$GetLoggingLevelVariable/logLevel])</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Send to Logger Queue</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Log</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>To Log Format</pd:from>
+        <pd:to>Log</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Get Logging Level Filter</pd:from>
+        <pd:to>GetLoggingLevelVariable</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

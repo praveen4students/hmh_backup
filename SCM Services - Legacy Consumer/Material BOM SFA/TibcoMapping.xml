@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx5:MaterialBOM xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_BOM" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <xsl:attribute name="FileName">
+        <xsl:value-of select="&quot;&quot;"/>
+    </xsl:attribute>
+    <xsl:attribute name="MaterialBOMDateTime">
+        <xsl:value-of select="current-dateTime()"/>
+    </xsl:attribute>
+    <xsl:attribute name="Count">
+        <xsl:value-of select="1"/>
+    </xsl:attribute>
+    <pfx5:BillOfMaterial>
+        <pfx5:MaterialNumber>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/FIELDS/MATNR"/>
+        </pfx5:MaterialNumber>
+        <pfx5:ContentCategory>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/CHILDREN/ZE1MASTM/item[1]/FIELDS/ISMCONTTYPE"/>
+        </pfx5:ContentCategory>
+        <pfx5:Division>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/CHILDREN/ZE1MASTM/item[1]/FIELDS/SPART"/>
+        </pfx5:Division>
+        <pfx5:XPlantStatus>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/CHILDREN/ZE1MASTM/item[1]/FIELDS/MSATE"/>
+        </pfx5:XPlantStatus>
+        <pfx5:PHLevel4Code>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/CHILDREN/ZE1MASTM/item[1]/FIELDS/PRDHA__4"/>
+        </pfx5:PHLevel4Code>
+        <pfx5:PHLevel5Code>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/CHILDREN/ZE1MASTM/item[1]/FIELDS/PRDHA__5"/>
+        </pfx5:PHLevel5Code>
+        <pfx5:BOMUsage>
+            <xsl:value-of select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1MASTM/item[1]/FIELDS/STLAN"/>
+        </pfx5:BOMUsage>
+        <xsl:for-each select="$Start/pfx3:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item/CHILDREN/E1STPOM/item">
+            <pfx5:KitComponents>
+                <pfx5:Component>
+                    <xsl:value-of select="current()/FIELDS/IDNRK"/>
+                </pfx5:Component>
+                <xsl:choose>
+                    <xsl:when test="current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT !=00000000">
+                        <pfx5:CreatedDate>
+                            <xsl:value-of select="concat(substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT, 1, 4),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT, 5,2),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT, 7,2))"/>
+                        </pfx5:CreatedDate>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
+                    <xsl:when test="current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT !=00000000">
+                        <pfx5:ChangeCreatedDate>
+                            <xsl:value-of select="concat(substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT, 1, 4),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT, 5,2),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT, 7,2))"/>
+                        </pfx5:ChangeCreatedDate>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:if test="exists(current()/FIELDS/MENGE__C)">
+                    <pfx5:Quantity>
+                        <xsl:value-of select="current()/FIELDS/MENGE__C"/>
+                    </pfx5:Quantity>
+                </xsl:if>
+            </pfx5:KitComponents>
+        </xsl:for-each>
+    </pfx5:BillOfMaterial>
+</pfx5:MaterialBOM>

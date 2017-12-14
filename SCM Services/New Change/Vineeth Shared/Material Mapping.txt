@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx7:Material_Master_Update xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns3="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/ddo/material_update" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <pfx7:MaterialNumber>
+        <xsl:value-of select="$current_value/item/FIELDS/MATNR"/>
+    </pfx7:MaterialNumber>
+    <xsl:variable name="PaperMaterialCheck" select="if($current_value/item/FIELDS/MTART='ROH')&#xA;then 'ROH'&#xA;else ''&#xA;&#xA;"/>
+    <xsl:if test="string-length($current_value/item/FIELDS/ERSDA) >0and $current_value/item/FIELDS/ERSDA !=''">
+        <pfx7:CreatedOn>
+            <xsl:value-of select="concat(substring($current_value/item/FIELDS/ERSDA,1,4), '-',substring($current_value/item/FIELDS/ERSDA,5,2),'-',substring($current_value/item/FIELDS/ERSDA,7,2))"/>
+        </pfx7:CreatedOn>
+    </xsl:if>
+    <xsl:if test="string-length($current_value/item/FIELDS/LAEDA) > 0  and  ($current_value/item/FIELDS/LAEDA !='00000000')">
+        <pfx7:TitleUpdatedDate>
+            <xsl:value-of select="concat(substring($current_value/item/FIELDS/LAEDA,1,4), '-',substring($current_value/item/FIELDS/LAEDA,5,2),'-',substring($current_value/item/FIELDS/LAEDA,7,2))"/>
+        </pfx7:TitleUpdatedDate>
+    </xsl:if>
+    <pfx7:MaterialType>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MTART)"/>
+    </pfx7:MaterialType>
+    <pfx7:MaterialGroup>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MATKL)"/>
+    </pfx7:MaterialGroup>
+    <pfx7:OldMaterialNumber>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/BISMT)"/>
+    </pfx7:OldMaterialNumber>
+    <pfx7:BaseUnitofMeasure>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MEINS)"/>
+    </pfx7:BaseUnitofMeasure>
+    <pfx7:DocumentVersion>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/ZEIVR)"/>
+    </pfx7:DocumentVersion>
+    <pfx7:PurchasingValueKey>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/EKWSL)"/>
+    </pfx7:PurchasingValueKey>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/BRGEW)) > 0">
+        <pfx7:NetWeight>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/BRGEW)"/>
+        </pfx7:NetWeight>
+    </xsl:if>
+    <pfx7:WeightUnit>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/GEWEI)"/>
+    </pfx7:WeightUnit>
+    <xsl:choose>
+        <xsl:when test="not(($current_value/item/FIELDS/SPART/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/SPART/@xsi:nil=(&quot;1&quot;)))">
+            <pfx7:Division>
+                <xsl:value-of select="tib:trim($current_value/item/FIELDS/SPART)"/>
+            </pfx7:Division>
+        </xsl:when>
+        <xsl:otherwise>
+            <pfx7:Division>
+                <xsl:value-of select="''"/>
+            </pfx7:Division>
+        </xsl:otherwise>
+    </xsl:choose>
+    <pfx7:ExternalMaterialGroup>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/EXTWG)"/>
+    </pfx7:ExternalMaterialGroup>
+    <pfx7:XPlantStatus>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MSTAE)"/>
+    </pfx7:XPlantStatus>
+    <xsl:if test="exists($current_value/item/FIELDS/MSTDV)>0 and $current_value/item/FIELDS/MSTDV !='00000000'">
+        <pfx7:CrossPlantMatStatus>
+            <xsl:value-of select="concat(substring($current_value/item/FIELDS/MSTDV,1,4), '-',substring($current_value/item/FIELDS/MSTDV,5,2),'-',substring($current_value/item/FIELDS/MSTDV,7,2))"/>
+        </pfx7:CrossPlantMatStatus>
+    </xsl:if>
+    <pfx7:GeneralItemCategory>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MTPOS__MARA)"/>
+    </pfx7:GeneralItemCategory>
+    <pfx7:AuthorArtist>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMARTIST)"/>
+    </pfx7:AuthorArtist>
+    <pfx7:Subtitle1>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1)"/>
+    </pfx7:Subtitle1>
+    <pfx7:Subtitle2>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2)"/>
+    </pfx7:Subtitle2>
+    <pfx7:Subtitle3>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3)"/>
+    </pfx7:Subtitle3>
+    <pfx7:Title>
+        <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMTITLE"/>
+    </pfx7:Title>
+    <pfx7:MediaProduct>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREFMDPROD)"/>
+    </pfx7:MediaProduct>
+    <pfx7:PublicationType>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLTYPE)"/>
+    </pfx7:PublicationType>
+    <xsl:if test="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMMEDIATYPE">
+        <pfx7:MediaType>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMMEDIATYPE"/>
+        </pfx7:MediaType>
+    </xsl:if>
+    <pfx7:ContentCategory>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMCONTTYPE)"/>
+    </pfx7:ContentCategory>
+    <pfx7:EditionKey>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONTYPE)"/>
+    </pfx7:EditionKey>
+    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE)>0 and tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE) !='00000000'">
+        <pfx7:PublicationDate>
+            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE,1,4), '-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE,5,2),'-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE,7,2))"/>
+        </pfx7:PublicationDate>
+    </xsl:if>
+    <pfx7:Imprint>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT)"/>
+    </pfx7:Imprint>
+    <pfx7:EmplRespForPlan>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRESPPLANER)"/>
+    </pfx7:EmplRespForPlan>
+    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMLANGUAGES) > 0">
+        <pfx7:Languages>
+            <xsl:value-of select="($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMLANGUAGES)"/>
+        </pfx7:Languages>
+    </xsl:if>
+    <pfx7:EditionCounter>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONNUM)"/>
+    </pfx7:EditionCounter>
+    <pfx7:ReprintingType>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREPRINTTYPE)"/>
+    </pfx7:ReprintingType>
+    <pfx7:OriginalPublisher>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER)"/>
+    </pfx7:OriginalPublisher>
+    <pfx7:PrimaryISBN>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIDCODE)"/>
+    </pfx7:PrimaryISBN>
+    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR)) > 0">
+        <pfx7:YearNumber>
+            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR"/>
+        </pfx7:YearNumber>
+    </xsl:if>
+    <pfx7:StdlssVartype>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMISSUETYPEST)"/>
+    </pfx7:StdlssVartype>
+    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE)>0 and &#xA;$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE !='00000000'">
+        <pfx7:IntlShippingDate>
+            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE,1,4), '-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE,5,2),'-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE,7,2))"/>
+        </pfx7:IntlShippingDate>
+    </xsl:if>
+    <pfx7:ProductPresentation>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMDESIGN)"/>
+    </pfx7:ProductPresentation>
+    <pfx7:GTIN>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0003'][1]/FIELDS/IDENTCODE)"/>
+    </pfx7:GTIN>
+    <pfx7:ISBN_13>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0001'][1]/FIELDS/IDENTCODE)"/>
+    </pfx7:ISBN_13>
+    <pfx7:ISBN_10>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0002'][1]/FIELDS/IDENTCODE)"/>
+    </pfx7:ISBN_10>
+    <pfx7:MaterialDescription>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX)"/>
+    </pfx7:MaterialDescription>
+    <pfx7:DeletionIndicator>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/LVORM)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/LVORM)"/>
+    </pfx7:DeletionIndicator>
+    <pfx7:ABCIndicator>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then &#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MAABC)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/MAABC)"/>
+    </pfx7:ABCIndicator>
+    <pfx7:PurchasingGroup>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then &#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EKGRP)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/EKGRP)"/>
+    </pfx7:PurchasingGroup>
+    <pfx7:MRPType>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then &#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISMM)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/DISMM)"/>
+    </pfx7:MRPType>
+    <pfx7:MRPController>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA; tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISPO)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/DISPO)"/>
+    </pfx7:MRPController>
+    <pfx7:PlannedDeliveryTime>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PLIFZ)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/PLIFZ)"/>
+    </pfx7:PlannedDeliveryTime>
+    <xsl:choose>
+        <xsl:when test="$PaperMaterialCheck='ROH'  and string-length($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WEBAZ) > 0">
+            <pfx7:GRProcessingTime>
+                <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WEBAZ)"/>
+            </pfx7:GRProcessingTime>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:if test="string-length($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/WEBAZ) > 0">
+                <pfx7:GRProcessingTime>
+                    <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/WEBAZ)"/>
+                </pfx7:GRProcessingTime>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+    <pfx7:LotSize>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PLIFZ)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/PLIFZ)"/>
+    </pfx7:LotSize>
+    <pfx7:ProcurementType>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BESKZ)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/BESKZ)"/>
+    </pfx7:ProcurementType>
+    <pfx7:ReorderPoint>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MINBE)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/MINBE)"/>
+    </pfx7:ReorderPoint>
+    <pfx7:SafetyStock>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISBE)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/EISBE)"/>
+    </pfx7:SafetyStock>
+    <pfx7:MinimumLotSize>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMI)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/BSTMI)"/>
+    </pfx7:MinimumLotSize>
+    <pfx7:MaximumLotSize>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMA)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/BSTMA)"/>
+    </pfx7:MaximumLotSize>
+    <pfx7:RoundingValuePOQuantity>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTRF)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/BSTRF)"/>
+    </pfx7:RoundingValuePOQuantity>
+    <pfx7:DiscontIndicator>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/KZAUS)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/KZAUS)"/>
+    </pfx7:DiscontIndicator>
+    <xsl:choose>
+        <xsl:when test="$PaperMaterialCheck='ROH' &#xA;and&#xA;string-length($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT) >0&#xA;and &#xA;$current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT !='00000000'">
+            <pfx7:EffectiveOutDate>
+                <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT,1,4), '-',&#xA;substring($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT,5,2),'-',&#xA;substring($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT,7,2))"/>
+            </pfx7:EffectiveOutDate>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:if test="string-length($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/AUSDT) >0&#xA;and &#xA;$current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/AUSDT !='00000000'">
+                <pfx7:EffectiveOutDate>
+                    <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/AUSDT,1,4), '-',&#xA;substring($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/AUSDT,5,2),'-',&#xA;substring($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/AUSDT,7,2))"/>
+                </pfx7:EffectiveOutDate>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+    <pfx7:FollowupMaterial>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/NFMAT)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/NFMAT)"/>
+    </pfx7:FollowupMaterial>
+    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/DZEIT))>0">
+        <pfx7:InhouseProduction>
+            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/DZEIT)"/>
+        </pfx7:InhouseProduction>
+    </xsl:if>
+    <pfx7:AvailabilityCheck>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MTVFP)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/MTVFP)"/>
+    </pfx7:AvailabilityCheck>
+    <pfx7:CommodityCode>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STAWN)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/STAWN)"/>
+    </pfx7:CommodityCode>
+    <pfx7:CountryName>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/HERKL)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/HERKL)"/>
+    </pfx7:CountryName>
+    <pfx7:ProfitCenter>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PRCTR)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/PRCTR)"/>
+    </pfx7:ProfitCenter>
+    <pfx7:ConsumptionMode>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VRMOD)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/VRMOD)"/>
+    </pfx7:ConsumptionMode>
+    <xsl:choose>
+        <xsl:when test="$PaperMaterialCheck='ROH'&#xA;and&#xA;string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT1)) > 0">
+            <pfx7:BackwdConsumptionPer>
+                <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT1)"/>
+            </pfx7:BackwdConsumptionPer>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/VINT1)) > 0">
+                <pfx7:BackwdConsumptionPer>
+                    <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/VINT1)"/>
+                </pfx7:BackwdConsumptionPer>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+    <xsl:choose>
+        <xsl:when test="$PaperMaterialCheck='ROH'&#xA;and&#xA;string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT2)) > 0">
+            <pfx7:ForwardConsumptionPer>
+                <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT2)"/>
+            </pfx7:ForwardConsumptionPer>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/VINT2)) > 0">
+                <pfx7:ForwardConsumptionPer>
+                    <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/VINT2)"/>
+                </pfx7:ForwardConsumptionPer>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+    <pfx7:PlanningStrategyGroup>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STRGR)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/STRGR)"/>
+    </pfx7:PlanningStrategyGroup>
+    <xsl:choose>
+        <xsl:when test="$PaperMaterialCheck='ROH'&#xA;and&#xA;string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISLO)) > 0">
+            <pfx7:MinSafetyStock>
+                <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISLO)"/>
+            </pfx7:MinSafetyStock>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/EISLO)) > 0">
+                <pfx7:MinSafetyStock>
+                    <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/EISLO)"/>
+                </pfx7:MinSafetyStock>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+    <pfx7:SpecialProcurement>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/SOBSL)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/SOBSL)"/>
+    </pfx7:SpecialProcurement>
+    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARMM/item[ FIELDS/MEINH = 'CS']/FIELDS/UMREZ))>0">
+        <pfx7:Case>
+            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'CS']/FIELDS/UMREZ)"/>
+        </pfx7:Case>
+    </xsl:if>
+    <xsl:if test="$current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'PU']/FIELDS/UMREN">
+        <pfx7:PricingUnit>
+            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'PU']/FIELDS/UMREN)"/>
+        </pfx7:PricingUnit>
+    </xsl:if>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/LAENG)) >0">
+        <pfx7:Length>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/LAENG)"/>
+        </pfx7:Length>
+    </xsl:if>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/BREIT))>0">
+        <pfx7:Width>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/BREIT)"/>
+        </pfx7:Width>
+    </xsl:if>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/HOEHE)) > 0">
+        <pfx7:Height>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/HOEHE)"/>
+        </pfx7:Height>
+    </xsl:if>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/VOLUM)) > 0">
+        <pfx7:Volume>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/VOLUM)"/>
+        </pfx7:Volume>
+    </xsl:if>
+    <xsl:for-each select="$current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM[item/FIELDS/EANTP ='HE']][1][1]">
+        <pfx7:EAN>
+            <xsl:value-of select="current()/FIELDS/EAN11"/>
+        </pfx7:EAN>
+    </xsl:for-each>
+    <xsl:if test="not(($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EAN11/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EAN11/@xsi:nil=(&quot;1&quot;)))">
+        <pfx7:UPC>
+            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EAN11)"/>
+        </pfx7:UPC>
+    </xsl:if>
+    <pfx7:EANCategory>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'HE']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'HE']/FIELDS/EANTP)"/>
+    </pfx7:EANCategory>
+    <pfx7:UPCCategory>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EANTP)"/>
+    </pfx7:UPCCategory>
+    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MBEWM/item[FIELDS/BWKEY= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/STPRS)) > 0">
+        <pfx7:StandardPrice>
+            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MBEWM/item[FIELDS/BWKEY= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/STPRS)"/>
+        </pfx7:StandardPrice>
+    </xsl:if>
+    <pfx7:ValuationClass>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MBEWM/item[1]/FIELDS/BKLAS)"/>
+    </pfx7:ValuationClass>
+    <pfx7:MaterialStatisticsGroup>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VERSG)"/>
+    </pfx7:MaterialStatisticsGroup>
+    <pfx7:DchainSpecStatus>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTA)"/>
+    </pfx7:DchainSpecStatus>
+    <pfx7:DeliveringPlant>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK)"/>
+    </pfx7:DeliveringPlant>
+    <pfx7:MaterialGroupPricing>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KONDM)"/>
+    </pfx7:MaterialGroupPricing>
+    <pfx7:AccountAssignmentGroup>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KTGRM)"/>
+    </pfx7:AccountAssignmentGroup>
+    <pfx7:ReturnedCode>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1)"/>
+    </pfx7:ReturnedCode>
+    <pfx7:CartonRounding>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR2)"/>
+    </pfx7:CartonRounding>
+    <pfx7:EgoodIndicator>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR4)"/>
+    </pfx7:EgoodIndicator>
+    <pfx7:RoyaltyRelevance>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR5)"/>
+    </pfx7:RoyaltyRelevance>
+    <pfx7:ContractSalesOnly>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT1)"/>
+    </pfx7:ContractSalesOnly>
+    <pfx7:PrintSubscription>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT2)"/>
+    </pfx7:PrintSubscription>
+    <pfx7:ResendWorkId>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/RESEND__WORK__ID)"/>
+    </pfx7:ResendWorkId>
+    <pfx7:RoyaltyActivityFlag>
+        <xsl:value-of select="if ($current_value/item/CHILDREN/Z1ISBN/item/FIELDS/ROYALTY__ACTIVITY = 'Y')&#xA;then&#xA;true()&#xA;else &#xA;false()"/>
+    </pfx7:RoyaltyActivityFlag>
+    <pfx7:InspectionText>
+        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'PRUE' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+    </pfx7:InspectionText>
+    <pfx7:BasicdataText>
+        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'GRUN' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+    </pfx7:BasicdataText>
+    <pfx7:PoText>
+        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'BEST' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+    </pfx7:PoText>
+    <pfx7:salesText>
+        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = '0001' and ../../FIELDS/TDOBJECT = 'MVKE']/item/FIELDS/TDLINE))"/>
+    </pfx7:salesText>
+    <pfx7:InternalComment>
+        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'IVER' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+    </pfx7:InternalComment>
+    <pfx7:ReturnsAllowed>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMMATRETURN)"/>
+    </pfx7:ReturnsAllowed>
+    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNEND))>0 and &#xA;tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNEND) !='00000000'">
+        <pfx7:ReturnsAllowedPerToDate>
+            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNEND,1,4), '-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNEND,5,2),'-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNEND,7,2))"/>
+        </pfx7:ReturnsAllowedPerToDate>
+    </xsl:if>
+    <xsl:if test="string-length($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNBEGIN)>0 and &#xA;$current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNBEGIN !='00000000'">
+        <pfx7:ReturnsAllowedPerFromDate>
+            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNBEGIN,1,4), '-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNBEGIN,5,2),'-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMRETURNBEGIN,7,2))"/>
+        </pfx7:ReturnsAllowedPerFromDate>
+    </xsl:if>
+    <pfx7:iDocNumber>
+        <xsl:value-of select="tib:trim($Start/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/EDI__DC/DOCNUM)"/>
+    </pfx7:iDocNumber>
+    <pfx7:CompleteTitle>
+        <xsl:value-of select="tib:trim(concat(if (exists($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMTITLE)) then &#xA;&#xA;$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMTITLE  else '' ,&#xA;&#xA;if (exists($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1) ) then &#xA;concat(' ',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1) else '' ,&#xA;&#xA;if (exists($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2) ) then &#xA;concat(' ',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2) else '' ,&#xA;&#xA;concat(' ',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3)))"/>
+    </pfx7:CompleteTitle>
+    <pfx7:MaterialBlocked>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT3)"/>
+    </pfx7:MaterialBlocked>
+    <pfx7:ExcludeCouponCode>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT4)"/>
+    </pfx7:ExcludeCouponCode>
+    <pfx7:Update_User>
+        <xsl:value-of select="$_globalVariables/ns3:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+    </pfx7:Update_User>
+    <xsl:if test="$current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'CS']/FIELDS/UMREN">
+        <pfx7:CartonQuantity>
+            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'CS']/FIELDS/UMREN)"/>
+        </pfx7:CartonQuantity>
+    </xsl:if>
+    <pfx7:Collective>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/SBDKZ)"/>
+    </pfx7:Collective>
+    <pfx7:copyrightStatus>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRELEASE)"/>
+    </pfx7:copyrightStatus>
+    <pfx7:originalidCodeType>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIDCDTYPE)"/>
+    </pfx7:originalidCodeType>
+    <xsl:if test="string-length($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTD)>0 and &#xA;$current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTD !='00000000'">
+        <pfx7:saleRestrictionValidfromDate>
+            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTD,1,4), '-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTD,5,2),'-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTD,7,2))"/>
+        </pfx7:saleRestrictionValidfromDate>
+    </xsl:if>
+    <pfx7:periodIndicator>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PERKZ)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/PERKZ)"/>
+    </pfx7:periodIndicator>
+    <xsl:if test="string-length($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMONSALEDATE) > 0  and  ($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMONSALEDATE !='00000000')">
+        <pfx7:onSaleDate>
+            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMONSALEDATE,1,4), '-',substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMONSALEDATE,5,2),'-',&#xA;substring($current_value/item/CHILDREN/E1MVKEM/item[1]/CHILDREN/E1MVKEISM/item/FIELDS/ISMONSALEDATE,7,2))"/>
+        </pfx7:onSaleDate>
+    </xsl:if>
+    <pfx7:CreatedBy_SAP>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/ERNAM)"/>
+    </pfx7:CreatedBy_SAP>
+    <pfx7:CrossPlantCM>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/SATNR)"/>
+    </pfx7:CrossPlantCM>
+    <pfx7:LastUpdateBy_SAP>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/AENAM)"/>
+    </pfx7:LastUpdateBy_SAP>
+    <pfx7:LoadingGroup>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/LADGR)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/LADGR)"/>
+    </pfx7:LoadingGroup>
+    <pfx7:MaterialConfigurable>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/KZKFG)"/>
+    </pfx7:MaterialConfigurable>
+    <pfx7:MRPProfile>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISPR)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/DISPR)"/>
+    </pfx7:MRPProfile>
+    <pfx7:PriceDetermination>
+        <xsl:value-of select="string($current_value/item/CHILDREN/E1MBEWM/item[FIELDS/BWKEY= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/MLAST)"/>
+    </pfx7:PriceDetermination>
+    <pfx7:ProductHierarchy>
+        <pfx7:PHlevel1Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 1, 2)"/>
+        </pfx7:PHlevel1Code>
+        <pfx7:PHlevel2Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 3, 2)"/>
+        </pfx7:PHlevel2Code>
+        <pfx7:PHlevel3Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 5, 2)"/>
+        </pfx7:PHlevel3Code>
+        <pfx7:PHlevel4Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 7, 3)"/>
+        </pfx7:PHlevel4Code>
+        <pfx7:PHlevel5Code>
+            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 10,2)"/>
+        </pfx7:PHlevel5Code>
+    </pfx7:ProductHierarchy>
+    <pfx7:OriginalTitle>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIGTITLE)"/>
+    </pfx7:OriginalTitle>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/MEABM)) > 0">
+        <pfx7:LinearUnitsOfDimension>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/MEABM)"/>
+        </pfx7:LinearUnitsOfDimension>
+    </xsl:if>
+    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/VOLEH)) > 0">
+        <pfx7:VolumeUnitsOfDimension>
+            <xsl:value-of select="tib:trim($current_value/item/FIELDS/VOLEH)"/>
+        </pfx7:VolumeUnitsOfDimension>
+    </xsl:if>
+    <pfx7:AutomaticPO>
+        <xsl:value-of select="if ($PaperMaterialCheck='ROH')&#xA;then&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/KAUTB)&#xA;else&#xA;tib:trim($current_value/item/CHILDREN/E1MARCM/item[FIELDS/WERKS= ../../E1MVKEM/item/FIELDS/DWERK]/FIELDS/KAUTB)"/>
+    </pfx7:AutomaticPO>
+    <pfx7:ProductAttribute5>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT5)"/>
+    </pfx7:ProductAttribute5>
+    <pfx7:ProductAttribute6>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT6)"/>
+    </pfx7:ProductAttribute6>
+    <pfx7:ProductAttribute7>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT7)"/>
+    </pfx7:ProductAttribute7>
+    <pfx7:ProductAttribute8>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT8)"/>
+    </pfx7:ProductAttribute8>
+    <pfx7:ProductAttribute9>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT9)"/>
+    </pfx7:ProductAttribute9>
+    <pfx7:ProductAttribute10>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRATA)"/>
+    </pfx7:ProductAttribute10>
+    <pfx7:Draw>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMGROSSPRINTRUN)"/>
+    </pfx7:Draw>
+    <pfx7:Salesorg2ItemCategoryGrp>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MTPOS)"/>
+    </pfx7:Salesorg2ItemCategoryGrp>
+    <pfx7:TransGroup>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/TRAGR)"/>
+    </pfx7:TransGroup>
+    <pfx7:BatchManagement>
+        <xsl:value-of select="tib:trim($current_value/item/FIELDS/XCHPF)"/>
+    </pfx7:BatchManagement>
+    <pfx7:Salesorg2ProdHierarchy>
+        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRODH)"/>
+    </pfx7:Salesorg2ProdHierarchy>
+</pfx7:Material_Master_Update>

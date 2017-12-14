@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories>
+	<category id="CT0001"> <!-- Mandatory field. Category Id. Max size 100 Alphanumeric-->
+		<discipline>Math</discipline> <!-- Mandatory field. Name. Max size 100 Alphanumeric-->
+		<subjects>
+			<subject id="CT00010001">		
+				<desc>Algebra</desc> <!-- Mandatory field. Name. Max size 100 Alphanumeric-->	
+			</subject>
+			<subject id="CT00010002">
+				<desc>Calculus</desc>		
+			</subject>	
+		</subjects>			
+	</category>
+<categories>
+	
+
+		
+		

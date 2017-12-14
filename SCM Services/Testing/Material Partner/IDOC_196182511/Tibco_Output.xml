@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<root>
+ <ns0:MaterialPartners xmlns:ns0 = "http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd">
+  <ns0:PartnerInfo>
+   <ns0:MaterialNumber>000000000000498895</ns0:MaterialNumber>
+   <ns0:AuthorID>0000002927</ns0:AuthorID>
+   <ns0:Affiliation/>
+   <ns0:Role>ISM110</ns0:Role>
+   <ns0:FirstName>Wong</ns0:FirstName>
+   <ns0:LastName>Yee</ns0:LastName>
+   <ns0:MiddleName>Herbert</ns0:MiddleName>
+   <ns0:iDocNumber>0000000196310851</ns0:iDocNumber>
+   <ns0:Update_User>TIBCO</ns0:Update_User>
+  </ns0:PartnerInfo>
+ </ns0:MaterialPartners>
+</root>

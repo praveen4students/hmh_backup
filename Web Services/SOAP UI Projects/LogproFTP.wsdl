@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1273557354351/LogproOperationImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.hmco.com/EAI" name="Untitled" targetNamespace="http://xmlns.example.com/1273557354351/LogproOperationImpl">
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xsd:complexType name="eaiException">
+                <xsd:sequence>
+                    <xsd:element ref="ns1:errorList"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="error">
+                <xsd:sequence>
+                    <xsd:element name="errorCategory" type="xsd:string"/>
+                    <xsd:element name="errorCode" type="xsd:string"/>
+                    <xsd:element name="errorMessage" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="asyncRequestId">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ns1:requestId"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="asyncRequestStatus">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="isReady" type="xsd:boolean"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="error" type="ns1:error"/>
+            <xsd:element name="errorList">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="requestId" type="xsd:string"/>
+        </xsd:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd" targetNamespace="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Customer_CC_E-mail">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="128"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Customer_Recipient_E-mail">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="128"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Delivery_Number">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="15"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="HMH_From_E-mail">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="128"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Logpro">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:Plant"/>
+                        <xs:element ref="ns0:Delivery_Number"/>
+                        <xs:element ref="ns0:HMH_From_E-mail"/>
+                        <xs:element ref="ns0:Customer_Recipient_E-mail"/>
+                        <xs:element ref="ns0:Customer_CC_E-mail" minOccurs="0"/>
+                        <xs:element ref="ns0:Subject_Line"/>
+                        <xs:element ref="ns0:Notes" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Notes">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Plant">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Subject_Line">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="SubmitPackingList">
+        <wsdl:documentation>.</wsdl:documentation>
+        <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+            <soap:address location="http://hyddl2213:8184/BusinessProcesses/Logpro/SubmitPackingList/MainProcesses/SubmitPackingList"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="LogproTransaction">
+        <wsdl:operation name="LogproOperation">
+            <wsdl:input message="tns:LogproRequest"/>
+            <wsdl:output message="tns:LogproResponse"/>
+            <wsdl:fault name="LogproException" message="tns:eaiException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SOAPEventSourceBinding" type="tns:LogproTransaction">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="LogproOperation">
+            <soap:operation style="document" soapAction="/BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="LogproRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="LogproResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="LogproException">
+                <soap:fault use="literal" name="LogproException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="LogproRequest">
+        <wsdl:part name="LogproRequest" element="ns0:Logpro"/>
+    </wsdl:message>
+    <wsdl:message name="LogproResponse">
+        <wsdl:part name="LogproResponse" type="xs:string"/>
+    </wsdl:message>
+    <wsdl:message name="eaiException">
+        <wsdl:part name="eaiException" type="ns1:eaiException"/>
+    </wsdl:message>
+</wsdl:definitions>

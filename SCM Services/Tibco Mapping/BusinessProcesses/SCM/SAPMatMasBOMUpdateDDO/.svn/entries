@@ -1,0 +1,80 @@
+10
+
+dir
+1886
+svn://neduapp001/tibco/trunk/Sunrise1.0/SunriseCentral_Database_Consumer/BusinessProcesses/SCM/SAPMatMasBOMUpdateDDO
+svn://neduapp001
+
+
+
+2012-05-14T10:56:22.058517Z
+1248
+rajesh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bdeb329a-2704-11df-9d9c-21c6ffec8a09
+
+SubProcesses
+dir
+
+ValidationProcesses
+dir
+
+UnitTests
+dir
+
+.folder
+file
+
+
+
+
+2013-03-20T07:07:36.203748Z
+d369a6107dd7916123bbc3a7fa35adae
+2011-12-22T09:38:26.616191Z
+869
+shiva
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+403
+
+MainProcesses
+dir
+
+StarterProcesses
+dir
+
+TransformationProcesses
+dir
+

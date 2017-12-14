@@ -1,0 +1,485 @@
+HMH Conf Code   ===> 3515297
+HMH Conf Number ===> 8005224466
+
+====================================================
+Deploy Process for Enterprise Web Services
+====================================================
+
+mvn clean
+mvn install
+mvn site
+mvn war:war
+
+Copy both jar and war to server deploy folder
+
+=======================================================
+
+http://sslvpn.hmhpub.com
+SVN Link for Eclipse
+-----------------------------
+link		:	svn://neduapp001/tibco/trunk/Apache_Camel
+userid		:	ramesh
+password	:	ramesh
+userid		:	praveen
+password	:	praveen1
+
+
+Maven Commands for Installing SAP Jars
+-------------------------------------------
+mvn install:install-file -Dfile=C:\tools\fuse-esb-7.0.0.fuse-061\deploy\sapjco.jar -DgroupId=com.sap -DartifactId=sapjco -Dversion=2.1.10 -Dpackaging=jar
+mvn install:install-file -Dfile=C:\tools\fuse-esb-7.0.0.fuse-061\deploy\sap-bundle.jar -DgroupId=com.sap -DartifactId=sap-bundle -Dversion=1.0 -Dpackaging=jar
+mvn install:install-file -Dfile=C:\tools\fuse-esb-7.0.0.fuse-061\deploy\tibjms.jar -DgroupId=com.tibco -DartifactId=tibjms  -Dversion=6.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=C:\fuse-esb-7.1.0.fuse-047\deploy\jcifs-1.3.17.jar -DgroupId=org.samba.jcifs -DartifactId=jcifs  -Dversion=1.3.14-kohsuke-1 -Dpackaging=jar
+mvn install:install-file -Dfile=C:\fuse-esb-7.1.0.fuse-047\deploy\EWSJavaAPI-1.2.jar -DgroupId=microsoft.exchange.webservices -DartifactId=EWSJavaAPI  -Dversion=1.2 -Dpackaging=jar
+
+
+==============================================================================================================
+Environment Details
+-------------------------------------------------------
+
+Stage DB Details
+------------------------
+MIG_LOOKUP_DB/HOST = jdbc:tibcosoftwareinc:oracle://blackhole.hmco.com:1521;SID=ORDEVLAD
+MIG_LOOKUP_DB/PWD = Pas$w0rd1
+MIG_LOOKUP_DB/USER = IC_COMMON_STG
+
+
+Devlopment Machine
+----------------------------------
+Hostname	=	neduapp001b
+Username	=	tibcoa
+Password	=	tibc123
+Protocol	=	SSH1
+Port		=	22
+
+
+Stage Machine
+----------------------------------
+Hostname	=	hmhaestapp01
+Username	=	tibco
+Password	=	gear.card.kidney
+Protocol	=	SSH2
+Port		=	22
+
+
+Production Machine 1
+-----------------------------------
+Hostname	=	hmhaeapapp01
+Username	=	tibco
+Password	=	@pache_C@mel_123
+Protocol	=	SSH2
+Port		=	22
+
+
+Production Machine 2
+-----------------------------------
+Hostname	=	hmhaeapapp02
+Username	=	tibco
+Password	=	@pache_C@mel_123
+Protocol	=	SSH2
+Port		=	22
+
+
+
+DEV:  
+                Hostname: hmhaeshddb01.hmco.com
+                Port : 1521
+                SID: OREDEV1
+                Username: IC_COMMON
+                Password: Icpass!23
+
+QA :
+                Hostname: blackhole.hmco.com
+                Port: 1521
+                SID: ORDEVLAD
+                Username: IC_COMMON_QA
+                Password IC_COMMON_QA123#
+
+STG:
+                Hostname: blackhole.hmco.com
+                Port: 1521
+                SID: ORDEVLAD
+                Username: IC_COMMON_STG
+                Password: Pas$w0rd1
+                
+PROD 1:
+
+                Hostname: hubble.hmco.com
+                Port: 1521
+                SID: orprodap
+                Username: ic_common
+                Password: DF87aDDas33DFlk
+
+PROD 2:
+
+                Hostname: wdcprud06a.hmco.com
+                Port: 1561
+                Service Name : ORWLRAP1.hmco.com
+                Username: ic_common
+                Password: ic_common_pwd123
+
+				
+==============================================================================================================
+
+
+For FuseESB
+--------------
+osgi:install -s mvn:org.springframework/spring-jdbc/3.0.7.RELEASE
+
+log:set DEBUG
+
+For new Fuse ESB
+---------------------------
+features:install camel-sql
+features:install camel-mongodb
+features:install camel-xmljson
+
+features:install camel-mail ******************
+For Cygwin
+---------------
+246181@PC177262 /cygdrive
+$ cd d:/Praveen/tools/fuse-esb-7.0.0.fuse-061
+
+246181@PC177262 /cygdrive/d/Praveen/tools/fuse-esb-7.0.0.fuse-061
+$ cd d:/Praveen/tools/fuse-esb-7.0.0.fuse-061/data/log
+
+246181@PC177262 /cygdrive/d/Praveen/tools/fuse-esb-7.0.0.fuse-061/data/log
+$ tail -f fuseesb.log
+
+PATH Settings
+---------------
+JAVA_HOME = C:\Program Files\Java\jdk1.6.0_37
+
+Path = %JAVA_HOME%\bin;D:\Praveen\tools\apache-maven-3.0.4\bin;D:\Praveen\tools\ReferenceJars\sap-bundle.jar;D:\Praveen\tools\ReferenceJars\sapjco.jar
+
+
+
+================================================================================
+Useful Unix Commands
+================================================================================
+Too many open files
+----------------------
+lsof -p PID
+
+grep -B 1 "getMaterialAvailability ends" fuseesb.log | grep -v MaterialBean
+ 
+grep "execution time" mylog.log
+
+grep "000000000001131841" org.apache.cxf.cxf-api.log
+grep -l "000000000001131841" *.log*
+grep -c "ECEI" web-services-camel.log.1
+grep 7276846 web-services-camel.log
+grep -l 7276846 web-services-camel.log*
+ more web-services-camel.log
+grep -n 9780547444253 web-services-camel.log
+ grep -w 9780547444253 web-services-camel.log
+grep "| ERROR |" ots-services.log
+grep -A2 "| ERROR |" web-services-camel.log
+grep -A2 "| ERROR |" web-services-camel.log | wc
+
+ls -lrt web*
+
+
+for editing the text in the file in UNIX
+http://www.ccsf.edu/Pub/Fac/vi.html
+
+grep -B 1 "orderSubmit ends" fuseesb.log | grep -v MaterialImpl 
+grep -B 1 "findSFDCCustomer" fuseesb.log | grep -v CustomerImpl 
+grep -B 1 "findTransactions" fuseesb.log | grep -v TransactionImpl 
+
+grep -B 1 "orderAudit" hmhutil.log
+//orderAudit
+
+grep -B 1 "SQLRecoverableException" fuseesb.log
+
+grep -B 1 "orderSimulate ends" fuseesb.log
+
+grep -B 1 "createCustomer ends" fuseesb.log
+
+
+
+Links
+=========
+Songs
+http://www.youtube.com/watch?v=isaXqowHZuU
+http://www.youtube.com/watch?v=QECUFmEPbU0
+
+Tutorial
+http://www.youtube.com/watch?v=ub0DXaeV6hA
+http://www.youtube.com/watch?v=dh3KowBg_TE
+
+CRON
+-----------
+#min hour day month weekday command
+*/1   *    *    *    *     <your command>
+
+==========================================
+Mail Services
+==========================================
+pubedu\qaemailrepos
+qaemailrepos@hmhco.com
+change_1
+
+Order IDs
+------------
+709642
+12121
+7096242
+7075093
+
+
+For SVN Branch
+==================
+/tibco/branches/Apache_Camel/hmhutil-camel/hmhutil-notification
+svn://neduapp001/tibco/branches/Apache_Camel/mail-services-camel/mail-services-notification
+
+============================================================
+FUSE ESB Related
+------------------------------------------------------------
+
+To See the Server Console using Remote Client : 	bin/client -u admin -p admin
+log:display
+ps -ef | grep java
+
+====================================
+Attoor, Vineeth (Cognizant)‎‎ [12:37 PM]:
+ neduapp002 :  opt/tibcoa/tmp/rajesh/TIBCOInstalls
+ username pass : tibcoa / tibc123
+‎‎Dyamappa, Praveen (Cognizant)‎‎ [12:38 PM]:
+ k
+ pls share me the DB details
+‎‎Dyamappa, Praveen (Cognizant)‎‎ [12:47 PM]:
+ do i need to copy all the files which is there in the above folder ?
+‎‎Attoor, Vineeth (Cognizant)‎‎ [12:47 PM]:
+ IC_COMMON 
+
+ hubble.hmco.com:1521;SID=orprodap
+
+ pass # DF87aDDas33DFlk 
+
+‎‎Dyamappa, Praveen (Cognizant)‎‎ [12:47 PM]:
+ k
+‎‎Attoor, Vineeth (Cognizant)‎‎ [12:47 PM]:
+ hubble.hmco.com:1521rprodap 
+
+ hubble.hmco.com:1521: orprodap 
+
+‎‎Dyamappa, Praveen (Cognizant)‎‎ [12:48 PM]:
+ password is
+ # DF87aDDas33DFlk
+ ?
+‎‎Dyamappa, Praveen (Cognizant)‎‎ [12:53 PM]:
+ can u pls call me
+‎‎Attoor, Vineeth (Cognizant)‎‎ [12:55 PM]:
+ yeah
+‎‎Attoor, Vineeth (Cognizant)‎‎ [1:00 PM]:
+ blackhole.hmco.com:1521;SID=ORDEVLAD 
+
+ Pas$w0rd1 
+
+ IC_COMMON_STG 
+=============================================================================================
+
+=======================
+Audit Log Related
+-----------------------
+
+LogEnter
+LogRequest
+LogError
+LogResponse
+LogExit
+
+LogFilter
+
+=======================
+
+
+===========================================
+PUB - SUBs Related
+-------------------------------------------
+purge durables in tibco stg ems
+*******************************
+
+neduapp001b box 
+cd /opt/tibcoa/tibco/ems/5.1/bin/
+./tibemsadmin  
+
+connect neduapp002:7222
+user name : admin
+password : tibc123
+
+show durables
+show durable <durable_name>
+purge durable <durable_name>
+
+show topic <topic_name>
+
+show queue <queuename>
+====================================================
+
+
+/opt/tibcoa/tmp/Tibco-Apache-Support --- > Pinger mails
+
+
+http://stackoverflow.com/questions/1661322/too-many-open-file-handles
+http://blog.thecodingmachine.com/content/solving-too-many-open-files-exception-red5-or-any-other-application
+http://www.unixmantra.com/2013/05/too-many-open-files.html
+
+======================================================================================================================
+Web Service Related
+----------------------------------------------------------------------------------------------------------------------
+
+SOAP UI
+-----------
+http://localhost:7110/services/transaction?wsdl    	----> Local
+http://neduapp01b:7110/services/transaction?wsdl   	----> Dev Box
+http://eaicamel-stg/services/transaction?wsdl		----> Stage Box
+http://eaicamel-stg/services/esker?wsdl
+http://eaicamel-prd/services/transaction?wsdl       ----> Production Load Blancer URL
+http://hmhaeapapp01:7110/services/transaction?wsdl	----> Production Instance 1
+http://hmhaeapapp02:7110/services/transaction?wsdl	----> Production Instance 2
+
+
+http://eaicamel-stg/services/customer
+http://eaicamel-stg/rest/getCustomerDetail
+http://eaicamel-stg/rest/getMaterialDetail
+
+http://eaicamel-stg/rest/order/orderSimulate
+http://localhost:7110/services/transaction
+http://eaicamel-stg/services/transaction  ---> Load Balancing URL
+http://hmhaestapp01:7110/services/transaction
+http://eaicamel-stg/services/orderEx
+http://eaicamel-stg/services/order
+http://eaicamel-stg/services/material
+http://eaicamel-stg/services/atp
+
+http://localhost:7110/rest/transaction/getTransactionDetail?id=6179957 ===> GET
+http://localhost:7110/rest/transaction/findTransactions ====> POST
+http://eaicamel-stg/rest/order/submitSaleEx
+
+Request Url: http://localhost:7110/rest/order/orderSimulate
+Request Method: POST
+Status Code: 200
+Params: {}
+
+
+http://hmhaeapapp01:8181/web-services-docs/jaxrsdocs/overview-index.html
+
+======================================================================================================================
+select * from v$version 
+
+for windows search
+dir *.xls /s
+
+http://www.clipconverter.cc/
+
+
+
+=======================================================================================================================
+SCM Services - SFA
+=======================================================================================================================
+/opt/tibcoa/projects/sunrise/sfa/scm/sapmaterialmasterclassupdate/
+
+data Folder
+===========
+error  === Error while creating the babay file
+output === Baby Files
+work   === Working Folder
+
+
+ftpbatch Folder ---> 30 min
+===============
+temp    === Move from output to temp
+error  	=== Error while creating the consolidated file
+success === Baby Files ==== NO USE
+work   	=== Working Folder the consolidated file ==== NO USE
+
+
+ftp Folder 
+===========
+error  	=== Any Error keep the file here
+success === Contains the FTPed Consolidated File  
+work   	=== Contains the Consolidated File
+
+
+sequence Folder
+=================
+sapmatmasterclassificationupdatesfa_sequence.txt
+
+
+ 2011 error
+drwxr-xr-x 2 tibcoa tibco 1880064 Aug 14 08:45 
+drwxr-xr-x 2 tibcoa tibco    4096 Aug 14 07:49 work
+
+
+
+/opt/tibcoa/projects/sunrise/sfa/scm/sapmaterialmasterclassupdate/data/output
+9008126540 -- Narsimanna
+
+Account Number : 214001500233 Bank: ICICI BANK LTD State: TAMIL NADU IFSC Code: ICIC0002140 MICR Code: 641229017
+
+Bank Address: ICICI BANK LTD. NO. 27 A, KOVAI MAIN ROAD, METTUPALAYAM -641301. COIMBATORE DISTRICT, TAMILNADU
+
+
+
+1. Move data output to ftpbatch temp ---->  nO worries --- Done
+2. Consolidating ----> ftpbatch temp to error 
+ sucees ---->move to ftp work
+	if move fails ---> ftpbatch temp to ftpbatch error
+	
+3. JMS message failed --->
+   msg failed --- > ftp wrok to ftpbatch error 
+   
+   
+   4500444525
+   
+    /opt/tibcoa/tmp/rajesh/TIBCOInstalls
+	
+	
+==========================================
+SAP
+==========================================
+maryadr
+Apr@2013
+
+To check order details : va03 ===> Mail Services
+To Trigger IDOC : we19
+order related info === > /nVA03
+
+===============================================================================================================================================
+IDOC NUMBERS
+================================================================================================================================================	
+
+K-12 Product
+-------------
+0000000220003372 
+
+Vendor Banta
+-------------
+0000000220008738 
+
+Customer Update CDB
+---------------------
+0000000220286918  (Customer id : 0000649244)
+
+
+Mat Classification SFA
+-----------------------
+0000000199818861
+0000000199818482  == IODC Contains the Material Number ending with 'a'
+0000000199821079  == IODC Contains invalid TEXT_TRIM_WIDTH
+0000000196763601 
+0000000199309411 ****
+0000000196763622 ****
+0000000196789702 
+0000000196789728 
+0000000196789741 
+0000000196789751 
+0000000220287284
+
+20220060
+md-ateeq.ahmed@hp.com
+
+https://onlineservices.tin.egov-nsdl.com/etaxnew/PopServlet?rKey=507617552

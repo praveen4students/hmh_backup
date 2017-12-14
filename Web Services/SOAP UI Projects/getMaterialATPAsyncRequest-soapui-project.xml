@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="getMaterialATPAsyncRequest" resourceRoot="" soapui-version="3.0.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SOAPEventSourceBinding" type="wsdl" bindingName="{http://www.hmco.com/EAI/OTS/ATP/getMaterialATPAsyncResultImpl}SOAPEventSourceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialATPAsyncRequest.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialATPAsyncRequest.wsdl"><con:part><con:url>file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialATPAsyncRequest.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.hmco.com/EAI/OTS/ATP/getMaterialATPAsyncResultImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.hmco.com/EAI/OTS/ATP/getMaterialATPAsyncResultImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.hmco.com/EAI" xmlns:ns1="http://www.hmco.com/EAI/OTS/Material/GetATP">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns0:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns0:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns0:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns0:error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <schema targetNamespace="http://www.hmco.com/EAI/OTS/Material/GetATP" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:atp="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eai="http://www.hmco.com/EAI">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <element name="ATP_DETAIL_LIST">
+        <complexType>
+          <sequence>
+            <element ref="atp:MATNR"/>
+            <element ref="atp:QUANTITY"/>
+            <element ref="atp:FLEX1" minOccurs="0"/>
+            <element ref="atp:FLEX2" minOccurs="0"/>
+            <element ref="atp:FLEX3" minOccurs="0"/>
+            <element ref="atp:SUCCESS" minOccurs="0"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ATP_EXCEPTION" type="eai:eaiException"/>
+      <element name="ATP_MATERIAL_LIST">
+        <complexType>
+          <sequence>
+            <element ref="atp:MATNR" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="COUNTRY" type="xsd:string"/>
+      <element name="CUST_ID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="18"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="DIST_CHNL" type="xsd:string"/>
+      <element name="DIVISION" type="xsd:string"/>
+      <element name="FLEX1" type="xsd:string"/>
+      <element name="FLEX2" type="xsd:string"/>
+      <element name="FLEX3" type="xsd:string"/>
+      <element name="GET_ATP_REQUEST">
+        <complexType>
+          <sequence>
+            <element ref="atp:COUNTRY" minOccurs="0"/>
+            <element ref="atp:REGION" minOccurs="0"/>
+            <element ref="atp:CUST_ID" minOccurs="0"/>
+            <element ref="atp:DIST_CHNL" minOccurs="0"/>
+            <element ref="atp:DIVISION" minOccurs="0"/>
+            <element ref="atp:ITEM_TYPE" minOccurs="0"/>
+            <element ref="atp:MDR" minOccurs="0"/>
+            <element ref="atp:SALES_ORG" minOccurs="0"/>
+            <element ref="atp:ORDER_TYPE" minOccurs="0"/>
+            <element ref="atp:FLEX1" minOccurs="0"/>
+            <element ref="atp:FLEX2" minOccurs="0"/>
+            <element ref="atp:FLEX3" minOccurs="0"/>
+            <element ref="atp:ATP_MATERIAL_LIST"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GET_ATP_RESPONSE">
+        <complexType>
+          <sequence>
+            <element ref="atp:ATP_DETAIL_LIST" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ITEM_TYPE" type="xsd:string"/>
+      <element name="MATNR" type="xsd:string"/>
+      <element name="MDR" type="xsd:string"/>
+      <element name="ORDER_TYPE" type="xsd:string"/>
+      <element name="QUANTITY" type="xsd:string"/>
+      <element name="REGION" type="xsd:string"/>
+      <element name="SALES_ORG" type="xsd:string"/>
+      <element name="SUCCESS" type="xsd:string"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:service name="getMaterialATPAsyncResult">
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://hyddl2213:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="ATP">
+    <wsdl:operation name="getMaterialATPAsyncResult">
+      <wsdl:input message="tns:asyncRequestId"/>
+      <wsdl:output message="tns:getMaterialATPResponse"/>
+      <wsdl:fault name="getMaterialATPException" message="tns:getMaterialATPException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:ATP">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMaterialATPAsyncResult">
+      <soap:operation style="document" soapAction="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="asyncRequestId"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="getMaterialATPResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="getMaterialATPException">
+        <soap:fault use="literal" name="getMaterialATPException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="asyncRequestId">
+    <wsdl:part name="asyncRequestId" element="ns0:asyncRequestId"/>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPResponse">
+    <wsdl:part name="getMaterialATPResponse" element="ns1:GET_ATP_RESPONSE"/>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPException">
+    <wsdl:part name="getMaterialATPException" element="ns1:ATP_EXCEPTION"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://wdcqaua01:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult</con:endpoint><con:endpoint>https://10.83.58.63:9800/getMaterialATPAsyncResult_Q100?wsdl</con:endpoint><con:endpoint>https://10.83.27.191:9800/getMaterialATPAsyncResult?wsdl</con:endpoint><con:endpoint>http://nepuinf005a:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult</con:endpoint><con:endpoint>http://hyddl2213:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult" name="getMaterialATPAsyncResult" bindingOperationName="getMaterialATPAsyncResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://hyddl2213:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eai="http://www.hmco.com/EAI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <eai:asyncRequestId>
+         <eai:requestId>14872</eai:requestId>
+      </eai:asyncRequestId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATPAsyncResult"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

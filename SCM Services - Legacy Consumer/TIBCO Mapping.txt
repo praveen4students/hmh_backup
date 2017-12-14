@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:template xmlns:ns22="http://xmlns.tibco.com/body" xmlns:pfx2="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx="http://www.hmco.com/schemas/sfa/material_Classification" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="java://HMCOParseDimension" xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/mail" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <pfx:MaterialClassification>
+        <xsl:attribute xmlns:xsl="http://www.w3.org/1999/XSL/Transform" name="FileName">
+            <xsl:value-of select="&quot;&quot;"/>
+        </xsl:attribute>
+        <xsl:attribute xmlns:xsl="http://www.w3.org/1999/XSL/Transform" name="MaterialClassificationDateTime">
+            <xsl:value-of select="current-dateTime()"/>
+        </xsl:attribute>
+        <xsl:attribute xmlns:xsl="http://www.w3.org/1999/XSL/Transform" name="Count">
+            <xsl:value-of select="1"/>
+        </xsl:attribute>
+        <pfx:Classification>
+            <pfx:MaterialNumber>
+                <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR"/>
+            </pfx:MaterialNumber>
+            <xsl:if xmlns:xsl="http://www.w3.org/1999/XSL/Transform" test="not($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;AUDIENCE_TYPE&quot;]/FIELDS/ATWRT/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx:AudienceType>
+                    <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;AUDIENCE_TYPE&quot;]/FIELDS/ATWRT)"/>
+                </pfx:AudienceType>
+            </xsl:if>
+            <pfx:BeginningAge>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;BEGINNING_AGE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BeginningAge>
+            <pfx:EndingAge>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;ENDING_AGE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:EndingAge>
+            <pfx:BasicDataText>
+                <xsl:value-of select="tib:concat-sequence-format($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MTXHM/item[ upper-case(FIELDS/TDID) =&quot;GRUN&quot; ]/CHILDREN/E1MTXLM/item/FIELDS/TDLINE,&quot; &quot;)"/>
+            </pfx:BasicDataText>
+            <pfx:BeginningGradeLevelCode>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;BEGINNING_GRADE_LEVEL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BeginningGradeLevelCode>
+            <pfx:BisacSubtitle>
+                <xsl:value-of select="tib:concat-sequence($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MTXHM/item[ upper-case(FIELDS/TDID) =&quot;PRUE&quot; ]/CHILDREN/E1MTXLM/item/FIELDS/TDLINE)"/>
+            </pfx:BisacSubtitle>
+            <pfx:CollegeSpecialProductCode>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;SPECIAL_PRODUCT&quot;]/FIELDS/ATWRT)"/>
+            </pfx:CollegeSpecialProductCode>
+            <pfx:Duration>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;DURATION&quot;]/FIELDS/ATWRT)"/>
+            </pfx:Duration>
+            <pfx:EndingGradeLevelCode>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;ENDING_GRADE_LEVEL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:EndingGradeLevelCode>
+            <pfx:FormatCollegeCode>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;FORMAT&quot;]/FIELDS/ATWRT)"/>
+            </pfx:FormatCollegeCode>
+            <pfx:NextEdition>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;NEXT_EDITION&quot;]/FIELDS/ATWRT)"/>
+            </pfx:NextEdition>
+            <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:when test="exists($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;NEXT_PUB_DATE&quot;]/FIELDS/ATWRT)">
+                    <pfx:NextPubDate>
+                        <xsl:value-of select="tib:format-date('yyyy-MM-dd',tib:parse-date('yyyyMMdd',tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;NEXT_PUB_DATE&quot;]/FIELDS/ATWRT)))"/>
+                    </pfx:NextPubDate>
+                </xsl:when>
+            </xsl:choose>
+            <pfx:PreviousEdition>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PREVIOUS_EDITION&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PreviousEdition>
+            <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:when test="exists($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_TRIM_HEIGHT&quot;]/FIELDS/ATWRT)">
+                    <pfx:TextTrimHeight>
+                        <xsl:value-of select="ns:convertDimension($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_TRIM_HEIGHT&quot;]/FIELDS/ATWRT)"/>
+                    </pfx:TextTrimHeight>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:when test="exists($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_TRIM_WIDTH&quot;]/FIELDS/ATWRT)">
+                    <pfx:TextTrimWidth>
+                        <xsl:value-of select="ns:convertDimension($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_TRIM_WIDTH&quot;]/FIELDS/ATWRT)"/>
+                    </pfx:TextTrimWidth>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:when test="exists($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_PAGE_COUNT&quot;]/FIELDS/ATWRT)">
+                    <pfx:TextPageCount>
+                        <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_PAGE_COUNT&quot;]/FIELDS/ATWRT"/>
+                    </pfx:TextPageCount>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:when test="exists($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;BINDING_BULK&quot;]/FIELDS/ATWRT)">
+                    <pfx:TextBulk>
+                        <xsl:value-of select="ns:convertDimension($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;BINDING_BULK&quot;]/FIELDS/ATWRT)"/>
+                    </pfx:TextBulk>
+                </xsl:when>
+            </xsl:choose>
+            <pfx:TitleForCustomer>
+                <xsl:value-of select="tib:concat-sequence($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MTXHM/item[ upper-case(FIELDS/TDID) =&quot;IVER&quot; ]/CHILDREN/E1MTXLM/item/FIELDS/TDLINE)"/>
+            </pfx:TitleForCustomer>
+            <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:when test="exists($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;VOLUME_NUMBER&quot;]/FIELDS/ATWRT)">
+                    <pfx:Volume>
+                        <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;VOLUME_NUMBER&quot;]/FIELDS/ATWRT"/>
+                    </pfx:Volume>
+                </xsl:when>
+            </xsl:choose>
+            <pfx:BisacBindingCode>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;ONIX_BINDING&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BisacBindingCode>
+            <pfx:BisacMediaCode>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;ONIX_MEDIA&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BisacMediaCode>
+            <pfx:ShelfLife>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;SHELF_LIFE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:ShelfLife>
+            <pfx:CustomerContact>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;CUSTOMER_CONTACT&quot;]/FIELDS/ATWRT)"/>
+            </pfx:CustomerContact>
+            <pfx:ProductType>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PRODUCT_TYPE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:ProductType>
+            <pfx:ProductSubType>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PRODUCT_SUB_TYPE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:ProductSubType>
+            <pfx:CPSIAReqLabel>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;CPSIA_REQ_LABEL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:CPSIAReqLabel>
+            <pfx:CPSIAReqCertificate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;CPSIA_REQ_CERTIFICATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:CPSIAReqCertificate>
+            <pfx:PermissionText>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PERMISSION_TEXT&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PermissionText>
+            <pfx:PermissionImage>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PERMISSION_IMAGE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PermissionImage>
+            <pfx:PermissionDigital>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PERMISSION_DIGITAL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PermissionDigital>
+            <pfx:StateIndicator>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;STATE_INDICATOR&quot;]/FIELDS/ATWRT)"/>
+            </pfx:StateIndicator>
+            <pfx:EstimatedCost>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;ESTIMATED_COST&quot;]/FIELDS/ATWRT)"/>
+            </pfx:EstimatedCost>
+            <pfx:BeginSellingDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;BEGIN_SELLING_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BeginSellingDate>
+            <pfx:SubmissionDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;SUBMISSION_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:SubmissionDate>
+            <pfx:SamplingDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;SAMPLING_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:SamplingDate>
+            <pfx:PilotStartDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PILOT_START_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PilotStartDate>
+            <pfx:InServiceStartDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;IN-SERVICE_START_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:InServiceStartDate>
+            <pfx:ImplementationDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;IMPLEMENTATION_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:ImplementationDate>
+            <pfx:SSIncentiveSellByDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;SS_INCENTIVE_SELL_BY_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:SSIncentiveSellByDate>
+            <pfx:EGoodMixedKit>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;EGOOD_MIXED_KIT&quot;]/FIELDS/ATWRT)"/>
+            </pfx:EGoodMixedKit>
+            <pfx:BPrintingFileAvailDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;B_PRINTING_FILE_AVAILA_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BPrintingFileAvailDate>
+            <pfx:NationalISBN>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;NATIONAL_ISBN&quot;]/FIELDS/ATWRT)"/>
+            </pfx:NationalISBN>
+            <pfx:NationalMaterial>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;NATIONAL_MATERIAL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:NationalMaterial>
+            <pfx:DivisionalReadiness>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;DIVISIONAL_READINESS&quot;]/FIELDS/ATWRT)"/>
+            </pfx:DivisionalReadiness>
+            <pfx:TextClass>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TEXT_CLASS&quot;]/FIELDS/ATWRT)"/>
+            </pfx:TextClass>
+            <pfx:PDFFileReleaseActual>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PDF_FILE_RELEASE_ACTUAL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PDFFileReleaseActual>
+            <pfx:PageCountFinal>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PAGE_COUNT_FINAL&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PageCountFinal>
+            <pfx:PageCountFinalDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PAGE_COUNT_FINAL_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PageCountFinalDate>
+            <pfx:PRJCoverFileRelease>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;PRJ_COVER_FILE_RELEASE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:PRJCoverFileRelease>
+            <pfx:ToBeDeliveredDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;TBD_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:ToBeDeliveredDate>
+            <pfx:FileAvailabilityDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;FILE_AVAILABILITY_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:FileAvailabilityDate>
+            <pfx:ScheduledFTPDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;SCHEDULED_FTP_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:ScheduledFTPDate>
+            <pfx:BPrintFTPDate>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;B_PRINT_FTP_DATE&quot;]/FIELDS/ATWRT)"/>
+            </pfx:BPrintFTPDate>
+            <pfx:FileRequired>
+                <xsl:value-of select="tib:trim($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item[ upper-case(FIELDS/ATNAM)=&quot;FILE_REQUIRED&quot;]/FIELDS/ATWRT)"/>
+            </pfx:FileRequired>
+            <xsl:if xmlns:xsl="http://www.w3.org/1999/XSL/Transform" test="not($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARAISM/item/FIELDS/ISMCONTTYPE/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx:ContentCategory>
+                    <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMCONTTYPE"/>
+                </pfx:ContentCategory>
+            </xsl:if>
+            <pfx:Division>
+                <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/SPART"/>
+            </pfx:Division>
+            <pfx:XPlantStatus>
+                <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MSTAE"/>
+            </pfx:XPlantStatus>
+            <pfx:PHLevel4Code>
+                <xsl:value-of select="substring($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/PRDHA,7,3)"/>
+            </pfx:PHLevel4Code>
+            <pfx:PHLevel5Code>
+                <xsl:value-of select="substring($Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/PRDHA, 10, 2)"/>
+            </pfx:PHLevel5Code>
+            <xsl:for-each xmlns:xsl="http://www.w3.org/1999/XSL/Transform" select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/Z1AUSPM/item">
+                <xsl:if test="upper-case(current()/FIELDS/ATNAM)=&quot;CUSTOM_KEYS&quot;">
+                    <pfx:CustomKeys>
+                        <xsl:value-of select="tib:trim(current()/FIELDS/ATWRT)"/>
+                    </pfx:CustomKeys>
+                </xsl:if>
+            </xsl:for-each>
+        </pfx:Classification>
+    </pfx:MaterialClassification>
+</xsl:template>

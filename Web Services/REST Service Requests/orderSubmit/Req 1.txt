@@ -1,0 +1,88 @@
+{
+    "orderSubmitRequest": {
+        "billToAddress": {
+            "addressLine1": "66 Brook Lane",
+            "addressLine2": "",
+            "addressLine3": "",
+            "city": "Gardner",
+            "countryCode": "US",
+            "customerName": "Marcia Marjomaa",
+            "emailAddress": "marcia.marjomaa@hmhco.com",
+            "phone": "6173515254",
+            "state": "MA",
+            "zipcode": "01440"
+        },
+        "billToCustomerId": "0000643157",
+        "creditCard": {
+            "cardType": "CREDIT_CARD_TYPE_DISC",
+            "ccName": "Marcia Marjomaa",
+            "cvv": "876",
+            "expDate": "0316",
+            "number": "-E803-0000-ZGKEN00000000Z"
+        },
+        "entryDivision": "DIVISION_TRADE_AND_REFERENCE",
+        "orderSource": "ORDER_SOURCE_ECOMMERCE_CONSUMER",
+        "payerAddress": {
+            "addressLine1": "66 Brook Lane",
+            "addressLine2": "",
+            "addressLine3": "",
+            "city": "Gardner",
+            "countryCode": "US",
+            "customerName": "Marcia Marjomaa",
+            "emailAddress": "marcia.marjomaa@hmhco.com",
+            "phone": "6173515254",
+            "state": "MA",
+            "zipcode": "01440"
+        },
+        "payerCustomerId": "0000643157",
+        "poNumber": "Web Order",
+        "saleLineItemList": [
+            {
+                "backofficeLineNo": 10,
+                "lineNo": "1",
+                "materialID": "000000000001434351",
+                "quantity": 10
+            },{
+                "backofficeLineNo": 20,
+                "lineNo": "2",
+                "materialID": "000000000001434351",
+                "quantity": 20
+            },{
+                "backofficeLineNo": 30,
+                "lineNo": "3",
+                "materialID": "000000000001434351",
+                "quantity": 30
+            },{
+                "backofficeLineNo": 40,
+                "lineNo": "4",
+                "materialID": "000000000001434351",
+                "quantity": 40
+            }
+        ],
+        "shipmentMethod": "SHIPMENT_METHOD_UPS_SUREPOST",
+        "shipToAddress": {
+            "addressLine1": "222 berkeley st",
+            "city": "Boston",
+            "countryCode": "US",
+            "customerName": "Marcia Marjomaa",
+            "emailAddress": "marcia.marjomaa@hmhco.com",
+            "state": "MA",
+            "zipcode": "02148"
+        },
+        "shipToCustomerId": "0000643157",
+        "soldToAddress": {
+            "addressLine1": "66 Brook Lane",
+            "addressLine2": "",
+            "addressLine3": "",
+            "city": "Gardner",
+            "countryCode": "US",
+            "customerName": "Marcia Marjomaa",
+            "emailAddress": "marcia.marjomaa@hmhco.com",
+            "phone": "6173515254",
+            "state": "MA",
+            "zipcode": "01440"
+        },
+        "soldToCustomerId": "0000643157",
+        "transactionType": "TRANSACTION_TYPE_STANDARD"
+    }
+}

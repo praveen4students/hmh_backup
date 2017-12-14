@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Material_Master_Update">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MaterialNumber"/>
+				<xs:element ref="CreatedOn" minOccurs="0"/>
+				<xs:element ref="TitleUpdatedDate" minOccurs="0"/>
+				<xs:element ref="MaterialType" minOccurs="0"/>
+				<xs:element ref="MaterialGroup" minOccurs="0"/>
+				<xs:element ref="OldMaterialNumber" minOccurs="0"/>
+				<xs:element ref="BaseUnitofMeasure" minOccurs="0"/>
+				<xs:element ref="DocumentVersion" minOccurs="0"/>
+				<xs:element ref="PurchasingValueKey" minOccurs="0"/>
+				<xs:element ref="NetWeight" minOccurs="0"/>
+				<xs:element ref="WeightUnit" minOccurs="0"/>
+				<xs:element ref="Division" minOccurs="0"/>
+				<xs:element ref="ExternalMaterialGroup" minOccurs="0"/>
+				<xs:element ref="XPlantStatus" minOccurs="0"/>
+				<xs:element ref="CrossPlantMatStatus" minOccurs="0"/>
+				<xs:element ref="GeneralItemCategory" minOccurs="0"/>
+				<xs:element ref="AuthorArtist" minOccurs="0"/>
+				<xs:element ref="Subtitle1" minOccurs="0"/>
+				<xs:element ref="Subtitle2" minOccurs="0"/>
+				<xs:element ref="Subtitle3" minOccurs="0"/>
+				<xs:element ref="Title" minOccurs="0"/>
+				<xs:element ref="MediaProduct" minOccurs="0"/>
+				<xs:element ref="PublicationType" minOccurs="0"/>
+				<xs:element ref="MediaType" minOccurs="0"/>
+				<xs:element ref="ContentCategory" minOccurs="0"/>
+				<xs:element ref="EditionKey" minOccurs="0"/>
+				<xs:element ref="PublicationDate" minOccurs="0"/>
+				<xs:element ref="Imprint" minOccurs="0"/>
+				<xs:element ref="EmplRespForPlan" minOccurs="0"/>
+				<xs:element ref="Languages" minOccurs="0"/>
+				<xs:element ref="EditionCounter" minOccurs="0"/>
+				<xs:element ref="ReprintingType" minOccurs="0"/>
+				<xs:element ref="OriginalPublisher" minOccurs="0"/>
+				<xs:element ref="PrimaryISBN" minOccurs="0"/>
+				<xs:element ref="YearNumber" minOccurs="0"/>
+				<xs:element ref="StdlssVartype" minOccurs="0"/>
+				<xs:element ref="IntlShippingDate" minOccurs="0"/>
+				<xs:element ref="ProductPresentation" minOccurs="0"/>
+				<xs:element ref="GTIN" minOccurs="0"/>
+				<xs:element ref="ISBN_13" minOccurs="0"/>
+				<xs:element ref="ISBN_10" minOccurs="0"/>
+				<xs:element ref="MaterialDescription" minOccurs="0"/>
+				<xs:element ref="DeletionIndicator" minOccurs="0"/>
+				<xs:element ref="ABCIndicator" minOccurs="0"/>
+				<xs:element ref="PurchasingGroup" minOccurs="0"/>
+				<xs:element ref="MRPType" minOccurs="0"/>
+				<xs:element ref="MRPController" minOccurs="0"/>
+				<xs:element ref="PlannedDeliveryTime" minOccurs="0"/>
+				<xs:element ref="GRProcessingTime" minOccurs="0"/>
+				<xs:element ref="LotSize" minOccurs="0"/>
+				<xs:element ref="ProcurementType" minOccurs="0"/>
+				<xs:element ref="ReorderPoint" minOccurs="0"/>
+				<xs:element ref="SafetyStock" minOccurs="0"/>
+				<xs:element ref="MinimumLotSize" minOccurs="0"/>
+				<xs:element ref="MaximumLotSize" minOccurs="0"/>
+				<xs:element ref="RoundingValuePOQuantity" minOccurs="0"/>
+				<xs:element ref="DiscontIndicator" minOccurs="0"/>
+				<xs:element ref="EffectiveOutDate" minOccurs="0"/>
+				<xs:element ref="FollowupMaterial" minOccurs="0"/>
+				<xs:element ref="InhouseProduction" minOccurs="0"/>
+				<xs:element ref="AvailabilityCheck" minOccurs="0"/>
+				<xs:element ref="CommodityCode" minOccurs="0"/>
+				<xs:element ref="CountryName" minOccurs="0"/>
+				<xs:element ref="ProfitCenter" minOccurs="0"/>
+				<xs:element ref="ConsumptionMode" minOccurs="0"/>
+				<xs:element ref="BackwdConsumptionPer" minOccurs="0"/>
+				<xs:element ref="ForwardConsumptionPer" minOccurs="0"/>
+				<xs:element ref="PlanningStrategyGroup" minOccurs="0"/>
+				<xs:element ref="MinSafetyStock" minOccurs="0"/>
+				<xs:element ref="SpecialProcurement" minOccurs="0"/>
+				<xs:element ref="Case" minOccurs="0"/>
+				<xs:element ref="PricingUnit" minOccurs="0"/>
+				<xs:element ref="Length" minOccurs="0"/>
+				<xs:element ref="Width" minOccurs="0"/>
+				<xs:element ref="Height" minOccurs="0"/>
+				<xs:element ref="Volume" minOccurs="0"/>
+				<xs:element ref="EAN" minOccurs="0"/>
+				<xs:element ref="UPC" minOccurs="0"/>
+				<xs:element ref="EANCategory" minOccurs="0"/>
+				<xs:element ref="UPCCategory" minOccurs="0"/>
+				<xs:element ref="StandardPrice" minOccurs="0"/>
+				<xs:element ref="ValuationClass" minOccurs="0"/>
+				<xs:element ref="MaterialStatisticsGroup" minOccurs="0"/>
+				<xs:element ref="DchainSpecStatus" minOccurs="0"/>
+				<xs:element ref="DeliveringPlant" minOccurs="0"/>
+				<xs:element ref="MaterialGroupPricing" minOccurs="0"/>
+				<xs:element ref="AccountAssignmentGroup" minOccurs="0"/>
+				<xs:element ref="ReturnedCode" minOccurs="0"/>
+				<xs:element ref="CartonRounding" minOccurs="0"/>
+				<xs:element ref="EgoodIndicator" minOccurs="0"/>
+				<xs:element ref="RoyaltyRelevance" minOccurs="0"/>
+				<xs:element ref="ContractSalesOnly" minOccurs="0"/>
+				<xs:element ref="PrintSubscription" minOccurs="0"/>
+				<xs:element ref="ResendWorkId" minOccurs="0"/>
+				<xs:element ref="RoyaltyActivityFlag" minOccurs="0"/>
+				<xs:element ref="InspectionText" minOccurs="0"/>
+				<xs:element ref="BasicdataText" minOccurs="0"/>
+				<xs:element ref="PoText" minOccurs="0"/>
+				<xs:element ref="salesText" minOccurs="0"/>
+				<xs:element ref="InternalComment" minOccurs="0"/>
+				<xs:element ref="ReturnsAllowed" minOccurs="0"/>
+				<xs:element ref="ReturnsAllowedPerToDate" minOccurs="0"/>
+				<xs:element ref="ReturnsAllowedPerFromDate" minOccurs="0"/>
+				<xs:element ref="iDocNumber" minOccurs="0"/>
+				<xs:element ref="CompleteTitle" minOccurs="0"/>
+				<xs:element ref="MaterialBlocked" minOccurs="0"/>
+				<xs:element ref="ExcludeCouponCode" minOccurs="0"/>
+				<xs:element ref="Update_User" minOccurs="0"/>
+				<xs:element ref="CartonQuantity" minOccurs="0"/>
+				<xs:element ref="Collective" minOccurs="0"/>
+				<xs:element ref="copyrightStatus" minOccurs="0"/>
+				<xs:element ref="originalidCodeType" minOccurs="0"/>
+				<xs:element ref="saleRestrictionValidfromDate" minOccurs="0"/>
+				<xs:element ref="periodIndicator" minOccurs="0"/>
+				<xs:element ref="onSaleDate" minOccurs="0"/>
+				<xs:element ref="CreatedBy_SAP" minOccurs="0"/>
+				<xs:element ref="CrossPlantCM" minOccurs="0"/>
+				<xs:element ref="LastUpdateBy_SAP" minOccurs="0"/>
+				<xs:element ref="LoadingGroup" minOccurs="0"/>
+				<xs:element ref="MaterialConfigurable" minOccurs="0"/>
+				<xs:element ref="MRPProfile" minOccurs="0"/>
+				<xs:element ref="PriceDetermination" minOccurs="0"/>
+				<xs:element ref="ProductHierarchy" minOccurs="0"/>
+				<xs:element ref="OriginalTitle" minOccurs="0"/>
+				<xs:element ref="LinearUnitsOfDimension" minOccurs="0"/>
+				<xs:element ref="VolumeUnitsOfDimension" minOccurs="0"/>
+				<xs:element ref="AutomaticPO" minOccurs="0"/>
+				<xs:element ref="ProductAttribute5" minOccurs="0"/>
+				<xs:element ref="ProductAttribute6" minOccurs="0"/>
+				<xs:element ref="ProductAttribute7" minOccurs="0"/>
+				<xs:element ref="ProductAttribute8" minOccurs="0"/>
+				<xs:element ref="ProductAttribute9" minOccurs="0"/>
+				<xs:element ref="ProductAttribute10" minOccurs="0"/>
+				<xs:element ref="Draw" minOccurs="0"/>
+				<xs:element ref="Salesorg2ItemCategoryGrp" minOccurs="0"/>
+				<xs:element ref="TransGroup" minOccurs="0"/>
+				<xs:element ref="BatchManagement" minOccurs="0"/>
+				<xs:element ref="Salesorg2ProdHierarchy" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MaterialNumber">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CreatedOn" type="xs:date"/>
+	<xs:element name="TitleUpdatedDate" type="xs:date"/>
+	<xs:element name="MaterialType" type="xs:string"/>
+	<xs:element name="MaterialGroup" type="xs:string"/>
+	<xs:element name="OldMaterialNumber" type="xs:string"/>
+	<xs:element name="BaseUnitofMeasure" type="xs:string"/>
+	<xs:element name="DocumentVersion" type="xs:string"/>
+	<xs:element name="PurchasingValueKey" type="xs:string"/>
+	<xs:element name="NetWeight">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:fractionDigits value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="WeightUnit" type="xs:string"/>
+	<xs:element name="Division" type="xs:string"/>
+	<xs:element name="ExternalMaterialGroup" type="xs:string"/>
+	<xs:element name="XPlantStatus" type="xs:string"/>
+	<xs:element name="CrossPlantMatStatus" type="xs:date"/>
+	<xs:element name="GeneralItemCategory" type="xs:string"/>
+	<xs:element name="AuthorArtist" type="xs:string"/>
+	<xs:element name="Subtitle1" type="xs:string"/>
+	<xs:element name="Subtitle2" type="xs:string"/>
+	<xs:element name="Subtitle3" type="xs:string"/>
+	<xs:element name="Title" type="xs:string"/>
+	<xs:element name="MediaProduct" type="xs:string"/>
+	<xs:element name="PublicationType" type="xs:string"/>
+	<xs:element name="MediaType" type="xs:string"/>
+	<xs:element name="ContentCategory" type="xs:string"/>
+	<xs:element name="EditionKey" type="xs:string"/>
+	<xs:element name="PublicationDate" type="xs:date"/>
+	<xs:element name="Imprint" type="xs:string"/>
+	<xs:element name="EmplRespForPlan" type="xs:string"/>
+	<xs:element name="Languages" type="xs:string"/>
+	<xs:element name="EditionCounter" type="xs:string"/>
+	<xs:element name="ReprintingType" type="xs:string"/>
+	<xs:element name="OriginalPublisher" type="xs:string"/>
+	<xs:element name="PrimaryISBN" type="xs:string"/>
+	<xs:element name="YearNumber" type="xs:integer"/>
+	<xs:element name="StdlssVartype" type="xs:string"/>
+	<xs:element name="IntlShippingDate" type="xs:date"/>
+	<xs:element name="ProductPresentation" type="xs:string"/>
+	<xs:element name="GTIN" type="xs:string"/>
+	<xs:element name="ISBN_13" type="xs:string"/>
+	<xs:element name="ISBN_10" type="xs:string"/>
+	<xs:element name="MaterialDescription" type="xs:string"/>
+	<xs:element name="DeletionIndicator" type="xs:string"/>
+	<xs:element name="ABCIndicator" type="xs:string"/>
+	<xs:element name="PurchasingGroup" type="xs:string"/>
+	<xs:element name="MRPType" type="xs:string"/>
+	<xs:element name="MRPController" type="xs:string"/>
+	<xs:element name="PlannedDeliveryTime" type="xs:string"/>
+	<xs:element name="GRProcessingTime" type="xs:integer"/>
+	<xs:element name="LotSize" type="xs:string"/>
+	<xs:element name="ProcurementType" type="xs:string"/>
+	<xs:element name="ReorderPoint" type="xs:string"/>
+	<xs:element name="SafetyStock" type="xs:string"/>
+	<xs:element name="MinimumLotSize" type="xs:string"/>
+	<xs:element name="MaximumLotSize" type="xs:string"/>
+	<xs:element name="RoundingValuePOQuantity" type="xs:string"/>
+	<xs:element name="DiscontIndicator" type="xs:string"/>
+	<xs:element name="EffectiveOutDate" type="xs:date"/>
+	<xs:element name="FollowupMaterial" type="xs:string"/>
+	<xs:element name="InhouseProduction" type="xs:integer"/>
+	<xs:element name="AvailabilityCheck" type="xs:string"/>
+	<xs:element name="CommodityCode" type="xs:string"/>
+	<xs:element name="CountryName" type="xs:string"/>
+	<xs:element name="ProfitCenter" type="xs:string"/>
+	<xs:element name="ConsumptionMode" type="xs:string"/>
+	<xs:element name="BackwdConsumptionPer" type="xs:integer"/>
+	<xs:element name="ForwardConsumptionPer" type="xs:integer"/>
+	<xs:element name="PlanningStrategyGroup" type="xs:string"/>
+	<xs:element name="MinSafetyStock" type="xs:double"/>
+	<xs:element name="SpecialProcurement" type="xs:string"/>
+	<xs:element name="Case" type="xs:integer"/>
+	<xs:element name="PricingUnit" type="xs:string"/>
+	<xs:element name="Length">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:fractionDigits value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Width">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:fractionDigits value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Height">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:fractionDigits value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Volume">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:fractionDigits value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="EAN" type="xs:string"/>
+	<xs:element name="UPC" type="xs:string"/>
+	<xs:element name="EANCategory" type="xs:string"/>
+	<xs:element name="UPCCategory" type="xs:string"/>
+	<xs:element name="StandardPrice">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:fractionDigits value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ValuationClass" type="xs:string"/>
+	<xs:element name="MaterialStatisticsGroup" type="xs:string"/>
+	<xs:element name="DchainSpecStatus" type="xs:string"/>
+	<xs:element name="DeliveringPlant" type="xs:string"/>
+	<xs:element name="MaterialGroupPricing" type="xs:string"/>
+	<xs:element name="AccountAssignmentGroup" type="xs:string"/>
+	<xs:element name="ReturnedCode" type="xs:string"/>
+	<xs:element name="CartonRounding" type="xs:string"/>
+	<xs:element name="EgoodIndicator" type="xs:string"/>
+	<xs:element name="RoyaltyRelevance" type="xs:string"/>
+	<xs:element name="ContractSalesOnly" type="xs:string"/>
+	<xs:element name="PrintSubscription" type="xs:string"/>
+	<xs:element name="ResendWorkId" type="xs:string"/>
+	<xs:element name="RoyaltyActivityFlag" type="xs:boolean"/>
+	<xs:element name="InspectionText" type="xs:string"/>
+	<xs:element name="BasicdataText" type="xs:string"/>
+	<xs:element name="PoText" type="xs:string"/>
+	<xs:element name="salesText" type="xs:string"/>
+	<xs:element name="ProductHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PHlevel1Code" minOccurs="0"/>
+				<xs:element ref="PHlevel2Code" minOccurs="0"/>
+				<xs:element ref="PHlevel3Code" minOccurs="0"/>
+				<xs:element ref="PHlevel4Code" minOccurs="0"/>
+				<xs:element ref="PHlevel5Code" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PHlevel1Code" type="xs:string"/>
+	<xs:element name="PHlevel2Code" type="xs:string"/>
+	<xs:element name="PHlevel3Code" type="xs:string"/>
+	<xs:element name="PHlevel4Code" type="xs:string"/>
+	<xs:element name="PHlevel5Code" type="xs:string"/>
+	<xs:element name="Plant" type="xs:string"/>
+	<xs:element name="CountryofOrigin" type="xs:string"/>
+	<xs:element name="Vendor" type="xs:string"/>
+	<xs:element name="InternalComment" type="xs:string"/>
+	<xs:element name="ReturnsAllowed" type="xs:string"/>
+	<xs:element name="ReturnsAllowedPerToDate" type="xs:string"/>
+	<xs:element name="ReturnsAllowedPerFromDate" type="xs:string"/>
+	<xs:element name="iDocNumber" type="xs:string"/>
+	<xs:element name="CompleteTitle" type="xs:string"/>
+	<xs:element name="MaterialBlocked" type="xs:string"/>
+	<xs:element name="ExcludeCouponCode" type="xs:string"/>
+	<xs:element name="Update_User" type="xs:string"/>
+	<xs:element name="CartonQuantity" type="xs:string"/>
+	<xs:element name="Collective" type="xs:string"/>
+	<xs:element name="copyrightStatus" type="xs:string"/>
+	<xs:element name="originalidCodeType" type="xs:string"/>
+	<xs:element name="saleRestrictionValidfromDate" type="xs:date"/>
+	<xs:element name="periodIndicator" type="xs:string"/>
+	<xs:element name="onSaleDate" type="xs:string"/>
+	<xs:element name="CreatedBy_SAP" type="xs:string"/>
+	<xs:element name="CrossPlantCM" type="xs:string"/>
+	<xs:element name="LastUpdateBy_SAP" type="xs:string"/>
+	<xs:element name="LoadingGroup" type="xs:string"/>
+	<xs:element name="MaterialConfigurable" type="xs:string"/>
+	<xs:element name="MRPProfile" type="xs:string"/>
+	<xs:element name="PriceDetermination" type="xs:string"/>
+	<xs:element name="OriginalTitle" type="xs:string"/>
+	<xs:element name="LinearUnitsOfDimension" type="xs:string"/>
+	<xs:element name="VolumeUnitsOfDimension" type="xs:string"/>
+	<xs:element name="AutomaticPO" type="xs:string"/>
+	<xs:element name="ProductAttribute5" type="xs:string"/>
+	<xs:element name="ProductAttribute6" type="xs:string"/>
+	<xs:element name="ProductAttribute7" type="xs:string"/>
+	<xs:element name="ProductAttribute8" type="xs:string"/>
+	<xs:element name="ProductAttribute9" type="xs:string"/>
+	<xs:element name="ProductAttribute10" type="xs:string"/>
+	<xs:element name="Draw" type="xs:string"/>
+	<xs:element name="Salesorg2ItemCategoryGrp" type="xs:string"/>
+	<xs:element name="BatchManagement" type="xs:string"/>
+	<xs:element name="Salesorg2ProdHierarchy" type="xs:string"/>
+	<xs:element name="TransGroup" type="xs:string"/>
+</xs:schema>

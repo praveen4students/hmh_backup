@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:ns4="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx2="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:pfx="http://www.hmco.com/schemas/sfa/material_Classification" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx1="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx4="http://www.hmco.com/schemas/sfa/material_BOM" xmlns:ns5="http://www.hmco.com/EAI/utility/LookupList" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx21="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:ns22="http://xmlns.tibco.com/body" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:ns="java://HMCOParseDimension" xmlns:pfx6="http://www.tibco.com/ns/no_namespace_schema_location/SharedResources/Schemas/SCM/Material_Bom_Update.xsd" xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/mail" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx41="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA">
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_Classification" schemaLocation="/SharedResources/Schemas/Common/SAPMaterialMasterClassificationUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Bom_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPMatMasBOMUpdateDDO/TransformationProcesses/TransformToDDO.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx2:BOMMAT03-ZBOMMAT03-4x"/>
+    <pd:startX>45</pd:startX>
+    <pd:startY>64</pd:startY>
+    <pd:returnBindings>
+        <root>
+            <xsl:copy-of select="$MAP_SAPIdoc_to_Header/root/pfx5:BillOfMaterial"/>
+        </root>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType>
+        <xsd:element name="root">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element ref="pfx5:BillOfMaterial"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:endType>
+    <pd:endX>535</pd:endX>
+    <pd:endY>65</pd:endY>
+    <pd:errorSchemas>
+        <Error ref="pfx3:errorMessage"/>
+    </pd:errorSchemas>
+    <pd:processVariables>
+        <Variable0>
+            <xsd:element name="root">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="TextTrimHeight" type="xsd:double" minOccurs="0"/>
+                        <xsd:element name="TextTrimWidth" type="xsd:double" minOccurs="0"/>
+                        <xsd:element name="TextBulk" type="xsd:double" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </Variable0>
+    </pd:processVariables>
+    <pd:targetNamespace>http://xmlns.example.com/1310990241565</pd:targetNamespace>
+    <pd:activity name="MAP_SAPIdoc_to_Header">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>338</pd:x>
+        <pd:y>65</pd:y>
+        <config>
+            <element>
+                <xsd:element name="root">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="pfx5:BillOfMaterial"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </element>
+        </config>
+        <pd:inputBindings>
+            <root>
+                <xsl:for-each select="$Start/pfx2:BOMMAT03-ZBOMMAT03-4x/CHILDREN/E1STZUM/item">
+                    <xsl:choose>
+                        <xsl:when test="exists(CHILDREN/E1STPOM/item)">
+                            <pfx5:BillOfMaterial>
+                                <xsl:for-each select="CHILDREN/E1STPOM/item">
+                                    <pfx5:KitComponents>
+                                        <pfx5:MaterialNumber>
+                                            <xsl:value-of select="../../E1MASTM/item[1]/FIELDS/MATNR"/>
+                                        </pfx5:MaterialNumber>
+                                        <pfx5:Component>
+                                            <xsl:value-of select="tib:trim(current()/FIELDS/IDNRK)"/>
+                                        </pfx5:Component>
+                                        <xsl:choose>
+                                            <xsl:when test="current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT !=00000000">
+                                                <pfx5:CreatedDate>
+                                                    <xsl:value-of select="concat(substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT, 1, 4),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT, 5,2),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/ANDAT, 7,2))"/>
+                                                </pfx5:CreatedDate>
+                                            </xsl:when>
+                                        </xsl:choose>
+                                        <xsl:choose>
+                                            <xsl:when test="current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT !=00000000">
+                                                <pfx5:ChangeCreatedDate>
+                                                    <xsl:value-of select="concat(substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT, 1, 4),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT, 5,2),&quot;-&quot;,substring(current()/CHILDREN/ZE1STPOM/item[1]/FIELDS/AEDAT, 7,2))"/>
+                                                </pfx5:ChangeCreatedDate>
+                                            </xsl:when>
+                                        </xsl:choose>
+                                        <xsl:if test="exists(current()/FIELDS/MENGE__C)">
+                                            <xsl:if test="current()/FIELDS/MENGE__C">
+                                                <pfx5:Quantity>
+                                                    <xsl:value-of select="current()/FIELDS/MENGE__C"/>
+                                                </pfx5:Quantity>
+                                            </xsl:if>
+                                        </xsl:if>
+                                        <pfx5:BomStatus>
+                                            <xsl:value-of select="''"/>
+                                        </pfx5:BomStatus>
+                                        <pfx5:iDocNumber>
+                                            <xsl:value-of select="tib:trim(../../../../../../EDI__DC/DOCNUM)"/>
+                                        </pfx5:iDocNumber>
+                                        <pfx5:Update_User>
+                                            <xsl:value-of select="$_globalVariables/ns1:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+                                        </pfx5:Update_User>
+                                        <pfx5:itemNumber>
+                                            <xsl:value-of select="tib:trim(current()/FIELDS/POSNR)"/>
+                                        </pfx5:itemNumber>
+                                        <pfx5:itemCategory>
+                                            <xsl:value-of select="tib:trim(current()/FIELDS/POSTP)"/>
+                                        </pfx5:itemCategory>
+                                        <pfx5:FixedIndicator>
+                                            <xsl:value-of select="tib:trim(current()/FIELDS/FMENG)"/>
+                                        </pfx5:FixedIndicator>
+                                    </pfx5:KitComponents>
+                                </xsl:for-each>
+                            </pfx5:BillOfMaterial>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <pfx5:BillOfMaterial>
+                                <pfx5:KitComponents>
+                                    <pfx5:MaterialNumber>
+                                        <xsl:value-of select="current()/CHILDREN/E1MASTM/item[1]/FIELDS/MATNR"/>
+                                    </pfx5:MaterialNumber>
+                                    <xsl:choose>
+                                        <xsl:when test="tib:trim(current()/CHILDREN/E1MASTM/item[1]/CHILDREN/ZE1MASTM/item[1]/FIELDS/BOM__DEL__IND) ='Y'">
+                                            <pfx5:BomStatus>
+                                                <xsl:value-of select="'D'"/>
+                                            </pfx5:BomStatus>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <pfx5:BomStatus>
+                                                <xsl:value-of select="''"/>
+                                            </pfx5:BomStatus>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    <pfx5:iDocNumber>
+                                        <xsl:value-of select="../../../EDI__DC/DOCNUM"/>
+                                    </pfx5:iDocNumber>
+                                    <pfx5:Update_User>
+                                        <xsl:value-of select="$_globalVariables/ns1:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+                                    </pfx5:Update_User>
+                                </pfx5:KitComponents>
+                            </pfx5:BillOfMaterial>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </root>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Generate Error">
+        <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+        <pd:resourceType>ae.activities.throw</pd:resourceType>
+        <pd:x>341</pd:x>
+        <pd:y>197</pd:y>
+        <config>
+            <faultName/>
+        </config>
+        <pd:inputBindings>
+            <ns4:ActivityInput>
+                <message>
+                    <xsl:value-of select="$_error/ns3:ErrorReport/Msg"/>
+                </message>
+                <messageCode>
+                    <xsl:value-of select="$_error/ns3:ErrorReport/StackTrace"/>
+                </messageCode>
+            </ns4:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>MAP_SAPIdoc_to_Header</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>MAP_SAPIdoc_to_Header</pd:from>
+        <pd:to>Generate Error</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-65536</pd:lineColor>
+        <pd:conditionType>error</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>MAP_SAPIdoc_to_Header</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

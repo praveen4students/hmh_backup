@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VendorInfo xmlns="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/VendorSchema.xsd">
+    <VendorNumber>5000000697</VendorNumber>
+    <VendorType>ZMFG</VendorType>
+    <VendorName>LINDENMEYR PAPER COMPANY INC</VendorName>
+    <camel__ry__vendor>
+        <VendorNumber>5000000697</VendorNumber>
+        <Country>US</Country>
+        <Name1>LINDENMEYR PAPER COMPANY INC</Name1>
+        <Name2></Name2>
+        <Name3></Name3>
+        <Name4></Name4>
+        <City>DEDHAM</City>
+        <County>NORFOLK</County>
+        <PO_Box></PO_Box>
+        <PO_Box_Post_Cd></PO_Box_Post_Cd>
+        <Postal_Code>02026</Postal_Code>
+        <Region_State>MA</Region_State>
+        <sort_name>LINDENMEYE</sort_name>
+        <Street>990 WASHINGTON STREET  STE 211S</Street>
+        <SAP_Addr_No>0000084921</SAP_Addr_No>
+        <PS_Vendor-Loc></PS_Vendor-Loc>
+        <Vendor_Group>ZMFG</Vendor_Group>
+        <AlternatePayeeID></AlternatePayeeID>
+        <Central_Delete_Flag></Central_Delete_Flag>
+        <Central_Post_Block></Central_Post_Block>
+        <Central_Purch_Block></Central_Purch_Block>
+        <Telephone></Telephone>
+        <Mobile_Phone></Mobile_Phone>
+        <Fax_Number>1-781-326-4027</Fax_Number>
+        <AlternatePayeeAllowed></AlternatePayeeAllowed>
+        <Tax_Jurisdiction>USMA02026XXXX0</Tax_Jurisdiction>
+        <Central_Delete_Block></Central_Delete_Block>
+        <Company>HMC1</Company>
+        <Company_Post_Block></Company_Post_Block>
+        <Company_Delete_Flag></Company_Delete_Flag>
+        <Reconcile_Acct>0003100000</Reconcile_Acct>
+        <Payment_Methods>T</Payment_Methods>
+        <Payment_Block></Payment_Block>
+        <Payment_Terms>T040</Payment_Terms>
+        <AlternatePayeeAccountNumber></AlternatePayeeAccountNumber>
+        <Check_Dup_Invoice>X</Check_Dup_Invoice>
+        <Individual_Payments></Individual_Payments>
+        <Minority_Indicators></Minority_Indicators>
+        <Legacy_Vendor_No></Legacy_Vendor_No>
+        <Pay_Method_Supplmt>PP</Pay_Method_Supplmt>
+        <WH_Tax_Country></WH_Tax_Country>
+        <camel__ry__vendor__remit>
+            <VendorNumber>5000000697</VendorNumber>
+            <Purchase_Org>1001</Purchase_Org>
+            <Purch_Block></Purch_Block>
+            <Purch_Delete_Flag></Purch_Delete_Flag>
+            <Payment_Terms>T100</Payment_Terms>
+            <Incoterms_Code>DAF</Incoterms_Code>
+            <Incoterms_Descr>DELIVER AT DESTINATION</Incoterms_Descr>
+            <Partner_Function>RS</Partner_Function>
+            <Remit_to_vendor_no>5000000236</Remit_to_vendor_no>
+        </camel__ry__vendor__remit>
+        <camel__ry__vendor__remit>
+            <VendorNumber>5000000697</VendorNumber>
+            <Purchase_Org>1002</Purchase_Org>
+            <Purch_Block></Purch_Block>
+            <Purch_Delete_Flag></Purch_Delete_Flag>
+            <Payment_Terms>T040</Payment_Terms>
+            <Incoterms_Code>DAF</Incoterms_Code>
+            <Incoterms_Descr>Delivery at Destination</Incoterms_Descr>
+            <Partner_Function>RS</Partner_Function>
+            <Remit_to_vendor_no>5000000236</Remit_to_vendor_no>
+        </camel__ry__vendor__remit>
+        <camel__ry__vendor__email>
+            <VendorNumber>5000000697</VendorNumber>
+            <Emailid>Atheesivam.Karuppiah@hmhco.com</Emailid>
+            <DefaultEmail>X</DefaultEmail>
+        </camel__ry__vendor__email>
+    </camel__ry__vendor>
+    <iDocNumber>0000000199572616</iDocNumber>
+    <Update_User>CAMEL</Update_User>
+</VendorInfo>

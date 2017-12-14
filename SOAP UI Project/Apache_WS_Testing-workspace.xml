@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="Apache_WS_Testing" soapui-version="3.6.1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project status="CLOSED" name="getInvoices">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getInvoices-soapui-project.xml</con:project>
+  <con:project name="Testing">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/Testing-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="findTransaction_new">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/findTransaction_new-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="findTransactions">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/findTransactions-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getShipments">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getShipments-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="Apache_WS_Testing_Andrew_Changes">D:/Praveen/SkyDrive/Documents/HMH/SOAP UI Project/Apache-WS-Testing-Andrew-Changes-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="submitSale">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/submitSale-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getransactiondetailex">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getransactiondetailex-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getTransactionDetail">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getTransactionDetail-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="RetrieveInvoicePDF">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/RetrieveInvoicePDF-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="submitSale">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/submitSale-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="submitSaleAsync">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/submitSaleAsync-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="FindSfdcBasisOrder">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/FindSfdcBasisOrder-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="SubmitSample">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/SubmitSample-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="submitsfdcOrder">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/submitsfdcOrder-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="eskerTransaction">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/eskerTransaction-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="Esker">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/Esker-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getMaterial">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getMaterial-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getMaterialDetailAsync">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getMaterialDetailAsync-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getMaterialSubstitutions">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getMaterialSubstitutions-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getMaterialATP">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getMaterialATP-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="AccountStatementPDF">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/AccountStatementPDF-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="createEtailCustomer">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/createEtailCustomer-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="createSundryCustomer">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/createSundryCustomer-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="createSundryCustomerAsync">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/createSundryCustomerAsync-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="createSundryCustomerAsyncResult">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/createSundryCustomerAsyncResult-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="FindEtailCustomer">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/FindEtailCustomer-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="findSFDCCustomer">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/findSFDCCustomer-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getCustomerdetail">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getCustomerdetail-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="GetCustomerRelationships">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/GetCustomerRelationships-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="getSFDCRep">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/getSFDCRep-soapui-project.xml</con:project>
+  <con:project status="CLOSED" name="PackingList_New">D:/Praveen/SkyDrive/Documents/HMH/1. Webservice Testing/WSDL/PackingList_New-soapui-project.xml</con:project>
+  <con:project name="helloWorld?wsdl">D:/Praveen/SkyDrive/Documents/HMH/SOAP UI Project/HelloWorld-wsdl-soapui-project.xml</con:project>
+</con:soapui-workspace>

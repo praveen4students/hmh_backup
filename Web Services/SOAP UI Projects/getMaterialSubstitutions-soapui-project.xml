@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="getMaterialSubstitutions" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SOAPEventSourceBinding" type="wsdl" bindingName="{http://www.hmco.com/EAI/OTS/Material/getMaterialSubstitutionsImpl}SOAPEventSourceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialSubstitutions.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialSubstitutions.wsdl"><con:part><con:url>file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialSubstitutions.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.hmco.com/EAI/OTS/Material/getMaterialSubstitutionsImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.hmco.com/EAI/OTS/Material/getMaterialSubstitutionsImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.hmco.com/EAI/OTS/Material" xmlns:ns1="http://www.hmco.com/EAI">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns1:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns1:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <schema targetNamespace="http://www.hmco.com/EAI/OTS/Material" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eai="http://www.hmco.com/EAI">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <complexType name="substitution">
+        <sequence>
+          <element name="key">
+            <complexType>
+              <sequence>
+                <element name="materialID" type="xsd:string" minOccurs="0"/>
+                <element name="isbn" type="xsd:string" minOccurs="0"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element ref="mat:substitutionValue" maxOccurs="unbounded"/>
+        </sequence>
+      </complexType>
+      <element name="component">
+        <complexType>
+          <sequence>
+            <element name="materialID" type="xsd:string"/>
+            <element name="isbn" type="xsd:string" minOccurs="0"/>
+            <element name="quantity" type="xsd:int" minOccurs="0"/>
+            <element name="bomType" type="xsd:string" minOccurs="0"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getMaterialDetailRequest">
+        <complexType>
+          <sequence>
+            <element ref="mat:materialKeyList"/>
+            <element name="customerID" minOccurs="0">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="10"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialDetail">
+        <complexType>
+          <sequence>
+            <element name="materialID" type="xsd:string" minOccurs="0"/>
+            <element name="isbn13" type="xsd:string" minOccurs="0"/>
+            <element name="isbn10" type="xsd:string" minOccurs="0"/>
+            <element name="internalDescription" type="xsd:string"/>
+            <element name="fullDescription" type="xsd:string" minOccurs="0"/>
+            <element name="author" type="xsd:string" minOccurs="0"/>
+            <element name="materialStatus" type="xsd:string"/>
+            <element name="materialStatusDescription" type="xsd:string" minOccurs="0"/>
+            <element name="listPrice" type="xsd:double" minOccurs="0"/>
+            <element name="netPrice" type="xsd:double" minOccurs="0"/>
+            <element name="quantityInStock" type="xsd:int" minOccurs="0"/>
+            <element name="restriction" type="xsd:string" minOccurs="0"/>
+            <element name="materialGroup" type="xsd:string"/>
+            <element name="substituted" type="xsd:boolean"/>
+            <element name="availableDate" type="xsd:date" minOccurs="0"/>
+            <element name="copyrightYear" type="xsd:string" minOccurs="0"/>
+            <element name="mediaType" type="xsd:string" minOccurs="0"/>
+            <element name="productDivision" type="xsd:string"/>
+            <element name="phLevelCode1" type="xsd:string" minOccurs="0"/>
+            <element name="phLevelCode2" type="xsd:string" minOccurs="0"/>
+            <element name="phLevelCode3" type="xsd:string" minOccurs="0"/>
+            <element name="phLevelCode4" type="xsd:string" minOccurs="0"/>
+            <element name="phLevelCode5" type="xsd:string" minOccurs="0"/>
+            <element name="unitsPerCarton" type="xsd:int" minOccurs="0"/>
+            <element name="isSubscription" type="xsd:boolean"/>
+            <element name="genItemCategory" type="xsd:string" minOccurs="0"/>
+            <element ref="mat:component" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="mat:subscriptionTerm" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialDetailList">
+        <complexType>
+          <sequence>
+            <element ref="mat:materialDetail" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialException" type="eai:eaiException"/>
+      <element name="materialKeyList">
+        <complexType>
+          <sequence>
+            <element name="materialID" minOccurs="0" maxOccurs="unbounded">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+            <element name="isbn" minOccurs="0" maxOccurs="unbounded">
+              <simpleType>
+                <restriction base="xsd:string">
+                  <maxLength value="18"/>
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="materialSubstitution" type="mat:substitution"/>
+      <element name="materialSubstitutionList">
+        <complexType>
+          <sequence>
+            <element ref="mat:materialSubstitution" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subscriptionTerm">
+        <complexType>
+          <sequence>
+            <element name="duration" type="xsd:int" minOccurs="0"/>
+            <element name="unit" type="xsd:string" minOccurs="0"/>
+            <element name="rate" type="xsd:double" minOccurs="0"/>
+            <element name="startDate" type="xsd:date" minOccurs="0"/>
+            <element name="endDate" type="xsd:date" minOccurs="0"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="substitutionValue">
+        <complexType>
+          <sequence>
+            <element name="substituteID" type="xsd:string"/>
+            <element name="substituteISBN" type="xsd:string"/>
+            <element name="description" type="xsd:string"/>
+            <element name="autoSubstitute" type="xsd:boolean" minOccurs="0"/>
+            <element name="usePrimePrice" type="xsd:boolean" minOccurs="0"/>
+            <element name="applySale" type="xsd:boolean" minOccurs="0"/>
+            <element name="applySample" type="xsd:boolean" minOccurs="0"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:service name="getMaterialSubstitutions">
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://hyddl2213:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="Material">
+    <wsdl:operation name="getMaterialSubstitutions">
+      <wsdl:input message="tns:getMaterialSubstitutionsRequest"/>
+      <wsdl:output message="tns:getMaterialSubstitutionsResponse"/>
+      <wsdl:fault name="materialException" message="tns:materialException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:Material">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMaterialSubstitutions">
+      <soap:operation style="document" soapAction="/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="materialKeyList"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="materialSubstitutionList"/>
+      </wsdl:output>
+      <wsdl:fault name="materialException">
+        <soap:fault use="literal" name="materialException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="getMaterialSubstitutionsRequest">
+    <wsdl:part name="materialKeyList" element="ns0:materialKeyList"/>
+  </wsdl:message>
+  <wsdl:message name="getMaterialSubstitutionsResponse">
+    <wsdl:part name="materialSubstitutionList" element="ns0:materialSubstitutionList"/>
+  </wsdl:message>
+  <wsdl:message name="materialException">
+    <wsdl:part name="materialException" element="ns0:materialException"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions</con:endpoint><con:endpoint>http://neduapp001c:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions </con:endpoint><con:endpoint>http://wdcqaua01:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions</con:endpoint><con:endpoint>http://neduapp001b:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions" name="getMaterialSubstitutions" bindingOperationName="getMaterialSubstitutions" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="stg"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions </con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://www.hmco.com/EAI/OTS/Material">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <mat:materialKeyList>
+            <!--Zero or more repetitions:-->
+            <mat:materialID>1469606</mat:materialID>
+         </mat:materialKeyList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Dev"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions </con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+<materialKeyList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://www.hmco.com/EAI/OTS/Material" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<materialID>000000000000004242</materialID>
+</materialKeyList>
+</soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Dev1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001b:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://www.hmco.com/EAI/OTS/Material">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:materialKeyList>
+         <!--Zero or more repetitions:-->
+         <mat:materialID>000000000001000298</mat:materialID>
+         <!--Zero or more repetitions:-->
+         <mat:isbn>9780618513369</mat:isbn>
+      </mat:materialKeyList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9004/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mat="http://www.hmco.com/EAI/OTS/Material">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mat:materialKeyList>
+         <!--Zero or more repetitions:-->
+         <mat:materialID>?</mat:materialID>
+         <!--Zero or more repetitions:-->
+         <mat:isbn>?</mat:isbn>
+      </mat:materialKeyList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialSubstitutions/MainProcesses/getMaterialSubstitutions"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

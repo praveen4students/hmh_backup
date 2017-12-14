@@ -1,0 +1,300 @@
+<project name="enterprise_webservices" default="all" basedir=".">
+    <property name="gensrc" location="${basedir}/src-generated"/>
+    <property name="outjar" location="${basedir}/dist/EwsBindings.jar"/>
+    <property name="classes" location="${basedir}/classes"/>
+    <property name="javadoc" location="${basedir}/javadoc"/>
+    <property name="unittests" location="${basedir}/unitTests"/>
+    <property name="build.compiler" value="javac1.4"/>
+    <property name="ant.build.javac.target" value="1.4"/>
+    <property name="ant.build.javac.source" value="1.4"/>
+
+
+    <patternset id="wsdl.source.pattern">
+        <include name="com/hmco/**"/>
+    </patternset>
+    <path id="wsdl.library.compile.path">
+        <fileset dir="lib">
+            <include name="**/**.jar"/>
+            <include name="**/**.zip"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${gensrc}"/>
+        <delete dir="${classes}"/>
+        <delete dir="${javadoc}"/>
+        <delete file="${outjar}"/>
+    </target>
+
+    <target name="wsdls">
+        <mkdir dir="${gensrc}"/>
+        <taskdef name="wsdl2java" classname="org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask"
+                 classpathref="wsdl.library.compile.path"/>
+        <wsdl2java url="wsdl/order_submitSale.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/order_submitSample.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/order_submitSaleAsync.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/order_submitSaleAsyncResult.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/order_asyncPoll.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+
+        <wsdl2java url="wsdl/order_findSfdcBasisOrder.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/order_submitSfdcOrder.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+
+        <wsdl2java url="wsdl/customer_getCustomerRelationships.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_getCustomerRelationshipsAsync.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_getCustomerRelationshipsAsyncResult.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_createEtailCustomer.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_createSundryCustomer.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_createSundryCustomerAsync.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_createSundryCustomerAsyncResult.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_findEtailCustomer.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_getCustomerDetail.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_getCustomerDetailAsync.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_getCustomerDetailAsyncResult.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_asyncPoll.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+	<!--
+        <wsdl2java url="wsdl/customer_getCustomerSubstitutions.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+	-->
+        <wsdl2java url="wsdl/customer_findSFDCCustomer.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_getSFDCRep.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/customer_SubmitPackingList.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+
+        <wsdl2java url="wsdl/transaction_findTransactions.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/transaction_getInvoices.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/transaction_getShipments.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/transaction_getTransactionDetail.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/material_getMaterialDetail.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/material_getMaterialDetailAsync.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/material_getMaterialDetailAsyncResult.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/material_asyncPoll.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/material_getMaterialSubstitutions.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/materialATP_getMaterialATP.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/materialATP_getMaterialATPAsync.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/materialATP_getMaterialATPAsyncResult.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/materialATP_asyncPoll.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+        <wsdl2java url="wsdl/transaction_retrieveInvoicePDF.wsdl"
+                   output="${gensrc}"
+                   serverSide="yes"
+                   testcase="no"
+                   wrapArrays="yes">
+        </wsdl2java>
+    </target>
+    <target name="compile">
+        <mkdir dir="${classes}"/>
+        <javac srcdir="src" destdir="classes">
+            <patternset refid="wsdl.source.pattern"/>
+            <classpath>
+                <path refid="wsdl.library.compile.path"/>
+            </classpath>
+        </javac>
+        <javac srcdir="${gensrc}" destdir="classes">
+            <patternset refid="wsdl.source.pattern"/>
+            <classpath>
+                <path refid="wsdl.library.compile.path"/>
+            </classpath>
+        </javac>
+        <javac srcdir="${unittests}" destdir="classes">
+            <patternset refid="wsdl.source.pattern"/>
+            <classpath>
+                <path refid="wsdl.library.compile.path"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="dist"/>
+        <jar destfile="${outjar}" basedir="classes"/>
+    </target>
+
+    <target name="javadoc">
+        <mkdir dir="javadoc"/>
+        <javadoc maxmemory="256m" packagenames="com.hmco.*" classpathref="wsdl.library.compile.path"
+                 destdir="${javadoc}" author="true" version="true" use="true"
+                 windowtitle="WSDL API" doctitle="&lt;h1&gt;WSDL API&lt;/h1&gt;">
+           <sourcepath location="src"/>
+           <sourcepath location="${gensrc}"/>
+        </javadoc>
+    </target>
+
+    <target name="all" depends="clean, wsdls, compile, javadoc, jar"/>
+
+</project>

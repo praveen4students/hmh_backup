@@ -1,0 +1,18 @@
+<MaterialPartners xmlns="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd">
+    <PartnerInfo>
+        <MaterialNumber>J29509</MaterialNumber>
+        <AuthorID>0000000042</AuthorID>
+        <Role>ZSM128</Role>
+        <FirstName>Pamela</FirstName>
+        <LastName>Zagarenski</LastName>
+        <iDocNumber>0000000196310876</iDocNumber>
+    </PartnerInfo>
+    <PartnerInfo>
+        <MaterialNumber>J29509</MaterialNumber>
+        <AuthorID>0000004268</AuthorID>
+        <Role>ZSM125</Role>
+        <FirstName>Editors of</FirstName>
+        <LastName>The American Heritage Dictionaries</LastName>
+        <iDocNumber>0000000196310876</iDocNumber>
+    </PartnerInfo>
+</MaterialPartners>

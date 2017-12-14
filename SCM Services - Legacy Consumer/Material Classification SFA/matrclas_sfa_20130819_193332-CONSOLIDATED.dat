@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MaterialClassification FileName="Target_sfa.xml" xmlns="http://www.hmco.com/schemas/sfa/material_Classification">
+    <Classification>
+        <MaterialNumber>000000000001014853</MaterialNumber>
+        <BasicDataText>Houghton Mifflin Math Spanish Texas  Math Music, Level K</BasicDataText>
+        <BisacSubtitle></BisacSubtitle>
+        <TitleForCustomer></TitleForCustomer>
+        <ShelfLife xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <CustomerContact xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ContentCategory>13</ContentCategory>
+        <Division>30</Division>
+        <XPlantStatus>IP</XPlantStatus>
+        <PHLevel4Code>011</PHLevel4Code>
+        <PHLevel5Code>01</PHLevel5Code>
+    </Classification>
+    <Classification>
+        <MaterialNumber>000000000001014853</MaterialNumber>
+        <BasicDataText>Houghton Mifflin Math Spanish Texas  Math Music, Level K</BasicDataText>
+        <BisacSubtitle></BisacSubtitle>
+        <TitleForCustomer></TitleForCustomer>
+        <ShelfLife xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <CustomerContact xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ContentCategory>13</ContentCategory>
+        <Division>30</Division>
+        <XPlantStatus>IP</XPlantStatus>
+        <PHLevel4Code>011</PHLevel4Code>
+        <PHLevel5Code>01</PHLevel5Code>
+    </Classification>
+    <Classification>
+        <MaterialNumber>000000000001014853</MaterialNumber>
+        <BasicDataText>Houghton Mifflin Math Spanish Texas  Math Music, Level K</BasicDataText>
+        <BisacSubtitle></BisacSubtitle>
+        <TitleForCustomer></TitleForCustomer>
+        <ShelfLife xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <CustomerContact xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ContentCategory>13</ContentCategory>
+        <Division>30</Division>
+        <XPlantStatus>IP</XPlantStatus>
+        <PHLevel4Code>011</PHLevel4Code>
+        <PHLevel5Code>01</PHLevel5Code>
+    </Classification>
+    <Classification>
+        <MaterialNumber>000000000001014853</MaterialNumber>
+        <BasicDataText>Houghton Mifflin Math Spanish Texas  Math Music, Level K</BasicDataText>
+        <BisacSubtitle></BisacSubtitle>
+        <TitleForCustomer></TitleForCustomer>
+        <ShelfLife xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <CustomerContact xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ContentCategory>13</ContentCategory>
+        <Division>30</Division>
+        <XPlantStatus>IP</XPlantStatus>
+        <PHLevel4Code>011</PHLevel4Code>
+        <PHLevel5Code>01</PHLevel5Code>
+    </Classification>
+</MaterialClassification>

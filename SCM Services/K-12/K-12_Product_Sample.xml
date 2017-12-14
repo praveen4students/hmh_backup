@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components>
+	<component>	
+		*<materialid>000000000000121745</materialid> <!-- Mandatory field. SAP title or material number. Max size 18 Alphanumeric -->
+		#<versionid>PG00012011NATIONAL, PG00012012NATIONAL, PG00022006CA</versionid> <!-- Mandatory field. This could be an array of version ids from K-12 Program XML. Foreign key in Program.xml-->
+		<!-- Praveen : Its not Present in the enerated Java Class-->
+		
+		<isbn13>9780547365480</isbn13> <!-- Mandatory field. ISBN13 from SAP. Lisa checking on Harcourt part numbers by chance part of MVP Max size 18 Alphanumeric. Need to discuss with Hybris team-->
+		<isbn10>0547365489</isbn10> <!-- Mandatory field. ISBN10 from SAP. Max size 18 alphanumeric Lisa? -->
+		<format>0002</format> <!-- Mandatory field.  Code. SAP classfication field. Foreign key which is in Format.xml. Max size 4 Alphanumeric-->
+		
+		<imprint>HMH</imprint>  <!-- Optional field. Code. Foreign key which is in Imprint.xml. Max size 10 Alphanumeric-->
+		<title>Above Level Reader Lv 6 Book 19 Mysteries of the Phoenicians</title> <!-- Mandatory field. Lisa need to review with marketing team on the format of the title Subtitle1+Subtitle2+Subtitle3. Max size 240 alphanumeric-->
+		<pubdate>12/02/2010</pubdate>  <!-- Optional field. Date of the publication for K-12 products and this date is when the product is considered in print or IP. Max size 10 Alphanumeric -->
+		
+		*<status>Active</status> <!-- Mandatory field. SAP has codes like IP, NP but may need to translate into meaningful text like Active, Not yet published like Trade. Max size is ? Check with MPY, OW & Trade -->
+		#<pages>328</pages> <!-- Optional field. Number of pages for printed book. If a product is CD then there is no pages. Max size 30 alphanumeric-->
+		<age>11,12</age><!--Optional field. Comma separated values. 00 means under 1 year, UP means above 17 years. Max size ?-->
+		
+		<grade>06</grade><!-- Optional field. Comma separated values. AdultEd is an example where there may be no grade. 00 means toddler, P means preshcool, UP means Upper, CO means College, K Kindergarten etc. Max size ?-->
+		<cartonqty>320</cartonqty><!-- Optional field. If product is NP then we won't know how many per carton. Max size is 5 Numeric-->
+		<lang>Spanish</lang> <!-- Optional field. Language. For example english, spanish etc Max Size 40 Alphanumeric -->
+		
+		<copyright>2011</copyright> <!-- Mandatory field. Copy right year. Max Size 4 -->
+		<cpsia>N</cpsia> <!-- Mandatory field. Cpsia complaince or not  Flag values are Y or N -->
+		<chokehazardind>N</chokehazardind> <!-- Mandatory field. Choking Hazard or not. Flag values are Y or N. Classification field CPSIA label. -->
+
+		<categories>CT00010001,CT00010002</categories> <!-- Mandatory field. Foreign key which is in Category.xml -->
+		<topic>12</topic> <!-- Mandatory field. Foreign key which is in Topic.xml -->
+		*<producttype>1</producttype>  <!-- Mandatory field. Foreign key which is in ProductType.xml -->
+		
+		<state>NATIONAL</state> <!-- Optional field. Program version's state or national. State code. Code for national is NATIONAL. Max size 30 Alphanumeric-->
+		<salesrestriction>BS</salesrestriction> <!-- Mandatory field. Code. HMH need to provide spreadsheet. Max size 2 Alphanumeric -->
+	<component>		
+</components>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx6:TFITM xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ConvertToLogProFormat="java://ConvertToLogProFormat" xmlns:TrimMATNR="java://TrimMATNR" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterUpdateLogPro_Schema" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx6="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterUpdateLogpro_Schema" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <RECTYP>
+        <xsl:value-of select="&quot;TFITM&quot;"/>
+    </RECTYP>
+    <xsl:variable xmlns:xsl="http://www.w3.org/1999/XSL/Transform" name="var" select="($Start/root/k)"/>
+    <xsl:variable xmlns:xsl="http://www.w3.org/1999/XSL/Transform" name="LegacyPlntName" select="ceiling((tib:index-of(tib:concat-sequence($Legacy/Tokenizing/PlntNum), $Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/WERKS) div string-length($Legacy/Tokenizing/PlntNum[1])))"/>
+    <IMORG>
+        <xsl:value-of select="if(exists($Legacy/Tokenizing/PlntNames[$LegacyPlntName]))&#xA;then&#xA;$Legacy/Tokenizing/PlntNames[$LegacyPlntName]&#xA;else&#xA;&quot;ERROR&quot;"/>
+    </IMORG>
+    <IMITM>
+        <xsl:value-of select="tib:pad-front(TrimMATNR:trim($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR), '6','0')"/>
+    </IMITM>
+    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:when test="string-length($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX) >= 30">
+            <IMIDSC>
+                <xsl:value-of select="concat(substring($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX,1, 29), &quot;*&quot;)"/>
+            </IMIDSC>
+        </xsl:when>
+        <xsl:otherwise>
+            <IMIDSC>
+                <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX/@xsi:nil"/>
+                <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX"/>
+            </IMIDSC>
+        </xsl:otherwise>
+    </xsl:choose>
+    <IMVDSC>
+        <xsl:value-of select="if (string-length($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX) >= 30)&#xA;then substring($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX,30,11)&#xA;else ()"/>
+    </IMVDSC>
+    <xsl:variable xmlns:xsl="http://www.w3.org/1999/XSL/Transform" name="DivName" select="ceiling((tib:index-of(tib:concat-sequence($Legacy/Tokenizing/DivNum), $Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/SPART) div string-length($Legacy/Tokenizing/DivNum[1])))"/>
+    <IMIVND>
+        <xsl:value-of select="if(exists($Legacy/Tokenizing/DivName[$DivName]))&#xA;then $Legacy/Tokenizing/DivName[$DivName]&#xA;else  &quot;ERROR&quot;"/>
+    </IMIVND>
+    <IMRNUM>
+        <xsl:value-of select="tib:pad-front(TrimMATNR:trim($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR), '6','0')"/>
+    </IMRNUM>
+    <xsl:variable name="IDENTCODE_0002" select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE='0002']/FIELDS/IDENTCODE"/>
+    <IMMSKU>
+        <xsl:choose>
+            <xsl:when test="exists(if (string-length(tib:trim($IDENTCODE_0002))>0) then $IDENTCODE_0002&#xA;else if ((upper-case($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIGTITLE=upper-case($_globalVariables/ns1:GlobalVariables/GLB_ORIGTITLE))&#xA;    and (substring($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/BISMT, 1,3) =&quot;999&quot;)&#xA;    and (not(contains($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/BISMT,&quot;-&quot;)))&#xA; ))&#xA;then tib:pad($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/BISMT,'18',' ')&#xA;else ())">
+                <xsl:value-of select="if (string-length(tib:trim($IDENTCODE_0002))>0) then $IDENTCODE_0002&#xA;else if ((upper-case($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIGTITLE=upper-case($_globalVariables/ns1:GlobalVariables/GLB_ORIGTITLE))&#xA;    and (substring($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/BISMT, 1,3) =&quot;999&quot;)&#xA;    and (not(contains($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/BISMT,&quot;-&quot;)))&#xA; ))&#xA;then tib:pad($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/BISMT,'18',' ')&#xA;else ()"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:attribute name="xsi:nil">true</xsl:attribute>
+            </xsl:otherwise>
+        </xsl:choose>
+    </IMMSKU>
+    <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/PRDHA">
+        <IMSTYL>
+            <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/PRDHA/@xsi:nil"/>
+            <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/PRDHA"/>
+        </IMSTYL>
+    </xsl:if>
+    <IMRTPC>
+        <xsl:value-of select="ConvertToLogProFormat:convert(tib:trim(string($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/Z1LISTPR/item[1]/FIELDS/LISTPR)),2)"/>
+    </IMRTPC>
+    <IMIUC1>
+        <xsl:value-of select="substring($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR,3,2)"/>
+    </IMIUC1>
+    <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MSTAE">
+        <IMIUC3>
+            <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MSTAE/@xsi:nil"/>
+            <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MSTAE"/>
+        </IMIUC3>
+    </xsl:if>
+    <IMHARM>
+        <xsl:value-of select="substring($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/STAWN, 1, 12)"/>
+    </IMHARM>
+    <IMPREF>
+        <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/PREFE/@xsi:nil"/>
+        <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/PREFE"/>
+    </IMPREF>
+    <IMCNTY>
+        <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/HERKL/@xsi:nil"/>
+        <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/HERKL"/>
+    </IMCNTY>
+    <xsl:if xmlns:xsl="http://www.w3.org/1999/XSL/Transform" test="exists($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MBEWM/item[position()=$var]/FIELDS/STPRS) and exists($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MBEWM/item[position()=$var]/FIELDS/PEINH)">
+        <IMCOST>
+            <xsl:value-of select="number(tib:pad-front(floor((($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MBEWM/item[position()=$var]/FIELDS/STPRS)div ($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MBEWM/item[position()=$var]/FIELDS/PEINH))*100), 13,0))"/>
+        </IMCOST>
+    </xsl:if>
+    <XFITM2_caret_child>
+        <item>
+            <RECTYP>
+                <xsl:value-of select="&quot;XFITM2&quot;"/>
+            </RECTYP>
+            <XMORG>
+                <xsl:value-of select="if(exists($Legacy/Tokenizing/PlntNames[$LegacyPlntName]))&#xA;then&#xA;$Legacy/Tokenizing/PlntNames[$LegacyPlntName]&#xA;else&#xA;&quot;ERROR&quot;"/>
+            </XMORG>
+            <XMITM>
+                <xsl:value-of select="tib:pad-front(TrimMATNR:trim($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR), '6','0')"/>
+            </XMITM>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MTART">
+                <MATTYPE>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MTART/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MTART"/>
+                </MATTYPE>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATKL">
+                <MATGRP>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATKL/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATKL"/>
+                </MATGRP>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK">
+                <DLVPLNT>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK"/>
+                </DLVPLNT>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMDESIGN">
+                <ISMDESIGN>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMDESIGN/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMDESIGN"/>
+                </ISMDESIGN>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MTPOS__MARA">
+                <MTPOS>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MTPOS__MARA/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MTPOS__MARA"/>
+                </MTPOS>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMPUBLDATE">
+                <ISMPUBDATE>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMPUBLDATE/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMPUBLDATE"/>
+                </ISMPUBDATE>
+            </xsl:if>
+            <HERKR>
+                <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/HERKR/@xsi:nil"/>
+                <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$var]/FIELDS/HERKR"/>
+            </HERKR>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/XCHPF">
+                <XCHPF>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/XCHPF/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/XCHPF"/>
+                </XCHPF>
+            </xsl:if>
+            <EAN_sp_UOM>
+                <xsl:value-of select="if (($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARMM/item/CHILDREN/E1MEANM/item/FIELDS[MEINH='EA']/HPEAN=&quot;X&quot;)) then &#xA;'EA'&#xA;else ()"/>
+            </EAN_sp_UOM>
+            <EAN_sp_EA>
+                <xsl:value-of select="if (($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARMM/item/CHILDREN/E1MEANM/item/FIELDS[MEINH='EA']/HPEAN=&quot;X&quot;)) then &#xA;$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARMM/item/FIELDS[MEINH='EA']/EAN11&#xA;else ()"/>
+            </EAN_sp_EA>
+            <EAN_sp_UOM1>
+                <xsl:value-of select="if (($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARMM/item/CHILDREN/E1MEANM/item/FIELDS[MEINH='CS']/HPEAN=&quot;X&quot;)) then &#xA;'CS'&#xA;else ()"/>
+            </EAN_sp_UOM1>
+            <EAN_sp_CS>
+                <xsl:value-of select="if (($Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARMM/item/CHILDREN/E1MEANM/item/FIELDS[MEINH='CS']/HPEAN=&quot;X&quot;)) then &#xA;$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/E1MARMM/item/FIELDS[MEINH='CS']/EAN11&#xA;else ()"/>
+            </EAN_sp_CS>
+            <xsl:variable name="IDENTCODE_0001" select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1ISBN/item[FIELDS/IDCODETYPE='0001']/FIELDS/IDENTCODE"/>
+            <ISBN13>
+                <xsl:value-of select="if (exists($IDENTCODE_0001)) then $IDENTCODE_0001&#xA;else ()"/>
+            </ISBN13>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMREPRINTTYPE">
+                <RPTTYP>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMREPRINTTYPE/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMREPRINTTYPE"/>
+                </RPTTYP>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMMEDIATYPE">
+                <MEDTYP>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMMEDIATYPE/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMMEDIATYPE"/>
+                </MEDTYP>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMCONTTYPE">
+                <CONTTYP>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMCONTTYPE/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMCONTTYPE"/>
+                </CONTTYP>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMPUBLTYPE">
+                <PUBLTYP>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMPUBLTYPE/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMPUBLTYPE"/>
+                </PUBLTYP>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMARTIST">
+                <AUTHOR>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMARTIST/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMARTIST"/>
+                </AUTHOR>
+            </xsl:if>
+            <xsl:if test="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/LVORM">
+                <DELMAT>
+                    <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/LVORM/@xsi:nil"/>
+                    <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/LVORM"/>
+                </DELMAT>
+            </xsl:if>
+            <MVGR1>
+                <xsl:copy-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1/@xsi:nil"/>
+                <xsl:value-of select="$Start/root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1"/>
+            </MVGR1>
+        </item>
+    </XFITM2_caret_child>
+</pfx6:TFITM>

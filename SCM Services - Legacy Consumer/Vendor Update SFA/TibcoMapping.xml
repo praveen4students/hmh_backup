@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VendorMaster xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx7="http://www.hmco.com/schemas/VendorMasterCreate" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pfx8="http://www.hmco.com/schemas/VendorMasterRemitCreate" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx10="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/ADB/SCM_IN_ADADB_SAPVendorUpdate" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx9="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/native/SCM_IN_ADFFA_SAPVendorMasterCreateBanta" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_BOM" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/vendor_update" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <pfx6:VendorUpdateList>
+        <pfx6:VendorInfo>
+            <pfx6:MfgVendor>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR"/>
+            </pfx6:MfgVendor>
+            <pfx6:VendorType>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK"/>
+            </pfx6:VendorType>
+            <pfx6:VendorName>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1"/>
+            </pfx6:VendorName>
+        </pfx6:VendorInfo>
+    </pfx6:VendorUpdateList>
+    <xsl:if xmlns:xsl="http://www.w3.org/1999/XSL/Transform" test="tib:index-of($_globalVariables/ns1:GlobalVariables/SAPVENDORUPDATESFA/COMPANY_CODE, $Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/BUKRS) !=-1">
+        <pfx10:tibco__ry__vendor>
+            <vendor__number>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR"/>
+            </vendor__number>
+            <country>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LAND1/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LAND1"/>
+            </country>
+            <name1>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1"/>
+            </name1>
+            <name2>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME2/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME2"/>
+            </name2>
+            <name3>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME3/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME3"/>
+            </name3>
+            <name4>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME4/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME4"/>
+            </name4>
+            <city>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ORT01/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ORT01"/>
+            </city>
+            <county>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ORT02/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ORT02"/>
+            </county>
+            <po__box>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PFACH/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PFACH"/>
+            </po__box>
+            <po__box__post__cd>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PSTL2/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PSTL2"/>
+            </po__box__post__cd>
+            <postal__code>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PSTLZ/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PSTLZ"/>
+            </postal__code>
+            <region__state>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/REGIO/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/REGIO"/>
+            </region__state>
+            <sort__name>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SORTL/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SORTL"/>
+            </sort__name>
+            <street>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/STRAS/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/STRAS"/>
+            </street>
+            <xsl:if test="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET2">
+                <adrc__str__suppl1>
+                    <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET2/@xsi:nil"/>
+                    <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET2"/>
+                </adrc__str__suppl1>
+            </xsl:if>
+            <xsl:if test="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET3">
+                <adrc__str__suppl2>
+                    <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET3/@xsi:nil"/>
+                    <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET3"/>
+                </adrc__str__suppl2>
+            </xsl:if>
+            <xsl:if test="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET4">
+                <adrc__str__suppl3>
+                    <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET4/@xsi:nil"/>
+                    <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET4"/>
+                </adrc__str__suppl3>
+            </xsl:if>
+            <xsl:if test="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET5">
+                <adrc__location>
+                    <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET5/@xsi:nil"/>
+                    <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET5"/>
+                </adrc__location>
+            </xsl:if>
+            <sap__addr__no>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ADRNR/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ADRNR"/>
+            </sap__addr__no>
+            <ps__vendor__loc>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/BAHNS/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/BAHNS"/>
+            </ps__vendor__loc>
+            <vendor__group>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK"/>
+            </vendor__group>
+            <xsl:if test="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LNRZA">
+                <alt__payee__id>
+                    <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LNRZA/@xsi:nil"/>
+                    <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LNRZA"/>
+                </alt__payee__id>
+            </xsl:if>
+            <central__delete__flag>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LOEVM/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LOEVM"/>
+            </central__delete__flag>
+            <central__post__block>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SPERR/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SPERR"/>
+            </central__post__block>
+            <central__purch__block>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SPERM/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SPERM"/>
+            </central__purch__block>
+            <telephone>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELF1/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELF1"/>
+            </telephone>
+            <mobile__phone>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELF2/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELF2"/>
+            </mobile__phone>
+            <fax__number>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELFX/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELFX"/>
+            </fax__number>
+            <xsl:if test="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/XZEMP">
+                <alt__payee__allowed>
+                    <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/XZEMP/@xsi:nil"/>
+                    <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/XZEMP"/>
+                </alt__payee__allowed>
+            </xsl:if>
+            <tax__jurisdiction>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TXJCD/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TXJCD"/>
+            </tax__jurisdiction>
+            <centraldeleteblock>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NODEL/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NODEL"/>
+            </centraldeleteblock>
+            <company>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/BUKRS/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/BUKRS"/>
+            </company>
+            <companypostblock>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/SPERR/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/SPERR"/>
+            </companypostblock>
+            <companydeleteflag>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/LOEVM/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/LOEVM"/>
+            </companydeleteflag>
+            <reconcileacct>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/AKONT/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/AKONT"/>
+            </reconcileacct>
+            <payment__methods>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZWELS/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZWELS"/>
+            </payment__methods>
+            <payment__block>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZAHLS/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZAHLS"/>
+            </payment__block>
+            <payment__terms>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZTERM/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZTERM"/>
+            </payment__terms>
+            <c__alt__payee__id>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/LNRZB/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/LNRZB"/>
+            </c__alt__payee__id>
+            <check__dup__invoice>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/REPRF/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/REPRF"/>
+            </check__dup__invoice>
+            <individual__payments>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/XPORE/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/XPORE"/>
+            </individual__payments>
+            <minority__indicators>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/MINDK/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/MINDK"/>
+            </minority__indicators>
+            <legacy__vendor__no>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ALTKN/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ALTKN"/>
+            </legacy__vendor__no>
+            <pay__method__supplmt>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/UZAWE/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/UZAWE"/>
+            </pay__method__supplmt>
+            <wh__tax__country>
+                <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/QLAND/@xsi:nil"/>
+                <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/QLAND"/>
+            </wh__tax__country>
+        </pfx10:tibco__ry__vendor>
+    </xsl:if>
+    <xsl:for-each select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFM1M/item/CHILDREN/E1WYT3M/item">
+        <xsl:if test="tib:index-of($_globalVariables/ns1:GlobalVariables/SAPVENDORUPDATESFA/PARTNER_FUNCTION,current()/FIELDS/PARVW) !=-1">
+            <pfx10:tibco__ry__vendor__remit>
+                <vendor__number>
+                    <xsl:copy-of select="../../../FIELDS[1]/LIFNR/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/LIFNR"/>
+                </vendor__number>
+                <purchase__org>
+                    <xsl:copy-of select="../../../FIELDS[1]/EKORG/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/EKORG"/>
+                </purchase__org>
+                <purch__block>
+                    <xsl:copy-of select="../../../FIELDS[1]/SPERM/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/SPERM"/>
+                </purch__block>
+                <purch__delete__flag>
+                    <xsl:copy-of select="../../../FIELDS[1]/LOEVM/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/LOEVM"/>
+                </purch__delete__flag>
+                <payment__terms>
+                    <xsl:copy-of select="../../../FIELDS[1]/ZTERM/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/ZTERM"/>
+                </payment__terms>
+                <incoterms__code>
+                    <xsl:copy-of select="../../../FIELDS[1]/INCO1/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/INCO1"/>
+                </incoterms__code>
+                <incoterms__descr>
+                    <xsl:copy-of select="../../../FIELDS[1]/INCO2/@xsi:nil"/>
+                    <xsl:value-of select="../../../FIELDS[1]/INCO2"/>
+                </incoterms__descr>
+                <xsl:if test="FIELDS/PARVW">
+                    <partner__function>
+                        <xsl:copy-of select="FIELDS/PARVW/@xsi:nil"/>
+                        <xsl:value-of select="FIELDS/PARVW"/>
+                    </partner__function>
+                </xsl:if>
+                <xsl:if test="FIELDS/LIFN2">
+                    <remit__to__vendor__no>
+                        <xsl:copy-of select="FIELDS/LIFN2/@xsi:nil"/>
+                        <xsl:value-of select="FIELDS/LIFN2"/>
+                    </remit__to__vendor__no>
+                </xsl:if>
+            </pfx10:tibco__ry__vendor__remit>
+        </xsl:if>
+    </xsl:for-each>
+</VendorMaster>

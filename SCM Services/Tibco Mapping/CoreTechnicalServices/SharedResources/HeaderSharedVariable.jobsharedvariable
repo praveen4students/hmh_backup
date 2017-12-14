@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:pfx="http://www.hmco.com/EAI/CoreTechnicalServices">
+    <import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <name>HeaderSharedVariable</name>
+    <resourceType>ae.shared.jobSharedVariable</resourceType>
+    <config xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <initialValue>none</initialValue>
+        <xsdString ref="pfx:messageHeader"/>
+    </config>
+</BWSharedResource>

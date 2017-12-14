@@ -1,0 +1,984 @@
+     IDoc Number		Date	Time		Direction		Partner	Status	Descr.	IDoc type	Messg.Type	Test	Port
+Number	Segment type			Number		Hier.level							
+													
+219748235		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748236		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748237		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748238		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748239		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748240		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748241		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748242		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748243		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748244		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748245		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748246		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748247		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748248		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748249		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748250		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748251		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748252		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748253		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748254		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748255		9/2/2013	23:46:59		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748256		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748257		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748258		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748259		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748260		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748261		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748262		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748263		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748264		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748265		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748266		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748267		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748268		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748269		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748270		9/2/2013	23:47:00		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748271		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748272		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748273		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748274		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748275		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748276		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748277		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748278		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748279		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748280		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748281		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748282		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748283		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748284		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748285		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748286		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748287		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748288		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748289		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748290		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748291		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748292		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748293		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748294		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748295		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748296		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748297		9/2/2013	23:47:01		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748298		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748299		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748300		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748301		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748302		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748303		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748304		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748305		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748306		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748307		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748308		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748309		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748310		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748311		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748312		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748313		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748314		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748315		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748316		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748317		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748318		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748319		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748320		9/2/2013	23:47:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748321		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748322		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748323		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748324		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748325		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748326		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748327		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748328		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748329		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748330		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748331		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748332		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748333		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748334		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748335		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748336		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748337		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748338		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748339		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748340		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748341		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748342		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748343		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748344		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748345		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748346		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748347		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748348		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748349		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748350		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748351		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748352		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748353		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748354		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748355		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748356		9/2/2013	23:47:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748357		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748358		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748359		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748360		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748361		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748362		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748363		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748364		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748365		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748366		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748367		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748368		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748369		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748370		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748371		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748372		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748373		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748374		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748375		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748376		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748377		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748378		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748379		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748380		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748381		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748382		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748383		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748384		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748385		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748386		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748387		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748388		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748389		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748390		9/2/2013	23:47:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748391		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748392		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748393		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748394		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748395		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748396		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748397		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748398		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748399		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748400		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748401		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748402		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748403		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748404		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748405		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748406		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748407		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748408		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748409		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748410		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748411		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748412		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748413		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748414		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748415		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748416		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748417		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748418		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748419		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748420		9/2/2013	23:47:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748421		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748422		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748423		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748424		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748425		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748426		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748427		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748428		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748429		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748430		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748431		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748432		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748433		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748434		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748435		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748436		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748437		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748438		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748439		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748440		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748441		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748442		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748443		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748444		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748445		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748446		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748447		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748448		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748449		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748450		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748451		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748452		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748453		9/2/2013	23:47:06		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748454		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748455		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748456		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748457		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748458		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748459		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748460		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748461		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748462		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748463		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748464		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748465		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748466		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748467		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748468		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748469		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748470		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748471		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748472		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748473		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748474		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748475		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748476		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748477		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748478		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748479		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748480		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748481		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748482		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748483		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748484		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748485		9/2/2013	23:47:07		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748486		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748487		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748488		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748489		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748490		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748491		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748492		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748493		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748494		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748495		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748496		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748497		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748498		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748499		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748500		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748501		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748502		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748503		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748504		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748505		9/2/2013	23:47:08		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748506		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748507		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748508		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748509		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748510		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748511		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748512		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748513		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748514		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748515		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748516		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748517		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748518		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748519		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748520		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748521		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748522		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748523		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748524		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748525		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748526		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748527		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748528		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748529		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748530		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748531		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748532		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748533		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748534		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748535		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748536		9/2/2013	23:47:09		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748537		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748538		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748539		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748540		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748541		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748542		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748543		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748544		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748545		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748546		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748547		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748548		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748549		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748550		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748551		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748552		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748553		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748554		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748555		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748556		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748557		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748558		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748559		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748560		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748561		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748562		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748563		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748564		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748565		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748566		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748567		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748568		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748569		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748570		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748571		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748572		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748573		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748574		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748575		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748576		9/2/2013	23:47:10		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748577		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748578		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748579		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748580		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748581		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748582		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748583		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748584		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748585		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748586		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748587		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748588		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748589		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748590		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748591		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748592		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748593		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748594		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748595		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748596		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748597		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748598		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748599		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748600		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748601		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748602		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748603		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748604		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748605		9/2/2013	23:47:11		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748606		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748607		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748608		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748609		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748610		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748611		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748612		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748613		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748614		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748615		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748616		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748617		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748618		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748619		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748620		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748621		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748622		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748623		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748624		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748625		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748626		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748627		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748628		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748629		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748630		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748631		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748632		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748633		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748634		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748635		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748636		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748637		9/2/2013	23:47:12		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748638		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748639		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748640		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748641		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748642		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748643		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748644		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748645		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748646		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748647		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748648		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748649		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748650		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748651		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748652		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748653		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748654		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748655		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748656		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748657		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748658		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748659		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748660		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748661		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748662		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748663		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748664		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748665		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748666		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748667		9/2/2013	23:47:13		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748668		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748669		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748670		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748671		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748672		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748673		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748674		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748675		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748676		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748677		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748678		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748679		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219748680		9/2/2013	23:47:14		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934818		9/4/2013	0:36:02		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934819		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934820		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934821		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934822		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934823		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934824		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934825		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934826		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934827		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934828		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934829		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934830		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934831		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934832		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934833		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934834		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934835		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934836		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934837		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934838		9/4/2013	0:36:03		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934839		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934840		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934841		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934842		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934843		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934844		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934845		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934846		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934847		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934848		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934849		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934850		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934851		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934852		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934853		9/4/2013	0:36:04		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934854		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934855		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934856		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934857		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934858		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934859		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934860		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934861		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02
+													
+219934862		9/4/2013	0:36:05		1		LS/  /TIBCO	3	Data passed to port OK		ZGOODS_MOV_UPD		TZWMMBID02

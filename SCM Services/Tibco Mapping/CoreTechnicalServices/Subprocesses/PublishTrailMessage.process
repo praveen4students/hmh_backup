@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <pd:name>CoreTechnicalServices/Subprocesses/PublishTrailMessage.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx:logMessage"/>
+    <pd:startX>27</pd:startX>
+    <pd:startY>63</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>431</pd:endX>
+    <pd:endY>61</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1294655901043</pd:targetNamespace>
+    <pd:activity name="Publish Rendezvous Trail Message">
+        <pd:type>com.tibco.plugin.tibrv.RVPubActivity</pd:type>
+        <pd:resourceType>ae.rvpalette.RVPubActivity</pd:resourceType>
+        <pd:x>305</pd:x>
+        <pd:y>69</pd:y>
+        <config>
+            <wantsXMLCompliantFieldNames>false</wantsXMLCompliantFieldNames>
+            <xmlEncoding>false</xmlEncoding>
+            <subject>%%RANDEZVOUS/TRANSACTION_TRAIL%%</subject>
+            <sharedChannel>/CoreTechnicalServices/SharedResources/Connections/Randezvous/Rendezvous Transport.rvtransport</sharedChannel>
+            <xsdString>
+                <xsd:element name="logMessageWire">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="pfx:messageHeader"/>
+                            <xsd:element ref="pfx:logMessage"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsdString>
+        </config>
+        <pd:coercions>
+            <pd:coercion xpath="" element="pfx:errorMessage"/>
+        </pd:coercions>
+        <pd:inputBindings>
+            <ActivityInput>
+                <body>
+                    <xsl:for-each select="$GetHeaderVariable/pfx:messageHeader">
+                        <pfx:messageHeader>
+                            <pfx:source>
+                                <xsl:value-of select="pfx:source"/>
+                            </pfx:source>
+                            <pfx:destination>
+                                <xsl:value-of select="pfx:destination"/>
+                            </pfx:destination>
+                            <pfx:ebsName>
+                                <xsl:value-of select="pfx:ebsName"/>
+                            </pfx:ebsName>
+                            <pfx:eventID>
+                                <xsl:value-of select="pfx:eventID"/>
+                            </pfx:eventID>
+                            <pfx:transactionID>
+                                <xsl:value-of select="pfx:transactionID"/>
+                            </pfx:transactionID>
+                        </pfx:messageHeader>
+                    </xsl:for-each>
+                    <xsl:choose>
+                        <xsl:when test="$Start/*[@xsi:type='pfx:errorMessage']">
+                            <xsl:for-each select="$Start/*">
+                                <pfx:errorMessage>
+                                    <pfx:severity>
+                                        <xsl:value-of select="&quot;error&quot;"/>
+                                    </pfx:severity>
+                                    <pfx:sensitive>
+                                        <xsl:value-of select="pfx:sensitive"/>
+                                    </pfx:sensitive>
+                                    <pfx:componentName>
+                                        <xsl:value-of select="pfx:componentName"/>
+                                    </pfx:componentName>
+                                    <pfx:messageText>
+                                        <xsl:value-of select="pfx:messageText"/>
+                                    </pfx:messageText>
+                                    <pfx:payload>
+                                        <xsl:value-of select="pfx:payload"/>
+                                    </pfx:payload>
+                                    <pfx:evtActivityTimeStamp>
+                                        <xsl:value-of select="pfx:evtActivityTimeStamp"/>
+                                    </pfx:evtActivityTimeStamp>
+                                    <pfx:errorType>
+                                        <xsl:value-of select="pfx:errorType"/>
+                                    </pfx:errorType>
+                                    <pfx:errorFamily>
+                                        <xsl:value-of select="pfx:errorFamily"/>
+                                    </pfx:errorFamily>
+                                    <pfx:errorStackTrace>
+                                        <xsl:value-of select="pfx:errorStackTrace"/>
+                                    </pfx:errorStackTrace>
+                                </pfx:errorMessage>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:for-each select="$Start/*">
+                                <pfx:logMessage>
+                                    <pfx:severity>
+                                        <xsl:value-of select="&quot;trail&quot;"/>
+                                    </pfx:severity>
+                                    <pfx:sensitive>
+                                        <xsl:value-of select="pfx:sensitive"/>
+                                    </pfx:sensitive>
+                                    <pfx:componentName>
+                                        <xsl:value-of select="pfx:componentName"/>
+                                    </pfx:componentName>
+                                    <pfx:messageText>
+                                        <xsl:value-of select="pfx:messageText"/>
+                                    </pfx:messageText>
+                                    <pfx:payload>
+                                        <xsl:value-of select="pfx:payload"/>
+                                    </pfx:payload>
+                                    <pfx:evtActivityTimeStamp>
+                                        <xsl:value-of select="pfx:evtActivityTimeStamp"/>
+                                    </pfx:evtActivityTimeStamp>
+                                </pfx:logMessage>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </body>
+            </ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="GetHeaderVariable">
+        <pd:type>com.tibco.pe.core.GetSharedVariableActivity</pd:type>
+        <pd:resourceType>ae.activities.getSharedVariable</pd:resourceType>
+        <pd:x>146</pd:x>
+        <pd:y>62</pd:y>
+        <config>
+            <variableConfig>/CoreTechnicalServices/SharedResources/HeaderSharedVariable.jobsharedvariable</variableConfig>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GetHeaderVariable</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Publish Rendezvous Trail Message</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetHeaderVariable</pd:from>
+        <pd:to>Publish Rendezvous Trail Message</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

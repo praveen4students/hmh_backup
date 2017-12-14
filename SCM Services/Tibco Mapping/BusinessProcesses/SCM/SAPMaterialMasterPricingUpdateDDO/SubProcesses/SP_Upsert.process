@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pfx2="http://www.hmco.com/schemas/sfa/material_update" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.hmco.com/schemas/ddo/material_update" xmlns:pfx="http://www.hmco.com/EAI/common/QueryRequest" xmlns:pfx7="http://www.hmco.com/schemas/sfa/material_Pricing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx5="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:ns="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx6="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsd:import namespace="http://www.hmco.com/EAI/common/QueryRequest" schemaLocation="/SharedResources/Schemas/Query.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_update" schemaLocation="/SharedResources/Schemas/Common/SCM/MatMasterUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/ddo/material_update" schemaLocation="/SharedResources/Schemas/SCM/MatMasterUpdate.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Partners_Update.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_Pricing" schemaLocation="/SharedResources/Schemas/SCM/Material_Pricing_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPMaterialMasterPricingUpdateDDO/SubProcesses/SP_Upsert.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="Pricing_Update_Request">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element ref="pfx7:MaterialPricing"/>
+                    <xsd:element name="TransactionID" type="xsd:string"/>
+                    <xsd:element name="MessageID" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>245</pd:startX>
+    <pd:startY>221</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>1095</pd:endX>
+    <pd:endY>190</pd:endY>
+    <pd:errorSchemas>
+        <Error ref="pfx6:errorMessage"/>
+    </pd:errorSchemas>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1305632190574</pd:targetNamespace>
+    <pd:group name="Transaction">
+        <pd:type>com.tibco.pe.core.TransactionGroup</pd:type>
+        <pd:resourceType>ae.process.group</pd:resourceType>
+        <pd:x>339</pd:x>
+        <pd:y>11</pd:y>
+        <pd:width>689</pd:width>
+        <pd:height>380</pd:height>
+        <pd:collapsedWidth>57</pd:collapsedWidth>
+        <pd:collapsedHeight>70</pd:collapsedHeight>
+        <pd:groupVariables/>
+        <pd:joinToggle>inherit</pd:joinToggle>
+        <config>
+            <pd:groupType>transactionGroup</pd:groupType>
+            <pd:serializable>false</pd:serializable>
+            <pd:transactionType>JDBCTransaction</pd:transactionType>
+            <pd:includeCheckpoint>false</pd:includeCheckpoint>
+        </config>
+        <pd:inputBindings/>
+        <pd:expanded>true</pd:expanded>
+        <pd:transition>
+            <pd:from>start</pd:from>
+            <pd:to>JDBC_Upsert</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>JDBC_Upsert</pd:from>
+            <pd:to>end</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:group name="JDBC_Upsert">
+            <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
+            <pd:resourceType>ae.process.group</pd:resourceType>
+            <pd:x>453</pd:x>
+            <pd:y>60</pd:y>
+            <pd:width>433</pd:width>
+            <pd:height>277</pd:height>
+            <pd:collapsedWidth>57</pd:collapsedWidth>
+            <pd:collapsedHeight>70</pd:collapsedHeight>
+            <pd:groupVariables/>
+            <pd:joinToggle>inherit</pd:joinToggle>
+            <config>
+                <pd:groupType>inputLoop</pd:groupType>
+                <pd:serializable>false</pd:serializable>
+                <pd:over>$Start/Pricing_Update_Request/pfx7:MaterialPricing/pfx7:MaterialPrice</pd:over>
+                <pd:iterationElementSlot>Update_Requests</pd:iterationElementSlot>
+                <pd:indexSlot>index</pd:indexSlot>
+                <pd:activityOutputName/>
+                <pd:accumulateOutput>false</pd:accumulateOutput>
+            </config>
+            <pd:inputBindings/>
+            <pd:expanded>true</pd:expanded>
+            <pd:transition>
+                <pd:from>start</pd:from>
+                <pd:to>JDBC_SP_Master_Pricing</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>JDBC_SP_Master_Pricing</pd:from>
+                <pd:to>end</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>Catch</pd:from>
+                <pd:to>Log</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>Log</pd:from>
+                <pd:to>Generate-Error-Subprocess-1</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:activity name="Catch">
+                <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+                <pd:resourceType>ae.activities.catch</pd:resourceType>
+                <pd:x>530</pd:x>
+                <pd:y>263</pd:y>
+                <pd:handler>true</pd:handler>
+                <config>
+                    <catchAll>true</catchAll>
+                </config>
+                <pd:inputBindings/>
+            </pd:activity>
+            <pd:activity name="Log">
+                <pd:type>com.tibco.pe.core.WriteToLogActivity</pd:type>
+                <pd:resourceType>ae.activities.log</pd:resourceType>
+                <pd:x>641</pd:x>
+                <pd:y>261</pd:y>
+                <config>
+                    <role>User</role>
+                </config>
+                <pd:inputBindings>
+                    <ns2:ActivityInput>
+                        <message>
+                            <xsl:value-of select="concat (' MaterialMasterPricing iDoc #   ', $Start/Pricing_Update_Request/TransactionID ,'     with the Message ID #    ', $Start/Pricing_Update_Request/MessageID, '    failed in the DB insert Process. The reason for the failure is    ',$Catch/exceptiondata/* , &quot;&#xA;&quot;)"/>
+                        </message>
+                    </ns2:ActivityInput>
+                </pd:inputBindings>
+            </pd:activity>
+            <pd:activity name="JDBC_SP_Master_Pricing">
+                <pd:type>com.tibco.plugin.jdbc.JDBCCallActivity</pd:type>
+                <pd:resourceType>ae.activities.JDBCCallActivity</pd:resourceType>
+                <pd:x>637</pd:x>
+                <pd:y>133</pd:y>
+                <config>
+                    <timeout>%%CENTRAL_DB/JDBC_TIMEOUT%%</timeout>
+                    <maxRows>%%CENTRAL_DB/JDBC_MAXROWS%%</maxRows>
+                    <emptyStrAsNil>false</emptyStrAsNil>
+                    <jdbcSharedConfig>/SharedResources/Connections/Database/CentralDBJdbcConnection.sharedjdbc</jdbcSharedConfig>
+                    <schema>%%CENTRAL_DB/Schema%%</schema>
+                    <ProcedureName>%%CENTRAL_DB/Material_Pricing/Pricing_SP_Name%%</ProcedureName>
+                    <parameterTypes>
+                        <parameter>
+                            <colName>IN_MATERIALNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_LISTPRICE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_LISTEFFECTIVEDATE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_LISTENDDATE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_COUNT</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_IDOCNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_UPDATE_USER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_TERMUNIT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DURATION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_VARIANT</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                    </parameterTypes>
+                </config>
+                <pd:inputBindings>
+                    <inputs>
+                        <inputSet>
+                            <IN_MATERIALNUMBER>
+                                <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:MaterialNumber"/>
+                            </IN_MATERIALNUMBER>
+                            <IN_LISTPRICE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Update_Requests/pfx7:MaterialPrice/pfx7:ListPrice)">
+                                        <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:ListPrice"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_LISTPRICE>
+                            <IN_LISTEFFECTIVEDATE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Update_Requests/pfx7:MaterialPrice/pfx7:ListEffectiveDate)">
+                                        <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:ListEffectiveDate"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_LISTEFFECTIVEDATE>
+                            <IN_LISTENDDATE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Update_Requests/pfx7:MaterialPrice/pfx7:ListEndDate)">
+                                        <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:ListEndDate"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_LISTENDDATE>
+                            <IN_COUNT>
+                                <xsl:value-of select="$index"/>
+                            </IN_COUNT>
+                            <IN_IDOCNUMBER>
+                                <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:iDocNumber"/>
+                            </IN_IDOCNUMBER>
+                            <IN_UPDATE_USER>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Update_Requests/pfx7:MaterialPrice/pfx7:Update_User)">
+                                        <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:Update_User"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_UPDATE_USER>
+                            <IN_TERMUNIT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Update_Requests/pfx7:MaterialPrice/pfx7:termUnit)">
+                                        <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:termUnit"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_TERMUNIT>
+                            <IN_DURATION>
+                                <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:termDuration"/>
+                            </IN_DURATION>
+                            <IN_VARIANT>
+                                <xsl:choose>
+                                    <xsl:when test="exists($Update_Requests/pfx7:MaterialPrice/pfx7:Variant)">
+                                        <xsl:value-of select="$Update_Requests/pfx7:MaterialPrice/pfx7:Variant"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_VARIANT>
+                        </inputSet>
+                    </inputs>
+                </pd:inputBindings>
+            </pd:activity>
+            <pd:activity name="Generate-Error-Subprocess-1">
+                <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+                <pd:resourceType>ae.activities.throw</pd:resourceType>
+                <pd:x>764</pd:x>
+                <pd:y>262</pd:y>
+                <config>
+                    <faultName/>
+                </config>
+                <pd:inputBindings>
+                    <ns:ActivityInput>
+                        <message>
+                            <xsl:value-of select="concat('An error Occurred in insertion of data in DDO DB' ,string( $Catch/exceptiondata))"/>
+                        </message>
+                        <messageCode>
+                            <xsl:value-of select="concat('An error Occurred in insertion of data in DDO DB' ,string( $Catch/exceptiondata))"/>
+                        </messageCode>
+                    </ns:ActivityInput>
+                </pd:inputBindings>
+            </pd:activity>
+        </pd:group>
+    </pd:group>
+    <pd:transition>
+        <pd:from>Transaction</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Transaction</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

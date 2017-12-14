@@ -1,0 +1,42 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns6:invoiceDetailsList xmlns:ns12="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns11="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:ns10="http://www.hmco.com/EAI/OTS/EskerTransaction" xmlns:ns9="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns:ns8="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:ns7="http://www.hmco.com/EAI/OTS/PackingList" xmlns:ns6="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns5="http://www.hmco.com/EAI/OTS/Order" xmlns:ns4="http://www.hmco.com/EAI" xmlns:ns3="http://www.hmco.com/EAI/OTS/Material" xmlns:ns2="http://www.hmco.com/EAI/OTS/Customer" xmlns="http://www.hmco.com/EAI/OTS/TransactionNew">
+         <ns6:invoiceDetails>
+            <ns6:transactionID>0002172048</ns6:transactionID>
+            <ns6:invoiceTransactionItem>
+               <ns6:invoiceNo>0942633419</ns6:invoiceNo>
+               <ns6:invoiceType>INVOICE_TYPE_STANDARD</ns6:invoiceType>
+               <ns6:billingDate>2008-03-12</ns6:billingDate>
+               <ns6:subTotal>12.39</ns6:subTotal>
+               <ns6:salesTax>0.0</ns6:salesTax>
+               <ns6:shippingCharge>0.0</ns6:shippingCharge>
+               <ns6:total>12.39</ns6:total>
+               <ns6:lineItem>
+                  <ns6:productInfo>
+                     <ns6:lineNo>10</ns6:lineNo>
+                     <ns6:salesOffice/>
+                     <ns6:materialID>000000000000651164</ns6:materialID>
+                     <ns6:isbn>9780807032848</ns6:isbn>
+                     <ns6:description>CAN WE TALK ABOUT RACE</ns6:description>
+                     <ns6:couponCode/>
+                     <ns6:promotionType/>
+                     <ns6:quantity>1</ns6:quantity>
+                     <ns6:listPrice>22.95</ns6:listPrice>
+                     <ns6:netPrice>12.39</ns6:netPrice>
+                     <ns6:productDivision>DIVISION_TRADE_AND_REFERENCE</ns6:productDivision>
+                     <ns6:listDiscount>10.56</ns6:listDiscount>
+                     <ns6:isEGood>false</ns6:isEGood>
+                     <ns6:isSubscription>false</ns6:isSubscription>
+                  </ns6:productInfo>
+                  <ns6:shipmentNo>0082585011</ns6:shipmentNo>
+                  <ns6:shipmentLineNo>10</ns6:shipmentLineNo>
+                  <ns6:shipmentLocation>D300</ns6:shipmentLocation>
+                  <ns6:paymentTerm>AR_TERMS_NET_DUE_30_DAYS</ns6:paymentTerm>
+                  <ns6:transactionNo>0002172048</ns6:transactionNo>
+                  <ns6:transactionLineNo>10</ns6:transactionLineNo>
+               </ns6:lineItem>
+            </ns6:invoiceTransactionItem>
+         </ns6:invoiceDetails>
+      </ns6:invoiceDetailsList>
+   </soap:Body>
+</soap:Envelope>

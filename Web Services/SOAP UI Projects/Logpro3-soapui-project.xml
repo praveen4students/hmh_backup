@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="Logpro3" resourceRoot="" soapui-version="3.0.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SOAPEventSourceBinding" type="wsdl" bindingName="{http://xmlns.example.com/1273557354351/LogproOperationImpl}SOAPEventSourceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Documents%20and%20Settings/195361/My%20Documents/Logpro3.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Documents%20and%20Settings/195361/My%20Documents/Logpro3.wsdl"><con:part><con:url>file:/C:/Documents%20and%20Settings/195361/My%20Documents/Logpro3.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://xmlns.example.com/1273557354351/LogproOperationImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1273557354351/LogproOperationImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.hmco.com/EAI">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns1:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns1:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <xs:schema targetNamespace="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd">
+      <xs:element name="Customer_CC_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Customer_Recipient_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Delivery_Number">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="HMH_From_E-mail">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Logpro">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:Plant"/>
+            <xs:element ref="ns0:Delivery_Number"/>
+            <xs:element ref="ns0:HMH_From_E-mail"/>
+            <xs:element ref="ns0:Customer_Recipient_E-mail"/>
+            <xs:element ref="ns0:Customer_CC_E-mail" minOccurs="0"/>
+            <xs:element ref="ns0:Subject_Line"/>
+            <xs:element ref="ns0:Notes" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Notes">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Plant">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Subject_Line">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="6"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="LogproTransactions">
+    <wsdl:documentation>.</wsdl:documentation>
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://hyddl2213:8184/BusinessProcesses/Logpro/LogproTransaction/MainProcesses/LogproTransactions"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="LogproTransaction">
+    <wsdl:operation name="LogproOperation">
+      <wsdl:input message="tns:LogproRequest"/>
+      <wsdl:output message="tns:LogproResponse"/>
+      <wsdl:fault name="LogproException" message="tns:eaiException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:LogproTransaction">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="LogproOperation">
+      <soap:operation style="document" soapAction="/BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="LogproRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="LogproResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="LogproException">
+        <soap:fault use="literal" name="LogproException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="LogproRequest">
+    <wsdl:part name="LogproRequest" element="ns0:Logpro"/>
+  </wsdl:message>
+  <wsdl:message name="LogproResponse">
+    <wsdl:part name="LogproResponse" type="xs:string"/>
+  </wsdl:message>
+  <wsdl:message name="eaiException">
+    <wsdl:part name="eaiException" type="ns1:eaiException"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://hyddl2213:8184/BusinessProcesses/Logpro/LogproTransaction/MainProcesses/LogproTransactions</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions" name="LogproOperation" bindingOperationName="LogproOperation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://hyddl2213:8184/BusinessProcesses/Logpro/LogproTransaction/MainProcesses/LogproTransactions</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/Enterprise_Webservices/SharedResources/Schemas/Schema.xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:Logpro>
+         <sch:Plant>445</sch:Plant>
+         <sch:Delivery_Number>rajess</sch:Delivery_Number>
+         <sch:HMH_From_E-mail>ffsadasf#comdfsa.,</sch:HMH_From_E-mail>
+         <sch:Customer_Recipient_E-mail>sadfsafsafsdfas</sch:Customer_Recipient_E-mail>
+         <!--Optional:-->
+         <sch:Customer_CC_E-mail>sdfsdfsafsda</sch:Customer_CC_E-mail>
+         <sch:Subject_Line>sdfkjsdf</sch:Subject_Line>
+         <!--Optional:-->
+         <sch:Notes>sdfasadfsafsdafsdaf</sch:Notes>
+      </sch:Logpro>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Transaction/findTransactions/MainProcesses/findTransactions"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

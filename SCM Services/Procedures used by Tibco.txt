@@ -1,0 +1,5 @@
+Material Master 		====> 	MATERIAL_UPSERT
+Material Classification ====>	material_classification_upsert
+Pricing 				====> 	material_pricing_upsert
+Partner 				====> 	material_partners_upsert
+BOM 					====> 	material_Kitcomponents_upsert

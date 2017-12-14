@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx6:SAPMaterialMasterUpdateBanta xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:TrailingSpaces_NoZeroes="java://TrailingSpaces_NoZeroes" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterUpdateBanta_Schema" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx6="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/native/SCM_IN_ADFFA_SAPMaterialMasterUpdateBanta" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:TRIM_SPACES="java://TrimMATNR">
+    <BRANCH>
+        <xsl:copy-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$Start/Root/index]/FIELDS/WERKS/@xsi:nil"/>
+        <xsl:value-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$Start/Root/index]/FIELDS/WERKS"/>
+    </BRANCH>
+    <ITEM__NUM>
+        <xsl:value-of select="TRIM_SPACES:trim($Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR)"/>
+    </ITEM__NUM>
+    <ITEM__DESC>
+        <xsl:copy-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX/@xsi:nil"/>
+        <xsl:value-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX"/>
+    </ITEM__DESC>
+    <STATUS>
+        <xsl:copy-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MSTAE/@xsi:nil"/>
+        <xsl:value-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MSTAE"/>
+    </STATUS>
+    <ISBN>
+        <xsl:copy-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/Z1ISBN/item[1]/FIELDS/IDENTCODE/@xsi:nil"/>
+        <xsl:value-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/Z1ISBN/item[1]/FIELDS/IDENTCODE"/>
+    </ISBN>
+    <SITE__ID>
+        <xsl:copy-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/SPART/@xsi:nil"/>
+        <xsl:value-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/SPART"/>
+    </SITE__ID>
+    <xsl:if test="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$Start/Root/index]/FIELDS/HERKL">
+        <CTRY__CODE>
+            <xsl:copy-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$Start/Root/index]/FIELDS/HERKL/@xsi:nil"/>
+            <xsl:value-of select="$Start/Root/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/CHILDREN/E1MARCM/item[position()=$Start/Root/index]/FIELDS/HERKL"/>
+        </CTRY__CODE>
+    </xsl:if>
+</pfx6:SAPMaterialMasterUpdateBanta>

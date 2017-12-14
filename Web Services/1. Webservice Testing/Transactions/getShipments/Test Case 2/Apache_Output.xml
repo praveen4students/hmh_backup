@@ -1,0 +1,8 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Client</faultcode>
+         <faultstring>Unmarshalling Error: cvc-complex-type.2.4.b: The content of element 'tran:shipmentIDList' is not complete. One of '{"http://www.hmco.com/EAI/OTS/Transaction":transactionID}' is expected.</faultstring>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>

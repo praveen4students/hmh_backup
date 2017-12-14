@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VendorMaster xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pfx8="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx9="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:TrimMATNR="java://TrimMATNR" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:ns3="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/ddo/material_update" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <pfx9:VendorInfo>
+        <pfx9:VendorNumber>
+            <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR"/>
+        </pfx9:VendorNumber>
+        <pfx9:VendorType>
+            <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK)"/>
+        </pfx9:VendorType>
+        <pfx9:VendorName>
+            <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1)"/>
+        </pfx9:VendorName>
+        <xsl:if test="tib:index-of($_globalVariables/ns3:GlobalVariables/CENTRAL_DB/Vendor_Update/COMPANY_CODE, $Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/BUKRS) !=-1">
+            <pfx9:tibco__ry__vendor>
+                <pfx9:VendorNumber>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR)"/>
+                </pfx9:VendorNumber>
+                <pfx9:Country>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LAND1)"/>
+                </pfx9:Country>
+                <pfx9:Name1>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1)"/>
+                </pfx9:Name1>
+                <pfx9:Name2>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME2)"/>
+                </pfx9:Name2>
+                <pfx9:Name3>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME3)"/>
+                </pfx9:Name3>
+                <pfx9:Name4>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME4)"/>
+                </pfx9:Name4>
+                <pfx9:City>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ORT01)"/>
+                </pfx9:City>
+                <pfx9:County>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ORT02)"/>
+                </pfx9:County>
+                <pfx9:PO_Box>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PFACH)"/>
+                </pfx9:PO_Box>
+                <pfx9:PO_Box_Post_Cd>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PSTL2)"/>
+                </pfx9:PO_Box_Post_Cd>
+                <pfx9:Postal_Code>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/PSTLZ)"/>
+                </pfx9:Postal_Code>
+                <pfx9:Region_State>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/REGIO)"/>
+                </pfx9:Region_State>
+                <pfx9:sort_name>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SORTL)"/>
+                </pfx9:sort_name>
+                <pfx9:Street>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/STRAS)"/>
+                </pfx9:Street>
+                <pfx9:adrc_str_suppl1>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET2)"/>
+                </pfx9:adrc_str_suppl1>
+                <pfx9:adrc_str_suppl2>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET3)"/>
+                </pfx9:adrc_str_suppl2>
+                <pfx9:adrc_str_suppl3>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET4)"/>
+                </pfx9:adrc_str_suppl3>
+                <pfx9:adrc_location>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/STREET5)"/>
+                </pfx9:adrc_location>
+                <pfx9:SAP_Addr_No>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/ADRNR)"/>
+                </pfx9:SAP_Addr_No>
+                <pfx9:PS_Vendor-Loc>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/BAHNS)"/>
+                </pfx9:PS_Vendor-Loc>
+                <pfx9:Vendor_Group>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK)"/>
+                </pfx9:Vendor_Group>
+                <pfx9:AlternatePayeeID>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LNRZA)"/>
+                </pfx9:AlternatePayeeID>
+                <pfx9:Central_Delete_Flag>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LOEVM)"/>
+                </pfx9:Central_Delete_Flag>
+                <pfx9:Central_Post_Block>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SPERR)"/>
+                </pfx9:Central_Post_Block>
+                <pfx9:Central_Purch_Block>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SPERM)"/>
+                </pfx9:Central_Purch_Block>
+                <pfx9:Telephone>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELF1)"/>
+                </pfx9:Telephone>
+                <pfx9:Mobile_Phone>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELF2)"/>
+                </pfx9:Mobile_Phone>
+                <pfx9:Fax_Number>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TELFX)"/>
+                </pfx9:Fax_Number>
+                <pfx9:AlternatePayeeAllowed>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/XZEMP)"/>
+                </pfx9:AlternatePayeeAllowed>
+                <pfx9:Tax_Jurisdiction>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/TXJCD)"/>
+                </pfx9:Tax_Jurisdiction>
+                <pfx9:Central_Delete_Block>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NODEL)"/>
+                </pfx9:Central_Delete_Block>
+                <pfx9:Company>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/BUKRS)"/>
+                </pfx9:Company>
+                <pfx9:Company_Post_Block>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/SPERR)"/>
+                </pfx9:Company_Post_Block>
+                <pfx9:Company_Delete_Flag>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/LOEVM)"/>
+                </pfx9:Company_Delete_Flag>
+                <pfx9:Reconcile_Acct>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/AKONT)"/>
+                </pfx9:Reconcile_Acct>
+                <pfx9:Payment_Methods>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZWELS)"/>
+                </pfx9:Payment_Methods>
+                <pfx9:Payment_Block>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZAHLS)"/>
+                </pfx9:Payment_Block>
+                <pfx9:Payment_Terms>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ZTERM)"/>
+                </pfx9:Payment_Terms>
+                <pfx9:AlternatePayeeAccountNumber>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/LNRZB)"/>
+                </pfx9:AlternatePayeeAccountNumber>
+                <pfx9:Check_Dup_Invoice>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/REPRF)"/>
+                </pfx9:Check_Dup_Invoice>
+                <pfx9:Individual_Payments>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/XPORE)"/>
+                </pfx9:Individual_Payments>
+                <pfx9:Minority_Indicators>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/MINDK)"/>
+                </pfx9:Minority_Indicators>
+                <pfx9:Legacy_Vendor_No>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/ALTKN)"/>
+                </pfx9:Legacy_Vendor_No>
+                <pfx9:Pay_Method_Supplmt>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/UZAWE)"/>
+                </pfx9:Pay_Method_Supplmt>
+                <pfx9:WH_Tax_Country>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/FIELDS/QLAND)"/>
+                </pfx9:WH_Tax_Country>
+                <pfx9:WH_TaxType>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFB1M/item[1]/CHILDREN/Z1LFB1WT/item[1]/FIELDS/WITHT)"/>
+                </pfx9:WH_TaxType>
+                <pfx9:CareOf>
+                    <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFA1M/item/FIELDS/NAME__CO)"/>
+                </pfx9:CareOf>
+                <xsl:for-each select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/E1LFM1M/item/CHILDREN/E1WYT3M/item">
+                    <xsl:if test="tib:index-of($_globalVariables/ns3:GlobalVariables/CENTRAL_DB/Vendor_Update/PARTNER_FUNCTION,current()/FIELDS/PARVW) !=-1">
+                        <pfx9:tibco__ry__vendor__remit>
+                            <pfx9:VendorNumber>
+                                <xsl:value-of select="../../../FIELDS[1]/LIFNR"/>
+                            </pfx9:VendorNumber>
+                            <pfx9:Purchase_Org>
+                                <xsl:value-of select="../../../FIELDS[1]/EKORG"/>
+                            </pfx9:Purchase_Org>
+                            <pfx9:Purch_Block>
+                                <xsl:value-of select="../../../FIELDS[1]/SPERM"/>
+                            </pfx9:Purch_Block>
+                            <pfx9:Purch_Delete_Flag>
+                                <xsl:value-of select="../../../FIELDS[1]/LOEVM"/>
+                            </pfx9:Purch_Delete_Flag>
+                            <pfx9:Payment_Terms>
+                                <xsl:value-of select="../../../FIELDS[1]/ZTERM"/>
+                            </pfx9:Payment_Terms>
+                            <pfx9:Incoterms_Code>
+                                <xsl:value-of select="../../../FIELDS[1]/INCO1"/>
+                            </pfx9:Incoterms_Code>
+                            <pfx9:Incoterms_Descr>
+                                <xsl:value-of select="../../../FIELDS[1]/INCO2"/>
+                            </pfx9:Incoterms_Descr>
+                            <pfx9:Partner_Function>
+                                <xsl:value-of select="FIELDS/PARVW"/>
+                            </pfx9:Partner_Function>
+                            <pfx9:Remit_to_vendor_no>
+                                <xsl:value-of select="FIELDS/LIFN2"/>
+                            </pfx9:Remit_to_vendor_no>
+                        </pfx9:tibco__ry__vendor__remit>
+                    </xsl:if>
+                </xsl:for-each>
+                <xsl:for-each select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/CHILDREN/Z1LFEMAIL/item">
+                    <pfx9:tibco__ry__vendor__email>
+                        <pfx9:VendorNumber>
+                            <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR)"/>
+                        </pfx9:VendorNumber>
+                        <pfx9:Emailid>
+                            <xsl:value-of select="tib:trim(current()/FIELDS/SMTP__ADDR)"/>
+                        </pfx9:Emailid>
+                        <pfx9:DefaultEmail>
+                            <xsl:value-of select="tib:trim(current()/FIELDS/FLGDEFAULT)"/>
+                        </pfx9:DefaultEmail>
+                    </pfx9:tibco__ry__vendor__email>
+                </xsl:for-each>
+            </pfx9:tibco__ry__vendor>
+        </xsl:if>
+        <pfx9:iDocNumber>
+            <xsl:value-of select="tib:trim($Start/pfx3:CREMAS01-ZCREMAS01-4x/EDI__DC/DOCNUM)"/>
+        </pfx9:iDocNumber>
+        <pfx9:Update_User>
+            <xsl:value-of select="$_globalVariables/ns3:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+        </pfx9:Update_User>
+    </pfx9:VendorInfo>
+</VendorMaster>

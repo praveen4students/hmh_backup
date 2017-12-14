@@ -1,0 +1,58 @@
+<Material_Master_Update xmlns="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd">
+    <MaterialNumber>H11076</MaterialNumber>
+    <CreatedOn>2006-09-13+05:30</CreatedOn>
+    <TitleUpdatedDate>2013-03-07+05:30</TitleUpdatedDate>
+    <MaterialType>FERT</MaterialType>
+    <MaterialGroup>H00-001</MaterialGroup>
+    <BaseUnitofMeasure>EA</BaseUnitofMeasure>
+    <DocumentVersion>X</DocumentVersion>
+    <NetWeight>1.556</NetWeight>
+    <WeightUnit>LB</WeightUnit>
+    <Division>20</Division>
+    <ExternalMaterialGroup>01</ExternalMaterialGroup>
+    <XPlantStatus>IP</XPlantStatus>
+    <CrossPlantMatStatus>2006-09-11+05:30</CrossPlantMatStatus>
+    <GeneralItemCategory>NORM</GeneralItemCategory>
+    <AuthorArtist>AHD</AuthorArtist>
+    <Subtitle3>Edition 002</Subtitle3>
+    <Title>The Concise American Heritage Spanish Dictionary</Title>
+    <MediaProduct>W10006810</MediaProduct>
+    <PublicationType>13</PublicationType>
+    <MediaType>Z0</MediaType>
+    <ContentCategory>13</ContentCategory>
+    <EditionKey>0020</EditionKey>
+    <PublicationDate>2001-08-10+05:30</PublicationDate>
+    <EmplRespForPlan>CARBONC</EmplRespForPlan>
+    <Languages>0002</Languages>
+    <EditionCounter>000002</EditionCounter>
+    <ReprintingType>0009</ReprintingType>
+    <PrimaryISBN>9780618117697</PrimaryISBN>
+    <YearNumber>2001</YearNumber>
+    <IntlShippingDate>2001-08-10+05:30</IntlShippingDate>
+    <ProductPresentation>0001</ProductPresentation>
+    <GTIN>09780618117697</GTIN>
+    <ISBN_13>9780618117697</ISBN_13>
+    <ISBN_10>0618117695</ISBN_10>
+    <MaterialDescription>AH CONCISE SPANISH/ENG DICT 2E POB test</MaterialDescription>
+    <Length>8.579</Length>
+    <Width>5.592</Width>
+    <Height>1.748</Height>
+    <Volume>83.858</Volume>
+    <RoyaltyActivityFlag>false</RoyaltyActivityFlag>
+    <iDocNumber>0000000196310880</iDocNumber>
+    <CompleteTitle>The Concise American Heritage Spanish Dictionary   Edition 002</CompleteTitle>
+    <copyrightStatus>R</copyrightStatus>
+    <originalidCodeType>0001</originalidCodeType>
+    <CreatedBy_SAP>ZPRDCUT_16</CreatedBy_SAP>
+    <CrossPlantCM>SPECS</CrossPlantCM>
+    <LastUpdateBy_SAP>KONJARR</LastUpdateBy_SAP>
+    <ProductHierarchy>
+        <PHlevel1Code>20</PHlevel1Code>
+        <PHlevel2Code>11</PHlevel2Code>
+        <PHlevel3Code>03</PHlevel3Code>
+        <PHlevel4Code>008</PHlevel4Code>
+        <PHlevel5Code>55</PHlevel5Code>
+    </ProductHierarchy>
+    <LinearUnitsOfDimension>INH</LinearUnitsOfDimension>
+    <VolumeUnitsOfDimension>INQ</VolumeUnitsOfDimension>
+</Material_Master_Update>

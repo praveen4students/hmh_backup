@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.hmco.com/EAI/OTS/Material/getMaterialDetailImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.hmco.com/EAI/OTS/Material" xmlns:ns1="http://www.hmco.com/EAI" name="Untitled" targetNamespace="http://www.hmco.com/EAI/OTS/Material/getMaterialDetailImpl">
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xsd:complexType name="eaiException">
+                <xsd:sequence>
+                    <xsd:element ref="ns1:errorList"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="error">
+                <xsd:sequence>
+                    <xsd:element name="errorCategory" type="xsd:string"/>
+                    <xsd:element name="errorCode" type="xsd:string"/>
+                    <xsd:element name="errorMessage" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="asyncRequestId">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ns1:requestId"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="asyncRequestStatus">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="isReady" type="xsd:boolean"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="error" type="ns1:error"/>
+            <xsd:element name="errorList">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="requestId" type="xsd:string"/>
+        </xsd:schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mat="http://www.hmco.com/EAI/OTS/Material" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eai="http://www.hmco.com/EAI" targetNamespace="http://www.hmco.com/EAI/OTS/Material" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <import namespace="http://www.hmco.com/EAI"/>
+            <complexType name="substitution">
+                <sequence>
+                    <element name="key">
+                        <complexType>
+                            <sequence>
+                                <element name="materialID" type="xsd:string" minOccurs="0"/>
+                                <element name="isbn" type="xsd:string" minOccurs="0"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                    <element ref="mat:substitutionValue" maxOccurs="unbounded"/>
+                </sequence>
+            </complexType>
+            <element name="component">
+                <complexType>
+                    <sequence>
+                        <element name="materialID" type="xsd:string"/>
+                        <element name="isbn" type="xsd:string" minOccurs="0"/>
+                        <element name="quantity" type="xsd:int" minOccurs="0"/>
+                        <element name="bomType" type="xsd:string" minOccurs="0"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="getMaterialDetailRequest">
+                <complexType>
+                    <sequence>
+                        <element ref="mat:materialKeyList"/>
+                        <element name="customerID" minOccurs="0">
+                            <simpleType>
+                                <restriction base="xsd:string">
+                                    <maxLength value="10"/>
+                                </restriction>
+                            </simpleType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="materialDetail">
+                <complexType>
+                    <sequence>
+                        <element name="materialID" type="xsd:string" minOccurs="0"/>
+                        <element name="isbn13" type="xsd:string" minOccurs="0"/>
+                        <element name="isbn10" type="xsd:string" minOccurs="0"/>
+                        <element name="internalDescription" type="xsd:string"/>
+                        <element name="fullDescription" type="xsd:string" minOccurs="0"/>
+                        <element name="author" type="xsd:string" minOccurs="0"/>
+                        <element name="materialStatus" type="xsd:string"/>
+                        <element name="materialStatusDescription" type="xsd:string" minOccurs="0"/>
+                        <element name="listPrice" type="xsd:double" minOccurs="0"/>
+                        <element name="netPrice" type="xsd:double" minOccurs="0"/>
+                        <element name="quantityInStock" type="xsd:int" minOccurs="0"/>
+                        <element name="restriction" type="xsd:string" minOccurs="0"/>
+                        <element name="materialGroup" type="xsd:string"/>
+                        <element name="substituted" type="xsd:boolean"/>
+                        <element name="availableDate" type="xsd:date" minOccurs="0"/>
+                        <element name="copyrightYear" type="xsd:string" minOccurs="0"/>
+                        <element name="mediaType" type="xsd:string" minOccurs="0"/>
+                        <element name="productDivision" type="xsd:string"/>
+                        <element name="phLevelCode1" type="xsd:string" minOccurs="0"/>
+                        <element name="phLevelCode2" type="xsd:string" minOccurs="0"/>
+                        <element name="phLevelCode3" type="xsd:string" minOccurs="0"/>
+                        <element name="phLevelCode4" type="xsd:string" minOccurs="0"/>
+                        <element name="phLevelCode5" type="xsd:string" minOccurs="0"/>
+                        <element name="unitsPerCarton" type="xsd:int" minOccurs="0"/>
+                        <element name="isSubscription" type="xsd:boolean"/>
+                        <element name="genItemCategory" type="xsd:string" minOccurs="0"/>
+                        <element ref="mat:component" minOccurs="0" maxOccurs="unbounded"/>
+                        <element ref="mat:subscriptionTerm" minOccurs="0" maxOccurs="unbounded"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="materialDetailList">
+                <complexType>
+                    <sequence>
+                        <element ref="mat:materialDetail" minOccurs="0" maxOccurs="unbounded"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="materialException" type="eai:eaiException"/>
+            <element name="materialKeyList">
+                <complexType>
+                    <sequence>
+                        <element name="materialID" minOccurs="0" maxOccurs="unbounded">
+                            <simpleType>
+                                <restriction base="xsd:string">
+                                    <maxLength value="18"/>
+                                </restriction>
+                            </simpleType>
+                        </element>
+                        <element name="isbn" minOccurs="0" maxOccurs="unbounded">
+                            <simpleType>
+                                <restriction base="xsd:string">
+                                    <maxLength value="18"/>
+                                </restriction>
+                            </simpleType>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="materialSubstitution" type="mat:substitution"/>
+            <element name="materialSubstitutionList">
+                <complexType>
+                    <sequence>
+                        <element ref="mat:materialSubstitution" minOccurs="0" maxOccurs="unbounded"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="subscriptionTerm">
+                <complexType>
+                    <sequence>
+                        <element name="duration" type="xsd:int" minOccurs="0"/>
+                        <element name="unit" type="xsd:string" minOccurs="0"/>
+                        <element name="rate" type="xsd:double" minOccurs="0"/>
+                        <element name="startDate" type="xsd:date" minOccurs="0"/>
+                        <element name="endDate" type="xsd:date" minOccurs="0"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="substitutionValue">
+                <complexType>
+                    <sequence>
+                        <element name="substituteID" type="xsd:string"/>
+                        <element name="substituteISBN" type="xsd:string"/>
+                        <element name="description" type="xsd:string"/>
+                        <element name="autoSubstitute" type="xsd:boolean" minOccurs="0"/>
+                        <element name="usePrimePrice" type="xsd:boolean" minOccurs="0"/>
+                        <element name="applySale" type="xsd:boolean" minOccurs="0"/>
+                        <element name="applySample" type="xsd:boolean" minOccurs="0"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </wsdl:types>
+    <wsdl:service name="getMaterialDetail">
+        <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+            <soap:address location="http://hyddl2213:9004/BusinessProcesses/Material/GetMaterialDetail/MainProcesses/getMaterialDetail"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="Material">
+        <wsdl:operation name="getMaterialDetail">
+            <wsdl:input message="tns:getMaterialDetailRequest"/>
+            <wsdl:output message="tns:getMaterialDetailResponse"/>
+            <wsdl:fault name="materialException" message="tns:materialException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SOAPEventSourceBinding" type="tns:Material">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getMaterialDetail">
+            <soap:operation style="document" soapAction="/BusinessProcesses/Material/GetMaterialDetail/MainProcesses/getMaterialDetail"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="getMaterialDetailRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="materialDetails"/>
+            </wsdl:output>
+            <wsdl:fault name="materialException">
+                <soap:fault use="literal" name="materialException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="getMaterialDetailRequest">
+        <wsdl:part name="getMaterialDetailRequest" element="ns0:getMaterialDetailRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getMaterialDetailResponse">
+        <wsdl:part name="materialDetails" element="ns0:materialDetailList"/>
+    </wsdl:message>
+    <wsdl:message name="materialException">
+        <wsdl:part name="materialException" element="ns0:materialException"/>
+    </wsdl:message>
+</wsdl:definitions>

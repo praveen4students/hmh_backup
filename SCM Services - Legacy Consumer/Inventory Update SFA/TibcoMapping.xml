@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx6:InventoryList xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/inventory_update" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:for-each select="$Start/pfx3:ZMINVUPD01-4x/CHILDREN/Z1INVUPDR01/item">
+        <pfx6:InventoryInfo>
+            <pfx6:MaterialNumber>
+                <xsl:value-of select="FIELDS/MATERIAL"/>
+            </pfx6:MaterialNumber>
+            <pfx6:Plant>
+                <xsl:value-of select="FIELDS/PLANT"/>
+            </pfx6:Plant>
+            <pfx6:ATPQuantity>
+                <xsl:value-of select="FIELDS/ATP__QUANTITY"/>
+            </pfx6:ATPQuantity>
+            <pfx6:ATPDate>
+                <xsl:value-of select="tib:parse-date('yyyyMMdd',current()/FIELDS/COMMITTED__DATE)"/>
+            </pfx6:ATPDate>
+            <pfx6:Division>
+                <xsl:value-of select="FIELDS/DIVISION"/>
+            </pfx6:Division>
+        </pfx6:InventoryInfo>
+    </xsl:for-each>
+</pfx6:InventoryList>

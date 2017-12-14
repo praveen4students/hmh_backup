@@ -1,0 +1,5 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns6:invoiceDetailsList xmlns:ns12="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns11="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:ns10="http://www.hmco.com/EAI/OTS/EskerTransaction" xmlns:ns9="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns:ns8="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:ns7="http://www.hmco.com/EAI/OTS/PackingList" xmlns:ns6="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns5="http://www.hmco.com/EAI/OTS/Order" xmlns:ns4="http://www.hmco.com/EAI" xmlns:ns3="http://www.hmco.com/EAI/OTS/Material" xmlns:ns2="http://www.hmco.com/EAI/OTS/Customer" xmlns="http://www.hmco.com/EAI/OTS/TransactionNew"/>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,57 @@
+<Material_Master_Update xmlns="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd">
+    <MaterialNumber>000000000001035388</MaterialNumber>
+    <CreatedOn>2007-06-25+05:30</CreatedOn>
+    <TitleUpdatedDate>2013-02-04+05:30</TitleUpdatedDate>
+    <MaterialType>FERT</MaterialType>
+    <MaterialGroup>H00-001</MaterialGroup>
+    <BaseUnitofMeasure>EA</BaseUnitofMeasure>
+    <DocumentVersion>X</DocumentVersion>
+    <NetWeight>0.830</NetWeight>
+    <WeightUnit>LB</WeightUnit>
+    <Division>20</Division>
+    <ExternalMaterialGroup>01</ExternalMaterialGroup>
+    <XPlantStatus>IP</XPlantStatus>
+    <CrossPlantMatStatus>2011-08-02+05:30</CrossPlantMatStatus>
+    <GeneralItemCategory>NORM</GeneralItemCategory>
+    <AuthorArtist>MENG</AuthorArtist>
+    <Title>I Will Not Read This Book</Title>
+    <MediaProduct>W20000959</MediaProduct>
+    <PublicationType>13</PublicationType>
+    <MediaType>ZZ</MediaType>
+    <ContentCategory>13</ContentCategory>
+    <EditionKey>0018</EditionKey>
+    <PublicationDate>2011-09-06+05:30</PublicationDate>
+    <EmplRespForPlan>KENNICA</EmplRespForPlan>
+    <Languages>0001</Languages>
+    <EditionCounter>000001</EditionCounter>
+    <ReprintingType>0008</ReprintingType>
+    <PrimaryISBN>9780547049717</PrimaryISBN>
+    <YearNumber>2011</YearNumber>
+    <IntlShippingDate>2011-08-03+05:30</IntlShippingDate>
+    <ProductPresentation>0001</ProductPresentation>
+    <GTIN>09780547049717</GTIN>
+    <ISBN_13>9780547049717</ISBN_13>
+    <ISBN_10>0547049714</ISBN_10>
+    <MaterialDescription>I WILL NOT READ THIS BOOK HC</MaterialDescription>
+    <Length>10.294</Length>
+    <Width>9.479</Width>
+    <Height>0.364</Height>
+    <Volume>35.518</Volume>
+    <RoyaltyActivityFlag>false</RoyaltyActivityFlag>
+    <iDocNumber>0000000196310890</iDocNumber>
+    <CompleteTitle>I Will Not Read This Book</CompleteTitle>
+    <copyrightStatus>R</copyrightStatus>
+    <originalidCodeType>0001</originalidCodeType>
+    <CreatedBy_SAP>GALIPEB</CreatedBy_SAP>
+    <CrossPlantCM>SPECS</CrossPlantCM>
+    <LastUpdateBy_SAP>PASTORV</LastUpdateBy_SAP>
+    <ProductHierarchy>
+        <PHlevel1Code>20</PHlevel1Code>
+        <PHlevel2Code>11</PHlevel2Code>
+        <PHlevel3Code>02</PHlevel3Code>
+        <PHlevel4Code>007</PHlevel4Code>
+        <PHlevel5Code>81</PHlevel5Code>
+    </ProductHierarchy>
+    <LinearUnitsOfDimension>INH</LinearUnitsOfDimension>
+    <VolumeUnitsOfDimension>INQ</VolumeUnitsOfDimension>
+</Material_Master_Update>

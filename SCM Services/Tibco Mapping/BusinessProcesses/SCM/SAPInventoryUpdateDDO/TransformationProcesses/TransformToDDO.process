@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:ns3="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:TrimMATNR="java://TrimMATNR" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:pfx9="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pfx8="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pfx7="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pfx6="http://www.hmco.com/schemas/ddo/material_update" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" schemaLocation="/AESchemas/ae/FileAdapter/wire/SCM_OUT_ADFFFA.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" schemaLocation="/SharedResources/Schemas/TIBCO Message/InventoryMovementUpdateLogProCanonical.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" schemaLocation="/AESchemas/ae/FileAdapter/wire/SCM_OUT_ADFFA.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_update" schemaLocation="/SharedResources/Schemas/Common/MatMasterUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/ddo/material_update" schemaLocation="/SharedResources/Schemas/SCM/MatMasterUpdate.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Master_Update.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Vendor_Update.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Inventory_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPInventoryUpdateDDO/TransformationProcesses/TransformToDDO.process</pd:name>
+    <pd:description>This activity transforms the incoming message to AE format, which
+represents SAP schema.</pd:description>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx3:ZMINVUPD01-4x"/>
+    <pd:startX>229</pd:startX>
+    <pd:startY>116</pd:startY>
+    <pd:returnBindings>
+        <xsl:copy-of select="$Map_Inventory/pfx9:InventoryList"/>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx9:InventoryList"/>
+    <pd:endX>579</pd:endX>
+    <pd:endY>118</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1314672687666</pd:targetNamespace>
+    <pd:activity name="Map_Inventory">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>390</pd:x>
+        <pd:y>114</pd:y>
+        <config>
+            <element ref="pfx9:InventoryList"/>
+        </config>
+        <pd:inputBindings>
+            <pfx9:InventoryList>
+                <xsl:for-each select="$Start/pfx3:ZMINVUPD01-4x/CHILDREN/Z1INVUPDR01/item">
+                    <pfx9:InventoryInfo>
+                        <pfx9:MaterialNumber>
+                            <xsl:value-of select="tib:trim(FIELDS/MATERIAL)"/>
+                        </pfx9:MaterialNumber>
+                        <pfx9:Plant>
+                            <xsl:value-of select="tib:trim(FIELDS/PLANT)"/>
+                        </pfx9:Plant>
+                        <pfx9:ATPQuantity>
+                            <xsl:value-of select="tib:trim(FIELDS/ATP__QUANTITY)"/>
+                        </pfx9:ATPQuantity>
+                        <pfx9:ATPDate>
+                            <xsl:value-of select="tib:parse-date('yyyyMMdd',current()/FIELDS/COMMITTED__DATE)"/>
+                        </pfx9:ATPDate>
+                        <pfx9:Division>
+                            <xsl:value-of select="tib:trim(FIELDS/DIVISION)"/>
+                        </pfx9:Division>
+                        <pfx9:iDocNumber>
+                            <xsl:value-of select="tib:trim(../../../EDI__DC/DOCNUM)"/>
+                        </pfx9:iDocNumber>
+                        <pfx9:Update_User>
+                            <xsl:value-of select="tib:trim($_globalVariables/ns3:GlobalVariables/CENTRAL_DB/UPDATE_USER)"/>
+                        </pfx9:Update_User>
+                    </pfx9:InventoryInfo>
+                </xsl:for-each>
+            </pfx9:InventoryList>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Generate Error">
+        <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+        <pd:resourceType>ae.activities.throw</pd:resourceType>
+        <pd:x>292</pd:x>
+        <pd:y>267</pd:y>
+        <config>
+            <faultName/>
+        </config>
+        <pd:inputBindings>
+            <ns2:ActivityInput>
+                <message>
+                    <xsl:value-of select="$_error/ns1:ErrorReport/Msg"/>
+                </message>
+                <messageCode>
+                    <xsl:value-of select="$_error/ns1:ErrorReport/StackTrace"/>
+                </messageCode>
+            </ns2:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Map_Inventory</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Map_Inventory</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Map_Inventory</pd:from>
+        <pd:to>Generate Error</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-65485</pd:lineColor>
+        <pd:conditionType>error</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

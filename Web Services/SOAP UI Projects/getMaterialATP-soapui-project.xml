@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="getMaterialATP" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SOAPEventSourceBinding" type="wsdl" bindingName="{http://www.hmco.com/EAI/OTS/ATP/getMaterialATPImpl}SOAPEventSourceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialATP.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialATP.wsdl"><con:part><con:url>file:/C:/Documents%20and%20Settings/195361/My%20Documents/getMaterialATP.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.hmco.com/EAI/OTS/ATP/getMaterialATPImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.hmco.com/EAI/OTS/ATP/getMaterialATPImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns1="http://www.hmco.com/EAI">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.hmco.com/EAI" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns1:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns1:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <schema targetNamespace="http://www.hmco.com/EAI/OTS/Material/GetATP" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:atp="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eai="http://www.hmco.com/EAI">
+      <import namespace="http://www.hmco.com/EAI"/>
+      <element name="ATP_DETAIL_LIST">
+        <complexType>
+          <sequence>
+            <element ref="atp:MATNR"/>
+            <element ref="atp:QUANTITY"/>
+            <element ref="atp:FLEX1" minOccurs="0"/>
+            <element ref="atp:FLEX2" minOccurs="0"/>
+            <element ref="atp:FLEX3" minOccurs="0"/>
+            <element ref="atp:SUCCESS" minOccurs="0"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ATP_EXCEPTION" type="eai:eaiException"/>
+      <element name="ATP_MATERIAL_LIST">
+        <complexType>
+          <sequence>
+            <element ref="atp:MATNR" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="COUNTRY" type="xsd:string"/>
+      <element name="CUST_ID">
+        <simpleType>
+          <restriction base="xsd:string">
+            <maxLength value="18"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="DIST_CHNL" type="xsd:string"/>
+      <element name="DIVISION" type="xsd:string"/>
+      <element name="FLEX1" type="xsd:string"/>
+      <element name="FLEX2" type="xsd:string"/>
+      <element name="FLEX3" type="xsd:string"/>
+      <element name="GET_ATP_REQUEST">
+        <complexType>
+          <sequence>
+            <element ref="atp:COUNTRY" minOccurs="0"/>
+            <element ref="atp:REGION" minOccurs="0"/>
+            <element ref="atp:CUST_ID" minOccurs="0"/>
+            <element ref="atp:DIST_CHNL" minOccurs="0"/>
+            <element ref="atp:DIVISION" minOccurs="0"/>
+            <element ref="atp:ITEM_TYPE" minOccurs="0"/>
+            <element ref="atp:MDR" minOccurs="0"/>
+            <element ref="atp:SALES_ORG" minOccurs="0"/>
+            <element ref="atp:ORDER_TYPE" minOccurs="0"/>
+            <element ref="atp:FLEX1" minOccurs="0"/>
+            <element ref="atp:FLEX2" minOccurs="0"/>
+            <element ref="atp:FLEX3" minOccurs="0"/>
+            <element ref="atp:ATP_MATERIAL_LIST"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GET_ATP_RESPONSE">
+        <complexType>
+          <sequence>
+            <element ref="atp:ATP_DETAIL_LIST" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ITEM_TYPE" type="xsd:string"/>
+      <element name="MATNR" type="xsd:string"/>
+      <element name="MDR" type="xsd:string"/>
+      <element name="ORDER_TYPE" type="xsd:string"/>
+      <element name="QUANTITY" type="xsd:string"/>
+      <element name="REGION" type="xsd:string"/>
+      <element name="SALES_ORG" type="xsd:string"/>
+      <element name="SUCCESS" type="xsd:string"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:service name="getMaterialATP">
+    <wsdl:port name="SOAPEventSource" binding="tns:SOAPEventSourceBinding">
+      <soap:address location="http://hyddl2213:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="ATP">
+    <wsdl:operation name="getMaterialATP">
+      <wsdl:input message="tns:getMaterialATPRequest"/>
+      <wsdl:output message="tns:getMaterialATPResponse"/>
+      <wsdl:fault name="ATPException" message="tns:getMaterialATPException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEventSourceBinding" type="tns:ATP">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMaterialATP">
+      <soap:operation style="document" soapAction="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="getMaterialATPRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="getMaterialATPResponse"/>
+      </wsdl:output>
+      <wsdl:fault name="ATPException">
+        <soap:fault use="literal" name="ATPException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="getMaterialATPRequest">
+    <wsdl:part name="getMaterialATPRequest" element="ns0:GET_ATP_REQUEST"/>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPResponse">
+    <wsdl:part name="getMaterialATPResponse" element="ns0:GET_ATP_RESPONSE"/>
+  </wsdl:message>
+  <wsdl:message name="getMaterialATPException">
+    <wsdl:part name="getMaterialATPException" element="ns0:ATP_EXCEPTION"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://10.83.58.63:9800/getMaterialATP_Q100?wsdl</con:endpoint><con:endpoint>http://neduapp001:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:endpoint>http://localhost:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:endpoint>http://wdcqaua01:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:endpoint>http://neduapp001c:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:endpoint>http://nepuinf005b:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP" name="getMaterialATP" bindingOperationName="getMaterialATP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="stg"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>US</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>MA</get:REGION>
+         <!--Optional:-->
+         <get:CUST_ID>0000128912</get:CUST_ID>
+         <!--Optional:-->
+         <get:DIST_CHNL>10</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>50</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>SAMPLE</get:ITEM_TYPE>
+        
+         <!--Optional:-->
+         <get:SALES_ORG>HMC1</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>TRANSACTION_TYPE_IMPLEMENTATION</get:ORDER_TYPE>
+         <!--Optional:-->
+         <get:FLEX1>Marsha</get:FLEX1>
+         <!--Optional:-->
+         <get:FLEX2>?</get:FLEX2>
+         <!--Optional:-->
+         <get:FLEX3>?</get:FLEX3>
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>1062230</get:MATNR>
+	    	
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Dev"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>US</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>OH</get:REGION>
+        
+         <!--Optional:-->
+         <get:DIST_CHNL>10</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>40</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>ITEM_TYPE_SAMPLE</get:ITEM_TYPE>
+         
+         <!--Optional:-->
+         <get:SALES_ORG>HMC1</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>1TRANSACTION_TYPE_SAMPLE</get:ORDER_TYPE>
+        
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>000000000001461019</get:MATNR>
+
+
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Prod"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://nepuinf005b:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>US</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>MA</get:REGION>
+         <!--Optional:-->
+         <get:CUST_ID>0000128912</get:CUST_ID>
+         <!--Optional:-->
+         <get:DIST_CHNL>10</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>50</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>SAMPLE</get:ITEM_TYPE>
+         <!--Optional:-->
+         <get:MDR>?</get:MDR>
+         <!--Optional:-->
+         <get:SALES_ORG>HMC1</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>TRANSACTION_TYPE_SAMPLE</get:ORDER_TYPE>
+         <!--Optional:-->
+         <get:FLEX1>Marsha</get:FLEX1>
+         <!--Optional:-->
+         <get:FLEX2>?</get:FLEX2>
+         <!--Optional:-->
+         <get:FLEX3>?</get:FLEX3>
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            
+	    <get:MATNR>000000000001058589</get:MATNR>
+   	   
+          
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>US</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>MA</get:REGION>
+         <!--Optional:-->
+         <get:CUST_ID>0000128912</get:CUST_ID>
+         <!--Optional:-->
+         <get:DIST_CHNL>10</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION></get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>SAMPLE</get:ITEM_TYPE>
+        
+         <!--Optional:-->
+         <get:SALES_ORG>HMC1</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>TRANSACTION_TYPE_IMPLEMENTATION</get:ORDER_TYPE>
+         <!--Optional:-->
+         <get:FLEX1>Marsha</get:FLEX1>
+         <!--Optional:-->
+         <get:FLEX2>?</get:FLEX2>
+         <!--Optional:-->
+         <get:FLEX3>?</get:FLEX3>
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>1062230</get:MATNR>
+	    	
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Kens Stg"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>US</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>OH</get:REGION>
+        
+         <!--Optional:-->
+         <get:DIST_CHNL>10</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>40</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>ITEM_TYPE_SAMPLE</get:ITEM_TYPE>
+         
+         <!--Optional:-->
+         <get:SALES_ORG>HMC1</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>TRANSACTION_TYPE_SAMPLE</get:ORDER_TYPE>
+        
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>000000000001461019</get:MATNR>
+
+
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call><con:call name="mahavir"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://nepuinf005b:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+        
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>1098274</get:MATNR>
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="getMaterialATP - stg"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPEventSourceBinding</con:interface><con:operation>getMaterialATP</con:operation><con:request name="getMaterialATP - stg" outgoingWss="" incomingWss="" wssPasswordType=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://wdcqaua01:9006/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.hmco.com/EAI/OTS/Material/GetATP">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GET_ATP_REQUEST>
+         <!--Optional:-->
+         <get:COUNTRY>US</get:COUNTRY>
+         <!--Optional:-->
+         <get:REGION>MA</get:REGION>
+         <!--Optional:-->
+         <get:CUST_ID>0000128912</get:CUST_ID>
+         <!--Optional:-->
+         <get:DIST_CHNL>10</get:DIST_CHNL>
+         <!--Optional:-->
+         <get:DIVISION>50</get:DIVISION>
+         <!--Optional:-->
+         <get:ITEM_TYPE>SAMPLE</get:ITEM_TYPE>
+        
+         <!--Optional:-->
+         <get:SALES_ORG>HMC1</get:SALES_ORG>
+         <!--Optional:-->
+         <get:ORDER_TYPE>TRANSACTION_TYPE_IMPLEMENTATION</get:ORDER_TYPE>
+         <!--Optional:-->
+         <get:FLEX1>Marsha</get:FLEX1>
+         <!--Optional:-->
+         <get:FLEX2>?</get:FLEX2>
+         <!--Optional:-->
+         <get:FLEX3>?</get:FLEX3>
+         <get:ATP_MATERIAL_LIST>
+            <!--1 or more repetitions:-->
+            <get:MATNR>1062230</get:MATNR>
+	    	
+         </get:ATP_MATERIAL_LIST>
+      </get:GET_ATP_REQUEST>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Material/GetMaterialATP/MainProcesses/getMaterialATP"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>180</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Burst</con:type><con:config><burstDelay>60000</burstDelay><burstDuration>10000</burstDuration></con:config></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

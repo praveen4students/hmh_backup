@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
+	<globalVariables>
+		<globalVariable>
+			<name>DRIVER</name>
+			<value>tibcosoftwareinc.jdbc.oracle.OracleDriver</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1247598957591</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>HOST</name>
+			<value>jdbc:tibcosoftwareinc:oracle://blackhole.hmco.com:1521;SID=ORDEVLAD</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1247598946685</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>PWD</name>
+			<value>1sore#9</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<constraint></constraint>
+			<modTime>1247598933903</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>USER</name>
+			<value>IC_COMMON</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1315832575031</modTime>
+		</globalVariable>
+	</globalVariables>
+</repository>

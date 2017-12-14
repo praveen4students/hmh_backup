@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<root>
+ <ns0:MaterialPartners xmlns:ns0 = "http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd">
+  <ns0:PartnerInfo>
+   <ns0:MaterialNumber>H11076</ns0:MaterialNumber>
+   <ns0:AuthorID>0000004268</ns0:AuthorID>
+   <ns0:Affiliation/>
+   <ns0:Role>ZSM125</ns0:Role>
+   <ns0:FirstName>Editors of</ns0:FirstName>
+   <ns0:LastName>The American Heritage Dictionaries</ns0:LastName>
+   <ns0:iDocNumber>0000000196310846</ns0:iDocNumber>
+   <ns0:Update_User>TIBCO</ns0:Update_User>
+  </ns0:PartnerInfo>
+ </ns0:MaterialPartners>
+</root>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prices>
+	<materialid id="000000000001422379"><!-- Mandatory field. SAP title or material number. Max size 18 Aphanumeric -->
+		<price>			
+			<from>10/01/2012</from> <!-- Mandatory field. Date effective from. Max size 10 Alphanumeric -->
+			<to>12/31/9999</to> <!-- Mandatory field. Date effective to. Max Size 10 Alphanumeric -->
+			<amount>7.60</amount> <!-- Mandatory field. List Price of the product. Max Size 11 digits + 2 decimal digits -->
+			<duration></duration> <!-- Optional field. Values like 006 or 018 etc. 6 years or 18 months. Max Size 3 Alphanumeric -->
+			<unit></unit> <!-- Optional field. Values like DAY, MON, YR, WK. Mon is month, YR is year, WK is week. Max size is 3 Alphanumeric -->
+		</price>
+		<price>			
+			<from>10/01/2011</from>
+			<to>09/30/2012</to>
+			<amount>7.60</amount>
+			<duration></duration>
+			<unit></unit>
+		</price>
+		<price>			
+			<from>10/01/2010</from>
+			<to>09/30/2011</to>
+			<amount>7.53</amount>
+			<duration></duration>
+			<unit></unit>
+		</price>
+		<price>			
+			<from>01/01/2010</from>
+			<to>09/30/2010</to>
+			<amount>6.93</amount>
+			<duration></duration>
+			<unit></unit>
+		</price>		
+		<price>			
+			<from>11/17/2009</from>
+			<to>12/31/2009</to>
+			<amount>6.93</amount>
+			<duration></duration>
+			<unit></unit>
+		</price>		
+	</materialid>		
+	<materialid id="000000000001528501">
+			<price>			
+				<from>04/11/2012</from>
+				<to>10/14/2012</to>
+				<amount>6.99</amount>
+				<duration></duration>
+				<unit></unit>
+			</price>
+			<price>			
+				<from>10/15/2012</from>
+				<to>12/31/9999</to>
+				<amount>6.99</amount>
+				<duration></duration>
+				<unit></unit>
+			</price>
+	</materialid>
+</prices>
+		
+		

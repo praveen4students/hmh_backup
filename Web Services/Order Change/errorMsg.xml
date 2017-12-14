@@ -1,0 +1,7 @@
+<orderChangeResponse>
+<error>
+<errorCategory>No Line Items present in the Request</errorCategory>
+<errorCode>No Line Items present in the Request</errorCode>
+<errorMessage>No Line Items present in the Request. Request Should Contain One / More Line Items</errorMessage>
+</error>
+</orderChangeResponse>

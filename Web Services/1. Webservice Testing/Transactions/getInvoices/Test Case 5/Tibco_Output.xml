@@ -1,0 +1,42 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:invoiceDetailsList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:invoiceDetails>
+            <ns0:transactionID>0002172048</ns0:transactionID>
+            <ns0:invoiceTransactionItem>
+               <ns0:invoiceNo>0942633419</ns0:invoiceNo>
+               <ns0:invoiceType>INVOICE_TYPE_STANDARD</ns0:invoiceType>
+               <ns0:billingDate>2008-03-12</ns0:billingDate>
+               <ns0:subTotal>1.239E1</ns0:subTotal>
+               <ns0:salesTax>0.0E0</ns0:salesTax>
+               <ns0:shippingCharge>0.0E0</ns0:shippingCharge>
+               <ns0:total>1.239E1</ns0:total>
+               <ns0:lineItem>
+                  <ns0:productInfo>
+                     <ns0:lineNo>10</ns0:lineNo>
+                     <ns0:salesOffice/>
+                     <ns0:materialID>000000000000651164</ns0:materialID>
+                     <ns0:isbn>9780807032848</ns0:isbn>
+                     <ns0:description>CAN WE TALK ABOUT RACE</ns0:description>
+                     <ns0:couponCode/>
+                     <ns0:promotionType/>
+                     <ns0:quantity>1</ns0:quantity>
+                     <ns0:listPrice>2.295E1</ns0:listPrice>
+                     <ns0:netPrice>1.239E1</ns0:netPrice>
+                     <ns0:productDivision>DIVISION_TRADE_AND_REFERENCE</ns0:productDivision>
+                     <ns0:listDiscount>1.056E1</ns0:listDiscount>
+                     <ns0:isEGood>false</ns0:isEGood>
+                     <ns0:isSubscription>false</ns0:isSubscription>
+                  </ns0:productInfo>
+                  <ns0:shipmentNo>0082585011</ns0:shipmentNo>
+                  <ns0:shipmentLineNo>10</ns0:shipmentLineNo>
+                  <ns0:shipmentLocation>D300</ns0:shipmentLocation>
+                  <ns0:paymentTerm>AR_TERMS_NET_DUE_30_DAYS</ns0:paymentTerm>
+                  <ns0:transactionNo>0002172048</ns0:transactionNo>
+                  <ns0:transactionLineNo>10</ns0:transactionLineNo>
+               </ns0:lineItem>
+            </ns0:invoiceTransactionItem>
+         </ns0:invoiceDetails>
+      </ns0:invoiceDetailsList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

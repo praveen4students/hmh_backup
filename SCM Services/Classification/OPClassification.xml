@@ -1,0 +1,443 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<ns0:Classfication_Update_Request xmlns:ns0 = "http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd">
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>APO_CALC_PRICE</ns0:ATNAM>
+		<ns0:ATWRT>21.000</ns0:ATWRT>
+		<ns0:ATWTB/>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>BEGINNING_AGE</ns0:ATNAM>
+		<ns0:ATWRT>05</ns0:ATWRT>
+		<ns0:ATWTB>Five</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>BEGINNING_GRADE_LEVEL</ns0:ATNAM>
+		<ns0:ATWRT>K</ns0:ATWRT>
+		<ns0:ATWTB>Kindergarten</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>BINDING_METHOD</ns0:ATNAM>
+		<ns0:ATWRT>SADDLE-WIRE</ns0:ATWRT>
+		<ns0:ATWTB>Binding Method</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_COUNT</ns0:ATNAM>
+		<ns0:ATWRT>1</ns0:ATWRT>
+		<ns0:ATWTB>Number of CDs</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_INKS</ns0:ATNAM>
+		<ns0:ATWRT>5/C WITH FLOOD COAT</ns0:ATWRT>
+		<ns0:ATWTB>CD Inks</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_PACKAGING</ns0:ATNAM>
+		<ns0:ATWRT>JEWEL CASE</ns0:ATWRT>
+		<ns0:ATWTB>CD Packaging</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_PACKAGING_SPECIFICATIONS_1</ns0:ATNAM>
+		<ns0:ATWRT>INSERT BOOK, TRAY CARD &amp; CD</ns0:ATWRT>
+		<ns0:ATWTB>CD Packaging Specifications 1</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_PACKAGING_SPECIFICATIONS_2</ns0:ATNAM>
+		<ns0:ATWRT>CLOSE &amp; SHRINKWRAP</ns0:ATWRT>
+		<ns0:ATWTB>CD Packaging Specifications 2</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_PREP_1</ns0:ATNAM>
+		<ns0:ATWRT>WE HAVE SUPPLIED ALL MASTERS</ns0:ATWRT>
+		<ns0:ATWTB>CD Prep 1</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_PRESSWORK</ns0:ATNAM>
+		<ns0:ATWRT>SILK SCREEN</ns0:ATWRT>
+		<ns0:ATWTB>CD Presswork</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_SHRINK_WRAP</ns0:ATNAM>
+		<ns0:ATWRT>YES</ns0:ATWRT>
+		<ns0:ATWTB>CD Shrink Wrap</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_TRAY_CARD</ns0:ATNAM>
+		<ns0:ATWRT>4/0</ns0:ATWRT>
+		<ns0:ATWTB>CD Tray Card</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CD_TRAY_CARD_PRESSWORK</ns0:ATNAM>
+		<ns0:ATWRT>SHEETFED</ns0:ATWRT>
+		<ns0:ATWTB>CD Tray Card Presswork</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>COVER_BLEED</ns0:ATNAM>
+		<ns0:ATWRT>YES</ns0:ATWRT>
+		<ns0:ATWTB>Cover Bleed</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>COVER_COATING1</ns0:ATNAM>
+		<ns0:ATWRT>MATTE UV</ns0:ATWRT>
+		<ns0:ATWTB>Cover Coating</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>COVER_INKS</ns0:ATNAM>
+		<ns0:ATWRT>4/0</ns0:ATWRT>
+		<ns0:ATWTB>Cover Inks</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>COVER_STOCK</ns0:ATNAM>
+		<ns0:ATWRT>100# GLOSS TEXT</ns0:ATWRT>
+		<ns0:ATWTB>Cover stock</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>COVER_TRIM_SIZE</ns0:ATNAM>
+		<ns0:ATWRT>4-3/4" X 4-3/4"</ns0:ATWRT>
+		<ns0:ATWTB>Cover Trim Size</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CPSIA_REQ_CERTIFICATE</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CPSIA_REQ_LABEL</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>CPSIA_REQ_SAFETY_TEST</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>ENDING_AGE</ns0:ATNAM>
+		<ns0:ATWRT>06</ns0:ATWRT>
+		<ns0:ATWTB>Six</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>ENDING_GRADE_LEVEL</ns0:ATNAM>
+		<ns0:ATWRT>K</ns0:ATWRT>
+		<ns0:ATWTB>Kindergarten</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>ESTIMATED_COST</ns0:ATNAM>
+		<ns0:ATWRT>1.43 USD</ns0:ATWRT>
+		<ns0:ATWTB/>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>FILE_REQUIRED</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>FILE_TRANSFER_REQUIRED</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>INVENTORY_DISPOSITION</ns0:ATNAM>
+		<ns0:ATWRT>A</ns0:ATWRT>
+		<ns0:ATWTB>Sieve A</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MAKE_READY</ns0:ATNAM>
+		<ns0:ATWRT>65.000</ns0:ATWRT>
+		<ns0:ATWTB/>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>METHOD_OF_MANUFACTURE</ns0:ATNAM>
+		<ns0:ATWRT>3</ns0:ATWRT>
+		<ns0:ATWTB>Not Applicable</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MISC_SPEC_1</ns0:ATNAM>
+		<ns0:ATWRT>TRAY CARD UNIQUE-ALL GRADES</ns0:ATWRT>
+		<ns0:ATWTB>Misc Spec 1</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MISC_SPEC_2</ns0:ATNAM>
+		<ns0:ATWRT>GR K (1014853) BOOKLET UNIQUE:</ns0:ATWRT>
+		<ns0:ATWTB>Misc Spec 2</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MISC_SPEC_3</ns0:ATNAM>
+		<ns0:ATWRT>12 PGS, 4/4, SELF-COVER</ns0:ATWRT>
+		<ns0:ATWTB>Misc Spec 3</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MISC_SPEC_4</ns0:ATNAM>
+		<ns0:ATWRT>BOOKLETS UNIQUE FOR GR 1-5</ns0:ATWRT>
+		<ns0:ATWTB>Misc Spec 4</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MISC_SPEC_5</ns0:ATNAM>
+		<ns0:ATWRT>(1014854-1014858)</ns0:ATWRT>
+		<ns0:ATWTB>Misc Spec 5</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>MISC_SPEC_6</ns0:ATNAM>
+		<ns0:ATWRT>16 PGS, 4/4 SELF-COVER</ns0:ATWRT>
+		<ns0:ATWTB>Misc Spec 6</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>OBSOLETE_IND</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>PRIMARY_GRADE</ns0:ATNAM>
+		<ns0:ATWRT>K</ns0:ATWRT>
+		<ns0:ATWTB>Kindergarten</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>PRIMARY_SOURCE_REVIEW_DATE</ns0:ATNAM>
+		<ns0:ATWRT>02/2012</ns0:ATWRT>
+		<ns0:ATWTB/>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>PRODUCT_SUB_TYPE</ns0:ATNAM>
+		<ns0:ATWRT>CDS</ns0:ATWRT>
+		<ns0:ATWTB>CDs</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>PRODUCT_TYPE</ns0:ATNAM>
+		<ns0:ATWRT>AUDIO</ns0:ATWRT>
+		<ns0:ATWTB>Innactive Do Not Use</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>RESTRICTED_MATERIAL</ns0:ATNAM>
+		<ns0:ATWRT>N</ns0:ATWRT>
+		<ns0:ATWTB>No</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>RUN</ns0:ATNAM>
+		<ns0:ATWRT>0.250</ns0:ATWRT>
+		<ns0:ATWTB/>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>STATE_INDICATOR</ns0:ATNAM>
+		<ns0:ATWRT>TX</ns0:ATWRT>
+		<ns0:ATWTB>Texas</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_BLEED</ns0:ATNAM>
+		<ns0:ATWRT>YES</ns0:ATWRT>
+		<ns0:ATWTB>Text Bleed</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_INK</ns0:ATNAM>
+		<ns0:ATWRT>4/C</ns0:ATWRT>
+		<ns0:ATWTB>Text Ink</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_PAPER_SPECIFICATIONS_1</ns0:ATNAM>
+		<ns0:ATWRT>100# GLOSS TEXT</ns0:ATWRT>
+		<ns0:ATWTB>Text Paper Specifications 1</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_PAPER_SPECIFICATIONS_2</ns0:ATNAM>
+		<ns0:ATWRT>YOU SHOULD SUPPLY ALL PAPER</ns0:ATWRT>
+		<ns0:ATWTB>Text Paper Specifications 2</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_PLATES</ns0:ATNAM>
+		<ns0:ATWRT>EXPENDABLE</ns0:ATWRT>
+		<ns0:ATWTB>Text Plates</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_PREP_LINE_1</ns0:ATNAM>
+		<ns0:ATWRT>YOU TO OUTPUT FILM FROM FINAL</ns0:ATWRT>
+		<ns0:ATWTB>Text Prep Line 1</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_PRINTING_METHOD</ns0:ATNAM>
+		<ns0:ATWRT>WEB OFFSET</ns0:ATWRT>
+		<ns0:ATWTB>Text Printing Method</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_PRINT_SYMBOL</ns0:ATNAM>
+		<ns0:ATWRT>UPDATE ON COPYRIGHT PAGE</ns0:ATWRT>
+		<ns0:ATWTB>Text Print Symbol</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_SELFCOVER</ns0:ATNAM>
+		<ns0:ATWRT>YES</ns0:ATWRT>
+		<ns0:ATWTB>Text Selfcover</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_TRIM_HEIGHT</ns0:ATNAM>
+		<ns0:ATWRT>4-3/4"</ns0:ATWRT>
+		<ns0:ATWTB>Text Trim Height</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+	<ns0:Classification_Update_Requests>
+		<ns0:Material_Number>000000000001014853</ns0:Material_Number>
+		<ns0:ATNAM>TEXT_TRIM_WIDTH</ns0:ATNAM>
+		<ns0:ATWRT>4-3/4"</ns0:ATWRT>
+		<ns0:ATWTB>Text Trim Width</ns0:ATWTB>
+		<ns0:iDocNumber>0000000196271916</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:Classification_Update_Requests>
+</ns0:Classfication_Update_Request>

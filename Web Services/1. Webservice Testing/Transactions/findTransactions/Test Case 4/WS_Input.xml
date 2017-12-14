@@ -1,0 +1,45 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionSearchCriteria>
+         <!--Optional:-->
+
+         <!--Optional:-->
+         <tran:customerID>111</tran:customerID>
+         <!--Optional:-->
+         <tran:fromDate>2012-10-10</tran:fromDate>
+         <!--Optional:-->
+         <tran:toDate>2012-10-10</tran:toDate>
+         <tran:limitOfResults></tran:limitOfResults>
+         <!--Optional:-->
+         <tran:invoiceNo></tran:invoiceNo>
+         <!--Optional:-->
+         <tran:poNo></tran:poNo>
+         <!--Optional:-->
+         <tran:clientTransactionID></tran:clientTransactionID>
+         <!--Optional:-->
+         <tran:isbn></tran:isbn>
+         <!--Optional:-->
+         <tran:materialID></tran:materialID>
+         <!--Optional:-->
+         <tran:status></tran:status>
+         <!--Optional:-->
+         <tran:transactionType></tran:transactionType>
+         <!--Optional:-->
+         <tran:orderSource></tran:orderSource>
+         <!--Optional:-->
+         <tran:sanNumber></tran:sanNumber>
+         <!--Optional:-->
+         <tran:zipCode></tran:zipCode>
+         <!--Optional:-->
+         <tran:countryCode></tran:countryCode>
+         <!--Optional:-->
+         <tran:Division></tran:Division>
+         <!--Optional:-->
+         <tran:partnerFunctionList>
+            <!--1 or more repetitions:-->
+            <tran:partnerFunction></tran:partnerFunction>
+         </tran:partnerFunctionList>
+      </tran:transactionSearchCriteria>
+   </soapenv:Body>
+</soapenv:Envelope>

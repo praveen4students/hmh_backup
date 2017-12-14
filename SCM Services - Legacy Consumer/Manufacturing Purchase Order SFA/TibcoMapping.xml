@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx7:purchaseOrderList xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.hmco.com/schemas/sfa/purchase_order_update" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/inventory_update" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:for-each select="$Start/pfx3:ZORDERS05-4x/CHILDREN/ZE1EDK01/item/FIELDS">
+        <pfx7:purchaseOrderInfo>
+            <pfx7:purchaseOrderNumber>
+                <xsl:value-of select="EBELN"/>
+            </pfx7:purchaseOrderNumber>
+            <pfx7:createdDate>
+                <xsl:value-of select="tib:parse-date('yyyyMMdd',AEDAT)"/>
+            </pfx7:createdDate>
+            <pfx7:documentDate>
+                <xsl:value-of select="tib:parse-date('yyyyMMdd',BEDAT)"/>
+            </pfx7:documentDate>
+            <pfx7:vendor>
+                <xsl:value-of select="LIFNR"/>
+            </pfx7:vendor>
+            <pfx7:processingStatus>
+                <xsl:value-of select="PROCSTAT"/>
+            </pfx7:processingStatus>
+            <pfx7:releaseIndicator>
+                <xsl:value-of select="FRGKE"/>
+            </pfx7:releaseIndicator>
+            <xsl:if test="not(LOEKZ/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                <pfx7:deletionIndicator>
+                    <xsl:value-of select="LOEKZ"/>
+                </pfx7:deletionIndicator>
+            </xsl:if>
+            <xsl:for-each select="../../../ZE1EDP01/item/FIELDS">
+                <pfx7:purchaseOrderItem>
+                    <pfx7:purchaseOrderItemNumber>
+                        <xsl:value-of select="POSEX"/>
+                    </pfx7:purchaseOrderItemNumber>
+                    <pfx7:materialNumber>
+                        <xsl:value-of select="MATNR"/>
+                    </pfx7:materialNumber>
+                    <pfx7:ContentCategory>
+                        <xsl:value-of select="ISMCONTTYPE"/>
+                    </pfx7:ContentCategory>
+                    <pfx7:Division>
+                        <xsl:value-of select="SPART"/>
+                    </pfx7:Division>
+                    <pfx7:XPlantStatus>
+                        <xsl:value-of select="MSTAE"/>
+                    </pfx7:XPlantStatus>
+                    <pfx7:PHLevel4Code>
+                        <xsl:value-of select="PRDHA__4"/>
+                    </pfx7:PHLevel4Code>
+                    <pfx7:PHLevel5Code>
+                        <xsl:value-of select="PRDHA__5"/>
+                    </pfx7:PHLevel5Code>
+                    <pfx7:lastChangeDate>
+                        <xsl:value-of select="tib:parse-date('yyyyMMdd',AEDAT)"/>
+                    </pfx7:lastChangeDate>
+                    <pfx7:quantity>
+                        <xsl:value-of select="MENGE"/>
+                    </pfx7:quantity>
+                    <xsl:if test="not(BANFN/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                        <pfx7:purchaseReqNumber>
+                            <xsl:value-of select="BANFN"/>
+                        </pfx7:purchaseReqNumber>
+                    </xsl:if>
+                    <xsl:if test="not(BNFPO/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                        <pfx7:purchaseReqItemNumber>
+                            <xsl:value-of select="BNFPO"/>
+                        </pfx7:purchaseReqItemNumber>
+                    </xsl:if>
+                    <pfx7:printingNumber>
+                        <xsl:value-of select="../CHILDREN/E1MTXHM/item[FIELDS/TDID = 'F07']/CHILDREN/E1MTXLM/item/FIELDS/TDLINE"/>
+                    </pfx7:printingNumber>
+                    <xsl:if test="not(LOEKZ/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                        <pfx7:deletionIndicator>
+                            <xsl:value-of select="LOEKZ"/>
+                        </pfx7:deletionIndicator>
+                    </xsl:if>
+                    <xsl:for-each select="../CHILDREN/ZE1EDP02/item/FIELDS">
+                        <pfx7:scheduledDelivery>
+                            <xsl:if test="EDATU__OLD !=0 and string-length(EDATU__OLD) > 0">
+                                <pfx7:previousDeliveryDate>
+                                    <xsl:value-of select="tib:parse-date('yyyyMMdd',EDATU__OLD)"/>
+                                </pfx7:previousDeliveryDate>
+                            </xsl:if>
+                            <pfx7:quantity>
+                                <xsl:value-of select="WMENG"/>
+                            </pfx7:quantity>
+                            <xsl:if test="EDATU !=0 and string-length(EDATU) > 0">
+                                <pfx7:itemDeliveryDate>
+                                    <xsl:value-of select="tib:parse-date('yyyyMMdd',EDATU)"/>
+                                </pfx7:itemDeliveryDate>
+                            </xsl:if>
+                            <xsl:if test="not(AMENG/@xsi:nil!=(&quot;true&quot;,&quot;1&quot;))">
+                                <pfx7:previousDeliveryQuantity>
+                                    <xsl:value-of select="AMENG"/>
+                                </pfx7:previousDeliveryQuantity>
+                            </xsl:if>
+                        </pfx7:scheduledDelivery>
+                    </xsl:for-each>
+                </pfx7:purchaseOrderItem>
+            </xsl:for-each>
+        </pfx7:purchaseOrderInfo>
+    </xsl:for-each>
+</pfx7:purchaseOrderList>

@@ -1,0 +1,116 @@
+ID: 2
+Address: http://localhost:7110/services/transaction
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml;charset=UTF-8
+Headers: {accept-encoding=[gzip,deflate], Content-Length=[916], content-type=[text/xml;charset=UTF-8], Host=[localhost:7110], SOAPAction=["/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/findTransactions"], User-Agent=[Jakarta Commons-HttpClient/3.1]}
+Payload: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tran="http://www.hmco.com/EAI/OTS/Transaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tran:transactionSearchCriteria>
+         <!--Optional:-->
+        
+         <tran:fromDate>2010-05-01</tran:fromDate>
+         <!--Optional:-->
+         <tran:toDate>2010-05-30</tran:toDate>
+         <tran:limitOfResults>10</tran:limitOfResults>
+         <tran:poNo>366384</tran:poNo>
+         <tran:zipCode>55121</tran:zipCode>
+         <tran:partnerFunctionList>
+            <!--1 or more repetitions:-->
+          <tran:partnerFunction>PARTNER_FUNCTION_SHIPTO</tran:partnerFunction>
+	<tran:partnerFunction>PARTNER_FUNCTION_BILLTO</tran:partnerFunction>
+<tran:partnerFunction>PARTNER_FUNCTION_SOLDTO</tran:partnerFunction>
+         </tran:partnerFunctionList>
+      </tran:transactionSearchCriteria>
+   </soapenv:Body>
+</soapenv:Envelope>
+--------------------------------------
+12:52:50,564 | INFO  | qtp17432833-415  | route5                           | 149 - org.apache.camel.camel-core - 2.10.0.fuse-71-047 | route starts
+12:52:50,638 | INFO  | transactionAudit | UtilDAOImpl                      | 61 - hmhutil - 1.0.0.SNAPSHOT | LogEnter event-id 21789813930147.415.172.17.98.16
+12:52:50,695 | INFO  | transactionAudit | UtilDAOImpl                      | 61 - hmhutil - 1.0.0.SNAPSHOT | LogRequest event-id 21789813930147.415.172.17.98.16
+12:53:02,619 | INFO  | transactionAudit | UtilDAOImpl                      | 61 - hmhutil - 1.0.0.SNAPSHOT | LogResponse event-id 21789813930147.415.172.17.98.16
+12:53:02,850 | INFO  | transactionAudit | UtilDAOImpl                      | 61 - hmhutil - 1.0.0.SNAPSHOT | LogExit event-id 21789813930147.415.172.17.98.16
+12:53:02,851 | INFO  | qtp17432833-415  | route5                           | 149 - org.apache.camel.camel-core - 2.10.0.fuse-71-047 | route ends
+12:53:02,899 | WARN  | qtp17432833-415  | PhaseInterceptorChain            | 171 - org.apache.cxf.cxf-api - 2.6.0.fuse-71-047 | Interceptor for {http://www.hmco.com/EAI/Tibco/EnterpriseWebServices}EnterpriseWebServices.serviceagent#{http://www.hmco.com/EAI/Tibco/EnterpriseWebServices}findTransactions has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: Marshalling Error: cvc-complex-type.2.4.a: Invalid content was found starting with element 'ns6:soldToCustomerEmailAddress'. One of '{"http://www.hmco.com/EAI/OTS/Transaction":soldToCustomerAddress}' is expected.
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.marshall(JAXBEncoderDecoder.java:263)[176:org.apache.cxf.cxf-rt-databinding-jaxb:2.6.0.fuse-71-047]
+	at org.apache.cxf.jaxb.io.DataWriterImpl.write(DataWriterImpl.java:168)[176:org.apache.cxf.cxf-rt-databinding-jaxb:2.6.0.fuse-71-047]
+	at org.apache.cxf.interceptor.AbstractOutDatabindingInterceptor.writeParts(AbstractOutDatabindingInterceptor.java:121)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.interceptor.BareOutInterceptor.handleMessage(BareOutInterceptor.java:68)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:262)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.interceptor.OutgoingChainInterceptor.handleMessage(OutgoingChainInterceptor.java:77)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:262)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.phase.PhaseInterceptorChain.resume(PhaseInterceptorChain.java:231)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:78)[171:org.apache.cxf.cxf-api:2.6.0.fuse-71-047]
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.serviceRequest(JettyHTTPDestination.java:348)[194:org.apache.cxf.cxf-rt-transports-http-jetty:2.6.0.fuse-71-047]
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:312)[194:org.apache.cxf.cxf-rt-transports-http-jetty:2.6.0.fuse-71-047]
+	at org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:72)[194:org.apache.cxf.cxf-rt-transports-http-jetty:2.6.0.fuse-71-047]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1040)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:976)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:193)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.Server.handleAsync(Server.java:403)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:488)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:931)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:992)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)[81:org.eclipse.jetty.http:7.6.7.v20120910]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)[81:org.eclipse.jetty.http:7.6.7.v20120910]
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)[86:org.eclipse.jetty.server:7.6.7.v20120910]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)[92:org.eclipse.jetty.util:7.6.7.v20120910]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)[92:org.eclipse.jetty.util:7.6.7.v20120910]
+	at java.lang.Thread.run(Thread.java:662)[:1.6.0_37]
+Caused by: javax.xml.bind.MarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException: cvc-complex-type.2.4.a: Invalid content was found starting with element 'ns6:soldToCustomerEmailAddress'. One of '{"http://www.hmco.com/EAI/OTS/Transaction":soldToCustomerAddress}' is expected.]
+	at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:318)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.MarshallerImpl.marshal(MarshallerImpl.java:172)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.writeObject(JAXBEncoderDecoder.java:595)[176:org.apache.cxf.cxf-rt-databinding-jaxb:2.6.0.fuse-71-047]
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.marshall(JAXBEncoderDecoder.java:238)[176:org.apache.cxf.cxf-rt-databinding-jaxb:2.6.0.fuse-71-047]
+	... 28 more
+Caused by: org.xml.sax.SAXParseException: cvc-complex-type.2.4.a: Invalid content was found starting with element 'ns6:soldToCustomerEmailAddress'. One of '{"http://www.hmco.com/EAI/OTS/Transaction":soldToCustomerAddress}' is expected.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)[:]
+	at org.apache.xerces.util.ErrorHandlerWrapper.error(Unknown Source)[:]
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)[:]
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)[:]
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)[:]
+	at org.apache.xerces.impl.xs.XMLSchemaValidator$XSIErrorReporter.reportError(Unknown Source)[:]
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.reportSchemaError(Unknown Source)[:]
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.handleStartElement(Unknown Source)[:]
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.startElement(Unknown Source)[:]
+	at org.apache.xerces.jaxp.validation.ValidatorHandlerImpl.startElement(Unknown Source)[:]
+	at org.xml.sax.helpers.XMLFilterImpl.startElement(Unknown Source)[:2.0.0.fuse-71-047]
+	at com.sun.xml.bind.v2.runtime.output.SAXOutput.endStartTag(SAXOutput.java:124)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.output.ForkXmlOutput.endStartTag(ForkXmlOutput.java:102)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.XMLSerializer.leafElement(XMLSerializer.java:324)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.model.impl.RuntimeBuiltinLeafInfoImpl$StringImplImpl.writeLeafElement(RuntimeBuiltinLeafInfoImpl.java:1041)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.model.impl.RuntimeBuiltinLeafInfoImpl$StringImplImpl.writeLeafElement(RuntimeBuiltinLeafInfoImpl.java:1020)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.reflect.TransducedAccessor$CompositeTransducedAccessorImpl.writeLeafElement(TransducedAccessor.java:252)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.property.SingleElementLeafProperty.serializeBody(SingleElementLeafProperty.java:121)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ClassBeanInfoImpl.serializeBody(ClassBeanInfoImpl.java:340)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.XMLSerializer.childAsXsiType(XMLSerializer.java:696)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.property.ArrayElementNodeProperty.serializeItem(ArrayElementNodeProperty.java:65)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.property.ArrayElementProperty.serializeListBody(ArrayElementProperty.java:168)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.property.ArrayERProperty.serializeBody(ArrayERProperty.java:155)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ClassBeanInfoImpl.serializeBody(ClassBeanInfoImpl.java:340)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.XMLSerializer.childAsXsiType(XMLSerializer.java:696)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ElementBeanInfoImpl$1.serializeBody(ElementBeanInfoImpl.java:152)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ElementBeanInfoImpl$1.serializeBody(ElementBeanInfoImpl.java:189)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ElementBeanInfoImpl.serializeBody(ElementBeanInfoImpl.java:316)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ElementBeanInfoImpl.serializeRoot(ElementBeanInfoImpl.java:323)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.ElementBeanInfoImpl.serializeRoot(ElementBeanInfoImpl.java:72)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.XMLSerializer.childAsRoot(XMLSerializer.java:494)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	at com.sun.xml.bind.v2.runtime.MarshallerImpl.write(MarshallerImpl.java:315)[160:org.apache.servicemix.bundles.jaxb-impl:2.2.1.1_2]
+	... 31 more
+12:53:02,910 | INFO  | qtp17432833-415  | TransactionEx                    | 171 - org.apache.cxf.cxf-api - 2.6.0.fuse-71-047 | Outbound Message
+---------------------------
+ID: 2
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: text/xml
+Headers: {accept-encoding=[gzip,deflate], breadcrumbId=[ID-PC177262-58057-1361862843406-0-2], Host=[localhost:7110], SOAPAction=[/BusinessProcesses/V1.1/EnterpriseWebServices.serviceagent/TransactionExEndpoint1/findTransactions], User-Agent=[Jakarta Commons-HttpClient/3.1]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>Marshalling Error: cvc-complex-type.2.4.a: Invalid content was found starting with element 'ns6:soldToCustomerEmailAddress'. One of '{"http://www.hmco.com/EAI/OTS/Transaction":soldToCustomerAddress}' is expected.</faultstring></soap:Fault></soap:Body></soap:Envelope>
+--------------------------------------

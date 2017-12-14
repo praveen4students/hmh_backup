@@ -1,0 +1,49 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<root>
+ <ns0:MaterialPricing xmlns:ns0 = "http://www.hmco.com/schemas/sfa/material_Pricing">
+  <ns0:MaterialPrice>
+   <ns0:MaterialNumber>000000000001499573</ns0:MaterialNumber>
+   <ns0:ListPrice>13.27</ns0:ListPrice>
+   <ns0:ListEffectiveDate>2011-07-28</ns0:ListEffectiveDate>
+   <ns0:ListEndDate>2011-09-25</ns0:ListEndDate>
+   <ns0:iDocNumber>0000000196315979</ns0:iDocNumber>
+   <ns0:Update_User>TIBCO</ns0:Update_User>
+   <ns0:termUnit>DAY</ns0:termUnit>
+   <ns0:termDuration>030</ns0:termDuration>
+   <ns0:Variant>DAY30</ns0:Variant>
+  </ns0:MaterialPrice>
+  <ns0:MaterialPrice>
+   <ns0:MaterialNumber>000000000001499573</ns0:MaterialNumber>
+   <ns0:ListPrice>18.60</ns0:ListPrice>
+   <ns0:ListEffectiveDate>2011-09-26</ns0:ListEffectiveDate>
+   <ns0:ListEndDate>2011-11-15</ns0:ListEndDate>
+   <ns0:iDocNumber>0000000196315979</ns0:iDocNumber>
+   <ns0:Update_User>TIBCO</ns0:Update_User>
+   <ns0:termUnit>DAY</ns0:termUnit>
+   <ns0:termDuration>030</ns0:termDuration>
+   <ns0:Variant>DAY30</ns0:Variant>
+  </ns0:MaterialPrice>
+  <ns0:MaterialPrice>
+   <ns0:MaterialNumber>000000000001499573</ns0:MaterialNumber>
+   <ns0:ListPrice>13.95</ns0:ListPrice>
+   <ns0:ListEffectiveDate>2011-11-16</ns0:ListEffectiveDate>
+   <ns0:ListEndDate>2012-02-06</ns0:ListEndDate>
+   <ns0:iDocNumber>0000000196315979</ns0:iDocNumber>
+   <ns0:Update_User>TIBCO</ns0:Update_User>
+   <ns0:termUnit>DAY</ns0:termUnit>
+   <ns0:termDuration>030</ns0:termDuration>
+   <ns0:Variant>DAY30</ns0:Variant>
+  </ns0:MaterialPrice>
+  <ns0:MaterialPrice>
+   <ns0:MaterialNumber>000000000001499573</ns0:MaterialNumber>
+   <ns0:ListPrice>19.95</ns0:ListPrice>
+   <ns0:ListEffectiveDate>2012-02-07</ns0:ListEffectiveDate>
+   <ns0:ListEndDate>9999-12-31</ns0:ListEndDate>
+   <ns0:iDocNumber>0000000196315979</ns0:iDocNumber>
+   <ns0:Update_User>TIBCO</ns0:Update_User>
+   <ns0:termUnit>DAY</ns0:termUnit>
+   <ns0:termDuration>030</ns0:termDuration>
+   <ns0:Variant>DAY30</ns0:Variant>
+  </ns0:MaterialPrice>
+ </ns0:MaterialPricing>
+</root>

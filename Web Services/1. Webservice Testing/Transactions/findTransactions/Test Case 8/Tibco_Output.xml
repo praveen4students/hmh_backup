@@ -1,0 +1,20 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <SOAP-ENV:Fault>
+         <faultcode>SOAP-ENV:Exception</faultcode>
+         <faultstring>An error occurred while processing SOAP request.</faultstring>
+         <faultactor/>
+         <detail>
+            <ns:transactionException xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/">
+               <ns1:errorList xmlns:ns1="http://www.hmco.com/EAI">
+                  <ns1:error>
+                     <ns1:errorCategory>1</ns1:errorCategory>
+                     <ns1:errorCode>434</ns1:errorCode>
+                     <ns1:errorMessage>PO number must be accompanied by Customer no., SAN, Zip or Country</ns1:errorMessage>
+                  </ns1:error>
+               </ns1:errorList>
+            </ns:transactionException>
+         </detail>
+      </SOAP-ENV:Fault>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

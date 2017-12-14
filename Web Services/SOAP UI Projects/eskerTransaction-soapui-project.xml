@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="eskerTransaction" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="EskerTransaction__EventSourceBinding" type="wsdl" bindingName="{http://www.hmco.com/EAI/OTS/EskerTransaction/EskerTransactionOperationImpl/BusinessProcesses/External/EskerTransaction}EskerTransaction__EventSourceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Documents%20and%20Settings/maryadar/Desktop/eskerTransaction.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Documents%20and%20Settings/maryadar/Desktop/eskerTransaction.wsdl"><con:part><con:url>file:/C:/Documents%20and%20Settings/maryadar/Desktop/eskerTransaction.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.hmco.com/EAI/OTS/EskerTransaction/EskerTransactionOperationImpl/BusinessProcesses/External/EskerTransaction" xmlns:tns="http://www.hmco.com/EAI/OTS/EskerTransaction/EskerTransactionOperationImpl/BusinessProcesses/External/EskerTransaction" xmlns:ns0="http://www.hmco.com/EAI/OTS/EskerTransaction" xmlns:ns1="http://www.hmco.com/EAI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.hmco.com/EAI" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hmco.com/EAI">
+      <xsd:complexType name="eaiException">
+        <xsd:sequence>
+          <xsd:element ref="ns1:errorList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element name="errorCategory" type="xsd:string"/>
+          <xsd:element name="errorCode" type="xsd:string"/>
+          <xsd:element name="errorMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asyncRequestId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:requestId"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asyncRequestStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isReady" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="error" type="ns1:error"/>
+      <xsd:element name="errorList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="ns1:error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestId" type="xsd:string"/>
+    </xsd:schema>
+    <xs:schema targetNamespace="http://www.hmco.com/EAI/OTS/EskerTransaction" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hmco.com/EAI/OTS/EskerTransaction">
+      <xs:element name="EskerTransactionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:cpSfdcOrderNumber"/>
+            <xs:element ref="ns0:soldToCustomer" minOccurs="0"/>
+            <xs:element ref="ns0:shipToCustomer" minOccurs="0"/>
+            <xs:element ref="ns0:attnLine" minOccurs="0"/>
+            <xs:element ref="ns0:emailAddress" minOccurs="0"/>
+            <xs:element ref="ns0:faxURL" minOccurs="0"/>
+            <xs:element ref="ns0:customerPO"/>
+            <xs:element ref="ns0:overrideFlag"/>
+            <xs:element ref="ns0:dataIn1" minOccurs="0"/>
+            <xs:element ref="ns0:dataIn2" minOccurs="0"/>
+            <xs:element ref="ns0:dataIn3" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EskerTransactionResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:resultCode"/>
+            <xs:element ref="ns0:cpoSfdcOrderNumber" minOccurs="0"/>
+            <xs:element ref="ns0:cpoId" minOccurs="0"/>
+            <xs:element ref="ns0:message" minOccurs="0"/>
+            <xs:element ref="ns0:dataOut1" minOccurs="0"/>
+            <xs:element ref="ns0:dataOut2" minOccurs="0"/>
+            <xs:element ref="ns0:dataOut3" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="attnLine">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cpSfdcOrderNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cpoId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cpoSfdcOrderNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="customerPO">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="22"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataIn1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataIn2">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataIn3">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataOut1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataOut2">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataOut3">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="emailAddress">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="faxURL">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="message">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="overrideFlag" type="xs:boolean"/>
+      <xs:element name="resultCode" type="xs:int"/>
+      <xs:element name="shipToCustomer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="soldToCustomer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="EskerTransaction">
+    <wsdl:port name="EskerTransaction__EventSource" binding="tns:EskerTransaction__EventSourceBinding">
+      <soap:address location="http://localhost:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="EskerServices">
+    <wsdl:operation name="EskerTransactionOperation">
+      <wsdl:input message="tns:EskerTransactionRequest"/>
+      <wsdl:output message="tns:EskerTransactionResult"/>
+      <wsdl:fault name="EskerTransactionException" message="tns:eaiException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EskerTransaction__EventSourceBinding" type="tns:EskerServices">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="EskerTransactionOperation">
+      <soap:operation style="document" soapAction="/BusinessProcesses/Order/EskerTransaction/EskerTransaction"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="EskerTransactionRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="EskerTransactionResult"/>
+      </wsdl:output>
+      <wsdl:fault name="EskerTransactionException">
+        <soap:fault use="literal" name="EskerTransactionException"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="EskerTransactionRequest">
+    <wsdl:part name="EskerTransactionRequest" element="ns0:EskerTransactionRequest"/>
+  </wsdl:message>
+  <wsdl:message name="EskerTransactionResult">
+    <wsdl:part name="EskerTransactionResult" element="ns0:EskerTransactionResult"/>
+  </wsdl:message>
+  <wsdl:message name="eaiException">
+    <wsdl:part name="eaiException" type="ns1:eaiException"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://neduapp001b:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction</con:endpoint><con:endpoint>http://localhost:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction</con:endpoint><con:endpoint>http://neduapp001c:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction</con:endpoint><con:endpoint>http://neduapp002:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction</con:endpoint><con:endpoint>http://eaicamel-stg/services/esker</con:endpoint><con:endpoint>http://localhost:7110/services/esker</con:endpoint></con:endpoints><con:operation isOneWay="false" action="/BusinessProcesses/Order/EskerTransaction/EskerTransaction" name="EskerTransactionOperation" bindingOperationName="EskerTransactionOperation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp001c:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:esk="http://www.hmco.com/EAI/OTS/EskerTransaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <esk:EskerTransactionRequest>
+         <esk:cpSfdcOrderNumber>002857189</esk:cpSfdcOrderNumber>
+         <esk:soldToCustomer>281986</esk:soldToCustomer>
+         <esk:shipToCustomer>302784</esk:shipToCustomer>
+         <esk:attnLine>Baywood Elementary School</esk:attnLine>
+         <esk:faxURL>http://eskerorderentry.pubedu.hegn.us/DocMgrAuthent/attach.file?msn=12727247&amp;attachment=0&amp;converted=0</esk:faxURL>
+         <esk:customerPO>SS-45</esk:customerPO>
+         <esk:overrideFlag>false</esk:overrideFlag>
+<esk:poReceiptTimestamp>2012-07-01T14:45:15</esk:poReceiptTimestamp>
+      </esk:EskerTransactionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Order/EskerTransaction/EskerTransaction"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://neduapp002:9007/BusinessProcesses/External/EskerTransaction/EskerTransaction</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:esk="http://www.hmco.com/EAI/OTS/EskerTransaction">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <esk:EskerTransactionRequest>
+         <esk:cpSfdcOrderNumber>002139951</esk:cpSfdcOrderNumber>
+         <!--Optional:-->
+         <esk:soldToCustomer>175979</esk:soldToCustomer>
+         <!--Optional:-->
+         <esk:shipToCustomer>175979</esk:shipToCustomer>
+         <!--Optional:-->
+         <esk:emailAddress>scanneddocuments@hmhpub.com</esk:emailAddress>
+        
+         <esk:customerPO>P26229</esk:customerPO>
+         <esk:overrideFlag>false</esk:overrideFlag>
+       
+      </esk:EskerTransactionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessProcesses/Order/EskerTransaction/EskerTransaction"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

@@ -1,0 +1,86 @@
+10
+
+dir
+1886
+svn://neduapp001/tibco/trunk/Sunrise1.0/SunriseCentral_Database_Consumer/BusinessProcesses/SCM
+svn://neduapp001
+
+
+
+2013-03-07T10:09:40.943293Z
+1871
+rajesh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bdeb329a-2704-11df-9d9c-21c6ffec8a09
+
+SAPMaterialMasterClassificationUpdateDDO
+dir
+
+SAPMaterialMasterPricingUpdateDDO
+dir
+
+SAPMaterialMasterPartnersUpdateDDO
+dir
+
+SAPMaterialMasterUpdateDDO
+dir
+
+.folder
+file
+
+
+
+
+2013-03-20T07:07:36.292757Z
+ebf32dfa06c53ca6bb59adb9e451da5a
+2011-09-19T12:45:10.238647Z
+718
+shilpa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+380
+
+SAPInventoryUpdateDDO
+dir
+
+SAPVendorUpdateDDO
+dir
+
+SAPMaterialMasterSubscriptionUpdateDDO
+dir
+
+SAPMatMasBOMUpdateDDO
+dir
+

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/OTS/Schema.xsd"
+	 xmlns:sfa="http://www.hmco.com/sfa"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/OTS/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:attributeGroup name="customerAttributes">
+		<xsd:attribute name="CustomerID" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="CustomerName" type="xsd:string" use="required"/>
+		<xsd:attribute name="Status" type="xsd:string" use="required"/>
+		<xsd:attribute name="ClassCode" type="xsd:string" use="required"/>
+		<xsd:attribute name="ClassName" type="xsd:string" use="required"/>
+		<xsd:attribute name="TypeCode" type="xsd:string" use="required"/>
+		<xsd:attribute name="TypeName" type="xsd:string" use="required"/>
+		<xsd:attribute name="MDRPID" type="xsd:string"/>
+		<xsd:attribute name="Old_MDR_PID" type="xsd:string"/>
+		<xsd:attribute name="MDR_changed" type="xsd:string"/>
+		<xsd:attribute name="HMH_ID" type="xsd:string"/>
+		<xsd:attribute name="Old_HMH_ID" type="xsd:string"/>
+		<xsd:attribute name="HMH_ID_changed" type="xsd:string"/>
+		<xsd:attribute name="Telephone1" type="xsd:string"/>
+		<xsd:attribute name="Telephone2" type="xsd:string"/>
+		<xsd:attribute name="Fax" type="xsd:string"/>
+		<xsd:attribute name="EMail" type="xsd:string"/>
+		<xsd:attribute name="CollegeNumber" type="xsd:string"/>
+		<xsd:attribute name="CustomerAccountGroup" type="xsd:string" use="required"/>
+		<xsd:attribute name="CentralOrderBlock" type="xsd:string" use="required"/>
+		<xsd:attribute name="iDocNumber" type="xsd:string" use="required"/>
+		<xsd:attribute name="Update_User" type="xsd:string"/>
+		<xsd:attribute name="SFARepID" type="xsd:string"/>
+		<xsd:attribute name="POBox" type="xsd:string"/>
+		<xsd:attribute name="createDate_SAP" type="xsd:string"/>
+		<xsd:attribute name="createdBy_SAP" type="xsd:string"/>
+		<xsd:attribute name="PeriodAccntInd" type="xsd:string"/>
+		<xsd:attribute name="DeliveredOrNot" type="xsd:string"/>
+		<xsd:attribute name="VendorAccntNumber" type="xsd:string"/>
+		<xsd:attribute name="BillingBlockallSalesAreas" type="xsd:string"/>
+		<xsd:attribute name="DeliveryBlockallSalesAreas" type="xsd:string"/>
+		<xsd:attribute name="SendBoNotification" type="xsd:string"/>
+		<xsd:attribute name="JurisdictCode" type="xsd:string"/>
+		<xsd:attribute name="Industry" type="xsd:string"/>
+		<xsd:attribute name="GeneraltermsofPayment" type="xsd:string"/>
+		<xsd:attribute name="TaxCountry" type="xsd:string"/>
+		<xsd:attribute name="TaxCategory" type="xsd:string"/>
+		<xsd:attribute name="Licensenumber" type="xsd:string"/>
+		<xsd:attribute name="LicensevalidFrom" type="xsd:string"/>
+		<xsd:attribute name="LicensevalidTo" type="xsd:string"/>
+		<xsd:attribute name="AddressFieldforeMail" type="xsd:string"/>
+		<xsd:attribute name="CustomerClassadjMarket" type="xsd:string"/>
+		<xsd:attribute name="Comments" type="xsd:string"/>
+		<xsd:attribute name="DunnProcedure" type="xsd:string"/>
+		<xsd:attribute name="DunningClerk" type="xsd:string"/>
+		<xsd:attribute name="AcctgClerk" type="xsd:string"/>
+		<xsd:attribute name="BackorderChoice" type="xsd:string"/>
+		<xsd:attribute name="NoshipConsolidation" type="xsd:string"/>
+		<xsd:attribute name="AsneMail" type="xsd:string"/>
+		<xsd:attribute name="Accessorial1" type="xsd:string"/>
+		<xsd:attribute name="Accessorial2" type="xsd:string"/>
+		<xsd:attribute name="Accessorial3" type="xsd:string"/>
+		<xsd:attribute name="ToleranceGroup" type="xsd:string"/>
+	</xsd:attributeGroup>
+	<xsd:attributeGroup name="fileAttributeGroup">
+		<xsd:attribute name="FileName" type="xsd:string" use="required"/>
+		<xsd:attribute name="CustomerUpdateDateTime" type="xsd:dateTime" use="required"/>
+		<xsd:attribute name="Count" type="xsd:positiveInteger" use="required"/>
+	</xsd:attributeGroup>
+
+	<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Yalai Zhang (Houghton Mifflin) -->
+	<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Yalai Zhang (Houghton Mifflin) -->
+	<xsd:notation name="Customer-Update" public="http://www.hmco.com/schemas/sfa/customer_update" system=""/>
+	<xsd:element name="Address">
+		<xsd:complexType>
+			<xsd:attribute name="AddressLine1" type="xsd:string" use="required"/>
+			<xsd:attribute name="AddressLine2" type="xsd:string"/>
+			<xsd:attribute name="AddressLine3" type="xsd:string"/>
+			<xsd:attribute name="City" type="xsd:string" use="required"/>
+			<xsd:attribute name="State" type="xsd:string" use="required"/>
+			<xsd:attribute name="ZipCode" type="xsd:string" use="required"/>
+			<xsd:attribute name="CountyName" type="xsd:string" use="required"/>
+			<xsd:attribute name="CountryCode" type="xsd:string" use="required"/>
+			<xsd:attribute name="CountryName" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Customer">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Action">
+					<xsd:complexType>
+						<xsd:attribute name="Flag">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="ADD"/>
+									<xsd:enumeration value="CHANGE"/>
+									<xsd:enumeration value="DELETE"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:attribute>
+						<xsd:attribute name="DateTime" type="xsd:dateTime"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="Address"/>
+				<xsd:element name="Divisional" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="SalesRepresentative" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:attribute name="PartnerNumber" type="xsd:string" use="required"/>
+									<xsd:attribute name="PartnerFunction" use="required">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:minLength value="1"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:attribute>
+									<xsd:attribute name="DefaultPartner" type="xsd:string"/>
+									<xsd:attribute name="ParnterDescription" type="xsd:string"/>
+									<xsd:attribute name="PartnerCounter" type="xsd:string"/>
+									<xsd:attribute name="MessageFunction" type="xsd:string"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="Division" use="required">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:minLength value="1"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:attribute>
+						<xsd:attribute name="CustomerClassification" type="xsd:string"/>
+						<xsd:attribute name="DiscountCode" type="xsd:string" use="required"/>
+						<xsd:attribute name="DiscountDescription" type="xsd:string" use="required"/>
+						<xsd:attribute name="PaymentTermsCode" type="xsd:string" use="required"/>
+						<xsd:attribute name="PaymentTermsDescription" type="xsd:string" use="required"/>
+						<xsd:attribute name="IncoTerm1" type="xsd:string" use="required"/>
+						<xsd:attribute name="IncoTerm2" type="xsd:string" use="required"/>
+						<xsd:attribute name="SanNum" type="xsd:string"/>
+						<xsd:attribute name="DefaultBilltoCustomerID" type="xsd:string"/>
+						<xsd:attribute name="DefaultBilltoCustomerName" type="xsd:string"/>
+						<xsd:attribute name="SalesOffice" type="xsd:string"/>
+						<xsd:attribute name="SalesGroup" type="xsd:string"/>
+						<xsd:attribute name="TerritoryCode" type="xsd:string" use="required"/>
+						<xsd:attribute name="CentralOrderBlock" type="xsd:string" use="required"/>
+						<xsd:attribute name="OrderBlock" type="xsd:string" use="required"/>
+						<xsd:attribute name="PriceGroup" type="xsd:string" use="required"/>
+						<xsd:attribute name="PriceList" type="xsd:string" use="required"/>
+						<xsd:attribute name="CustomerDeliveryBlock" type="xsd:string" use="required"/>
+						<xsd:attribute name="ShipperAccountNumber" type="xsd:string" use="required"/>
+						<xsd:attribute name="ServiceLevel" type="xsd:string" use="required"/>
+						<xsd:attribute name="BillingBlockSelectedSalesArea" type="xsd:string"/>
+						<xsd:attribute name="OrderCombination" type="xsd:string"/>
+						<xsd:attribute name="SuppressedInvoiceProcessing" type="xsd:string"/>
+						<xsd:attribute name="ShippingConditions" type="xsd:string"/>
+						<xsd:attribute name="SubstitutionsAllowed" type="xsd:string"/>
+						<xsd:attribute name="FreightTerms" type="xsd:string"/>
+						<xsd:attribute name="DeliveringPlant" type="xsd:string"/>
+						<xsd:attribute name="ContractPriceAllowed" type="xsd:string"/>
+						<xsd:attribute name="DeliveryPriority" type="xsd:string"/>
+						<xsd:attribute name="PartialDelvperItem" type="xsd:string"/>
+						<xsd:attribute name="CustomerGroup" type="xsd:string"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="Contact"/>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="customerAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CustomerUpdate">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Customer" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="fileAttributeGroup"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Contact">
+		<xsd:complexType>
+			<xsd:attribute name="Tel1" type="xsd:string"/>
+			<xsd:attribute name="Tel2" type="xsd:string"/>
+			<xsd:attribute name="Tel3" type="xsd:string"/>
+			<xsd:attribute name="Email1" type="xsd:string"/>
+			<xsd:attribute name="Email2" type="xsd:string"/>
+			<xsd:attribute name="Email3" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

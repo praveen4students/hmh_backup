@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pfx2="http://www.tibco.com/ns/no_namespace_schema_location/CoreTechnicalServices/SharedResources/SchemaDefinitions/ExceptionRequestSchema.xsd" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx3="http://www.tibco.com/ns/no_namespace_schema_location/CoreTechnicalServices/SharedResources/SchemaDefinitions/ExceptionResponseSchema.xsd" xmlns:pfx="http://www.tibco.com/ns/no_namespace_schema_location/SharedResources/SchemaDefinitions/ClaimsSearchRequest.xsd" xmlns:ns="http://www.tibco.com/pe/EngineTypes" xmlns:pfx4="http://www.hmco.com/EAI/common/Exception" xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/ns/no_namespace_schema_location/SharedResources/SchemaDefinitions/ClaimsSearchRequest.xsd" schemaLocation="/SharedResources/SchemaDefinitions/ClaimsSearchRequest.xsd"/>
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/ns/no_namespace_schema_location/CoreTechnicalServices/SharedResources/SchemaDefinitions/ExceptionRequestSchema.xsd" schemaLocation="/CoreTechnicalServices/SharedResources/SchemaDefinitions/ExceptionRequestSchema.xsd"/>
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/ns/no_namespace_schema_location/CoreTechnicalServices/SharedResources/SchemaDefinitions/ExceptionResponseSchema.xsd" schemaLocation="/CoreTechnicalServices/SharedResources/SchemaDefinitions/ExceptionResponseSchema.xsd"/>
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.hmco.com/EAI/common/Exception" schemaLocation="/SharedResources/Schemas/Common/EAIException.xsd"/>
+    <pd:name>UtilityServices/ExceptionHandling/ExceptionHandler.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startDescription>This is a plug-in to enhance the exception handling capabilities.
+At present, it has no logic.</pd:startDescription>
+    <pd:startType ref="pfx4:Exception"/>
+    <pd:startX>150</pd:startX>
+    <pd:startY>64</pd:startY>
+    <pd:returnBindings>
+        <pfx4:Exception>
+            <pfx4:ExceptionSourceName>
+                <xsl:value-of select="$Populate-Exception-Data/pfx4:Exception/pfx4:ExceptionSourceName"/>
+            </pfx4:ExceptionSourceName>
+            <pfx4:ExceptionFamily>
+                <xsl:value-of select="$Populate-Exception-Data/pfx4:Exception/pfx4:ExceptionFamily"/>
+            </pfx4:ExceptionFamily>
+            <pfx4:ExceptionType>
+                <xsl:value-of select="$Populate-Exception-Data/pfx4:Exception/pfx4:ExceptionType"/>
+            </pfx4:ExceptionType>
+            <pfx4:ExceptionMessage>
+                <xsl:value-of select="$Populate-Exception-Data/pfx4:Exception/pfx4:ExceptionMessage"/>
+            </pfx4:ExceptionMessage>
+            <xsl:if test="$Populate-Exception-Data/pfx4:Exception/pfx4:TimeStamp">
+                <pfx4:TimeStamp>
+                    <xsl:value-of select="$Populate-Exception-Data/pfx4:Exception/pfx4:TimeStamp"/>
+                </pfx4:TimeStamp>
+            </xsl:if>
+        </pfx4:Exception>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx4:Exception"/>
+    <pd:endX>522</pd:endX>
+    <pd:endY>68</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1313486770718</pd:targetNamespace>
+    <pd:activity name="Populate Exception Data">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>331</pd:x>
+        <pd:y>74</pd:y>
+        <config>
+            <element ref="pfx4:Exception"/>
+        </config>
+        <pd:inputBindings>
+            <pfx4:Exception>
+                <pfx4:ExceptionSourceName>
+                    <xsl:value-of select="$Start/pfx4:Exception/pfx4:ExceptionSourceName"/>
+                </pfx4:ExceptionSourceName>
+                <pfx4:ExceptionFamily>
+                    <xsl:value-of select="$Start/pfx4:Exception/pfx4:ExceptionFamily"/>
+                </pfx4:ExceptionFamily>
+                <pfx4:ExceptionType>
+                    <xsl:value-of select="$Start/pfx4:Exception/pfx4:ExceptionType"/>
+                </pfx4:ExceptionType>
+                <pfx4:ExceptionMessage>
+                    <xsl:value-of select="$Start/pfx4:Exception/pfx4:ExceptionMessage"/>
+                </pfx4:ExceptionMessage>
+                <pfx4:TimeStamp>
+                    <xsl:value-of select="current-dateTime()"/>
+                </pfx4:TimeStamp>
+            </pfx4:Exception>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Populate Exception Data</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Populate Exception Data</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

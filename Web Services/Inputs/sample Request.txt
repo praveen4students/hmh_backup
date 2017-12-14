@@ -1,0 +1,26 @@
+{
+     "orderSubmitRequest": {
+     "soldToCustomerId": "ETAIL_TEMP",
+        "billToCustomerId": "ETAIL_TEMP",
+        "shipToCustomerId": "ETAIL_TEMP",       
+        "entryDivision": "DIVISION_SCHOOL",
+        "shipmentMethod": "SHIPMENT_METHOD_UPS_SUREPOST",
+        "transactionType": "TRANSACTION_TYPE_STANDARD",
+        "orderSource": "ORDER_SOURCE_ECOMMERCE_CONSUMER",
+        "poNumber": "Web Order Murali1", 
+        "internalText": "Attention: Murali Bondiga \nPosition: Head of America",
+        "shipToAttention": " Murali Bondiga",
+        "packlistComments":"SoldTo: [Acorn High School \n12404 Park Central \nSuite 400 \nDallas \nUS \nmurali.krishna.bondiga@meplusyou.com \n3181112222 \nTX \n75251 \nAttention: Murali Bondiga \nFax:3181112222] \n\nShipTo [Acorn High School \n12404 Park Central \nSuite 400 \nDallas \nUS \nmurali.krishna.bondiga@meplusyou.com \n3181112222 \nTX \n75251 \nAttention: Murali Bondiga \nFax:3181112222 ] \n\nBillTo [Acorn High School \n12404 Park Central \nSuite 400 \nDallas \nUS \nmurali.krishna.bondiga@meplusyou.com \n3181112222 \nTX \n75251 \nAttention: Murali Bondiga \nFax:3181112222]",
+        "billingBlock":"T1",
+        "deliveryBlock":"A6",
+        "saleLineItemList": [
+            {
+                "lineNo": "1",
+                "materialID": "000000000001462039",
+                "quantity": 2
+            }
+        ]
+
+    }
+}
+

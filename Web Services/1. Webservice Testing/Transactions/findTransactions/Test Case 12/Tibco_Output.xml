@@ -1,0 +1,684 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:transactionList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:transaction>
+            <ns0:transactionID>0004727076</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_STANDARD</ns0:type>
+            <ns0:poNumber>P722865</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-07-15</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_MAIL</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>OCS1</ns0:salesOffice>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID>0000103790</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:addressLine2 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID>0000103790</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>NORTH DIVISION HIGH SCHOOL</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">1011 W CENTER ST</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53206-3262</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID>0000297345</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">2181</ns1:poBox>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53201-2181</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000001414666</ns0:materialID>
+                  <ns0:isbn>9780547312231</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GRK 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>81</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000001424152</ns0:materialID>
+                  <ns0:isbn>9780547373119</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GR01 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>78</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>30</ns0:lineNo>
+                  <ns0:materialID>000000000001424213</ns0:materialID>
+                  <ns0:isbn>9780547373126</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GR02 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>74</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>40</ns0:lineNo>
+                  <ns0:materialID>000000000001424214</ns0:materialID>
+                  <ns0:isbn>9780547373133</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GR03 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>62</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>WILLIAM ACKLAND/K-3TE'S</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0004726731</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_IMPLEMENTATION</ns0:type>
+            <ns0:poNumber>P722865</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-07-15</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_MCDOUGAL_LITTELL_SFA</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>GCS1</ns0:salesOffice>
+            <ns0:customerEmail>hramirez@milwaukee.k12.wi.us</ns0:customerEmail>
+            <ns0:soldToCustomerID>0000103402</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:addressLine2 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress>hramirez@milwaukee.k12.wi.us</ns0:soldToCustomerEmailAddress>
+            <ns0:shipToCustomerID>0000103402</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>HAROLD S VINCENT HIGH SCHOOL</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">7501 N GRANVILLE RD</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53224-3927</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID>0000297345</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">2181</ns1:poBox>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53201-2181</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress>hramirez@milwaukee.k12.wi.us</ns0:billToCustomerEmailAddress>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000261835</ns0:materialID>
+                  <ns0:isbn>9780618568680</ns0:isbn>
+                  <ns0:description>MLLIT08 TE GR 06</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>211</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-21</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000000261842</ns0:materialID>
+                  <ns0:isbn>9780618568758</ns0:isbn>
+                  <ns0:description>MLLIT08 TE GR 07</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>195</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-21</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>30</ns0:lineNo>
+                  <ns0:materialID>000000000000261836</ns0:materialID>
+                  <ns0:isbn>9780618568697</ns0:isbn>
+                  <ns0:description>MLLIT08 TE GR 08</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>189</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_MCDOUGAL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-21</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>BARCODING/RESZCZYNSKI</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0004727075</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_STANDARD</ns0:type>
+            <ns0:poNumber>P722865</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-07-15</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_MAIL</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>OCS1</ns0:salesOffice>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID>0000103790</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:addressLine2 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID>0000103790</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>NORTH DIVISION HIGH SCHOOL</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">1011 W CENTER ST</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53206-3262</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID>0000297345</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">2181</ns1:poBox>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53201-2181</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000001414666</ns0:materialID>
+                  <ns0:isbn>9780547312231</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GRK 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>225</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:materialID>000000000001414666</ns0:materialID>
+                  <ns0:isbn>9780547312231</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GRK 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>164</ns0:quantity>
+                  <ns0:listPrice>1.2026612E5</ns0:listPrice>
+                  <ns0:netPrice>9.02E4</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>3.006612E4</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_SALE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>30</ns0:lineNo>
+                  <ns0:materialID>000000000001424152</ns0:materialID>
+                  <ns0:isbn>9780547373119</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GR01 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>413</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>40</ns0:lineNo>
+                  <ns0:materialID>000000000001424213</ns0:materialID>
+                  <ns0:isbn>9780547373126</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GR02 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>426</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>50</ns0:lineNo>
+                  <ns0:materialID>000000000001424214</ns0:materialID>
+                  <ns0:isbn>9780547373133</ns0:isbn>
+                  <ns0:description>HMH JRNY TE CLCT GR03 2011</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>433</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_IMPLEMENTATION</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>WILLIAM ACKLAND/K-3TE'S</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0004727487</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_IMPLEMENTATION</ns0:type>
+            <ns0:poNumber>P722865</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-07-15</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_SCHOOL_SFA</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>OCS1</ns0:salesOffice>
+            <ns0:customerEmail>hramirez@milwaukee.k12.wi.us</ns0:customerEmail>
+            <ns0:soldToCustomerID>0000297345</ns0:soldToCustomerID>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">2181</ns1:poBox>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53201-2181</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+               <ns1:emailAddressStruct xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">
+                  <ns1:emailAddress>hramirez@milwaukee.k12.wi.us</ns1:emailAddress>
+                  <ns1:isPrimary>true</ns1:isPrimary>
+               </ns1:emailAddressStruct>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress>hramirez@milwaukee.k12.wi.us</ns0:soldToCustomerEmailAddress>
+            <ns0:shipToCustomerID>0000103790</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>NORTH DIVISION HIGH SCHOOL</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">1011 W CENTER ST</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53206-3262</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID>0000297345</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">2181</ns1:poBox>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53201-2181</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000186060</ns0:materialID>
+                  <ns0:isbn>9780618512775</ns0:isbn>
+                  <ns0:description>HM PRE-K TCHR BK THM 1 2006</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>212</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_FREE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>MIKE FRANK - PRE-K VOLUME 1 TE'S</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+         <ns0:transaction>
+            <ns0:transactionID>0004727493</ns0:transactionID>
+            <ns0:type>TRANSACTION_TYPE_IMPLEMENTATION</ns0:type>
+            <ns0:poNumber>P722865</ns0:poNumber>
+            <ns0:status>TRANSACTION_STATUS_COMPLETELY_PROCESSED</ns0:status>
+            <ns0:creationDate>2010-07-15</ns0:creationDate>
+            <ns0:orderSource>ORDER_SOURCE_SCHOOL_SFA</ns0:orderSource>
+            <ns0:division>DIVISION_SCHOOL</ns0:division>
+            <ns0:salesOffice>OCS1</ns0:salesOffice>
+            <ns0:customerEmail/>
+            <ns0:soldToCustomerID/>
+            <ns0:soldToSANNumber/>
+            <ns0:soldToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:soldToCustomerName>
+            <ns0:soldToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:addressLine2 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+            </ns0:soldToCustomerAddress>
+            <ns0:soldToCustomerEmailAddress/>
+            <ns0:shipToCustomerID>0000103790</ns0:shipToCustomerID>
+            <ns0:shipToSANNumber/>
+            <ns0:shipToCustomerName>NORTH DIVISION HIGH SCHOOL</ns0:shipToCustomerName>
+            <ns0:shipToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">1011 W CENTER ST</ns1:addressLine1>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53206-3262</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:shipToCustomerAddress>
+            <ns0:shipToCustomerEmailAddress/>
+            <ns0:billToCustomerID>0000297345</ns0:billToCustomerID>
+            <ns0:billToSANNumber/>
+            <ns0:billToCustomerName>MILWAUKEE PUBLIC SCHOOLS</ns0:billToCustomerName>
+            <ns0:billToCustomerAddress>
+               <ns1:addressLine1 xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer"/>
+               <ns1:poBox xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">2181</ns1:poBox>
+               <ns1:city xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">MILWAUKEE</ns1:city>
+               <ns1:state xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">WI</ns1:state>
+               <ns1:zipcode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">53201-2181</ns1:zipcode>
+               <ns1:countryCode xmlns:ns1="http://www.hmco.com/EAI/OTS/Customer">US</ns1:countryCode>
+            </ns0:billToCustomerAddress>
+            <ns0:billToCustomerEmailAddress/>
+            <ns0:isHeaderComplete>true</ns0:isHeaderComplete>
+            <ns0:transactionRejectionStatus>TRANSACTION_REJECTION_STATUS_NOT_REJECTED</ns0:transactionRejectionStatus>
+            <ns0:transactionLineItem>
+               <ns0:productInfo>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:materialID>000000000000186060</ns0:materialID>
+                  <ns0:isbn>9780618512775</ns0:isbn>
+                  <ns0:description>HM PRE-K TCHR BK THM 1 2006</ns0:description>
+                  <ns0:couponCode/>
+                  <ns0:promotionType/>
+                  <ns0:quantity>44</ns0:quantity>
+                  <ns0:listPrice>0.0E0</ns0:listPrice>
+                  <ns0:netPrice>0.0E0</ns0:netPrice>
+                  <ns0:productDivision>DIVISION_SCHOOL</ns0:productDivision>
+                  <ns0:listDiscount>0.0E0</ns0:listDiscount>
+                  <ns0:isEGood>false</ns0:isEGood>
+                  <ns0:isSubscription>false</ns0:isSubscription>
+               </ns0:productInfo>
+               <ns0:lineitemStatus>LINE_ITEM_STATUS_COMPLETELY_PROCESSED</ns0:lineitemStatus>
+               <ns0:lineitemRejectionStatus>LINE_ITEM_REJECTION_STATUS_NOT_REJECTED</ns0:lineitemRejectionStatus>
+               <ns0:isLineitemComplete>true</ns0:isLineitemComplete>
+               <ns0:titleStatus>MATERIAL_STATUS_IN_PRINT</ns0:titleStatus>
+               <ns0:requestDate>2010-07-15</ns0:requestDate>
+               <ns0:availableDate>2010-07-23</ns0:availableDate>
+               <ns0:salesRep>
+                  <ns0:repID>0000020000</ns0:repID>
+                  <ns0:repName>GENERIC SALESREP</ns0:repName>
+                  <ns0:sfaRepID>20000</ns0:sfaRepID>
+               </ns0:salesRep>
+               <ns0:itemType>ITEM_TYPE_FREE</ns0:itemType>
+               <ns0:isKitComponent>false</ns0:isKitComponent>
+            </ns0:transactionLineItem>
+            <ns0:shipToCareOf_1>MIKE FRANK/PRE-KTE'S</ns0:shipToCareOf_1>
+            <ns0:shipToCareOf_2/>
+         </ns0:transaction>
+      </ns0:transactionList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

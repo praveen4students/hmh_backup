@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imprints>
+	<imprint id="RG"> <!-- Mandatory field. Unique Id. Max size 10 Alphanumeric -->		
+		<desc>Rigby</desc> <!-- Mandatory field. Description of imprint. Max size 30 Alphanumeric-->			
+	</imprint>
+	<imprint id="SX">		
+		<desc>Saxon/desc>				
+	</imprint>
+	<imprint id="HMH">		
+		<desc>Houghton Mifflin Harcourt/desc>				
+	</imprint>
+</imprints>

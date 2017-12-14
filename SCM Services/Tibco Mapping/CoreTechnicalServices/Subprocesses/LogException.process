@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <pd:name>CoreTechnicalServices/Subprocesses/LogException.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx:logMessage"/>
+    <pd:startX>49</pd:startX>
+    <pd:startY>99</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>344</pd:endX>
+    <pd:endY>96</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1313573557077</pd:targetNamespace>
+    <pd:activity name="Call Log Sub">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>251</pd:x>
+        <pd:y>94</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/LogSub.process</processName>
+        </config>
+        <pd:inputBindings>
+            <xsl:for-each select="$Start/*">
+                <pfx:logMessage xsi:type="pfx:errorMessage">
+                    <pfx:severity>
+                        <xsl:value-of select="pfx:severity"/>
+                    </pfx:severity>
+                    <pfx:sensitive>
+                        <xsl:value-of select="pfx:sensitive"/>
+                    </pfx:sensitive>
+                    <pfx:componentName>
+                        <xsl:value-of select="pfx:componentName"/>
+                    </pfx:componentName>
+                    <pfx:messageText>
+                        <xsl:value-of select="pfx:messageText"/>
+                    </pfx:messageText>
+                    <pfx:payload>
+                        <xsl:value-of select="pfx:payload"/>
+                    </pfx:payload>
+                    <pfx:evtActivityTimeStamp>
+                        <xsl:value-of select="pfx:evtActivityTimeStamp"/>
+                    </pfx:evtActivityTimeStamp>
+                    <pfx:errorType>
+                        <xsl:value-of select="pfx:errorType"/>
+                    </pfx:errorType>
+                    <pfx:errorFamily>
+                        <xsl:value-of select="pfx:errorFamily"/>
+                    </pfx:errorFamily>
+                    <pfx:errorStackTrace>
+                        <xsl:value-of select="pfx:errorStackTrace"/>
+                    </pfx:errorStackTrace>
+                </pfx:logMessage>
+            </xsl:for-each>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Call Publish Trail Message">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>141</pd:x>
+        <pd:y>103</pd:y>
+        <config>
+            <processName>/CoreTechnicalServices/Subprocesses/PublishTrailMessage.process</processName>
+        </config>
+        <pd:inputBindings>
+            <xsl:for-each select="$Start/*">
+                <pfx:logMessage xsi:type="pfx:errorMessage">
+                    <pfx:severity>
+                        <xsl:value-of select="pfx:severity"/>
+                    </pfx:severity>
+                    <pfx:sensitive>
+                        <xsl:value-of select="pfx:sensitive"/>
+                    </pfx:sensitive>
+                    <pfx:componentName>
+                        <xsl:value-of select="pfx:componentName"/>
+                    </pfx:componentName>
+                    <pfx:messageText>
+                        <xsl:value-of select="$_globalVariables/ns:GlobalVariables/LOG_MESSAGE/LOG_EXCEPTION"/>
+                    </pfx:messageText>
+                    <pfx:payload>
+                        <xsl:value-of select="pfx:payload"/>
+                    </pfx:payload>
+                    <pfx:evtActivityTimeStamp>
+                        <xsl:value-of select="pfx:evtActivityTimeStamp"/>
+                    </pfx:evtActivityTimeStamp>
+                    <pfx:errorType>
+                        <xsl:value-of select="pfx:errorType"/>
+                    </pfx:errorType>
+                    <pfx:errorFamily>
+                        <xsl:value-of select="pfx:errorFamily"/>
+                    </pfx:errorFamily>
+                    <pfx:errorStackTrace>
+                        <xsl:value-of select="pfx:errorStackTrace"/>
+                    </pfx:errorStackTrace>
+                </pfx:logMessage>
+            </xsl:for-each>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Call Publish Trail Message</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Call Log Sub</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Call Publish Trail Message</pd:from>
+        <pd:to>Call Log Sub</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

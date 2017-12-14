@@ -1,0 +1,86 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<VendorMaster>
+	<ns0:VendorInfo xmlns:ns0 = "http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd">
+		<ns0:VendorNumber>5000000697</ns0:VendorNumber>
+		<ns0:VendorType>ZMFG</ns0:VendorType>
+		<ns0:VendorName>LINDENMEYR PAPER COMPANY INC</ns0:VendorName>
+		<ns0:tibco__ry__vendor>
+			<ns0:VendorNumber>5000000697</ns0:VendorNumber>
+			<ns0:Country>US</ns0:Country>
+			<ns0:Name1>LINDENMEYR PAPER COMPANY INC</ns0:Name1>
+			<ns0:Name2/>
+			<ns0:Name3/>
+			<ns0:Name4/>
+			<ns0:City>DEDHAM</ns0:City>
+			<ns0:County>NORFOLK</ns0:County>
+			<ns0:PO_Box/>
+			<ns0:PO_Box_Post_Cd/>
+			<ns0:Postal_Code>02026</ns0:Postal_Code>
+			<ns0:Region_State>MA</ns0:Region_State>
+			<ns0:sort_name>LINDENMEYE</ns0:sort_name>
+			<ns0:Street>990 WASHINGTON STREET  STE 211S</ns0:Street>
+			<ns0:adrc_str_suppl1/>
+			<ns0:adrc_str_suppl2/>
+			<ns0:adrc_str_suppl3/>
+			<ns0:adrc_location/>
+			<ns0:SAP_Addr_No>0000084921</ns0:SAP_Addr_No>
+			<ns0:PS_Vendor-Loc/>
+			<ns0:Vendor_Group>ZMFG</ns0:Vendor_Group>
+			<ns0:AlternatePayeeID/>
+			<ns0:Central_Delete_Flag/>
+			<ns0:Central_Post_Block/>
+			<ns0:Central_Purch_Block/>
+			<ns0:Telephone/>
+			<ns0:Mobile_Phone/>
+			<ns0:Fax_Number>1-781-326-4027</ns0:Fax_Number>
+			<ns0:AlternatePayeeAllowed/>
+			<ns0:Tax_Jurisdiction>USMA02026XXXX0</ns0:Tax_Jurisdiction>
+			<ns0:Central_Delete_Block/>
+			<ns0:Company>HMC1</ns0:Company>
+			<ns0:Company_Post_Block/>
+			<ns0:Company_Delete_Flag/>
+			<ns0:Reconcile_Acct>0003100000</ns0:Reconcile_Acct>
+			<ns0:Payment_Methods>T</ns0:Payment_Methods>
+			<ns0:Payment_Block/>
+			<ns0:Payment_Terms>T040</ns0:Payment_Terms>
+			<ns0:AlternatePayeeAccountNumber/>
+			<ns0:Check_Dup_Invoice>X</ns0:Check_Dup_Invoice>
+			<ns0:Individual_Payments/>
+			<ns0:Minority_Indicators/>
+			<ns0:Legacy_Vendor_No/>
+			<ns0:Pay_Method_Supplmt>PP</ns0:Pay_Method_Supplmt>
+			<ns0:WH_Tax_Country/>
+			<ns0:WH_TaxType/>
+			<ns0:CareOf/>
+			<ns0:tibco__ry__vendor__remit>
+				<ns0:VendorNumber>5000000697</ns0:VendorNumber>
+				<ns0:Purchase_Org>1001</ns0:Purchase_Org>
+				<ns0:Purch_Block/>
+				<ns0:Purch_Delete_Flag/>
+				<ns0:Payment_Terms>T100</ns0:Payment_Terms>
+				<ns0:Incoterms_Code>DAF</ns0:Incoterms_Code>
+				<ns0:Incoterms_Descr>DELIVER AT DESTINATION</ns0:Incoterms_Descr>
+				<ns0:Partner_Function>RS</ns0:Partner_Function>
+				<ns0:Remit_to_vendor_no>5000000236</ns0:Remit_to_vendor_no>
+			</ns0:tibco__ry__vendor__remit>
+			<ns0:tibco__ry__vendor__remit>
+				<ns0:VendorNumber>5000000697</ns0:VendorNumber>
+				<ns0:Purchase_Org>1002</ns0:Purchase_Org>
+				<ns0:Purch_Block/>
+				<ns0:Purch_Delete_Flag/>
+				<ns0:Payment_Terms>T040</ns0:Payment_Terms>
+				<ns0:Incoterms_Code>DAF</ns0:Incoterms_Code>
+				<ns0:Incoterms_Descr>Delivery at Destination</ns0:Incoterms_Descr>
+				<ns0:Partner_Function>RS</ns0:Partner_Function>
+				<ns0:Remit_to_vendor_no>5000000236</ns0:Remit_to_vendor_no>
+			</ns0:tibco__ry__vendor__remit>
+			<ns0:tibco__ry__vendor__email>
+				<ns0:VendorNumber>5000000697</ns0:VendorNumber>
+				<ns0:Emailid>Atheesivam.Karuppiah@hmhco.com</ns0:Emailid>
+				<ns0:DefaultEmail>X</ns0:DefaultEmail>
+			</ns0:tibco__ry__vendor__email>
+		</ns0:tibco__ry__vendor>
+		<ns0:iDocNumber>0000000196271896</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:VendorInfo>
+</VendorMaster>

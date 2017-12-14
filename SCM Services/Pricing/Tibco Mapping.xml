@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx51="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPMaterialMasterPricingUpdateSFA" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.hmco.com/schemas/sfa/material_partners" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pfx8="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx10="http://www.hmco.com/schemas/sfa/material_Pricing" xmlns:pfx9="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:TrimMATNR="java://TrimMATNR" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPShipmentUpdateSFA_Schema" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/shipment_update" xmlns:ns2="http://www.tibco.com/pe/DeployedVarsType" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:for-each select="$Start/group/pfx3:ZPRICECOND01-4x/CHILDREN/ZE1MARA/item">
+        <pfx10:MaterialPricing>
+            <xsl:for-each select="CHILDREN/ZE1KONP/item">
+                <pfx10:MaterialPrice>
+                    <pfx10:MaterialNumber>
+                        <xsl:value-of select="tib:trim(../../../FIELDS/MATNR)"/>
+                    </pfx10:MaterialNumber>
+                    <xsl:if test="exists(current()/FIELDS/KBETR)">
+                        <pfx10:ListPrice>
+                            <xsl:value-of select="tib:trim(current()/FIELDS/KBETR)"/>
+                        </pfx10:ListPrice>
+                    </xsl:if>
+                    <xsl:if test="exists(current()/FIELDS/DATAB)">
+                        <pfx10:ListEffectiveDate>
+                            <xsl:value-of select="concat(substring(current()/FIELDS/DATAB, 1, 4),&quot;-&quot;,substring(current()/FIELDS/DATAB, 5,2),&quot;-&quot;,substring(current()/FIELDS/DATAB, 7,2))"/>
+                        </pfx10:ListEffectiveDate>
+                    </xsl:if>
+                    <xsl:if test="exists(current()/FIELDS/DATBI)">
+                        <pfx10:ListEndDate>
+                            <xsl:value-of select="concat(substring(current()/FIELDS/DATBI, 1, 4),&quot;-&quot;,substring(current()/FIELDS/DATBI, 5,2),&quot;-&quot;,substring(current()/FIELDS/DATBI, 7,2))"/>
+                        </pfx10:ListEndDate>
+                    </xsl:if>
+                    <pfx10:iDocNumber>
+                        <xsl:value-of select="tib:trim(../../../../../../EDI__DC/DOCNUM)"/>
+                    </pfx10:iDocNumber>
+                    <pfx10:Update_User>
+                        <xsl:value-of select="$_globalVariables/ns2:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+                    </pfx10:Update_User>
+                    <pfx10:termUnit>
+                        <xsl:value-of select="tib:trim(current()/FIELDS/ZTIMEUNIT)"/>
+                    </pfx10:termUnit>
+                    <xsl:if test="exists(current()/FIELDS/ZTIMEQTY)">
+                        <pfx10:termDuration>
+                            <xsl:value-of select="tib:trim(current()/FIELDS/ZTIMEQTY)"/>
+                        </pfx10:termDuration>
+                    </xsl:if>
+                    <pfx10:Variant>
+                        <xsl:value-of select="tib:trim(current()/FIELDS/VARCOND)"/>
+                    </pfx10:Variant>
+                </pfx10:MaterialPrice>
+            </xsl:for-each>
+        </pfx10:MaterialPricing>
+    </xsl:for-each>
+</root>

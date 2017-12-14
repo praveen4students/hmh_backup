@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:goodsMovementList xmlns:ns0="http://www.hmco.com/schemas/sfa/goods_movement_update">
+	<ns0:goodsMovementInfo>
+		<ns0:goodsMovementNumber>5019286407</ns0:goodsMovementNumber>
+		<ns0:postingDate>2013-08-31</ns0:postingDate>
+		<ns0:documentDate>2013-08-31</ns0:documentDate>
+		<ns0:goodsMovementItem>
+			<ns0:goodsMovementItemNumber>0001</ns0:goodsMovementItemNumber>
+			<ns0:purchaseOrderNumber>4500435912</ns0:purchaseOrderNumber>
+			<ns0:purchaseOrderItemNumber>00010</ns0:purchaseOrderItemNumber>
+			<ns0:materialNumber>000000000001566136</ns0:materialNumber>
+			<ns0:ContentCategory>15</ns0:ContentCategory>
+			<ns0:Division>30</ns0:Division>
+			<ns0:XPlantStatus>IP</ns0:XPlantStatus>
+			<ns0:PHLevel4Code>034</ns0:PHLevel4Code>
+			<ns0:PHLevel5Code>01</ns0:PHLevel5Code>
+			<ns0:movementType>101</ns0:movementType>
+			<ns0:quantity>16</ns0:quantity>
+			<ns0:deliveryCompletedIndicator/>
+		</ns0:goodsMovementItem>
+	</ns0:goodsMovementInfo>
+</ns0:goodsMovementList>

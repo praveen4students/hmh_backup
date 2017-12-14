@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx7:MateriaPartners xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx7="http://www.hmco.com/schemas/sfa/material_partners" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPShipmentUpdateSFA_Schema" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/sfa/shipment_update" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:for-each select="$Start/group/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item">
+        <pfx7:Partners>
+            <pfx7:MaterialNumber>
+                <xsl:value-of select="current()/FIELDS/MATNR"/>
+            </pfx7:MaterialNumber>
+            <pfx7:ContentCategory>
+                <xsl:value-of select="current()/CHILDREN/E1MARAISM/item[1]/FIELDS/ISMCONTTYPE"/>
+            </pfx7:ContentCategory>
+            <pfx7:Division>
+                <xsl:value-of select="current()/FIELDS/SPART"/>
+            </pfx7:Division>
+            <pfx7:XPlantStatus>
+                <xsl:value-of select="current()/FIELDS/MSTAE"/>
+            </pfx7:XPlantStatus>
+            <pfx7:PHLevel4Code>
+                <xsl:value-of select="substring(current()/FIELDS/PRDHA,7,3)"/>
+            </pfx7:PHLevel4Code>
+            <pfx7:PHLevel5Code>
+                <xsl:value-of select="substring(current()/FIELDS/PRDHA,10,2)"/>
+            </pfx7:PHLevel5Code>
+            <xsl:for-each select="current()/CHILDREN/Z1BPBUSISM/item">
+                <pfx7:PartnerInfo>
+                    <pfx7:AuthorID>
+                        <xsl:value-of select="current()/FIELDS/PARTNER"/>
+                    </pfx7:AuthorID>
+                    <pfx7:Affiliation>
+                        <xsl:value-of select="current()/FIELDS/TITLE__LET"/>
+                    </pfx7:Affiliation>
+                    <pfx7:Role>
+                        <xsl:value-of select="current()/FIELDS/RLTYP"/>
+                    </pfx7:Role>
+                    <pfx7:FirstName>
+                        <xsl:value-of select="current()/FIELDS/NAME__FIRST"/>
+                    </pfx7:FirstName>
+                    <pfx7:LastName>
+                        <xsl:value-of select="current()/FIELDS/NAME__LAST"/>
+                    </pfx7:LastName>
+                    <pfx7:MiddleName>
+                        <xsl:value-of select="current()/FIELDS/NAME__MIDDLE"/>
+                    </pfx7:MiddleName>
+                </pfx7:PartnerInfo>
+            </xsl:for-each>
+        </pfx7:Partners>
+    </xsl:for-each>
+</pfx7:MateriaPartners>

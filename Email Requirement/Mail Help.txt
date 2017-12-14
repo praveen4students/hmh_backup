@@ -1,0 +1,39 @@
+http://stackoverflow.com/questions/13331989/how-to-handle-multipart-alternative-mail-with-javamail
+
+
+public static void handlePart(Part part)
+        throws MessagingException, IOException {
+
+    String disposition = part.getDisposition();
+    String contentType = part.getContentType();
+    if (disposition == null) { // When just body
+        System.out.println("Null: " + contentType);
+        // Check if plain
+        if ((contentType.length() >= 10)
+                && (contentType.toLowerCase().substring(
+                0, 10).equals("text/plain"))) {
+            part.writeTo(System.out);
+        } else if ((contentType.length() >= 9)
+                && (contentType.toLowerCase().substring(
+                0, 9).equals("text/html"))) {
+            part.writeTo(System.out);
+        } else if ((contentType.length() >= 9)
+                && (contentType.toLowerCase().substring(
+                0, 9).equals("text/html"))) {
+            System.out.println("Ook html gevonden");
+            part.writeTo(System.out);
+        }else{
+            System.out.println("Other body: " + contentType);
+            part.writeTo(System.out);
+        }
+    } else if (disposition.equalsIgnoreCase(Part.ATTACHMENT)) {
+        System.out.println("Attachment: " + part.getFileName()
+                + " : " + contentType);
+    } else if (disposition.equalsIgnoreCase(Part.INLINE)) {
+        System.out.println("Inline: "
+                + part.getFileName()
+                + " : " + contentType);
+    } else {
+        System.out.println("Other: " + disposition);
+    }
+}

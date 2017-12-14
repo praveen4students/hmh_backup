@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:ns2="http://www.tibco.com/pe/DeployedVarsType" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPShipmentUpdateSFA_Schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:TrimMATNR="java://TrimMATNR" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:pfx9="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx8="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:pfx7="http://www.hmco.com/schemas/sfa/material_partners" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx6="http://www.hmco.com/schemas/sfa/shipment_update">
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" schemaLocation="/AESchemas/ae/FileAdapter/wire/SCM_OUT_ADFFFA.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" schemaLocation="/SharedResources/Schemas/TIBCO Message/InventoryMovementUpdateLogProCanonical.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" schemaLocation="/AESchemas/ae/FileAdapter/wire/SCM_OUT_ADFFA.aeschema"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPShipmentUpdateSFA_Schema" schemaLocation="/AESchemas/ae/SBS_Schema/SAPShipmentUpdateSFA_Schema.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/shipment_update" schemaLocation="/SharedResources/Schemas/AE Message/OUT_Schema_SubShipmentUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_partners" schemaLocation="/SharedResources/Schemas/Common/SAPMaterialMasterPartnersUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Partners_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPMaterialMasterPartnersUpdateDDO/TransformationProcesses/TransformToDDO.process</pd:name>
+    <pd:description>This activity transforms the incoming message to AE format, which
+represents SAP schema.</pd:description>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="group">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element ref="pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>81</pd:startX>
+    <pd:startY>73</pd:startY>
+    <pd:returnBindings>
+        <xsl:copy-of select="$Map_SAPIdoc_to_FileAE/root/pfx8:MaterialPartners"/>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx8:MaterialPartners"/>
+    <pd:endX>456</pd:endX>
+    <pd:endY>79</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1319008999562</pd:targetNamespace>
+    <pd:activity name="Map_SAPIdoc_to_FileAE">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>248</pd:x>
+        <pd:y>76</pd:y>
+        <config>
+            <element>
+                <xsd:element name="root">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="pfx8:MaterialPartners" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </element>
+        </config>
+        <pd:inputBindings>
+            <root>
+                <xsl:for-each select="$Start/group/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item">
+                    <pfx8:MaterialPartners>
+                        <xsl:for-each select="CHILDREN/Z1BPBUSISM/item">
+                            <pfx8:PartnerInfo>
+                                <pfx8:MaterialNumber>
+                                    <xsl:value-of select="../../../FIELDS/MATNR"/>
+                                </pfx8:MaterialNumber>
+                                <pfx8:AuthorID>
+                                    <xsl:value-of select="tib:trim(current()/FIELDS/PARTNER)"/>
+                                </pfx8:AuthorID>
+                                <pfx8:Affiliation>
+                                    <xsl:value-of select="tib:trim(current()/FIELDS/TITLE__LET)"/>
+                                </pfx8:Affiliation>
+                                <pfx8:Role>
+                                    <xsl:value-of select="tib:trim(current()/FIELDS/RLTYP)"/>
+                                </pfx8:Role>
+                                <pfx8:FirstName>
+                                    <xsl:value-of select="tib:trim(current()/FIELDS/NAME__FIRST)"/>
+                                </pfx8:FirstName>
+                                <pfx8:LastName>
+                                    <xsl:value-of select="tib:trim(current()/FIELDS/NAME__LAST)"/>
+                                </pfx8:LastName>
+                                <xsl:if test="exists(current()/FIELDS/NAME__MIDDLE)">
+                                    <pfx8:MiddleName>
+                                        <xsl:value-of select="tib:trim(current()/FIELDS/NAME__MIDDLE)"/>
+                                    </pfx8:MiddleName>
+                                </xsl:if>
+                                <pfx8:iDocNumber>
+                                    <xsl:value-of select="tib:trim(../../../../../../EDI__DC/DOCNUM)"/>
+                                </pfx8:iDocNumber>
+                                <pfx8:Update_User>
+                                    <xsl:value-of select="$_globalVariables/ns2:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+                                </pfx8:Update_User>
+                            </pfx8:PartnerInfo>
+                        </xsl:for-each>
+                    </pfx8:MaterialPartners>
+                </xsl:for-each>
+            </root>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Generate Error">
+        <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+        <pd:resourceType>ae.activities.throw</pd:resourceType>
+        <pd:x>188</pd:x>
+        <pd:y>219</pd:y>
+        <config>
+            <faultName/>
+        </config>
+        <pd:inputBindings>
+            <pfx9:ActivityInput>
+                <message>
+                    <xsl:value-of select="$_error/ns1:ErrorReport/Msg"/>
+                </message>
+                <xsl:if test="$_error/ns1:ErrorReport/MsgCode">
+                    <messageCode>
+                        <xsl:value-of select="$_error/ns1:ErrorReport/MsgCode"/>
+                    </messageCode>
+                </xsl:if>
+            </pfx9:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Map_SAPIdoc_to_FileAE</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Map_SAPIdoc_to_FileAE</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Map_SAPIdoc_to_FileAE</pd:from>
+        <pd:to>Generate Error</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-52429</pd:lineColor>
+        <pd:conditionType>error</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

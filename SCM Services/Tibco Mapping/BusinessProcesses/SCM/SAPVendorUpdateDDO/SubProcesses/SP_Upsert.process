@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pfx2="http://www.hmco.com/schemas/sfa/material_update" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.hmco.com/schemas/ddo/material_update" xmlns:pfx="http://www.hmco.com/EAI/common/QueryRequest" xmlns:pfx7="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx5="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:pfx6="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:ns="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema">
+    <xsd:import namespace="http://www.hmco.com/EAI/common/QueryRequest" schemaLocation="/SharedResources/Schemas/Query.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_update" schemaLocation="/SharedResources/Schemas/Common/SCM/MatMasterUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/ddo/material_update" schemaLocation="/SharedResources/Schemas/SCM/MatMasterUpdate.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Partners_Update.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Vendor_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPVendorUpdateDDO/SubProcesses/SP_Upsert.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="root">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element ref="pfx7:VendorInfo"/>
+                    <xsd:element name="TransactionID" type="xsd:string"/>
+                    <xsd:element name="MessageID" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>53</pd:startX>
+    <pd:startY>220</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>922</pd:endX>
+    <pd:endY>200</pd:endY>
+    <pd:errorSchemas>
+        <Error ref="pfx6:errorMessage"/>
+    </pd:errorSchemas>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1305632190574</pd:targetNamespace>
+    <pd:group name="Vendor_Update">
+        <pd:type>com.tibco.pe.core.TransactionGroup</pd:type>
+        <pd:resourceType>ae.process.group</pd:resourceType>
+        <pd:x>191</pd:x>
+        <pd:y>38</pd:y>
+        <pd:width>619</pd:width>
+        <pd:height>346</pd:height>
+        <pd:collapsedWidth>57</pd:collapsedWidth>
+        <pd:collapsedHeight>70</pd:collapsedHeight>
+        <pd:groupVariables/>
+        <pd:joinToggle>inherit</pd:joinToggle>
+        <config>
+            <pd:groupType>transactionGroup</pd:groupType>
+            <pd:serializable>false</pd:serializable>
+            <pd:transactionType>JDBCTransaction</pd:transactionType>
+            <pd:includeCheckpoint>false</pd:includeCheckpoint>
+        </config>
+        <pd:inputBindings/>
+        <pd:expanded>true</pd:expanded>
+        <pd:transition>
+            <pd:from>start</pd:from>
+            <pd:to>JDBC_SP_Vendor_Update</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>Vendor_Email</pd:from>
+            <pd:to>end</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>Catch</pd:from>
+            <pd:to>Log</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>Log</pd:from>
+            <pd:to>Generate-Error-Subprocess</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>JDBC_SP_Vendor_Update</pd:from>
+            <pd:to>VENDOR_REMIT</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>VENDOR_REMIT</pd:from>
+            <pd:to>Vendor_Email</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:activity name="JDBC_SP_Vendor_Update">
+            <pd:type>com.tibco.plugin.jdbc.JDBCCallActivity</pd:type>
+            <pd:resourceType>ae.activities.JDBCCallActivity</pd:resourceType>
+            <pd:x>276</pd:x>
+            <pd:y>171</pd:y>
+            <config>
+                <timeout>%%CENTRAL_DB/JDBC_TIMEOUT%%</timeout>
+                <maxRows>%%CENTRAL_DB/JDBC_MAXROWS%%</maxRows>
+                <emptyStrAsNil>false</emptyStrAsNil>
+                <jdbcSharedConfig>/SharedResources/Connections/Database/CentralDBJdbcConnection.sharedjdbc</jdbcSharedConfig>
+                <schema>%%CENTRAL_DB/Schema%%</schema>
+                <ProcedureName>%%CENTRAL_DB/Vendor_Update/Vendor_SP_Name%%</ProcedureName>
+                <parameterTypes>
+                    <parameter>
+                        <colName>IN_VENDORNUMBER</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_VENDORTYPE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_VENDORNAME</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_COUNTRY</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_NAME1</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_NAME2</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_NAME3</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_NAME4</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CITY</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_COUNTY</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_PO_BOX</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_PO_BOX_POST_CD</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_POSTAL_CODE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_REGION_STATE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_SORT_NAME</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_STREET</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ADRC_STR_SUPPL1</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ADRC_STR_SUPPL2</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ADRC_STR_SUPPL3</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ADRC_LOCATION</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_SAP_ADDR_NO</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_PS_VENDOR_LOC</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_VENDOR_GROUP</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ALTERNATEPAYEEID</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CENTRAL_DELETE_FLAG</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CENTRAL_POST_BLOCK</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CENTRAL_PURCH_BLOCK</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_TELEPHONE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_MOBILE_PHONE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_FAX_NUMBER</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ALTERNATEPAYEEALLOWED</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_TAX_JURISDICTION</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CENTRAL_DELETE_BLOCK</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_COMPANY</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_COMPANY_POST_BLOCK</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_COMPANY_DELETE_FLAG</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_RECONCILE_ACCT</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_PAYMENT_METHODS</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_PAYMENT_BLOCK</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_ALTERNATEPAYEEACCOUNTNUMBER</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CHECK_DUP_INVOICE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_INDIVIDUAL_PAYMENTS</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_MINORITY_INDICATORS</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_LEGACY_VENDOR_NO</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_PAY_METHOD_SUPPLMT</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_WH_TAX_COUNTRY</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_WH_TAXTYPE</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_CAREOF</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_IDOCNUMBER</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                    <parameter>
+                        <colName>IN_UPDATE_USER</colName>
+                        <colType>1</colType>
+                        <dataType>12</dataType>
+                        <typeName>VARCHAR2</typeName>
+                    </parameter>
+                </parameterTypes>
+            </config>
+            <pd:inputBindings>
+                <inputs>
+                    <inputSet>
+                        <IN_VENDORNUMBER>
+                            <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:VendorNumber"/>
+                        </IN_VENDORNUMBER>
+                        <IN_VENDORTYPE>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:VendorType)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:VendorType"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_VENDORTYPE>
+                        <IN_VENDORNAME>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:VendorName)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:VendorName"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_VENDORNAME>
+                        <IN_COUNTRY>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Country)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Country"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_COUNTRY>
+                        <IN_NAME1>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name1)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_NAME1>
+                        <IN_NAME2>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name2)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name2"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_NAME2>
+                        <IN_NAME3>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name3)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name3"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_NAME3>
+                        <IN_NAME4>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name4)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Name4"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_NAME4>
+                        <IN_CITY>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:City)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:City"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_CITY>
+                        <IN_COUNTY>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:County)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:County"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_COUNTY>
+                        <IN_PO_BOX>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:PO_Box)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:PO_Box"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_PO_BOX>
+                        <IN_PO_BOX_POST_CD>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:PO_Box_Post_Cd)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:PO_Box_Post_Cd"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_PO_BOX_POST_CD>
+                        <IN_POSTAL_CODE>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Postal_Code)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Postal_Code"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_POSTAL_CODE>
+                        <IN_REGION_STATE>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Region_State)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Region_State"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_REGION_STATE>
+                        <IN_SORT_NAME>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:sort_name)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:sort_name"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_SORT_NAME>
+                        <IN_STREET>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Street)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Street"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_STREET>
+                        <IN_ADRC_STR_SUPPL1>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_str_suppl1)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_str_suppl1"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ADRC_STR_SUPPL1>
+                        <IN_ADRC_STR_SUPPL2>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_str_suppl2)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_str_suppl2"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ADRC_STR_SUPPL2>
+                        <IN_ADRC_STR_SUPPL3>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_str_suppl3)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_str_suppl3"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ADRC_STR_SUPPL3>
+                        <IN_ADRC_LOCATION>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_location)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:adrc_location"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ADRC_LOCATION>
+                        <IN_SAP_ADDR_NO>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:SAP_Addr_No)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:SAP_Addr_No"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_SAP_ADDR_NO>
+                        <IN_PS_VENDOR_LOC>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:PS_Vendor-Loc)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:PS_Vendor-Loc"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_PS_VENDOR_LOC>
+                        <IN_VENDOR_GROUP>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Vendor_Group)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Vendor_Group"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_VENDOR_GROUP>
+                        <IN_ALTERNATEPAYEEID>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:AlternatePayeeID)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:AlternatePayeeID"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ALTERNATEPAYEEID>
+                        <IN_CENTRAL_DELETE_FLAG>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Delete_Flag)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Delete_Flag"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_CENTRAL_DELETE_FLAG>
+                        <IN_CENTRAL_POST_BLOCK>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Post_Block)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Post_Block"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_CENTRAL_POST_BLOCK>
+                        <IN_CENTRAL_PURCH_BLOCK>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Purch_Block)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Purch_Block"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_CENTRAL_PURCH_BLOCK>
+                        <IN_TELEPHONE>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Telephone)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Telephone"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_TELEPHONE>
+                        <IN_MOBILE_PHONE>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Mobile_Phone)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Mobile_Phone"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_MOBILE_PHONE>
+                        <IN_FAX_NUMBER>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Fax_Number)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Fax_Number"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_FAX_NUMBER>
+                        <IN_ALTERNATEPAYEEALLOWED>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:AlternatePayeeAllowed)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:AlternatePayeeAllowed"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ALTERNATEPAYEEALLOWED>
+                        <IN_TAX_JURISDICTION>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Tax_Jurisdiction)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Tax_Jurisdiction"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_TAX_JURISDICTION>
+                        <IN_CENTRAL_DELETE_BLOCK>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Delete_Block)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Central_Delete_Block"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_CENTRAL_DELETE_BLOCK>
+                        <IN_COMPANY>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Company)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Company"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_COMPANY>
+                        <IN_COMPANY_POST_BLOCK>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Company_Post_Block)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Company_Post_Block"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_COMPANY_POST_BLOCK>
+                        <IN_COMPANY_DELETE_FLAG>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Company_Delete_Flag)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Company_Delete_Flag"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_COMPANY_DELETE_FLAG>
+                        <IN_RECONCILE_ACCT>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Reconcile_Acct)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Reconcile_Acct"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_RECONCILE_ACCT>
+                        <IN_PAYMENT_METHODS>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Payment_Methods)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Payment_Methods"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_PAYMENT_METHODS>
+                        <IN_PAYMENT_BLOCK>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Payment_Block)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Payment_Block"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_PAYMENT_BLOCK>
+                        <IN_ALTERNATEPAYEEACCOUNTNUMBER>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:AlternatePayeeAccountNumber)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:AlternatePayeeAccountNumber"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_ALTERNATEPAYEEACCOUNTNUMBER>
+                        <IN_CHECK_DUP_INVOICE>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Check_Dup_Invoice)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Check_Dup_Invoice"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_CHECK_DUP_INVOICE>
+                        <IN_INDIVIDUAL_PAYMENTS>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Individual_Payments)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Individual_Payments"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_INDIVIDUAL_PAYMENTS>
+                        <IN_MINORITY_INDICATORS>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Minority_Indicators)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Minority_Indicators"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_MINORITY_INDICATORS>
+                        <IN_LEGACY_VENDOR_NO>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Legacy_Vendor_No)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Legacy_Vendor_No"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_LEGACY_VENDOR_NO>
+                        <IN_PAY_METHOD_SUPPLMT>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Pay_Method_Supplmt)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:Pay_Method_Supplmt"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_PAY_METHOD_SUPPLMT>
+                        <IN_WH_TAX_COUNTRY>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:WH_Tax_Country)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:WH_Tax_Country"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_WH_TAX_COUNTRY>
+                        <IN_WH_TAXTYPE>
+                            <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:WH_TaxType"/>
+                        </IN_WH_TAXTYPE>
+                        <IN_CAREOF>
+                            <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:CareOf"/>
+                        </IN_CAREOF>
+                        <IN_IDOCNUMBER>
+                            <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:iDocNumber"/>
+                        </IN_IDOCNUMBER>
+                        <IN_UPDATE_USER>
+                            <xsl:choose>
+                                <xsl:when test="exists($Start/root/pfx7:VendorInfo/pfx7:Update_User)">
+                                    <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:Update_User"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </IN_UPDATE_USER>
+                    </inputSet>
+                </inputs>
+            </pd:inputBindings>
+        </pd:activity>
+        <pd:activity name="Generate-Error-Subprocess">
+            <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+            <pd:resourceType>ae.activities.throw</pd:resourceType>
+            <pd:x>696</pd:x>
+            <pd:y>301</pd:y>
+            <config>
+                <faultName/>
+            </config>
+            <pd:inputBindings>
+                <ns:ActivityInput>
+                    <message>
+                        <xsl:value-of select="concat('An error Occurred in insertion of data in DDO DB' ,string( $Catch/exceptiondata))"/>
+                    </message>
+                    <messageCode>
+                        <xsl:value-of select="concat('An error Occurred in insertion of data in DDO DB' ,string( $Catch/exceptiondata))"/>
+                    </messageCode>
+                </ns:ActivityInput>
+            </pd:inputBindings>
+        </pd:activity>
+        <pd:activity name="Catch">
+            <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+            <pd:resourceType>ae.activities.catch</pd:resourceType>
+            <pd:x>337</pd:x>
+            <pd:y>308</pd:y>
+            <pd:handler>true</pd:handler>
+            <config>
+                <catchAll>true</catchAll>
+            </config>
+            <pd:inputBindings/>
+        </pd:activity>
+        <pd:activity name="Log">
+            <pd:type>com.tibco.pe.core.WriteToLogActivity</pd:type>
+            <pd:resourceType>ae.activities.log</pd:resourceType>
+            <pd:x>509</pd:x>
+            <pd:y>307</pd:y>
+            <config>
+                <role>User</role>
+            </config>
+            <pd:inputBindings>
+                <ns2:ActivityInput>
+                    <message>
+                        <xsl:value-of select="concat (' SAPVendorUpdateDDO iDoc #   ', $Start/root/TransactionID ,'     with the Message ID #    ', $Start/root/MessageID, '    failed in the DB insert Process. The reason for the failure is    ',$Catch/exceptiondata/* , &quot;&#xA;&quot;)"/>
+                    </message>
+                </ns2:ActivityInput>
+            </pd:inputBindings>
+        </pd:activity>
+        <pd:group name="VENDOR_REMIT">
+            <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
+            <pd:resourceType>ae.process.group</pd:resourceType>
+            <pd:x>364</pd:x>
+            <pd:y>92</pd:y>
+            <pd:width>199</pd:width>
+            <pd:height>146</pd:height>
+            <pd:collapsedWidth>57</pd:collapsedWidth>
+            <pd:collapsedHeight>70</pd:collapsedHeight>
+            <pd:groupVariables/>
+            <pd:joinToggle>inherit</pd:joinToggle>
+            <config>
+                <pd:groupType>inputLoop</pd:groupType>
+                <pd:serializable>false</pd:serializable>
+                <pd:over>$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:tibco__ry__vendor__remit</pd:over>
+                <pd:iterationElementSlot>RemitIteration</pd:iterationElementSlot>
+                <pd:indexSlot>Remitindex</pd:indexSlot>
+                <pd:activityOutputName/>
+                <pd:accumulateOutput>false</pd:accumulateOutput>
+            </config>
+            <pd:inputBindings/>
+            <pd:expanded>true</pd:expanded>
+            <pd:transition>
+                <pd:from>start</pd:from>
+                <pd:to>JDBC_SP_Vendor_Remit</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>JDBC_SP_Vendor_Remit</pd:from>
+                <pd:to>end</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:activity name="JDBC_SP_Vendor_Remit">
+                <pd:type>com.tibco.plugin.jdbc.JDBCCallActivity</pd:type>
+                <pd:resourceType>ae.activities.JDBCCallActivity</pd:resourceType>
+                <pd:x>453</pd:x>
+                <pd:y>174</pd:y>
+                <config>
+                    <timeout>%%CENTRAL_DB/JDBC_TIMEOUT%%</timeout>
+                    <maxRows>%%CENTRAL_DB/JDBC_MAXROWS%%</maxRows>
+                    <emptyStrAsNil>false</emptyStrAsNil>
+                    <schema>%%CENTRAL_DB/Schema%%</schema>
+                    <jdbcSharedConfig>/SharedResources/Connections/Database/CentralDBJdbcConnection.sharedjdbc</jdbcSharedConfig>
+                    <ProcedureName>%%CENTRAL_DB/Vendor_Update/Vendor_Remit_SP_Name%%</ProcedureName>
+                    <parameterTypes>
+                        <parameter>
+                            <colName>IN_VENDORNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PURCHASE_ORG</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PURCH_BLOCK</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PURCH_DELETE_FLAG</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PAYMENT_TERMS</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INCOTERMS_CODE</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INCOTERMS_DESCR</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_PARTNER_FUNCTION</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_REMIT_TO_VENDOR_NO</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INDEX_REMIT</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                    </parameterTypes>
+                </config>
+                <pd:inputBindings>
+                    <inputs>
+                        <inputSet>
+                            <IN_VENDORNUMBER>
+                                <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:VendorNumber"/>
+                            </IN_VENDORNUMBER>
+                            <IN_PURCHASE_ORG>
+                                <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Purchase_Org"/>
+                            </IN_PURCHASE_ORG>
+                            <IN_PURCH_BLOCK>
+                                <xsl:choose>
+                                    <xsl:when test="exists($RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Purch_Block)">
+                                        <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Purch_Block"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PURCH_BLOCK>
+                            <IN_PURCH_DELETE_FLAG>
+                                <xsl:choose>
+                                    <xsl:when test="exists($RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Purch_Delete_Flag)">
+                                        <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Purch_Delete_Flag"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PURCH_DELETE_FLAG>
+                            <IN_PAYMENT_TERMS>
+                                <xsl:choose>
+                                    <xsl:when test="exists($RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Payment_Terms)">
+                                        <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Payment_Terms"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_PAYMENT_TERMS>
+                            <IN_INCOTERMS_CODE>
+                                <xsl:choose>
+                                    <xsl:when test="exists($RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Incoterms_Code)">
+                                        <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Incoterms_Code"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_INCOTERMS_CODE>
+                            <IN_INCOTERMS_DESCR>
+                                <xsl:choose>
+                                    <xsl:when test="exists($RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Incoterms_Descr)">
+                                        <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Incoterms_Descr"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_INCOTERMS_DESCR>
+                            <IN_PARTNER_FUNCTION>
+                                <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Partner_Function"/>
+                            </IN_PARTNER_FUNCTION>
+                            <IN_REMIT_TO_VENDOR_NO>
+                                <xsl:choose>
+                                    <xsl:when test="exists($RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Remit_to_vendor_no)">
+                                        <xsl:value-of select="$RemitIteration/pfx7:tibco__ry__vendor__remit/pfx7:Remit_to_vendor_no"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_REMIT_TO_VENDOR_NO>
+                            <IN_INDEX_REMIT>
+                                <xsl:value-of select="$Remitindex"/>
+                            </IN_INDEX_REMIT>
+                        </inputSet>
+                    </inputs>
+                </pd:inputBindings>
+            </pd:activity>
+        </pd:group>
+        <pd:group name="Vendor_Email">
+            <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
+            <pd:resourceType>ae.process.group</pd:resourceType>
+            <pd:x>591</pd:x>
+            <pd:y>90</pd:y>
+            <pd:width>177</pd:width>
+            <pd:height>150</pd:height>
+            <pd:collapsedWidth>57</pd:collapsedWidth>
+            <pd:collapsedHeight>70</pd:collapsedHeight>
+            <pd:groupVariables/>
+            <pd:joinToggle>inherit</pd:joinToggle>
+            <config>
+                <pd:groupType>inputLoop</pd:groupType>
+                <pd:serializable>false</pd:serializable>
+                <pd:over>$Start/root/pfx7:VendorInfo/pfx7:tibco__ry__vendor/pfx7:tibco__ry__vendor__email</pd:over>
+                <pd:iterationElementSlot>EmailIteration</pd:iterationElementSlot>
+                <pd:indexSlot>EmailIndex</pd:indexSlot>
+                <pd:activityOutputName/>
+                <pd:accumulateOutput>false</pd:accumulateOutput>
+            </config>
+            <pd:inputBindings/>
+            <pd:expanded>true</pd:expanded>
+            <pd:transition>
+                <pd:from>start</pd:from>
+                <pd:to>JDBC_SP_Vendor_Email</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:transition>
+                <pd:from>JDBC_SP_Vendor_Email</pd:from>
+                <pd:to>end</pd:to>
+                <pd:lineType>Default</pd:lineType>
+                <pd:lineColor>-16777216</pd:lineColor>
+                <pd:conditionType>always</pd:conditionType>
+            </pd:transition>
+            <pd:activity name="JDBC_SP_Vendor_Email">
+                <pd:type>com.tibco.plugin.jdbc.JDBCCallActivity</pd:type>
+                <pd:resourceType>ae.activities.JDBCCallActivity</pd:resourceType>
+                <pd:x>678</pd:x>
+                <pd:y>169</pd:y>
+                <config>
+                    <timeout>%%CENTRAL_DB/JDBC_TIMEOUT%%</timeout>
+                    <maxRows>100</maxRows>
+                    <emptyStrAsNil>false</emptyStrAsNil>
+                    <jdbcSharedConfig>/SharedResources/Connections/Database/CentralDBJdbcConnection.sharedjdbc</jdbcSharedConfig>
+                    <schema>%%CENTRAL_DB/Schema%%</schema>
+                    <ProcedureName>%%CENTRAL_DB/Vendor_Update/Vendor_Email_SP_Name%%</ProcedureName>
+                    <parameterTypes>
+                        <parameter>
+                            <colName>IN_VENDORNUMBER</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_EMAILID</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_DEFAULTEMAIL</colName>
+                            <colType>1</colType>
+                            <dataType>12</dataType>
+                            <typeName>VARCHAR2</typeName>
+                        </parameter>
+                        <parameter>
+                            <colName>IN_INDEX_EMAIL</colName>
+                            <colType>1</colType>
+                            <dataType>2</dataType>
+                            <typeName>NUMBER</typeName>
+                        </parameter>
+                    </parameterTypes>
+                </config>
+                <pd:inputBindings>
+                    <inputs>
+                        <inputSet>
+                            <IN_VENDORNUMBER>
+                                <xsl:value-of select="$Start/root/pfx7:VendorInfo/pfx7:VendorNumber"/>
+                            </IN_VENDORNUMBER>
+                            <IN_EMAILID>
+                                <xsl:choose>
+                                    <xsl:when test="exists($EmailIteration/pfx7:tibco__ry__vendor__email/pfx7:Emailid)">
+                                        <xsl:value-of select="$EmailIteration/pfx7:tibco__ry__vendor__email/pfx7:Emailid"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_EMAILID>
+                            <IN_DEFAULTEMAIL>
+                                <xsl:choose>
+                                    <xsl:when test="exists($EmailIteration/pfx7:tibco__ry__vendor__email/pfx7:DefaultEmail)">
+                                        <xsl:value-of select="$EmailIteration/pfx7:tibco__ry__vendor__email/pfx7:DefaultEmail"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </IN_DEFAULTEMAIL>
+                            <IN_INDEX_EMAIL>
+                                <xsl:value-of select="$EmailIndex"/>
+                            </IN_INDEX_EMAIL>
+                        </inputSet>
+                    </inputs>
+                </pd:inputBindings>
+            </pd:activity>
+        </pd:group>
+    </pd:group>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Vendor_Update</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Vendor_Update</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

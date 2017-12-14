@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx7="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.hmco.com/schemas/sfa/material_update" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.hmco.com/schemas/ddo/material_update" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" schemaLocation="/AESchemas/ae/FileAdapter/wire/SCM_OUT_ADFFFA.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" schemaLocation="/SharedResources/Schemas/TIBCO Message/InventoryMovementUpdateLogProCanonical.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" schemaLocation="/AESchemas/ae/FileAdapter/wire/SCM_OUT_ADFFA.aeschema"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_update" schemaLocation="/SharedResources/Schemas/Common/MatMasterUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/schemas/ddo/material_update" schemaLocation="/SharedResources/Schemas/SCM/MatMasterUpdate.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/SunriseCentral_Database_Consumer_Updated_Material/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Master_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPMaterialMasterUpdateDDO/TransformationProcesses/TransformToDDO.process</pd:name>
+    <pd:description>This activity transforms the incoming message to AE format, which
+represents SAP schema.</pd:description>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x"/>
+    <pd:startX>38</pd:startX>
+    <pd:startY>129</pd:startY>
+    <pd:returnBindings>
+        <xsl:copy-of select="$AccumulatedMaterial/AccumulatedOutput/pfx7:Material_Master_Update"/>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx7:Material_Master_Update"/>
+    <pd:endX>704</pd:endX>
+    <pd:endY>122</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1314672687666</pd:targetNamespace>
+    <pd:group name="E1MARAM">
+        <pd:type>com.tibco.pe.core.LoopGroup</pd:type>
+        <pd:resourceType>ae.process.group</pd:resourceType>
+        <pd:x>279</pd:x>
+        <pd:y>33</pd:y>
+        <pd:width>198</pd:width>
+        <pd:height>174</pd:height>
+        <pd:collapsedWidth>57</pd:collapsedWidth>
+        <pd:collapsedHeight>70</pd:collapsedHeight>
+        <pd:joinToggle>inherit</pd:joinToggle>
+        <config>
+            <pd:groupType>inputLoop</pd:groupType>
+            <pd:serializable>false</pd:serializable>
+            <pd:over>$Start/pfx3:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item</pd:over>
+            <pd:iterationElementSlot>current_value</pd:iterationElementSlot>
+            <pd:indexSlot>i</pd:indexSlot>
+            <pd:outSlot>AccumulatedMaterial</pd:outSlot>
+            <pd:activityOutputName>Map_Material</pd:activityOutputName>
+            <pd:accumulateOutput>true</pd:accumulateOutput>
+        </config>
+        <pd:inputBindings/>
+        <pd:expanded>true</pd:expanded>
+        <pd:transition>
+            <pd:from>start</pd:from>
+            <pd:to>Map_Material</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:transition>
+            <pd:from>Map_Material</pd:from>
+            <pd:to>end</pd:to>
+            <pd:lineType>Default</pd:lineType>
+            <pd:lineColor>-16777216</pd:lineColor>
+            <pd:conditionType>always</pd:conditionType>
+        </pd:transition>
+        <pd:activity name="Map_Material">
+            <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+            <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+            <pd:x>391</pd:x>
+            <pd:y>117</pd:y>
+            <config>
+                <element ref="pfx7:Material_Master_Update"/>
+            </config>
+            <pd:inputBindings>
+                <pfx7:Material_Master_Update>
+                    <pfx7:MaterialNumber>
+                        <xsl:value-of select="$current_value/item/FIELDS/MATNR"/>
+                    </pfx7:MaterialNumber>
+                    <xsl:if test="string-length($current_value/item/FIELDS/ERSDA) >0and $current_value/item/FIELDS/ERSDA !=''">
+                        <pfx7:CreatedOn>
+                            <xsl:value-of select="concat(substring($current_value/item/FIELDS/ERSDA,1,4), '-',substring($current_value/item/FIELDS/ERSDA,5,2),'-',substring($current_value/item/FIELDS/ERSDA,7,2))"/>
+                        </pfx7:CreatedOn>
+                    </xsl:if>
+                    <xsl:if test="string-length($current_value/item/FIELDS/LAEDA) > 0  and  ($current_value/item/FIELDS/LAEDA !='00000000')">
+                        <pfx7:TitleUpdatedDate>
+                            <xsl:value-of select="concat(substring($current_value/item/FIELDS/LAEDA,1,4), '-',substring($current_value/item/FIELDS/LAEDA,5,2),'-',substring($current_value/item/FIELDS/LAEDA,7,2))"/>
+                        </pfx7:TitleUpdatedDate>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/FIELDS/MTART/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/MTART/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MaterialType>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/MTART)"/>
+                        </pfx7:MaterialType>
+                    </xsl:if>
+                    <pfx7:MaterialGroup>
+                        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MATKL)"/>
+                    </pfx7:MaterialGroup>
+                    <xsl:if test="not(($current_value/item/FIELDS/BISMT/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/BISMT/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:OldMaterialNumber>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/BISMT)"/>
+                        </pfx7:OldMaterialNumber>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/FIELDS/MEINS/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/MEINS/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:BaseUnitofMeasure>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/MEINS)"/>
+                        </pfx7:BaseUnitofMeasure>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/FIELDS/ZEIVR/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/ZEIVR/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:DocumentVersion>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/ZEIVR)"/>
+                        </pfx7:DocumentVersion>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/FIELDS/EKWSL/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/EKWSL/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PurchasingValueKey>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/EKWSL)"/>
+                        </pfx7:PurchasingValueKey>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/FIELDS/BRGEW)) > 0">
+                        <pfx7:NetWeight>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/BRGEW)"/>
+                        </pfx7:NetWeight>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/FIELDS/GEWEI/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/GEWEI/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:WeightUnit>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/GEWEI)"/>
+                        </pfx7:WeightUnit>
+                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="not(($current_value/item/FIELDS/SPART/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/SPART/@xsi:nil=(&quot;1&quot;)))">
+                            <pfx7:Division>
+                                <xsl:value-of select="tib:trim($current_value/item/FIELDS/SPART)"/>
+                            </pfx7:Division>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <pfx7:Division>
+                                <xsl:value-of select="''"/>
+                            </pfx7:Division>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:if test="not(($current_value/item/FIELDS/EXTWG/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/EXTWG/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ExternalMaterialGroup>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/EXTWG)"/>
+                        </pfx7:ExternalMaterialGroup>
+                    </xsl:if>
+                    <pfx7:XPlantStatus>
+                        <xsl:value-of select="tib:trim($current_value/item/FIELDS/MSTAE)"/>
+                    </pfx7:XPlantStatus>
+                    <xsl:if test="exists($current_value/item/FIELDS/MSTDE)>0 and $current_value/item/FIELDS/MSTDE !='00000000'">
+                        <pfx7:CrossPlantMatStatus>
+                            <xsl:value-of select="concat(substring($current_value/item/FIELDS/MSTDE,1,4), '-',substring($current_value/item/FIELDS/MSTDE,5,2),'-',substring($current_value/item/FIELDS/MSTDE,7,2))"/>
+                        </pfx7:CrossPlantMatStatus>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/FIELDS/MTPOS__MARA/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/FIELDS/MTPOS__MARA/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:GeneralItemCategory>
+                            <xsl:value-of select="tib:trim($current_value/item/FIELDS/MTPOS__MARA)"/>
+                        </pfx7:GeneralItemCategory>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMARTIST/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMARTIST/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:AuthorArtist>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMARTIST)"/>
+                        </pfx7:AuthorArtist>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:Subtitle1>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1)"/>
+                        </pfx7:Subtitle1>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:Subtitle2>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2)"/>
+                        </pfx7:Subtitle2>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:Subtitle3>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3)"/>
+                        </pfx7:Subtitle3>
+                    </xsl:if>
+                    <pfx7:Title>
+                        <xsl:value-of select="tib:trim(concat($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE1,'  ',$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE2,'  ',&#xA;$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMSUBTITLE3))"/>
+                    </pfx7:Title>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREFMDPROD/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREFMDPROD/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MediaProduct>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREFMDPROD)"/>
+                        </pfx7:MediaProduct>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLTYPE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLTYPE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PublicationType>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLTYPE)"/>
+                        </pfx7:PublicationType>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMMEDIATYPE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMMEDIATYPE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MediaType>
+                            <xsl:value-of select="$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMMEDIATYPE"/>
+                        </pfx7:MediaType>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMCONTTYPE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMCONTTYPE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ContentCategory>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMCONTTYPE)"/>
+                        </pfx7:ContentCategory>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITION/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITION/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:EditionKey>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITION)"/>
+                        </pfx7:EditionKey>
+                    </xsl:if>
+                    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE)>0 and tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE) !='00000000'">
+                        <pfx7:PublicationDate>
+                            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE,1,4), '-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE,5,2),'-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMPUBLDATE,7,2))"/>
+                        </pfx7:PublicationDate>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:Imprint>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMIMPRINT)"/>
+                        </pfx7:Imprint>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRESPPLANER/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRESPPLANER/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:EmplRespForPlan>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMRESPPLANER)"/>
+                        </pfx7:EmplRespForPlan>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMLANGUAGES)) > 0">
+                        <pfx7:Languages>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMLANGUAGES)"/>
+                        </pfx7:Languages>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONNUM/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONNUM/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:EditionCounter>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMEDITIONNUM)"/>
+                        </pfx7:EditionCounter>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREPRINTTYPE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREPRINTTYPE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ReprintingType>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMREPRINTTYPE)"/>
+                        </pfx7:ReprintingType>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:OriginalPublisher>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORPUBLISHER)"/>
+                        </pfx7:OriginalPublisher>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIDCODE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIDCODE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PrimaryISBN>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMORIDCODE)"/>
+                        </pfx7:PrimaryISBN>
+                    </xsl:if>
+                    <pfx7:YearNumber>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMYEARNR)"/>
+                    </pfx7:YearNumber>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMISSUETYPEST/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMISSUETYPEST/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:StdlssVartype>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMISSUETYPEST)"/>
+                        </pfx7:StdlssVartype>
+                    </xsl:if>
+                    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE)>0 and &#xA;$current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE !='00000000'">
+                        <pfx7:IntlShippingDate>
+                            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE,1,4), '-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE,5,2),'-',substring($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMINITSHIPDATE,7,2))"/>
+                        </pfx7:IntlShippingDate>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMDESIGN/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMDESIGN/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ProductPresentation>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/FIELDS/ISMDESIGN)"/>
+                        </pfx7:ProductPresentation>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0003'][1]/FIELDS/IDENTCODE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0003'][1]/FIELDS/IDENTCODE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:GTIN>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0003'][1]/FIELDS/IDENTCODE)"/>
+                        </pfx7:GTIN>
+                    </xsl:if>
+                    <pfx7:ISBN_13>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0001'][1]/FIELDS/IDENTCODE)"/>
+                    </pfx7:ISBN_13>
+                    <pfx7:ISBN_10>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARAISM/item/CHILDREN/E1IDCDASSIGNISM/item[FIELDS/IDCODETYPE = '0002'][1]/FIELDS/IDENTCODE)"/>
+                    </pfx7:ISBN_10>
+                    <pfx7:MaterialDescription>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MAKTM/item[1]/FIELDS/MAKTX)"/>
+                    </pfx7:MaterialDescription>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WERKS/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WERKS/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:Plant>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WERKS)"/>
+                        </pfx7:Plant>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/LVORM/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/LVORM/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:DeletionIndicator>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/LVORM)"/>
+                        </pfx7:DeletionIndicator>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MAABC/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MAABC/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ABCIndicator>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MAABC)"/>
+                        </pfx7:ABCIndicator>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EKGRP/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EKGRP/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PurchasingGroup>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EKGRP)"/>
+                        </pfx7:PurchasingGroup>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISMM/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISMM/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MRPType>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISMM)"/>
+                        </pfx7:MRPType>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISPO/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISPO/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MRPController>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISPO)"/>
+                        </pfx7:MRPController>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PLIFZ/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PLIFZ/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PlannedDeliveryTime>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PLIFZ)"/>
+                        </pfx7:PlannedDeliveryTime>
+                    </xsl:if>
+                    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WEBAZ) > 0">
+                        <pfx7:GRProcessingTime>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/WEBAZ)"/>
+                        </pfx7:GRProcessingTime>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISLS/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISLS/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:LotSize>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DISLS)"/>
+                        </pfx7:LotSize>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BESKZ/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BESKZ/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ProcurementType>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BESKZ)"/>
+                        </pfx7:ProcurementType>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MINBE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MINBE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ReorderPoint>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MINBE)"/>
+                        </pfx7:ReorderPoint>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISBE/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISBE/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:SafetyStock>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISBE)"/>
+                        </pfx7:SafetyStock>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMI/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMI/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MinimumLotSize>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMI)"/>
+                        </pfx7:MinimumLotSize>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMA/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMA/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MaximumLotSize>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTMA)"/>
+                        </pfx7:MaximumLotSize>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTRF/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTRF/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:RoundingValuePOQuantity>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/BSTRF)"/>
+                        </pfx7:RoundingValuePOQuantity>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/KZAUS/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/KZAUS/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:DiscontIndicator>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/KZAUS)"/>
+                        </pfx7:DiscontIndicator>
+                    </xsl:if>
+                    <xsl:if test="string-length($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT) >0&#xA;and &#xA;$current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT !='00000000'">
+                        <pfx7:EffectiveOutDate>
+                            <xsl:value-of select="concat(substring($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT,1,4), '-',substring($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT,5,2),'-',substring($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/AUSDT,7,2))"/>
+                        </pfx7:EffectiveOutDate>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/NFMAT/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/NFMAT/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:FollowupMaterial>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/NFMAT)"/>
+                        </pfx7:FollowupMaterial>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DZEIT)) > 0">
+                        <pfx7:InhouseProduction>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/DZEIT)"/>
+                        </pfx7:InhouseProduction>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MTVFP/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MTVFP/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:AvailabilityCheck>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/MTVFP)"/>
+                        </pfx7:AvailabilityCheck>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STAWN/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STAWN/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:CommodityCode>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STAWN)"/>
+                        </pfx7:CommodityCode>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/HERKL/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/HERKL/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:CountryName>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/HERKL)"/>
+                        </pfx7:CountryName>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PRCTR/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PRCTR/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ProfitCenter>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/PRCTR)"/>
+                        </pfx7:ProfitCenter>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VRMOD/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VRMOD/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ConsumptionMode>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VRMOD)"/>
+                        </pfx7:ConsumptionMode>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT1)) > 0">
+                        <pfx7:BackwdConsumptionPer>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT1)"/>
+                        </pfx7:BackwdConsumptionPer>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT2)) > 0">
+                        <pfx7:ForwardConsumptionPer>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/VINT2)"/>
+                        </pfx7:ForwardConsumptionPer>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STRGR/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STRGR/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PlanningStrategyGroup>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/STRGR)"/>
+                        </pfx7:PlanningStrategyGroup>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISLO)) > 0">
+                        <pfx7:MinSafetyStock>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/EISLO)"/>
+                        </pfx7:MinSafetyStock>
+                    </xsl:if>
+                    <pfx7:CountryofOrigin>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/HERKL)"/>
+                    </pfx7:CountryofOrigin>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/SOBSL/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/SOBSL/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:SpecialProcurement>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARCM/item[1]/FIELDS/SOBSL)"/>
+                        </pfx7:SpecialProcurement>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARMM/item[ FIELDS/MEINH = 'CS']/FIELDS/UMREZ))>0">
+                        <pfx7:Case>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'CS']/FIELDS/UMREZ)"/>
+                        </pfx7:Case>
+                    </xsl:if>
+                    <xsl:if test="$current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'PU']/FIELDS/UMREN">
+                        <pfx7:PricingUnit>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[FIELDS/MEINH = 'PU']/FIELDS/UMREN)"/>
+                        </pfx7:PricingUnit>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/LAENG)) >0">
+                        <pfx7:Length>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/LAENG)"/>
+                        </pfx7:Length>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/BREIT))>0">
+                        <pfx7:Width>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/BREIT)"/>
+                        </pfx7:Width>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/HOEHE)) > 0">
+                        <pfx7:Height>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/HOEHE)"/>
+                        </pfx7:Height>
+                    </xsl:if>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/VOLUM)) > 0">
+                        <pfx7:Volume>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/FIELDS/VOLUM)"/>
+                        </pfx7:Volume>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARMM/item[1]/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'HE']/FIELDS/EAN11/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARMM/item[1]/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'HE']/FIELDS/EAN11/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:EAN>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[1]/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'HE']/FIELDS/EAN11)"/>
+                        </pfx7:EAN>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EAN11/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EAN11/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:UPC>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EAN11)"/>
+                        </pfx7:UPC>
+                    </xsl:if>
+                    <pfx7:EANCategory>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'HE']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'HE']/FIELDS/EANTP)"/>
+                    </pfx7:EANCategory>
+                    <pfx7:UPCCategory>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MARMM/item[CHILDREN/E1MEANM/item/FIELDS/EANTP = 'UC']/CHILDREN/E1MEANM/item[FIELDS/EANTP = 'UC']/FIELDS/EANTP)"/>
+                    </pfx7:UPCCategory>
+                    <xsl:if test="string-length(tib:trim($current_value/item/CHILDREN/E1MBEWM/item[1]/FIELDS/STPRS)) > 0">
+                        <pfx7:StandardPrice>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MBEWM/item[1]/FIELDS/STPRS)"/>
+                        </pfx7:StandardPrice>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MBEWM/item[1]/FIELDS/BKLAS/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MBEWM/item[1]/FIELDS/BKLAS/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ValuationClass>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MBEWM/item[1]/FIELDS/BKLAS)"/>
+                        </pfx7:ValuationClass>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VERSG/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VERSG/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:MaterialStatisticsGroup>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VERSG)"/>
+                        </pfx7:MaterialStatisticsGroup>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTA/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTA/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:DchainSpecStatus>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/VMSTA)"/>
+                        </pfx7:DchainSpecStatus>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:DeliveringPlant>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/DWERK)"/>
+                        </pfx7:DeliveringPlant>
+                    </xsl:if>
+                    <pfx7:MaterialGroupPricing>
+                        <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KONDM)"/>
+                    </pfx7:MaterialGroupPricing>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KTGRM/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KTGRM/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:AccountAssignmentGroup>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/KTGRM)"/>
+                        </pfx7:AccountAssignmentGroup>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ReturnedCode>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR1)"/>
+                        </pfx7:ReturnedCode>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR2/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR2/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:CartonRounding>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR2)"/>
+                        </pfx7:CartonRounding>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR4/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR4/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:EgoodIndicator>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR4)"/>
+                        </pfx7:EgoodIndicator>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR5/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR5/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:RoyaltyRelevance>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/MVGR5)"/>
+                        </pfx7:RoyaltyRelevance>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT1/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT1/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ContractSalesOnly>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT1)"/>
+                        </pfx7:ContractSalesOnly>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT2/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT2/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:PrintSubscription>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/E1MVKEM/item[1]/FIELDS/PRAT2)"/>
+                        </pfx7:PrintSubscription>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/LIFNR/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/LIFNR/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:Vendor>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/LIFNR)"/>
+                        </pfx7:Vendor>
+                    </xsl:if>
+                    <xsl:if test="not(($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/RESEND__WORK__ID/@xsi:nil=(&quot;true&quot;)) or ($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/RESEND__WORK__ID/@xsi:nil=(&quot;1&quot;)))">
+                        <pfx7:ResendWorkId>
+                            <xsl:value-of select="tib:trim($current_value/item/CHILDREN/Z1ISBN/item[1]/FIELDS/RESEND__WORK__ID)"/>
+                        </pfx7:ResendWorkId>
+                    </xsl:if>
+                    <pfx7:RoyaltyActivityFlag>
+                        <xsl:value-of select="if ($current_value/item/CHILDREN/Z1ISBN/item/FIELDS/ROYALTY__ACTIVITY = 'Y')&#xA;then&#xA;true()&#xA;else &#xA;false()"/>
+                    </pfx7:RoyaltyActivityFlag>
+                    <pfx7:InspectionText>
+                        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'PRUE' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+                    </pfx7:InspectionText>
+                    <pfx7:BasicdataText>
+                        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'GRUN' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+                    </pfx7:BasicdataText>
+                    <pfx7:PoText>
+                        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = 'BEST' and ../../FIELDS/TDOBJECT = 'MATERIAL']/item/FIELDS/TDLINE))"/>
+                    </pfx7:PoText>
+                    <pfx7:salesText>
+                        <xsl:value-of select="tib:trim(tib:concat-sequence($current_value/item/CHILDREN/E1MTXHM/item/CHILDREN/E1MTXLM[../../FIELDS/TDID = '0001' and ../../FIELDS/TDOBJECT = 'MVKE']/item/FIELDS/TDLINE))"/>
+                    </pfx7:salesText>
+                    <pfx7:ProductHierarchy>
+                        <pfx7:PHlevel1Code>
+                            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 1, 2)"/>
+                        </pfx7:PHlevel1Code>
+                        <pfx7:PHlevel2Code>
+                            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 3, 2)"/>
+                        </pfx7:PHlevel2Code>
+                        <pfx7:PHlevel3Code>
+                            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 5, 2)"/>
+                        </pfx7:PHlevel3Code>
+                        <pfx7:PHlevel4Code>
+                            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 7, 3)"/>
+                        </pfx7:PHlevel4Code>
+                        <pfx7:PHlevel5Code>
+                            <xsl:value-of select="substring($current_value/item/FIELDS/PRDHA, 10,2)"/>
+                        </pfx7:PHlevel5Code>
+                    </pfx7:ProductHierarchy>
+                </pfx7:Material_Master_Update>
+            </pd:inputBindings>
+        </pd:activity>
+    </pd:group>
+    <pd:activity name="Generate Error">
+        <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+        <pd:resourceType>ae.activities.throw</pd:resourceType>
+        <pd:x>379</pd:x>
+        <pd:y>306</pd:y>
+        <config>
+            <faultName/>
+        </config>
+        <pd:inputBindings>
+            <ns2:ActivityInput>
+                <message>
+                    <xsl:value-of select="$_error/ns1:ErrorReport/Msg"/>
+                </message>
+                <messageCode>
+                    <xsl:value-of select="$_error/ns1:ErrorReport/StackTrace"/>
+                </messageCode>
+            </ns2:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>E1MARAM</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>E1MARAM</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>E1MARAM</pd:from>
+        <pd:to>Generate Error</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-65485</pd:lineColor>
+        <pd:conditionType>error</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx6:SAPVendorMasterCreate xmlns:pfx2="http://www.hmco.com/EAI/TIBCOMessage/InventoryMovementUpdateLogPro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:pfx="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFFA" xmlns:pfx5="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/SBS_Schema/SAPVendorMasterCreate_Schema" xmlns:ns="http://www.hmco.com/EAI/utility/LookupList" xmlns:pfx6="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/native/SCM_IN_ADFFA_SAPVendorMasterCreateBanta" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx4="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/FileAdapter/wire/SCM_OUT_ADFFA" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <VENDOR__NO>
+        <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR/@xsi:nil"/>
+        <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/LIFNR"/>
+    </VENDOR__NO>
+    <VENDOR__NAME>
+        <xsl:copy-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1/@xsi:nil"/>
+        <xsl:value-of select="$Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/NAME1"/>
+    </VENDOR__NAME>
+    <VENDOR__TYPE>
+        <xsl:value-of select="if ($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK = '0005') then 'CARRIER' else 'VENDOR'"/>
+    </VENDOR__TYPE>
+    <SCAC>
+        <xsl:value-of select="if ($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/KTOKK = '0005') then ($Start/pfx3:CREMAS01-ZCREMAS01-4x/CHILDREN/E1LFA1M/item/FIELDS/SCACD) else &quot; &quot;"/>
+    </SCAC>
+</pfx6:SAPVendorMasterCreate>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:ns4="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx2="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfx3="http://www.hmco.com/EAI/CoreTechnicalServices" xmlns:pfx="http://www.hmco.com/schemas/sfa/material_Classification" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns22="http://xmlns.tibco.com/body" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:TrimMATNR="java://TrimMATNR" xmlns:pfx5="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:ns="java://HMCOParseDimension" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/mail">
+    <xsd:import namespace="http://www.hmco.com/schemas/sfa/material_Classification" schemaLocation="/SharedResources/Schemas/Common/SAPMaterialMasterClassificationUpdateSFA.xsd"/>
+    <xsd:import namespace="http://www.hmco.com/EAI/CoreTechnicalServices" schemaLocation="/CoreTechnicalServices/SharedResources/Schemas/coreTechnicalServices.xsd"/>
+    <xsd:import namespace="http://www.tibco.com/xmlns/ae2xsd/2002/05/ae/620/basic/IDOCS" schemaLocation="/AESchemas/ae/620/basic/IDOCS.aeschema"/>
+    <xsd:import namespace="http://www.tibco.com/schemas/DataDeliveryOptions/SharedResources/Schemas/SCM/Schema.xsd" schemaLocation="/SharedResources/Schemas/SCM/Material_Classification_Update.xsd"/>
+    <pd:name>BusinessProcesses/SCM/SAPMaterialMasterClassificationUpdateDDO/TransformationProcesses/TransformToDDO.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref="pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x"/>
+    <pd:startX>77</pd:startX>
+    <pd:startY>73</pd:startY>
+    <pd:returnBindings>
+        <pfx5:Classfication_Update_Request>
+            <xsl:for-each select="$MAP_SAPIdoc_to_Header/pfx5:Classfication_Update_Request/pfx5:Classification_Update_Requests">
+                <pfx5:Classification_Update_Requests>
+                    <xsl:if test="pfx5:Material_Number">
+                        <pfx5:Material_Number>
+                            <xsl:value-of select="pfx5:Material_Number"/>
+                        </pfx5:Material_Number>
+                    </xsl:if>
+                    <xsl:if test="pfx5:ATNAM">
+                        <pfx5:ATNAM>
+                            <xsl:value-of select="pfx5:ATNAM"/>
+                        </pfx5:ATNAM>
+                    </xsl:if>
+                    <xsl:if test="pfx5:ATWRT">
+                        <pfx5:ATWRT>
+                            <xsl:value-of select="pfx5:ATWRT"/>
+                        </pfx5:ATWRT>
+                    </xsl:if>
+                    <xsl:if test="pfx5:ATWTB">
+                        <pfx5:ATWTB>
+                            <xsl:value-of select="pfx5:ATWTB"/>
+                        </pfx5:ATWTB>
+                    </xsl:if>
+                    <xsl:if test="pfx5:iDocNumber">
+                        <pfx5:iDocNumber>
+                            <xsl:value-of select="pfx5:iDocNumber"/>
+                        </pfx5:iDocNumber>
+                    </xsl:if>
+                    <xsl:if test="pfx5:Update_User">
+                        <pfx5:Update_User>
+                            <xsl:value-of select="pfx5:Update_User"/>
+                        </pfx5:Update_User>
+                    </xsl:if>
+                </pfx5:Classification_Update_Requests>
+            </xsl:for-each>
+        </pfx5:Classfication_Update_Request>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType ref="pfx5:Classfication_Update_Request"/>
+    <pd:endX>536</pd:endX>
+    <pd:endY>72</pd:endY>
+    <pd:errorSchemas>
+        <Error ref="pfx3:errorMessage"/>
+    </pd:errorSchemas>
+    <pd:processVariables>
+        <Variable0>
+            <xsd:element name="root">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="TextTrimHeight" type="xsd:double" minOccurs="0"/>
+                        <xsd:element name="TextTrimWidth" type="xsd:double" minOccurs="0"/>
+                        <xsd:element name="TextBulk" type="xsd:double" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </Variable0>
+    </pd:processVariables>
+    <pd:targetNamespace>http://xmlns.example.com/1310990241565</pd:targetNamespace>
+    <pd:activity name="Generate Error">
+        <pd:type>com.tibco.pe.core.GenerateErrorActivity</pd:type>
+        <pd:resourceType>ae.activities.throw</pd:resourceType>
+        <pd:x>315</pd:x>
+        <pd:y>197</pd:y>
+        <config>
+            <faultName/>
+        </config>
+        <pd:inputBindings>
+            <ns4:ActivityInput>
+                <message>
+                    <xsl:value-of select="$_error/ns3:ErrorReport/Msg"/>
+                </message>
+                <messageCode>
+                    <xsl:value-of select="$_error/ns3:ErrorReport/StackTrace"/>
+                </messageCode>
+            </ns4:ActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="MAP_SAPIdoc_to_Header">
+        <pd:type>com.tibco.plugin.mapper.MapperActivity</pd:type>
+        <pd:resourceType>ae.activities.MapperActivity</pd:resourceType>
+        <pd:x>310</pd:x>
+        <pd:y>69</pd:y>
+        <config>
+            <element ref="pfx5:Classfication_Update_Request"/>
+        </config>
+        <pd:inputBindings>
+            <pfx5:Classfication_Update_Request>
+                <xsl:for-each select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item/CHILDREN/Z1AUSPM/item">
+                    <xsl:if test="string-length(current()/FIELDS/ATNAM)>0 and string-length(current()/FIELDS/ATWRT)>0">
+                        <pfx5:Classification_Update_Requests>
+                            <xsl:if test="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR">
+                                <pfx5:Material_Number>
+                                    <xsl:value-of select="$Start/pfx2:ISM__MATMAS03-ZISM__MATMAS03-4x/CHILDREN/E1MARAM/item[1]/FIELDS/MATNR"/>
+                                </pfx5:Material_Number>
+                            </xsl:if>
+                            <pfx5:ATNAM>
+                                <xsl:value-of select="tib:trim(current()/FIELDS/ATNAM)"/>
+                            </pfx5:ATNAM>
+                            <pfx5:ATWRT>
+                                <xsl:value-of select="tib:trim(current()/FIELDS/ATWRT)"/>
+                            </pfx5:ATWRT>
+                            <pfx5:ATWTB>
+                                <xsl:value-of select="tib:trim(current()/FIELDS/ATWTB)"/>
+                            </pfx5:ATWTB>
+                            <pfx5:iDocNumber>
+                                <xsl:value-of select="tib:trim(../../../../../../EDI__DC/DOCNUM)"/>
+                            </pfx5:iDocNumber>
+                            <pfx5:Update_User>
+                                <xsl:value-of select="$_globalVariables/ns1:GlobalVariables/CENTRAL_DB/UPDATE_USER"/>
+                            </pfx5:Update_User>
+                        </pfx5:Classification_Update_Requests>
+                    </xsl:if>
+                </xsl:for-each>
+            </pfx5:Classfication_Update_Request>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>MAP_SAPIdoc_to_Header</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>MAP_SAPIdoc_to_Header</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>MAP_SAPIdoc_to_Header</pd:from>
+        <pd:to>Generate Error</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-52429</pd:lineColor>
+        <pd:conditionType>error</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

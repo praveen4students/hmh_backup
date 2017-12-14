@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <name>LoggingLevelSharedVariable</name>
+    <resourceType>ae.shared.sharedVariable</resourceType>
+    <config>
+        <persistent>false</persistent>
+        <multi-engine>false</multi-engine>
+        <initialValue>none</initialValue>
+        <initialValueData>&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;logLevel&gt;'warn'&lt;/logLevel&gt;</initialValueData>
+        <initialValueRef/>
+        <xsdString>
+            <xsd:element name="logLevel" type="xsd:string"/>
+        </xsdString>
+    </config>
+</BWSharedResource>

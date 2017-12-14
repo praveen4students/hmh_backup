@@ -1,0 +1,49 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:shipmentDetailsList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:shipmentDetails>
+            <ns0:transactionID>0004560938</ns0:transactionID>
+            <ns0:shipmentDetailsItem>
+               <ns0:shipmentNo>0086719093</ns0:shipmentNo>
+               <ns0:shipmentCharge>0.0E0</ns0:shipmentCharge>
+               <ns0:shipmentCarrier>DHL</ns0:shipmentCarrier>
+               <ns0:shipmentServiceLevel>030000</ns0:shipmentServiceLevel>
+               <ns0:shipmentWeight>4.8899E1</ns0:shipmentWeight>
+               <ns0:totalPackages>2</ns0:totalPackages>
+               <ns0:docDate>2010-06-30</ns0:docDate>
+               <ns0:shippingDate>2010-07-01</ns0:shippingDate>
+               <ns0:lineItem>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:transactionID>0004560938</ns0:transactionID>
+                  <ns0:transactionLineNo>000010</ns0:transactionLineNo>
+                  <ns0:materialID>000000000000046773</ns0:materialID>
+                  <ns0:isbn>9780669467734</ns0:isbn>
+                  <ns0:fullDescription>WSOR 2000 99 HNBK HC</ns0:fullDescription>
+                  <ns0:shipmentLocation>0300</ns0:shipmentLocation>
+                  <ns0:quantity>1.0E1</ns0:quantity>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+               </ns0:lineItem>
+               <ns0:lineItem>
+                  <ns0:lineNo>20</ns0:lineNo>
+                  <ns0:transactionID>0004560938</ns0:transactionID>
+                  <ns0:transactionLineNo>000020</ns0:transactionLineNo>
+                  <ns0:materialID>000000000000053134</ns0:materialID>
+                  <ns0:isbn>9780669531343</ns0:isbn>
+                  <ns0:fullDescription>WRITE SOURCE PROGRAM PE HC GR 9</ns0:fullDescription>
+                  <ns0:shipmentLocation>0300</ns0:shipmentLocation>
+                  <ns0:quantity>1.0E1</ns0:quantity>
+                  <ns0:productDivision>DIVISION_GREAT_SOURCE</ns0:productDivision>
+               </ns0:lineItem>
+               <ns0:trackingItem>
+                  <ns0:trackingNo>9289389546</ns0:trackingNo>
+                  <ns0:shippedDate>2010-07-01</ns0:shippedDate>
+                  <ns0:shipmentServiceLevel>030000</ns0:shipmentServiceLevel>
+                  <ns0:destinationZip/>
+                  <ns0:weight>2.042E1</ns0:weight>
+                  <ns0:trackingURL>http://track.dhl-usa.com/TrackByNbr.asp</ns0:trackingURL>
+               </ns0:trackingItem>
+            </ns0:shipmentDetailsItem>
+         </ns0:shipmentDetails>
+      </ns0:shipmentDetailsList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

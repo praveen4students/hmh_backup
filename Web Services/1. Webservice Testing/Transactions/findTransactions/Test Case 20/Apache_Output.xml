@@ -1,0 +1,19 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>An error occurred while processing SOAP request.</faultstring>
+         <detail>
+            <ns6:transactionException xmlns:ns9="http://www.hmco.com/EAI/OTS/CustomerNew" xmlns:ns8="http://www.hmco.com/EAI/OTS/Material/GetATPNew" xmlns:ns7="http://www.hmco.com/EAI/OTS/Material/GetATP" xmlns:ns6="http://www.hmco.com/EAI/OTS/Transaction" xmlns:ns5="http://www.hmco.com/EAI/OTS/Order" xmlns:ns4="http://www.hmco.com/EAI" xmlns:ns3="http://www.hmco.com/EAI/OTS/Material" xmlns:ns2="http://www.hmco.com/EAI/OTS/Customer" xmlns:ns12="http://www.hmco.com/EAI/OTS/EskerTransaction" xmlns:ns11="http://www.hmco.com/EAI/OTS/PackingList" xmlns:ns10="http://www.hmco.com/EAI/OTS/MaterialNew" xmlns="http://www.hmco.com/EAI/OTS/TransactionNew">
+               <ns4:errorList>
+                  <ns4:error>
+                     <ns4:errorCategory>2</ns4:errorCategory>
+                     <ns4:errorCode>435</ns4:errorCode>
+                     <ns4:errorMessage>Please enter Customer number</ns4:errorMessage>
+                  </ns4:error>
+               </ns4:errorList>
+            </ns6:transactionException>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>

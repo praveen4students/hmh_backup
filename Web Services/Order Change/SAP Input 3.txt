@@ -1,0 +1,31 @@
+<ns:Zwrap_Sd_Salesdocument_Change_Input xmlns:ns="hmhco.com">
+	<BEHAVE_WHEN_ERROR>R</BEHAVE_WHEN_ERROR>
+	<BUSINESS_OBJECT>BUS2032</BUSINESS_OBJECT>
+	<CALL_FROM_BAPI>X</CALL_FROM_BAPI>
+	<INT_NUMBER_ASSIGNMENT>X</INT_NUMBER_ASSIGNMENT>
+	<ORDER_HEADER_INX>
+		<UPDATEFLAG>U</UPDATEFLAG>
+	</ORDER_HEADER_INX>
+	<SALESDOCUMENT>7525846</SALESDOCUMENT>
+	<ITEM_INX>
+		<item>
+			<ITM_NUMBER>000010</ITM_NUMBER>
+			<UPDATEFLAG>U</UPDATEFLAG>
+		</item>
+	</ITEM_INX>
+	<ITEM_IN>
+		<item>
+			<ITM_NUMBER>000010</ITM_NUMBER>
+		</item>
+	</ITEM_IN>
+	<EXTENSIONIN>
+		<item>
+			<STRUCTURE>BAPE_VBAP</STRUCTURE>
+			<VALUEPART1>0007525846000010                                                                                              Y</VALUEPART1>
+		</item>
+		<item>
+			<STRUCTURE>BAPE_VBAPX</STRUCTURE>
+			<VALUEPART1>0007525846000010       X</VALUEPART1>
+		</item>
+	</EXTENSIONIN>
+</ns:Zwrap_Sd_Salesdocument_Change_Input>

@@ -1,0 +1,22 @@
+if(h.getSoldtoemail() != null) {
+				t.setSoldToCustomerEmailAddress(h.getSoldtoemail());	
+			} else {
+				t.setSoldToCustomerEmailAddress(Transaction_Constants.EMPTY);
+				===============================================================
+			}
+			
+			{
+				ZvaddrType adrT = addrMap
+						.get(new Triple<String, String, String>(tranID, h
+								.getSoldtocustid(), Transaction_Constants.AG));
+				List<ZvemailType> emailList = emailMap
+						.get(new Pair<String, String>(tranID,
+								Transaction_Constants.AG));
+				if (adrT != null)
+					t.setSoldToCustomerAddress(makeAddr(adrT, emailList));
+				else {
+					
+					t.setSoldToCustomerAddress(new Address());
+					===========================================
+				}
+			}

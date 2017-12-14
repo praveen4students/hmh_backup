@@ -1,0 +1,38 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:shipmentDetailsList xmlns:ns0="http://www.hmco.com/EAI/OTS/Transaction">
+         <ns0:shipmentDetails>
+            <ns0:transactionID>0002172048</ns0:transactionID>
+            <ns0:shipmentDetailsItem>
+               <ns0:shipmentNo>0082585011</ns0:shipmentNo>
+               <ns0:shipmentCharge>0.0E0</ns0:shipmentCharge>
+               <ns0:shipmentCarrier>UP1P</ns0:shipmentCarrier>
+               <ns0:shipmentServiceLevel>010</ns0:shipmentServiceLevel>
+               <ns0:shipmentWeight>0.0E0</ns0:shipmentWeight>
+               <ns0:totalPackages>1</ns0:totalPackages>
+               <ns0:docDate>2008-03-12</ns0:docDate>
+               <ns0:shippingDate>2008-03-12</ns0:shippingDate>
+               <ns0:lineItem>
+                  <ns0:lineNo>10</ns0:lineNo>
+                  <ns0:transactionID>0002172048</ns0:transactionID>
+                  <ns0:transactionLineNo>000010</ns0:transactionLineNo>
+                  <ns0:materialID>000000000000651164</ns0:materialID>
+                  <ns0:isbn>9780807032848</ns0:isbn>
+                  <ns0:fullDescription>CAN WE TALK ABOUT RACE</ns0:fullDescription>
+                  <ns0:shipmentLocation>D300</ns0:shipmentLocation>
+                  <ns0:quantity>1.0E0</ns0:quantity>
+                  <ns0:productDivision>DIVISION_TRADE_AND_REFERENCE</ns0:productDivision>
+               </ns0:lineItem>
+               <ns0:trackingItem>
+                  <ns0:trackingNo>1Z00E64W1304812834</ns0:trackingNo>
+                  <ns0:shippedDate>2008-03-12</ns0:shippedDate>
+                  <ns0:shipmentServiceLevel>010</ns0:shipmentServiceLevel>
+                  <ns0:destinationZip>10022-1902</ns0:destinationZip>
+                  <ns0:weight>9.14E-1</ns0:weight>
+                  <ns0:trackingURL><![CDATA[http://wwwapps.ups.com/WebTracking/processInputRequest?HTMLVersion=5.0&loc=en_US&Requester=UPSHome&tracknum=1Z00E64W1304812834&ignore=&track.x=29&track.y=6]]></ns0:trackingURL>
+               </ns0:trackingItem>
+            </ns0:shipmentDetailsItem>
+         </ns0:shipmentDetails>
+      </ns0:shipmentDetailsList>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

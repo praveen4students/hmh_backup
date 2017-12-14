@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programs>
+	<program id="PG00001"> <!-- Mandatory field. Unique program Id, Max size 10 Alphanumeric-->
+		<name>Go Math</name> <!-- Mandatory field. Program Name Max size 200 Alphanumeric-->
+		<versions>
+			<version id="PG000012011NATIONAL"><!-- Mandatory field. Unique version Id. Max size 100 Alphanumeric-->
+				<copyright>2011</copyright> <!-- Mandatory field. Copy right year of a program's version. Max size  4 numeric -->
+				<state>NATIONAL</state> <!-- Mandatory field. Program version's state or national. State code. Code for national is national. Max size 30 Alphanumeric-->
+			</version>
+			<version id="PG00012012NATIONAL">	
+				<copyright>2012</copyright>
+				<state>NATIONAL</state>
+			</version>
+		</versions>
+	<program>
+	<program id="PG0002">
+			<name>Creating America</name>	
+			<versions>
+				<version id="PG00022006CA">
+					<copyright>2006</copyright>
+					<state>CA</state>
+				</version>
+				<version id="PG00022006NATIONAL">
+					<copyright>2007</copyright>
+					<state>NATIONAL</state>
+				</version>
+			</versions>
+	<program>
+</programs>

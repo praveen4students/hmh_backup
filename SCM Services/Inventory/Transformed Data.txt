@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<ns0:InventoryList xmlns:ns0 = "http://www.tibco.com/schemas/SunriseCentral_Database_Consumer/SharedResources/Schemas/SCM/Schema.xsd">
+	<ns0:InventoryInfo>
+		<ns0:MaterialNumber>000000000001014853</ns0:MaterialNumber>
+		<ns0:Plant>0300</ns0:Plant>
+		<ns0:ATPQuantity>0</ns0:ATPQuantity>
+		<ns0:ATPDate>2013-03-26</ns0:ATPDate>
+		<ns0:Division>30</ns0:Division>
+		<ns0:iDocNumber>0000000199562274</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:InventoryInfo>
+	<ns0:InventoryInfo>
+		<ns0:MaterialNumber>000000000001014853</ns0:MaterialNumber>
+		<ns0:Plant>0400</ns0:Plant>
+		<ns0:ATPQuantity>0</ns0:ATPQuantity>
+		<ns0:ATPDate>2013-03-26</ns0:ATPDate>
+		<ns0:Division>30</ns0:Division>
+		<ns0:iDocNumber>0000000199562274</ns0:iDocNumber>
+		<ns0:Update_User>TIBCO</ns0:Update_User>
+	</ns0:InventoryInfo>
+</ns0:InventoryList>
